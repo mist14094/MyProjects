@@ -1,0 +1,70 @@
+﻿<Window x:Class="TempDown"
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WinBin WinBig WinCash!" Height="768" Width="1024" xmlns:my="clr-namespace:WinbinExternal" Topmost="True" WindowStyle="None" WindowState="Maximized" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Cursor="None">
+    <!--Topmost="True" WindowStyle="None" WindowState="Maximized" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Cursor="None"-->
+
+    <Window.Background>
+        <ImageBrush ImageSource="/WinbinExternal;component/images/bg.jpg"></ImageBrush>
+    </Window.Background>
+
+    <Grid>
+        <Canvas>
+            <Image Canvas.Top="25" Canvas.Left="25" Height="85" HorizontalAlignment="Left" x:Name="imgLogo" Stretch="Fill" VerticalAlignment="Top" Width="208" Source="/WinbinExternal;component/images/logo.png" />
+            <Image Canvas.Top="25" Canvas.Right="25" HorizontalAlignment="Left" x:Name="Image1" Stretch="Fill" VerticalAlignment="Top" />
+            <my:OutlinedText Canvas.Top="42" Canvas.Left="311" x:Name="TextContent" FontSize="32" Bold="False" Stroke="limegreen" StrokeThickness="1" Text="Maintenance" VerticalAlignment="Center" HorizontalAlignment="Center" Font="Arial Black" Width="Auto" Height="Auto">
+                <my:OutlinedText.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFFFEC00" Offset="1" />
+                        <GradientStop Color="White" Offset="0" />
+                    </LinearGradientBrush>
+                </my:OutlinedText.Fill>
+                <my:OutlinedText.Effect>
+                    <DropShadowEffect BlurRadius="3" ShadowDepth="3" RenderingBias="Performance"/>
+                </my:OutlinedText.Effect>
+            </my:OutlinedText>
+
+        </Canvas>
+        <Grid x:Name="contentGrid" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="125" />
+                <RowDefinition Height="172" />
+                <RowDefinition Height="172" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="center" VerticalAlignment="Center">
+           
+            </TextBlock>
+            <TextBlock x:Name="txtGenMerch" Text="WinBin Temporarily Down" Grid.Column="0" Grid.Row="2" HorizontalAlignment="center" VerticalAlignment="Top" TextWrapping="Wrap" FontFamily="Droid Sans" FontWeight="bold" FontSize="40" Foreground="Yellow" MaxWidth="800" TextAlignment="Center">
+                <TextBlock.Effect>
+                    <DropShadowEffect BlurRadius="3" ShadowDepth="3" RenderingBias="Performance"/>
+                </TextBlock.Effect>
+            </TextBlock>
+            <TextBlock x:Name="txtGenMerchPoints" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="center"  FontFamily="Droid Sans" FontWeight="bold" FontSize="45" Foreground="LimeGreen" MaxWidth="800" TextAlignment="Center">
+                <TextBlock.Effect>
+                    <DropShadowEffect BlurRadius="0" ShadowDepth="2" RenderingBias="Performance" Color="Yellow" />
+                </TextBlock.Effect>
+            </TextBlock>
+
+            <TextBlock x:Name="txtTob" Text="Please Check Back Soon" Grid.Column="0" Grid.Row="3" HorizontalAlignment="center" VerticalAlignment="Top" TextWrapping="Wrap" FontFamily="Droid Sans" FontWeight="bold" FontSize="40" Foreground="Yellow" MaxWidth="800" TextAlignment="Center">
+                <TextBlock.Effect>
+                    <DropShadowEffect BlurRadius="3" ShadowDepth="3" RenderingBias="Performance"/>
+                </TextBlock.Effect>
+            </TextBlock>
+            <TextBlock x:Name="txtTobPoints" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="center"  FontFamily="Droid Sans" FontWeight="bold" FontSize="45" Foreground="LimeGreen" MaxWidth="800" TextAlignment="Center">
+                <TextBlock.Effect>
+                    <DropShadowEffect BlurRadius="0" ShadowDepth="2" RenderingBias="Performance" Color="Yellow" />
+                </TextBlock.Effect>
+            </TextBlock>
+           
+
+        </Grid>
+        <TextBox Name="scannerInput" Opacity="1" Width="0" Height="0" TabIndex="98" AllowDrop="False" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" Cursor="None" Foreground="{x:Null}" MaxLength="32767" MaxLines="1" />
+    </Grid>
+
+</Window>

@@ -1,0 +1,121 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="BEPProduct" %>
+
+<%@ Register Assembly="C1.Web.Wijmo.Controls.4" Namespace="C1.Web.Wijmo.Controls.C1ComboBox"
+    TagPrefix="wijmo" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<%@ Register Assembly="C1.Web.Wijmo.Controls.4" Namespace="C1.Web.Wijmo.Controls.C1Chart"
+    TagPrefix="wijmo" %>
+<%@ Register Assembly="C1.Web.Wijmo.Controls.4" Namespace="C1.Web.Wijmo.Controls.C1AutoComplete"
+    TagPrefix="wijmo" %>
+<%@ Register Assembly="C1.Web.Wijmo.Controls.4" Namespace="C1.Web.Wijmo.Controls.C1GridView"
+    TagPrefix="wijmo" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Break-Even | Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="css/960.css" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/text.css" />
+    <link rel="stylesheet" type="text/css" href="css/blue.css" />
+    <link type="text/css" href="css/smoothness/ui.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/blend/jquery.blend.js"></script>
+    <script type="text/javascript" src="js/ui.core.js"></script>
+    <script type="text/javascript" src="js/ui.sortable.js"></script>
+    <script type="text/javascript" src="js/ui.dialog.js"></script>
+    <script type="text/javascript" src="js/ui.datepicker.js"></script>
+    <script type="text/javascript" src="js/effects.js"></script>
+    <script type="text/javascript" src="js/flot/jquery.flot.pack.js"></script>
+    <script id="source" language="javascript" type="text/javascript" src="js/graphs.js"></script>
+    <style type="text/css">
+        .WindowsStyle .ajax__combobox_inputcontainer
+        {
+        }
+        .WindowsStyle .ajax__combobox_textboxcontainer
+        {
+            width: 100%;
+        }
+        .WindowsStyle .ajax__combobox_textboxcontainer input
+        {
+            width: 100%;
+        }
+        .WindowsStyle .ajax__combobox_buttoncontainer
+        {
+        }
+        .WindowsStyle .ajax__combobox_buttoncontainer button
+        {
+            background-position: center;
+            background-repeat: no-repeat;
+            border-color: ButtonFace;
+            height: 15px;
+            width: 15px;
+        }
+        
+        
+        .WindowsStyle .ajax__combobox_itemlist
+        {
+            margin: 0px;
+            padding: 0px;
+            cursor: default;
+            list-style-type: none;
+            text-align: left;
+            border: solid 1px ButtonShadow;
+            background-color: Window;
+            color: WindowText;
+            width: 300px;
+        }
+        .WindowsStyle .ajax__combobox_itemlist li
+        {
+            white-space: nowrap;
+            width: 300px;
+            padding: 0 3px 0 2px;
+        }
+        </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="container_16" id="wrapper">
+        <div style="position: relative;">
+        </div>
+        <div class="grid_8" id="logo">
+            Break - Even Analysis</div>
+        <div class="grid_8">
+            <div id="user_tools">
+                </div>
+        </div>
+        <div class="grid_16" id="header">
+            <!-- MENU START -->
+            <div id="menu">
+                <ul class="group" id="menu_group_main">
+                    <li class="item first" id="one"><a href="#" class="main"><span class="outer"><span
+                        class="inner dashboard">Dashboard</span></span></a></li>
+                    <li class="item middle" id="two"><a href="#" class="main current"><span class="outer">
+                        <span class="inner content">Break-Even</span></span></a></li>
+                    <li class="item middle" id="three"><a href="#"><span class="outer"><span class="inner reports png">
+                        Reports</span></span></a></li>
+                    <li class="item middle" id="four"><a href="#" class="main"><span class="outer"><span
+                        class="inner users">Sales</span></span></a></li>
+                    <li class="item middle" id="five"><a href="#" class="main"><span class="outer"><span
+                        class="inner media_library">Receiving</span></span></a></li>
+                    <li class="item middle" id="six"><a href="#" class="main"><span class="outer"><span
+                        class="inner event_manager">Inventory</span></span></a></li>
+                    <li class="item middle" id="seven"><a href="#" class="main"><span class="outer"><span
+                        class="inner newsletter">Overhead</span></span></a></li>
+                    <li class="item last" id="eight"><a href="#" class="main"><span class="outer"><span
+                        class="inner settings">Settings</span></span></a></li>
+                </ul>
+            </div>
+           
+            <div class="clear">
+                <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="container_16" id="footer">
+        ©2013 KeyTone Technologies - All rights reserved</div>
+    </form>
+</body>
+</html>

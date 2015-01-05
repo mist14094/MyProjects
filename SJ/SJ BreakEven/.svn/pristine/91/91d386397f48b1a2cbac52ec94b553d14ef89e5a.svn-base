@@ -1,0 +1,50 @@
+﻿<Window x:Class="InfoWrong"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WinBin WinBig WinCash!" Height="768" Width="1024" xmlns:my="clr-namespace:WinbinExternal" Topmost="True" WindowStyle="None" WindowState="Maximized" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Cursor="None">
+    <!--Topmost="True" WindowStyle="None" WindowState="Maximized" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Cursor="None"-->
+    <Window.Background>
+        <ImageBrush ImageSource="/WinbinExternal;component/images/bg.jpg"></ImageBrush>
+    </Window.Background>
+
+    <Grid>
+        <Canvas>
+            <Image Canvas.Top="25" Canvas.Left="25" Height="85" HorizontalAlignment="Left" x:Name="imgLogo" Stretch="Fill" VerticalAlignment="Top" Width="208" Source="/WinbinExternal;component/images/logo.png" />
+            <Image Canvas.Top="25" Canvas.Right="25" HorizontalAlignment="Left" x:Name="Image1" Stretch="Fill" VerticalAlignment="Top" />
+            <my:OutlinedText Canvas.Top="45" Canvas.Left="311" x:Name="txtHeader" FontSize="28" Bold="False" Stroke="limegreen" StrokeThickness="1" Text="Ask for Assistance" VerticalAlignment="Center" HorizontalAlignment="Center" Font="Arial Black" Width="Auto" Height="Auto">
+                <my:OutlinedText.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFFFEC00" Offset="1" />
+                        <GradientStop Color="White" Offset="0" />
+                    </LinearGradientBrush>
+                </my:OutlinedText.Fill>
+                <my:OutlinedText.Effect>
+                    <DropShadowEffect BlurRadius="3" ShadowDepth="3" RenderingBias="Performance"/>
+                </my:OutlinedText.Effect>
+            </my:OutlinedText>
+
+        </Canvas>
+        <Grid x:Name="contentGrid" Width="1024" Margin="0,0,-22,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            
+            <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="center" VerticalAlignment="Top" TextWrapping="Wrap" FontFamily="Droid Sans" FontSize="36" Foreground="Yellow" MaxWidth="1024" TextAlignment="Center">
+               
+                
+                <TextBlock HorizontalAlignment="center"  VerticalAlignment="Center" TextWrapping="Wrap" FontFamily="Droid Sans" FontSize="54" FontWeight="Bold" Foreground="Yellow" MaxWidth="800" TextAlignment="Center" Text="Sorry, we are having trouble getting correct information from your license.&#10;&#10;Please speak with a representative and they will assist you in entering.">
+                    <TextBlock.Effect>
+                        <DropShadowEffect BlurRadius="3" ShadowDepth="3" RenderingBias="Performance"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+                
+            </TextBlock>
+        </Grid>
+    </Grid>
+</Window>
+

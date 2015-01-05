@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name=”format-detection” content=”telephone=no”>
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" />
+  <script src="scripts/jquery.min.js"></script>
+  <script src="scripts/jquery.mobile-1.4.2.min.js"></script>
+  <script src="scripts/jquery.md5.min.js"></script>
+  <script src="phonegap.js"></script>
+</head>
+<body>
+    <div data-role="page" data-theme='a' id="index">
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='a'>
+            <h1>Spotcheck</h1>
+            <a href="#" class="ui-btn-right" data-icon="flat-settings" data-iconpos="notext" data-iconshadow="true" id="home_settings">Settings</a> 
+        </div>
+        
+        <div class="ui-content">   
+			<form id="select_store">
+            	<select id="storenum" data-theme="f" data-placeholder="true" data-native-menu="false">
+                    <option value="2">Store 2</option>
+                    <option value="3">Store 3</option>
+                    <option value="4">Store 4</option>
+                    <option value="6">Store 6</option>
+                    <option value="7">Store 7</option>
+                    <option value="9">Store 9</option>
+                    <option value="10">Store 10</option>
+                    <option value="12">Store 12</option>
+                </select>
+                
+                
+            </form>
+			
+            
+        </div>
+		<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="z">
+        	<div data-role="content">
+            <button id="scan_upc" data-theme="b" data-icon="flat-camera" data-mini="false" class="footer_btn">Scan Item UPC/RFID</button>
+            </div>
+        </div>
+       
+    </div>
+    
+    <div data-role="page" data-theme="a" id="scanning_page">
+    
+    </div>
+    
+    
+    <div data-role="page" data-theme="a" id="item_details">
+         
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='a'>
+        	<a href="#" class="ui-btn-left" data-icon="back" data-iconpos="left" data-iconshadow="false" id="details_home">Go Home</a>
+            <h1>Spotcheck</h1>
+            <a href="#" class="ui-btn-right" data-icon="flat-settings" data-iconpos="notext" data-iconshadow="false" id="details_settings">Settings</a> 
+        </div>
+         <div class="ui-content">   
+
+
+        <div class='inset'>
+        	<div data-role="tabs" id="tabs">
+              <div data-role="navbar">
+                <ul>
+                  <li><a href="#pricebook" data-ajax="false">Pricebook</a></li>
+                  <li><a href="#rfid" data-ajax="false">RFID Count</a></li>
+                  <li><a href="#breakeven" data-ajax="false">Break-even</a></li>
+                </ul>
+              </div>
+              <div id="pricebook">
+              	<h1>Pricebook</h1>
+                <table data-role="table" id='table-column-toggle' data-mode='columntoggle' class="ui-responsive table-stroke" width="100%">
+                    <thead>
+                        <tr>
+                            <th width="25%">
+                            </th>
+                            <th width="75%">
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td width="25%">UPC</td>
+                            <td width="75%" id="this_upc">
+                            
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Description</td>
+                            <td id="this_desc">
+                            
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Starting Inventory</td>
+                            <td id="this_beginv">
+                            
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Purchases</td>
+                            <td id="this_purch">
+                            
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Sales</td>
+                            <td id="this_sales">
+                            
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Current Inventory</td>
+                            <td id="this_currinv">
+                            
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Unit Cost</td>
+                            <td id="this_unitcost">
+                            
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Unit Retail</td>
+                            <td id="this_unitretail">
+                            
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div>
+              <div id="rfid">
+                <h1>RFID Counts</h1>
+                <table data-role="table" id='table-column-toggle' data-mode='columntoggle' class="ui-responsive table-stroke" width="100%">
+                    <thead>
+                        <tr>
+                            <th width="25%">
+                            </th>
+                            <th width="75%">
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>      
+                         <tr>
+                            <td>RFID Desc</td>
+                            <td id="this_rfiddesc">
+                            
+                            </td>
+                        </tr>
+                        
+                         <tr>
+                            <td>RFID Price</td>
+                            <td id="this_rfidprice">
+                            
+                            </td>
+                        </tr>
+                        
+                         <tr>
+                            <td>RFID Qty Min</td>
+                            <td id="this_rfidqtymin">
+                            
+                            </td>
+                        </tr>
+                        
+                         <tr>
+                            <td>RFID Qty Max</td>
+                            <td id="this_rfidqtymax">
+                            
+                            </td>
+                        </tr>
+                        
+                         <tr>
+                            <td>RFID QOH</td>
+                            <td id="this_rfidqoh">
+                            
+                            </td>
+                        </tr>
+                        
+                         <tr>
+                            <td>RFID Batch Qty</td>
+                            <td id="this_rfidbatchqty">
+                            
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div>
+              <div id="breakeven">
+                <h1>Break-even Info</h1>
+                <table data-role="table" id='table-column-toggle' data-mode='columntoggle' class="ui-responsive table-stroke" width="100%">
+                    <thead>
+                        <tr>
+                            <th width="25%">
+                            </th>
+                            <th width="75%">
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Description</td>
+                            <td id="this_bedesc">
+                            
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Vendor</td>
+                            <td id="this_bevendor">
+                            
+                            </td>
+                        </tr>
+                        
+                         <tr>
+                            <td>Stockcode</td>
+                            <td id="this_bestockcode">
+                            
+                            </td>
+                        </tr>
+                        
+                         <tr>
+                            <td>UOM</td>
+                            <td id="this_beuom">
+                            
+                            </td>
+                        </tr>
+                        
+                         <tr>
+                            <td>Avg. Cost Goods Sold</td>
+                            <td id="this_beavgcogs">
+                            
+                            </td>
+                        </tr>
+                        
+                         <tr>
+                            <td>Avg. Sale Price</td>
+                            <td id="this_beavgsaleprice">
+                            
+                            </td>
+                        </tr>
+                        
+                         <tr>
+                            <td>Suggested Retail</td>
+                            <td id="this_besuggretail">
+                            
+                            </td>
+                        </tr>
+                        
+                         <tr>
+                            <td>Total Cost Goods Sold</td>
+                            <td id="this_betotalcogs">
+                            
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Total Received</td>
+                            <td id="this_betotalrcvd">
+                            
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Total Sales</td>
+                            <td id="this_betotalsales">
+                            
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Total Sold</td>
+                            <td id="this_betotalsold">
+                            
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Last Sale Date</td>
+                            <td id="this_belastsale">
+                            
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Store Name</td>
+                            <td id="this_bestorename">
+                            
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Profit Margin</td>
+                            <td id="this_beprofitmargin">
+                            
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Profit Percentage</td>
+                            <td id="this_beprofitpercentage">
+                            
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div>
+            </div>
+        	
+            </div>
+            </div>
+            
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="z">
+                <div data-role="content">
+                <button id="scan_again" data-theme="b" data-icon="flat-camera" class="footer_btn">Scan Another Item</button>
+                </div>
+            </div>
+    </div>
+    
+    
+    <div data-role="page" data-theme='a' id="count">
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='a'>
+            <h1>Inventory Count</h1>
+            <a href="#" class="ui-btn-right" data-icon="flat-settings" data-iconpos="notext" data-iconshadow="true" id="count_settings">Settings</a> 
+        </div>
+        
+        <div class="ui-content">   
+			<form>
+            	<select id="count_storenum" data-theme="f" data-placeholder="true" data-native-menu="false">
+                    <option value="2">Store 2</option>
+                    <option value="3">Store 3</option>
+                    <option value="4">Store 4</option>
+                    <option value="6">Store 6</option>
+                    <option value="7">Store 7</option>
+                    <option value="9">Store 9</option>
+                    <option value="10">Store 10</option>
+                    <option value="12">Store 12</option>
+                </select>
+                
+                
+            </form>
+			
+            
+        </div>
+		<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="z">
+        	<div data-role="content">
+            <button id="count_scan_upc" data-theme="b" data-icon="flat-camera" data-mini="false" class="footer_btn">Scan Item UPC/RFID</button>
+            </div>
+        </div>
+       
+    </div>
+    
+    <div data-role="page" data-theme="a" id="count_scanning_page">
+    
+    </div>
+    
+    <div data-role="page" data-theme="a" id="count_setcount">
+    	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='a'>
+        	<a href="#" class="ui-btn-left" data-icon="flat-cross" data-iconpos="left" data-iconshadow="false" id="count_cancel">Cancel All</a> 
+            <h1>Inventory Count</h1>
+        </div>
+        
+        <div class="ui-content">
+        	<input type="text" id="setcount_upc" placeholder="UPC" />
+            <input type="number" id="setcount_qty" placeholder="Quantity" />
+        </div>
+        
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="z">
+        	<div data-role="content">
+            <button id="setcount_add" data-theme="b" data-icon="flat-plus" data-mini="false" class="footer_btn">Add Item</button>
+            </div>
+        </div>
+    </div>
+    
+    <div data-role="page" data-theme="a" id="count_list">
+    	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
+        	<a href="#" class="ui-btn-left" data-icon="flat-cross" data-iconpos="left" data-iconshadow="false" id="count_list_cancel">Cancel All</a>
+            <h1>Inventory Count</h1>
+        </div>
+        <div class="ui-content">
+            <div class='inset'>
+                <table data-role="table" id='table-column-toggle' data-mode='columntoggle' class="ui-responsive table-stroke" width="100%">
+                    <thead>
+                        <tr>
+                            <th>UPC</th>
+                            <th>QTY</th>
+                            <th>TIME</th>
+                        </tr>
+                    </thead>
+                    <tbody id="count_list_pop">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+         <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="z">
+        	<div data-role="content">
+            <button id="countlist_scan" data-theme="b" data-icon="flat-camera" data-mini="false" class="footer_btn">Scan Another</button>
+            <button id="countlist_post" data-theme="g" data-icon="flat-bubble" data-mini="false" class="footer_btn">Post</button>
+            </div>
+        </div>
+    </div>
+    <div id="popup-settings" data-theme="a" data-overlay-theme="c" data-dismissible="true">
+            <div data-role="fieldcontain" style="padding-left:20px; padding-right:20px;">
+                <input type="button" data-icon="flat-menu" data-iconpos="left" value="Spotcheck" id="settings_spotcheck" />
+                <input type="button" data-icon="flat-new" data-iconpos="left"value="Post Item Counts" id="settings_count" />
+            </div>
+    </div>
+    
+    <script>
+		$(function(){
+			$.mobile.defaultPageTransition="pop";
+			$.mobile.defaultHomeScroll=0 
+			
+			$( function() {
+				$( "#popup-settings" ).enhanceWithin().popup({
+					afteropen: function(){
+						$('#settings_spotcheck').click(function(e){
+							e.preventDefault();
+							e.stopImmediatePropagation();
+							
+							// $("#popup-settings").popup('close');
+							// This brings you to main spotcheck page - select store and scan\
+							$.mobile.pageContainer.pagecontainer("change", '#index');
+						});
+						
+						$('#settings_count').click(function(e){
+							e.preventDefault();
+							e.stopImmediatePropagation();
+							
+							// $("#popup-settings").popup('close');
+							// Check if there's any items already in localstorage, if not bring to main addition page, otherwise bring to current addition page.
+							$.mobile.pageContainer.pagecontainer("change", '#count');
+						});
+					}
+				});
+			});
+		});
+		
+		function alert_Timeout(){
+			navigator.notification.alert(	
+				'There is a connection issue, and the response timed out.',
+				alertDismissed,
+				'Connection Timeout',
+				'Ok'
+			);
+		}
+		
+		function alert_ScanError(){
+			navigator.notification.alert(	
+				'There was a problem loading the barcode scanner, please try again',
+				alertDismissed,
+				'Scanner Error',
+				'Ok'
+			);	
+		}
+		
+		function alert_Unknown(){
+			navigator.notification.alert(
+				'Well... This is embarassing...  Unknown error occurred.',
+				alertDismissed,
+				'Oops...',
+				'Ok'
+			);	
+		}
+		
+		function alert_NoSuchItem(){
+			navigator.notification.alert(
+				'The scanned item does not exist in our database.',
+				alertDismissed,
+				'Item Does Not Exist',
+				'Ok'
+			);
+		}
+		
+		function alert_UPC(){
+			navigator.notification.alert(
+				'UPCs must contain numeric values only.',
+				alertDismissed,
+				'UPC Not Numeric',
+				'Ok'
+			);	
+		}
+		
+		function alert_NotNumeric(){
+			navigator.notification.alert(
+				'Must enter a valid number for quantity.',
+				alertDismissed,
+				'Incorrect Value for Quantity',
+				'Ok'
+			);	
+		}
+		
+		function alert_SuccessCount(){
+			navigator.notification.alert(
+				'Successfully posted inventory to oasis!',
+				alertDismissed,
+				'Success!',
+				'Ok'
+			);	
+		}
+		
+		function alert_FailCount(){
+			navigator.notification.alert(
+				'Somethign went wrong with post.  Please Try again',
+				alertDismissed,
+				'Post Failed.',
+				'Ok'
+			);	
+		}
+	
+		function alertDismissed(){
+			//do nothing	
+		}
+	
+		function isNumeric(x) { 
+			var numbers=".0123456789";
+			// is x a String or a character? 
+			if(x.length>1) { 
+				// remove negative sign 
+				x=Math.abs(x)+""; 
+				for(j=0;j<x.length;j++) { 
+					// call isNumeric recursively for each character 
+					number=isNumeric(x.substring(j,j+1)); 
+					if(!number) return number; 
+				} 
+				return number; 
+			} 
+			else { 
+				// if x is number return true 
+				if(numbers.indexOf(x)>=0) return true; 
+				return false; 
+			} 
+		} 
+		
+		function cancelAll(){
+			window.localStorage.removeItem('store');
+			window.localStorage.removeItem('count_items');
+			
+			$.mobile.pageContainer.pagecontainer("change", "#index", {changeHash:true});
+		}
+		function ConvertUPCE2A(UPCE){
+
+			
+			// var UPCA = new String(document.forms["UPC"].txtUPCA.value);
+			var UPCEString = new String();
+			var ManufacturerNumber = new String();
+			var ItemNumber = new String();
+			var Msg = new String();
+			
+				if(isNumeric(UPCE)){
+					switch (UPCE.length){
+						case 6:
+						UPCEString = UPCE;	
+						break;
+					
+						case 7:
+						UPCEString = UPCE.substring(1, 7);	
+						break;
+						
+						case 8:
+						UPCEString = UPCE.substring(1, 7);
+						break;
+						
+						default :
+						document.forms["UPC"].txtUPCE.value = "";
+						document.forms["UPC"].txtUPCE.focus();
+						//return false;
+						
+					} //End Select
+					
+					
+					// break up the string into its 6 individual digits
+					var Digit1 = UPCEString.substr(0, 1);
+					var Digit2 = UPCEString.substr(1, 1);
+					var Digit3 = UPCEString.substr(2, 1);
+					var Digit4 = UPCEString.substr(3, 1);
+					var Digit5 = UPCEString.substr(4, 1);
+					var Digit6 = UPCEString.substr(5, 1);
+			
+					switch (Digit6){
+						case "0":
+						ManufacturerNumber = ManufacturerNumber.concat(Digit1, Digit2, Digit6, "00");
+							ItemNumber = ItemNumber.concat("00", Digit3, Digit4, Digit5);
+						break;
+						
+						case "1":
+						ManufacturerNumber = ManufacturerNumber.concat(Digit1, Digit2, Digit6, "00");
+							ItemNumber = "00" + Digit3 + Digit4 + Digit5;
+						break;
+						
+						case "2":
+						ManufacturerNumber = Digit1 + Digit2 + Digit6 + "00";
+							ItemNumber = "00" + Digit3 + Digit4 + Digit5;
+						break;
+						
+						case "3":
+						ManufacturerNumber = Digit1 + Digit2 + Digit3 + "00";
+							ItemNumber = "000" + Digit4 + Digit5;	
+						break;
+						
+						case "4":
+							ManufacturerNumber = Digit1 + Digit2 + Digit3 + Digit4 + "0";
+							ItemNumber = "0000" + Digit5;
+						break;
+						
+						default:
+						  ManufacturerNumber = ManufacturerNumber.concat(Digit1, Digit2, Digit3, Digit4, Digit5);
+							ItemNumber = ItemNumber.concat("0000", Digit6);
+						break;
+						
+					} //End Select
+			
+					// put the number system digit "0" together with the manufacturer code and Item number
+					Msg = Msg.concat("0", ManufacturerNumber, ItemNumber);
+					CheckChar = CalcCheckDigit(Msg);
+					//return(Msg + CheckChar);	// put the pieces together and return
+					if (!isNaN(CheckChar)){
+						return Msg.concat(CheckChar);
+					} //End If isNaN
+					else{
+						return 0;	
+					}
+				} //End If is numeric
+				else {
+					alert_UPC();
+					return 0;
+				}
+				return false;
+			} //End Function
+			
+			function CalcCheckDigit(strMsg){
+				// calculate the check digit - note UPCE and UPCA check digits are the same
+				var Check = 0;            // initialize the check digit value
+				for(var X = 1; X <= 11; X++){
+					var Test = strMsg.substr(X-1, 1);
+					  if (isOdd(X)==true){
+							Check = Check + parseInt(Test) * 7;       // odd position digits multiplied by 7
+					}
+					else{ 
+							Check = Check + parseInt(Test)  * 9;       // even position digits multiplied by 9
+					}
+				}
+				Check = (Check % 10) + 48;  	// convert value to ASCII character value;
+				return charFromCharCode (Check);    // check character
+			}
+			
+			function charFromCharCode (charCode) { 
+				return unescape('%' + charCode.toString(16)); 
+			} 
+			
+			function isEven(y) { 
+				return (y%2)?false:true; 
+			} 
+			function isOdd(y) { 
+				return !isEven(y); 
+			} 
+			
+			function mod(divisee,base) {
+				return Math.round(divisee - (Math.floor(divisee/base)*base));
+			}
+			
+			function PBInfo(upc, desc, begininv, currpurch, currsales, currinv, unitcost, unitretail){
+				this.upc = upc;
+				this.desc = desc;
+				this.begininv = begininv;
+				this.currpurch = currpurch;
+				this.currsales = currsales;
+				this.currinv = currinv;
+				this.unitcost = unitcost;
+				this.unitretail = unitretail;		
+			}
+			
+			function RFIDInfo(sku, desc, price, qtymin, qtymax, qoh, batchqty){
+				this.sku = sku;
+				this.desc = desc;
+				this.price = price;
+				this.qtymin - qtymin;
+				this.qtymax = qtymax;
+				this.qoh = qoh;
+				this.batchqty = batchqty;	
+			}
+			
+			function BEInfo(stockcode, vendor, desc, uom, avgcogs, avgsaleprice, suggretail, totalcogs, totalrcvd, totalsales, totalsold, lastsaledate, storename, profitmargin, profitpercentage){
+				this.stockcode = stockcode;
+				this.vendor = vendor;
+				this.desc = desc;
+				this.uom = uom;
+				this.avgcogs = avgcogs;
+				this.avgsaleprice = avgsaleprice;
+				this.suggretail = suggretail;
+				this.totalcogs = totalcogs;
+				this.totalrcvd = totalrcvd;
+				this.totalsales = totalsales;
+				this.totalsold = totalsold;
+				this.lastsaledate = lastsaledate;	
+				this.storename = storename;
+				this.profitmargin = profitmargin;
+				this.profitpercentage = profitpercentage;
+			}
+			
+		function ItemInfo(upc, desc, begininv, currpurch, currsales, currinv, unitcost, unitretail, rfidsku, rfiddesc, rfidprice, rfidqtymin, rfidqtymax, rfidqoh, rfidbatchqty, success){
+			this.upc = upc;
+			this.desc = desc;
+			this.begininv = begininv;
+			this.currpurch = currpurch;
+			this.currsales = currsales;
+			this.currinv = currinv;
+			this.unitcost = unitcost;
+			this.unitretail = unitretail;
+			this.rfidsku = rfidsku;
+			this.rfiddesc = rfiddesc;
+			this.rfidprice = rfidprice;
+			this.rfidqtymin = rfidqtymin;
+			this.rfidqtymax = rfidqtymax;
+			this.rfidqoh = rfidqoh;
+			this.rfidbatchqty = rfidbatchqty;
+			this.success = success;	
+		}
+		
+		function checkTime(i) {
+			if (i < 10) {
+				i = "0" + i;
+			}
+			return i;
+		}
+
+		function PostInfo(upc, quantity, num_one, num_two){
+			var date = new Date();
+			var dateString = (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear().toString().substr(2,2);
+			var h = date.getHours();
+			var m = date.getMinutes();
+			var s = date.getSeconds();
+			m = checkTime(m);
+   			s = checkTime(s);
+			
+			var timeString = h + ":" + m + ":" + s;
+			
+			this.upc = upc;
+			this.quantity = quantity;
+			this.date = dateString;
+			this.time = timeString;
+			this.num_one = num_one;
+			this.num_two = num_two;	
+		}
+
+
+		function hasStoredItems(){
+			if(window.localStorage.getItem('count_items') === null){
+				var items = [];
+				window.localStorage.setItem('count_items', JSON.stringify(items));
+			}
+			else{
+			}
+		}
+		
+		var scanning = false;
+		
+		
+		
+
+		$(document).on('pagecreate', '#index', function(){
+			window.localStorage.setItem("apphash", $.MD5("Who let the dog's out? Who, who, who, who?"));
+		});
+		
+		
+		$(document).on('pagecontainershow', function(){
+				var pageid = $("body").pagecontainer("getActivePage").prop("id");
+				
+				if(pageid === "index"){
+					$('#scan_upc').click(function(e){
+						e.stopImmediatePropagation();
+						e.preventDefault();
+						scanning = false;
+						window.sessionStorage.setItem("store", $('#storenum').val());
+						$.mobile.pageContainer.pagecontainer("change", "#scanning_page");
+					});
+					
+					$('#home_settings').click(function(e){
+						e.preventDefault();
+						e.stopImmediatePropagation();
+						
+						 $("#popup-settings").popup("open", {
+							  positionTo: "window",
+							  transition: "pop",
+							  history: false
+						  })
+					});
+				}
+				else if(pageid === 'scanning_page'){
+					
+					var scanner = cordova.require("cordova/plugin/BarcodeScanner");
+					if(!scanning){
+						scanning = true;
+						scanner.scan( function (result) { 
+							if(result.text.length > 0){
+								if(result.text.length > 8){
+							 		 window.sessionStorage.setItem("current_upc", result.text);
+								}
+								else{
+									var upce = result.text;
+									var upca = ConvertUPCE2A(upce);
+									window.sessionStorage.setItem("current_upc", upca);
+								}
+							  try{
+								 
+								  $.ajax({
+									type: 'post',
+									url: 'http://smokinjoe.com/SJInventory/spotcheck.php',
+									dataType: 'json',
+									timeout: 90000,
+									data: ({sechash: window.localStorage.getItem("apphash"), store: window.sessionStorage.getItem("store"), upc: window.sessionStorage.getItem("current_upc")}),
+									beforeSend: function(){
+										$.mobile.loading( 'show', {
+											text: 'Looking Up UPC',
+											textVisible: true
+										});	
+									},
+									success: function(data) {
+										scanning = false;
+										
+										// window.sessionStorage.setItem("itemdetails", JSON.stringify(Item));
+										
+										/*
+											class PBInfo{
+												public $upc;
+												public $desc;
+												public $begininv;
+												public $currpurch;
+												public $currsales;
+												public $currinv;
+												public $unitcost;
+												public $unitretail;
+												
+											}
+										*/
+										$.mobile.loading( 'hide' );
+										$('#this_upc').html(data.PBInfo.upc);
+										$('#this_desc').html(data.PBInfo.desc);
+										$('#this_beginv').html(data.PBInfo.begininv);
+										$('#this_purch').html(data.PBInfo.currpurch);
+										$('#this_sales').html(data.PBInfo.currsales);
+										$('#this_currinv').html(data.PBInfo.currinv);
+										$('#this_unitcost').html(data.PBInfo.unitcost);
+										$('#this_unitretail').html(data.PBInfo.unitretail);
+										
+										/*
+											class RFIDInfo{
+												public $sku;
+												public $desc;
+												public $price;
+												public $qtymin;
+												public $qtymax;
+												public $qoh;
+												public $batchqty;
+											}
+										*/
+										
+										$('#this_rfiddesc').html(data.RFIDInfo.desc);
+										$('#this_rfidprice').html(data.RFIDInfo.price);
+										$('#this_rfidqtymin').html(data.RFIDInfo.qtymin);
+										$('#this_rfidqtymax').html(data.RFIDInfo.qtymax);
+										$('#this_rfidqoh').html(data.RFIDInfo.qoh);
+										$('#this_rfidbatchqty').html(data.RFIDInfo.batchqty);
+										
+										/*
+											class BEInfo{
+												public $stockcode;
+												public $vendor;
+												public $desc;
+												public $uom;
+												public $avgcogs;
+												public $avgsaleprice;
+												public $suggretail;
+												public $totalcogs;
+												public $totalrcvd;
+												public $totalsales;
+												public $totalsold;
+												public $lastsaledate;
+												public $storename;
+												public $profitmargin;
+												public $profitpercentage;
+											}
+										*/
+										$('#this_bedesc').html(data.BEInfo.desc);
+										$('#this_bevendor').html(data.BEInfo.vendor);
+										$('#this_bestockcode').html(data.BEInfo.stockcode);
+										$('#this_beuom').html(data.BEInfo.uom);
+										$('#this_beavgcogs').html('$' + data.BEInfo.avgcogs);
+										$('#this_beavgsaleprice').html('$' + data.BEInfo.avgsaleprice);
+										$('#this_besuggretail').html('$' + data.BEInfo.suggretail);
+										$('#this_betotalcogs').html('$' + data.BEInfo.totalcogs);
+										$('#this_betotalrcvd').html(data.BEInfo.totalrcvd);
+										$('#this_betotalsales').html('$' + data.BEInfo.totalsales);
+										$('#this_betotalsold').html(data.BEInfo.totalsold);
+										$('#this_belastsale').html(data.BEInfo.lastsaledate);
+										$('#this_bestorename').html(data.BEInfo.storename);
+										$('#this_beprofitmargin').html('$' + data.BEInfo.profitmargin);
+										$('#this_beprofitpercentage').html(data.BEInfo.profitpercentage);
+										
+										
+										 $.mobile.pageContainer.pagecontainer("change", "#item_details" ,{changeHash: false });	
+									},
+									error: function(e){
+										scanning = false;
+										$.mobile.loading( 'hide' );
+										alert_Timeout();
+										$.mobile.pageContainer.pagecontainer("change", "#index" ,{transition: 'none', changeHash: false });	
+									}
+								});
+							  }
+							  catch(e){
+								scanning = false;
+								$.mobile.loading( 'hide' );
+								alert_ScanError(); 
+								$.mobile.pageContainer.pagecontainer("change", "#index" ,{transition: 'none', changeHash: false });	 
+							  }
+							}
+							else{
+								$.mobile.pageContainer.pagecontainer("change", "#index" ,{transition: 'none', changeHash: false });
+							}
+							 
+						  }, 
+						  function (error) {
+							  scanning = false;
+							  alert_ScanError();
+							  $.mobile.pageContainer.pagecontainer("change", "#index" ,{transition: 'none', changeHash: false });
+						  }
+						);
+					}
+					
+				}
+				else if(pageid === 'item_details'){
+					$('#details_settings').click(function(e){
+						e.preventDefault();
+						e.stopImmediatePropagation();
+						
+						 $("#popup-settings").popup("open", {
+							  positionTo: "window",
+							  transition: "pop",
+							  history: false
+						  })
+					});
+					
+					$('#details_home').click(function(e){
+						e.preventDefault();
+						e.stopImmediatePropagation();
+						
+						$.mobile.pageContainer.pagecontainer("change", '#index', {changeHash:false});
+					});
+					
+					$('#scan_again').click(function(e){
+						e.stopImmediatePropagation();
+						e.preventDefault();
+						
+						scanning = false;
+						$.mobile.pageContainer.pagecontainer("change", "#scanning_page",{ transition: "none" });
+					});
+				}
+				else if(pageid === 'count'){
+					$('#count_settings').click(function(e){
+						e.preventDefault();
+						e.stopImmediatePropagation();
+						
+						 $("#popup-settings").popup("open", {
+							  positionTo: "window",
+							  transition: "pop",
+							  history: false
+						  })
+					});
+					
+					if(!localStorage.getItem('store') === null && !localStorage.getItem('count_items') === null){
+						$.mobile.pageContainer.pagecontainer("change", "#count_list",{ transition: "none" });
+					}
+					
+					$('#count_scan_upc').click(function(e){
+						e.preventDefault();
+						e.stopImmediatePropagation();
+						
+						scanning = false;
+						window.localStorage.setItem('store', $('#count_storenum').val());
+						$.mobile.pageContainer.pagecontainer("change", "#count_scanning_page", {changeHash:false});
+					});
+				}
+				else if(pageid === 'count_scanning_page'){
+					var scanner = cordova.require("cordova/plugin/BarcodeScanner");
+					if(!scanning){
+						
+						scanning = true;
+						scanner.scan( function (result) { 
+							if(result.text.length > 0){
+								if(result.text.length > 8){
+							 		 window.sessionStorage.setItem("count_current_upc", result.text);
+								}
+								else{
+									var upce = result.text;
+									var upca = ConvertUPCE2A(upce);
+									
+									window.sessionStorage.setItem("count_current_upc", upca);
+								}
+							 	
+								scanning = false;
+								$.mobile.pageContainer.pagecontainer("change", "#count_setcount", {changeHash:false});
+							}
+							else{
+								$.mobile.pageContainer.pagecontainer("change", "#index" ,{transition: 'none', changeHash: false });
+							}
+							 
+						  }, 
+						  function (error) {
+							  scanning = false;
+							  alert_ScanError();
+							  $.mobile.pageContainer.pagecontainer("change", "#index" ,{transition: 'none', changeHash: false });
+						  }
+						);
+						
+						/*
+						
+						// This is for testing in browser
+						 window.sessionStorage.setItem("count_current_upc", '818917012760');
+						 $.mobile.pageContainer.pagecontainer("change", "#count_setcount");
+						 */
+					}
+				}
+				else if(pageid === 'count_setcount'){
+					$('#setcount_upc').val(window.sessionStorage.getItem('count_current_upc'));
+					
+					$('#setcount_add').click(function(e){
+						e.preventDefault();
+						e.stopImmediatePropagation();
+						if(isNumeric($('#setcount_qty').val())){
+							hasStoredItems();
+							var new_item = new PostInfo($('#setcount_upc').val(), $('#setcount_qty').val(), 0, 0);
+							
+							var the_items = JSON.parse(window.localStorage.getItem('count_items'));
+							
+							the_items.push(new_item);
+							
+							window.localStorage.setItem('count_items', JSON.stringify(the_items));
+							
+							$.mobile.pageContainer.pagecontainer("change", "#count_list", {changeHash:false});
+						}
+						else{
+							alert_NotNumeric();
+						}
+						
+					});
+					
+					$('#count_cancel').click(function(e){
+						e.preventDefault();
+						e.stopImmediatePropagation();
+						
+						cancelAll();
+					});
+						
+				}
+				else if(pageid === 'count_list'){
+					if(window.localStorage.getItem('store') === null){
+						$.mobile.pageContainer.pagecontainer("change", "#index", {changeHash:false});
+					}
+					else{
+						var list_items = JSON.parse(window.localStorage.getItem('count_items'));
+						var the_html = "";
+						for(i=0; i<list_items.length; i++){
+								var list_item = list_items[i];
+								
+								the_html = the_html + "<tr><td>" + list_item.upc + "</td><td>" + list_item.quantity + "</td><td>" + list_item.date + " " + list_item.time + "</td></tr>";
+						}
+						
+						$('#count_list_pop').html(the_html);
+						
+						$('#count_list_cancel').click(function(e){
+							e.preventDefault()
+							e.stopImmediatePropagation();
+							
+							cancelAll();
+						});
+						
+						$('#countlist_scan').click(function(e){
+							e.preventDefault();
+							e.stopImmediatePropagation();
+							scanning = false;
+							$.mobile.pageContainer.pagecontainer("change", "#count_scanning_page", {changeHash:false});
+						});
+						
+						$('#countlist_post').click(function(e){
+							e.preventDefault();
+							e.stopImmediatePropagation();
+							
+							$.ajax({
+								type: 'post',
+								url: 'http://smokinjoe.com/SJInventory/postinv.php',
+								dataType: 'json',
+								timeout: 90000,
+								data: ({sechash: window.localStorage.getItem("apphash"), store: window.localStorage.getItem("store"), items: window.localStorage.getItem("count_items")}),
+								beforeSend: function(){
+									$.mobile.loading( 'show', {
+										text: 'Posting Count',
+										textVisible: true
+									});	
+								},
+								success: function(data) {
+									$.mobile.loading( 'hide' );
+									if(data === 1){
+										alert_SuccessCount();
+										cancelAll();
+									}
+									else{
+										alert_FailCount();
+									}
+								},
+								error: function(e){
+									$.mobile.loading( 'hide' );
+									alert_Timeout();
+								}
+							});
+							
+						});
+					}
+				}
+		});
+		
+		document.addEventListener("backbutton", onBackKeyDown, false);
+		function onBackKeyDown(e) {
+		  e.preventDefault();
+		  $.mobile.pageContainer.pagecontainer("change", "#index" ,{transition: 'none', changeHash: false })
+		}
+	</script>
+</body>
+</html>

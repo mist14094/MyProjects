@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="BEPWeb.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                   Break Even Analysis
+                </h1>
+            </div>
+            <div class="loginDisplay"><b>
+                <asp:Label ID = "lblLastUpdatedTimeLable" Text= "Last Updated On :" runat ="server" ></asp:Label>
+                 <asp:Label ID = "lblLastUpdatedTime" Text= "" runat ="server" ></asp:Label></b>
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
+                        <asp:MenuItem NavigateUrl="~/BEPGrid.aspx" Text="Break Even Grid"/>
+                        <%--<asp:MenuItem NavigateUrl="~/BEItemDetail.aspx" Text="ItemDetail"/>--%>
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" ViewStateMode ="Enabled"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>

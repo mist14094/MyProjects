@@ -1,0 +1,106 @@
+﻿<Window x:Class="EntryFailure"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WinBin WinBig WinCash!" Height="768" Width="1024" xmlns:my="clr-namespace:WinbinExternal" Topmost="True" WindowStyle="None" WindowState="Maximized" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Cursor="None">
+    <!--Topmost="True" WindowStyle="None" WindowState="Maximized" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Cursor="None"-->
+    <Window.Background>
+        <ImageBrush ImageSource="/WinbinExternal;component/images/bg.jpg"></ImageBrush>
+    </Window.Background>
+
+    <Grid>
+        <Canvas>
+            <Image Canvas.Top="25" Canvas.Left="25" Height="85" HorizontalAlignment="Left" x:Name="imgLogo" Stretch="Fill" VerticalAlignment="Top" Width="208" Source="/WinbinExternal;component/images/logo.png" />
+            <Image Canvas.Top="25" Canvas.Right="25" HorizontalAlignment="Left" x:Name="Image1" Stretch="Fill" VerticalAlignment="Top" />
+            <my:OutlinedText Canvas.Top="42" Canvas.Left="311" x:Name="txtHeader" FontSize="32" Bold="False" Stroke="limegreen" StrokeThickness="1" Text="Already Entered!" VerticalAlignment="Center" HorizontalAlignment="Center" Font="Arial Black" Width="Auto" Height="Auto">
+                <my:OutlinedText.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFFFEC00" Offset="1" />
+                        <GradientStop Color="White" Offset="0" />
+                    </LinearGradientBrush>
+                </my:OutlinedText.Fill>
+                <my:OutlinedText.Effect>
+                    <DropShadowEffect BlurRadius="3" ShadowDepth="3" RenderingBias="Performance"/>
+                </my:OutlinedText.Effect>
+            </my:OutlinedText>
+
+        </Canvas>
+        <Grid x:Name="contentGrid" Width="1024" Margin="0,0,-22,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="125" />
+                <RowDefinition Height="210" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <my:OutlinedText Grid.Column="0" Grid.Row="1" x:Name="TextContent" FontSize="80" Bold="False" Stroke="limegreen" StrokeThickness="3" Text="Try Again Soon!" VerticalAlignment="Center" HorizontalAlignment="Center" Font="Arial Black" Width="Auto" Height="Auto">
+
+                <my:OutlinedText.Style>
+                    <Style TargetType="{x:Type my:OutlinedText}">
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="my:OutlinedText.Loaded">
+                                <EventTrigger.Actions>
+                                    <BeginStoryboard>
+                                        <Storyboard RepeatBehavior="Forever" Name="AttractorStoryboard">
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity">
+                                                <DoubleAnimationUsingKeyFrames.KeyFrames>
+                                                    <DiscreteDoubleKeyFrame Value="0.0" KeyTime="0:0:0"></DiscreteDoubleKeyFrame>
+                                                    <LinearDoubleKeyFrame Value="1.0" KeyTime="0:0:0.3"></LinearDoubleKeyFrame>
+                                                    <LinearDoubleKeyFrame Value="1.0" KeyTime="0:0:3.7"></LinearDoubleKeyFrame>
+                                                    <LinearDoubleKeyFrame Value="0.0" KeyTime="0:0:4"></LinearDoubleKeyFrame>
+                                                    <DiscreteDoubleKeyFrame Value="0.0" KeyTime="0:0:4.5"></DiscreteDoubleKeyFrame>
+                                                    <LinearDoubleKeyFrame Value="1.0" KeyTime="0:0:4.8"></LinearDoubleKeyFrame>
+                                                    <LinearDoubleKeyFrame Value="1.0" KeyTime="0:0:8"></LinearDoubleKeyFrame>
+                                                    <LinearDoubleKeyFrame Value="0.0" KeyTime="0:0:8.3"></LinearDoubleKeyFrame>
+                                                    <LinearDoubleKeyFrame Value="0.0" KeyTime="0:0:9"></LinearDoubleKeyFrame>
+                                                </DoubleAnimationUsingKeyFrames.KeyFrames>
+                                            </DoubleAnimationUsingKeyFrames>
+
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="FontSize">
+                                                <DoubleAnimationUsingKeyFrames.KeyFrames>
+                                                    <DiscreteDoubleKeyFrame Value="10" KeyTime="0:0:0"></DiscreteDoubleKeyFrame>
+                                                    <LinearDoubleKeyFrame Value="60" KeyTime="0:0:0.3"></LinearDoubleKeyFrame>
+                                                    <LinearDoubleKeyFrame Value="80" KeyTime="0:0:3.7"></LinearDoubleKeyFrame>
+                                                    <LinearDoubleKeyFrame Value="150" KeyTime="0:0:4"></LinearDoubleKeyFrame>
+                                                    <DiscreteDoubleKeyFrame Value="10" KeyTime="0:0:4.5"></DiscreteDoubleKeyFrame>
+                                                    <LinearDoubleKeyFrame Value="60" KeyTime="0:0:4.8"></LinearDoubleKeyFrame>
+                                                    <LinearDoubleKeyFrame Value="80" KeyTime="0:0:8"></LinearDoubleKeyFrame>
+                                                    <LinearDoubleKeyFrame Value="150" KeyTime="0:0:8.3"></LinearDoubleKeyFrame>
+                                                    <LinearDoubleKeyFrame Value="150" KeyTime="0:0:9"></LinearDoubleKeyFrame>
+                                                </DoubleAnimationUsingKeyFrames.KeyFrames>
+                                            </DoubleAnimationUsingKeyFrames>
+
+                                            <StringAnimationUsingKeyFrames Storyboard.TargetProperty="Text">
+                                                <StringAnimationUsingKeyFrames.KeyFrames>
+                                                    <DiscreteStringKeyFrame Value="Try Again Soon!" KeyTime="0:0:0"></DiscreteStringKeyFrame>
+                                                    <DiscreteStringKeyFrame Value="WinBin! WinBig!" KeyTime="0:0:4"></DiscreteStringKeyFrame>
+                                                </StringAnimationUsingKeyFrames.KeyFrames>
+                                            </StringAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger.Actions>
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </my:OutlinedText.Style>
+                <my:OutlinedText.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Yellow" Offset="1" />
+                        <GradientStop Color="White" Offset="0" />
+                    </LinearGradientBrush>
+                </my:OutlinedText.Fill>
+            </my:OutlinedText>
+            <TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="center" VerticalAlignment="Top" TextWrapping="Wrap" FontFamily="Droid Sans" FontSize="36" Foreground="Yellow" MaxWidth="1024" TextAlignment="Center">
+               
+                
+                <TextBlock x:Name="FailureMessage" HorizontalAlignment="center"  VerticalAlignment="Center" TextWrapping="Wrap" FontFamily="Droid Sans" FontSize="54" FontWeight="Bold" Foreground="Yellow" MinWidth="1024" TextAlignment="Center" Text="Sorry, you may only enter this&#10;promotion once per hour.&#10;Please try again in an hour!">
+                    <TextBlock.Effect>
+                        <DropShadowEffect BlurRadius="3" ShadowDepth="3" RenderingBias="Performance"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+                
+            </TextBlock>
+        </Grid>
+    </Grid>
+</Window>
