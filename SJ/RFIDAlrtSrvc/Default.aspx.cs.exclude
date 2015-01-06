@@ -1,0 +1,218 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using NLog;
+using NLog.Config;
+using NLog.Targets;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Net.Mail;
+using System.Text;
+
+public partial class _Default : System.Web.UI.Page
+{
+    public static string _TrackerRetail = ConfigurationManager.ConnectionStrings["TrackerConnectionString"].ConnectionString;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        try
+        {
+            if (!IsPostBack)
+            {
+        //        SendAlert("", "Alert Test", "RFID Details");
+        //         GetUserName("101");
+            }
+        }
+        catch (ApplicationException ae)
+        {
+           
+        }
+    }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        DataTable Alerts = GetAlerts();
+        if (Alerts.Rows.Count > 0)
+        {
+            for (int count = 0; count < Alerts.Rows.Count; count++)
+            {
+                string mess = MessageConstructor(Alerts.Rows[count]);
+                if (count == 0)
+                {
+                    string toaddress=GetUserName(Alerts.Rows[count]["StoreID"].ToString());
+                    SendAlert(toaddress, "RFIDAlert", mess);
+                    RFIDMessageLOG(toaddress, "RFIDAlert", mess, DateTime.Now, int.Parse(Alerts.Rows[count]["SNO"].ToString()));
+                    //     updateAlert(Alerts.Rows[count]["SNO"].ToString());
+
+           
+
+                }
+                Response.Write(mess);
+            }
+        }
+    }
+
+
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+     
+    }
+
+
+
+    public string MessageConstructor(DataRow dr)
+    {
+        string strmessage = "";
+        strmessage = "UPC : " + dr["UPC"] + "| Desc : " + (dr["DESC"].ToString().Length > 70 ? dr["DESC"].ToString().Substring(0, 70) : dr["DESC"].ToString()) + " | Price : $" + dr["Price"].ToString() + " | Portal : " + dr["LastSeenDevice"].ToString() + " (" + dr["KT_StoreName"] + ") on " + dr["LastSeenTime"];
+
+        if (strmessage.Length > 159)
+        {
+            strmessage = strmessage.Substring(0, 158);
+        }
+        return strmessage;
+    }
+
+
+    public string SendAlert(string strTo, string strSubject, string strMessage)
+    {
+        try
+        {
+
+            SmtpClient client = new SmtpClient();
+            client.Port = 587;
+            client.Host = "smtp.office365.com";
+            client.EnableSsl = true;
+            client.Timeout = 10000;
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            client.UseDefaultCredentials = false;
+            client.Credentials = new System.Net.NetworkCredential("vramalingam@smokinjoe.com", "VIvek@123");
+            MailMessage mm = new MailMessage("vramalingam@smokinjoe.com", "7162553032@vtext.com,r.vivekit@gmail.com",strSubject, strMessage);
+            mm.BodyEncoding = UTF8Encoding.UTF8;
+            mm.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
+            client.Send(mm);
+        }
+
+        catch (Exception ex)
+        {
+        }
+        return "";
+    }
+
+
+    public DataTable GetAlerts()
+    {
+
+        DataTable dtRRDetails = new DataTable();
+        SqlCommand scmCmdToExecute = new SqlCommand();
+        scmCmdToExecute.CommandText = "dbo.[pr_GetRFIDAlertValues]";
+        scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+        DataTable dtToReturn = new DataTable("Alerts");
+        SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+        SqlConnection sql = new SqlConnection(_TrackerRetail);
+        scmCmdToExecute.Connection = sql; ;
+
+        try
+        {
+          
+            sql.Open();
+            sdaAdapter.Fill(dtRRDetails);
+         
+        }
+        catch (Exception ex)
+        {
+
+        }
+        finally
+        {
+            // Close connection.
+            sql.Close();
+            scmCmdToExecute.Dispose();
+            sdaAdapter.Dispose();
+        }
+
+
+        return dtRRDetails;
+    }
+
+
+    public void updateAlert(string sno)
+    {
+        DataSet resultset = new DataSet();
+        string query = "UPDATE [dbo].[RFIDAlert]   SET  [AlertTime] = getdate(), [AlertFlag] = 2  WHERE sno='" + sno + "'";
+        try
+        {
+            using (SqlDataAdapter dataAdapter = new SqlDataAdapter(query, _TrackerRetail))
+            {
+                dataAdapter.Fill(resultset, "VendorName");
+            }
+        }
+        catch (Exception ex)
+        {
+
+        }
+    }
+
+    public void RFIDMessageLOG(string strToAddress, string strSubject, string strBody, DateTime dtMessageTime, int SNO)
+    {
+            SqlConnection connection = new SqlConnection(_TrackerRetail);
+            try
+            {
+                SqlCommand command = new SqlCommand("pr_RFIDAlertLOG_Insert", connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add(new SqlParameter("@ToAddress", SqlDbType.VarChar)).Value = strToAddress;
+                command.Parameters.Add(new SqlParameter("@Subject", SqlDbType.VarChar)).Value = strSubject;
+                command.Parameters.Add(new SqlParameter("@Body", SqlDbType.VarChar)).Value = strBody;
+                command.Parameters.Add(new SqlParameter("@MessageTime", SqlDbType.Date)).Value = dtMessageTime;
+                command.Parameters.Add(new SqlParameter("@LogId", SqlDbType.Int)).Value = SNO;
+
+                connection.Open();
+                command.ExecuteNonQuery();
+
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+    }
+    public string GetUserName(string storeID)
+    {
+        DataSet resultset = new DataSet();
+        string query = "select sp +','  from  (SELECT  ( validno +'@'  +serviceprovider +'.com') as 'sp', VALUE AS 'STORE',SNO   FROM RFIDALERTDIRECTORY  CROSS APPLY DBO.FN_SPLIT(STOREID,',') WHERE VALUE = '"+storeID+"') a where a.sp = a.sp for xml path ('')";
+        string result="";
+        try
+        {
+
+            using (SqlDataAdapter dataAdapter = new SqlDataAdapter(query, _TrackerRetail))
+            {
+                dataAdapter.Fill(resultset, "ServiceProviderName");
+            }
+
+            if (resultset != null)
+            {
+                if (resultset.Tables.Count > 0)
+                {
+
+                    result = resultset.Tables[0].Rows[0][0].ToString();
+                    if (result != "")
+                    {
+                        result = result.Substring(0, result.Length - 1);
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+
+        }
+        return result;
+    }
+
+}
