@@ -1,0 +1,8 @@
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\TobaccoTestReports\DataLogic\bin\Debug\NLog.config
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\TobaccoTestReports\DataLogic\bin\Debug\DataLogic.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\TobaccoTestReports\DataLogic\bin\Debug\DataLogic.pdb
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\TobaccoTestReports\DataLogic\bin\Debug\NLog.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\TobaccoTestReports\DataLogic\bin\Debug\NLog.xml
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\TobaccoTestReports\DataLogic\obj\Debug\DataLogic.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\TobaccoTestReports\DataLogic\obj\Debug\DataLogic.pdb
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\TobaccoTestReports\DataLogic\obj\Debug\DataLogic.csprojResolveAssemblyReference.cache

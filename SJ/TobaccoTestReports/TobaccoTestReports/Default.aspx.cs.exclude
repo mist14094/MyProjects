@@ -1,0 +1,281 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.OleDb;
+using System.Data.SqlClient;
+using System.IO;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class _Default : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        string FileName = Path.GetFileName("RT091014.xlsx");
+        string Extension = Path.GetExtension("RT091014.xlsx");
+        string FolderPath = ConfigurationManager.AppSettings["FolderPath"];
+       int returnValue= Import_To_Grid(Server.MapPath(FolderPath + FileName), Extension, "Yes",FileName);
+        
+        
+    }
+    private int  Import_To_Grid(string FilePath, string Extension, string isHDR, string FileName)
+    {
+        string conStr = "";
+        switch (Extension)
+        {
+            case ".xls": //Excel 97-03
+                conStr = ConfigurationManager.ConnectionStrings["Excel03ConString"]
+                         .ConnectionString;
+                break;
+            case ".xlsx": //Excel 07
+                conStr = ConfigurationManager.ConnectionStrings["Excel07ConString"]
+                          .ConnectionString;
+                break;
+        }
+        conStr = String.Format(conStr, FilePath, isHDR);
+        OleDbConnection connExcel = new OleDbConnection(conStr);
+        OleDbCommand cmdExcel = new OleDbCommand();
+        OleDbDataAdapter oda = new OleDbDataAdapter();
+        DataTable dt = new DataTable();
+        cmdExcel.Connection = connExcel;
+
+        //Get the name of First Sheet
+        connExcel.Open();
+        DataTable dtExcelSchema;
+        dtExcelSchema = connExcel.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
+        var name = from d1 in dtExcelSchema.AsEnumerable()
+                   where (d1.Field<string>("TABLE_NAME").Contains("$"))
+                   where (!d1.Field<string>("TABLE_NAME").Contains("#"))
+                   select d1;
+        DataTable dtn = name.AsDataView().ToTable();
+        string SheetName = dtn.Rows[0]["TABLE_NAME"].ToString();
+        connExcel.Close();
+
+        //Read Data from First Sheet
+        connExcel.Open();
+        cmdExcel.CommandText = "SELECT * From [" + SheetName + "]";
+        oda.SelectCommand = cmdExcel;
+        oda.Fill(dt);
+        connExcel.Close();
+       int returnValue= ProcessData(dt, FileName, SheetName);
+        //Bind Data to GridView
+
+      bool CheckCredible =  CheckCredibility(dt, returnValue.ToString());
+      if (!CheckCredible)
+      {
+          DeleteDirtyData(returnValue.ToString());
+      }
+        GridView1.Caption = Path.GetFileName(FilePath);
+        GridView1.DataSource = dt;
+        GridView1.DataBind();
+        return returnValue;
+    }
+    public int ProcessData(DataTable dt,string FileName, string SheetName)
+    {
+       int MasterSno= MasterData(dt,FileName,  SheetName);
+       bool flag = false;
+       if (MasterSno != 0)
+       {
+           for (int i = 0; i < dt.Rows.Count; i++)
+           {
+               try
+               {
+                   if (i > 3) //if cross column number 4
+                   {
+
+                       if (dt.Rows[i]["F2"].ToString() == "MONITOR")
+                       {
+                           flag = !flag;
+                       }
+
+
+                       if (!flag)
+                       {
+                           ClientData(dt.Rows[i], MasterSno, i + 1, "0", "");
+                       }
+                       else
+                       {
+                           string ToBeProcessed = "";
+                           string ProductClass =dt.Rows[i]["F2"].ToString();
+                           if (dt.Rows[i]["F2"].ToString().IndexOf(" ") != -1)
+                           {
+
+                               ProductClass = dt.Rows[i]["F2"].ToString().Substring(0, dt.Rows[i]["F2"].ToString().IndexOf(" "));
+                               ToBeProcessed = "1";
+                           }
+                           else
+                           {
+                               ProductClass = "";
+                               ToBeProcessed = "0";
+                           }
+
+                           ClientData(dt.Rows[i], MasterSno, i + 1, ToBeProcessed, ProductClass);
+                       }
+
+                      
+                   }
+               }
+               catch (Exception ex)
+               {
+
+               }
+           }
+       }
+       return MasterSno;
+    }
+    public int MasterData(DataTable dt, string FileName, string SheetName)
+    {
+        SqlConnection sqlConnection1 = new SqlConnection(ConfigurationManager.ConnectionStrings["DBConnectionString"].ToString());
+        try
+        {
+
+            SqlCommand cmd = new SqlCommand();
+            Object returnValue;
+            cmd.CommandText = "InsertTBCMasterDetail";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@FileName", FileName);
+            cmd.Parameters.AddWithValue("@SheetName", SheetName);
+            cmd.Parameters.AddWithValue("@ReportName", dt.Columns[0].ColumnName);
+            cmd.Parameters.AddWithValue("@Date", dt.Rows[0][0].ToString().Substring(5));
+            cmd.Parameters.AddWithValue("@BaseConfiguration", dt.Rows[1][0].ToString().Substring(20));
+            cmd.Parameters.AddWithValue("@Description", "");
+            cmd.Parameters.AddWithValue("@FromLocation", "");
+            cmd.Parameters.AddWithValue("@ToLocation", "");
+            cmd.Parameters.AddWithValue("@ImportedTime", DBNull.Value);
+            cmd.Parameters.AddWithValue("@isValid", "1");
+            cmd.Connection = sqlConnection1;
+            sqlConnection1.Open();
+            returnValue = cmd.ExecuteScalar();
+            return int.Parse(returnValue.ToString());
+        }
+
+        catch (Exception ex)
+        {
+            return 0;
+        }
+
+        finally
+        {
+            sqlConnection1.Close();
+        }
+
+    }
+    public int ClientData(DataRow dr, int ReferenceID, int LineNumber, string ValueTobeProcessed, string ProductClass)
+    { 
+        
+        SqlConnection sqlConnection1 = new SqlConnection(ConfigurationManager.ConnectionStrings["DBConnectionString"].ToString());
+        try
+        {
+
+            SqlCommand cmd = new SqlCommand();
+            Object returnValue;
+            cmd.CommandText = "InsertTBCClientData";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@ReferenceID", ReferenceID);
+            cmd.Parameters.AddWithValue("@LineNumber", LineNumber);
+            cmd.Parameters.AddWithValue("@Sam", dr[0].ToString());
+            cmd.Parameters.AddWithValue("@Identifier", dr[1].ToString());
+            cmd.Parameters.AddWithValue("@Dil", dr[2].ToString());
+            cmd.Parameters.AddWithValue("@Wgt", dr[3].ToString());
+            cmd.Parameters.AddWithValue("@NicotinePercentage", dr[4].ToString());
+            cmd.Parameters.AddWithValue("@TSugarPercentage", dr[5].ToString());
+            cmd.Parameters.AddWithValue("@RSugarPercentage", dr[6].ToString());
+            cmd.Parameters.AddWithValue("@ValueTobeProcessed", ValueTobeProcessed);
+            cmd.Parameters.AddWithValue("@ProductClass", ProductClass);
+            cmd.Parameters.AddWithValue("@ImportedTime", DBNull.Value);
+
+            cmd.Connection = sqlConnection1;
+            sqlConnection1.Open();
+            returnValue = cmd.ExecuteScalar();
+            return int.Parse(returnValue.ToString());
+        }
+
+        catch (Exception ex)
+        {
+            return 0;
+        }
+
+        finally
+        {
+            sqlConnection1.Close();
+        }
+    }
+
+    public bool CheckCredibility(DataTable dt, string MasterSno)
+    {
+        bool checkerFlag = true;
+        try
+        {
+            DataTable FromDatabase = new DataTable();
+            FromDatabase = GetClientDetails(MasterSno);
+            dt.Rows.RemoveAt(0);
+            dt.Rows.RemoveAt(0);
+            dt.Rows.RemoveAt(0);
+            dt.Rows.RemoveAt(0);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                for (int j = 0; j < 7; j++)
+                {
+                    if (dt.Rows[i][j].ToString() == FromDatabase.Rows[i][j].ToString())
+                    {
+                    }
+                    else
+                    {
+                        if(! (dt.Rows[i][j].ToString() == "" && FromDatabase.Rows[i][j].ToString() == "0"))
+                        {
+                            checkerFlag = false;
+                        }
+                       
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            checkerFlag = false;
+        }
+        return checkerFlag;
+    }
+
+    public DataTable GetClientDetails(string MasterSno)
+    {
+        DataTable allData = new DataTable();
+        SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DBConnectionString"].ToString());
+        try
+        {
+            SqlCommand cmd = new SqlCommand("SELECT [Sam],[Identifier],[Dil],[Wgt],[NicotinePercentage],[TSugarPercentage],[RSugarPercentage] FROM [TobaccoTest].[dbo].[TbcTest_Details] WHERE referenceid="+MasterSno, connection);
+            connection.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(allData);
+            connection.Close();
+        }
+        catch (Exception ex)
+        {
+            connection.Close();
+        }
+        return allData;
+    }
+
+    public void DeleteDirtyData(string MasterSno)
+    {
+        DataTable allData = new DataTable();
+        SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DBConnectionString"].ToString());
+        try
+        {
+            SqlCommand cmd = new SqlCommand(" DELETE FROM [TbcTest_Details] WHERE [ReferenceID] ='"+ MasterSno+"'; DELETE FROM TbcTest_MasterDetail WHERE [Sno] ='"+MasterSno+"';", connection);
+            connection.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(allData);
+            connection.Close();
+        }
+        catch (Exception ex)
+        {
+            connection.Close();
+        }
+        
+    }
+
+}

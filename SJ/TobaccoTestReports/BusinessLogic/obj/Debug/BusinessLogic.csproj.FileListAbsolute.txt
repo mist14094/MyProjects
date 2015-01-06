@@ -1,0 +1,11 @@
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\TobaccoTestReports\BusinessLogic\bin\Debug\NLog.config
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\TobaccoTestReports\BusinessLogic\bin\Debug\BusinessLogic.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\TobaccoTestReports\BusinessLogic\bin\Debug\BusinessLogic.pdb
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\TobaccoTestReports\BusinessLogic\bin\Debug\DataLogic.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\TobaccoTestReports\BusinessLogic\bin\Debug\NLog.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\TobaccoTestReports\BusinessLogic\bin\Debug\DataLogic.pdb
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\TobaccoTestReports\BusinessLogic\bin\Debug\NLog.xml
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\TobaccoTestReports\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\TobaccoTestReports\BusinessLogic\obj\Debug\BusinessLogic.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\TobaccoTestReports\BusinessLogic\obj\Debug\BusinessLogic.pdb
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\TobaccoTestReports\BusinessLogic\obj\Debug\BusinessLogic.csproj.ResolveComReference.cache
