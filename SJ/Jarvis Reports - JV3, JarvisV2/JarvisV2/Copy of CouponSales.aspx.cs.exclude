@@ -1,0 +1,158 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using Shield.Web.UI;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Collections;
+using System.Drawing;
+
+public partial class _Default : System.Web.UI.Page
+{
+    public static string _EPMString = ConfigurationManager.ConnectionStrings["EPMString"].ConnectionString;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            //C1ComboBox1.DataSource = getViewandProcedures();
+           // C1ComboBox1.DataValueField = "name";
+           // C1ComboBox1.DataTextField = "name";
+           // C1ComboBox1.DataBind();
+        }
+    }
+
+    public DataSet getViewandProcedures()
+    {
+        DataSet ds = new DataSet();
+        SqlConnection connection = new SqlConnection(_EPMString);
+        try
+        {
+            SqlCommand cmd = new SqlCommand("SELECT name FROM sys.views UNION SELECT name FROM sys.procedures", connection);
+            //cmd.CommandType = CommandType.StoredProcedure;
+            //cmd.Parameters.Add(new SqlParameter("@numberofdays", NoOfDays));
+            connection.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(ds);
+            connection.Close();
+        }
+        catch (Exception ex)
+        {
+            connection.Close();
+        }
+        return ds;
+    }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            DataSet ds = GetData("account");
+            GridView1.DataSource = ds;
+            GridView1.DataBind();
+
+
+            var columns = ds.Tables
+                     .Cast<DataTable>()
+                     .SelectMany(t => t.Columns
+                                     .Cast<DataColumn>()
+                                     .Select(c => c.ColumnName));
+
+      //      C1ComboBox2.DataSource = columns.ToList();
+         //   C1ComboBox2.DataBind();
+
+         //   C1ComboBox3.DataSource = columns.ToList();
+        //    C1ComboBox3.DataBind();
+
+        }
+        catch (Exception ex)
+        {
+
+        }
+
+    }
+
+
+    public DataSet GetData(string ViewName)
+    {
+        DataSet ds = new DataSet();
+        SqlConnection connection = new SqlConnection(_EPMString);
+        try
+        {
+            SqlCommand cmd = new SqlCommand("SELECT top 10 * from " + ViewName, connection);
+            //cmd.CommandType = CommandType.StoredProcedure;
+            //cmd.Parameters.Add(new SqlParameter("@numberofdays", NoOfDays));
+            connection.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(ds);
+            connection.Close();
+        }
+        catch (Exception ex)
+        {
+            connection.Close();
+        }
+        return ds;
+    }
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+
+        try
+        {
+
+
+            DataSet ds = GetData("account");
+
+            ChartAxisX axisX = new ChartAxisX();
+            axisX.CategoricalValuesField = "TicketDate";
+            axisX.Title.Text = "Date";
+            axisX.AxisTickText.TextAngle = 270;
+            axisX.AxisTickText.Y = 35;
+            ShieldChart1.Axes.Add(axisX);
+
+            ChartAxisX axisY = new ChartAxisX();
+            //  axisY.CategoricalValuesField = C1ComboBox3.SelectedValue;
+            axisY.Title.Text = "Range";
+            axisY.AxisTickText.TextAngle = 270;
+            axisY.AxisTickText.Y = 35;
+            ShieldChart1.Axes.Add(axisY);
+
+            ChartBarSeries cb = new ChartBarSeries();
+            cb.DataFieldY = "shift_seq";
+            //    cb.CollectionAlias = "Total Visits";
+            ShieldChart1.DataSeries.Add(cb);
+            //   ShieldChart1.PrimaryHeader.Text = Title + " - [Stacked]";
+
+            ShieldChart1.DataSource = ds.Tables[0];
+            ShieldChart1.DataBind();
+
+        }
+        catch (Exception ex)
+        {
+
+        }
+    }
+
+
+    public string[] ReportXAxis(DataTable dt, string ColumnName)
+    {
+        var x1 = (from r in dt.AsEnumerable()
+                  select r[ColumnName]).ToList();
+        string[] arr = ((IEnumerable)x1).Cast<object>()
+                                 .Select(x => x.ToString())
+                                 .ToArray();
+        return arr;
+    }
+
+
+    public string[] ReportYAxis(DataTable dt, string ColumnName)
+    {
+        var x1 = (from r in dt.AsEnumerable()
+                  select r[ColumnName]).ToList();
+        string[] arr = ((IEnumerable)x1).Cast<object>()
+                                 .Select(x => x.ToString())
+                                 .ToArray();
+        return arr;
+    }
+}

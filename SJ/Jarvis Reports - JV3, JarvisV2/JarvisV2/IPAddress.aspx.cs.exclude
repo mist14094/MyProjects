@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class IPAddress : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Response.Write("Login Name: " + Request.LogonUserIdentity.Name + "<br />");
+
+        Response.Write("Your IP address is: " + Request.ServerVariables["REMOTE_ADDR"].ToString() + "<br />");
+
+        Response.Write("You are browsing this site with: " + Request.ServerVariables["http_user_agent"].ToString() + "<br />");
+
+        Response.Write("The method used to call the page: " + Request.ServerVariables["request_method"].ToString() + "<br />");
+
+        Response.Write("The server's domain name: " + Request.ServerVariables["server_name"].ToString() + "<br />");
+
+        Response.Write("The server's port: " + Request.ServerVariables["server_port"].ToString() + "<br />");
+
+        Response.Write("The server's software: " + Request.ServerVariables["server_software"].ToString() + "<br />");
+
+        Response.Write("The DNS lookup of the IP address is: " + Request.ServerVariables["REMOTE_HOST"].ToString());
+
+        string[] computer_name = System.Net.Dns.GetHostEntry(Request.ServerVariables["remote_addr"]).HostName.Split(new Char[] { '.' });
+        String ecname = System.Environment.MachineName;
+        //txtComputerName.Text = computer_name[0].ToString();
+
+        Response.Write("Host Name" + computer_name[0].ToString());
+    }
+
+}

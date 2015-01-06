@@ -1,0 +1,2758 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Shield.Web.UI</name>
+    </assembly>
+    <members>
+        <member name="T:Shield.Web.UI.BarcodeType">
+            <summary>
+            Enumerates the supported barcode types in a Shield Barcode widget.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.BarcodeStyle">
+            <summary>
+             Represents the styles of the Barcode control.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.BarcodeStyleBase">
+            <summary>
+             Represents the base styles of the Barcode control.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.Common.ViewStateComponent">
+            <summary>
+            Represents a view state component.
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.Common.ViewStateComponent.LoadViewState(System.Object)">
+            <summary>
+            Loads the state of the view.
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.Common.ViewStateComponent.SaveViewState">
+            <summary>
+            When implemented by a class, saves the changes to a server control's 
+            view state to an <see cref="T:System.Object" />.
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.Common.ViewStateComponent.TrackViewState">
+            <summary>
+            When implemented by a class, instructs the server 
+            control to track changes to its view state.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.Common.ViewStateComponent.IsTrackingViewState">
+            <summary>
+            When implemented by a class, gets a value indicating whether a 
+            server control is tracking its view state changes.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.BarcodeStyleBase.Color">
+            <summary>
+             Specifies the color.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.BarcodeStyleBase.PaddingTop">
+            <summary>
+            Specifies the top padding.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.BarcodeStyleBase.PaddingBottom">
+            <summary>
+            Specifies the bottom padding.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.BarcodeStyleBase.PaddingLeft">
+            <summary>
+            Specifies the left padding.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.BarcodeStyleBase.PaddingRight">
+            <summary>
+            Specifies the right padding.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.BarcodeStyle.BackgroundColor">
+            <summary>
+            Specifies the background color.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.BarcodeStyle.BorderColor">
+            <summary>
+            Specifies the border color.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.BarcodeStyle.BorderStyle">
+            <summary>
+            Specifies the border style.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.BarcodeStyle.BorderWidth">
+            <summary>
+            Specifies the border width.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.BarcodeText.EnableChecksum">
+            <summary>
+            Specifies whether to include checksum in text value.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.BarcodeText.Enabled">
+            <summary>
+            Enables the text.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.BarcodeText.Style">
+            <summary>
+            Gets the style of the barcode text.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.BarcodeTextStyle">
+            <summary>
+             Represents the text styles of the Barcode control.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.BarcodeTextStyle.FontFamily">
+            <summary>
+            Specifies the font family of the barcode text.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.BarcodeTextStyle.FontSize">
+            <summary>
+            Specifies the font size of the barcode text.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ShieldBarcode">
+            <summary>
+            Defines the ShieldBarcode control.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.Common.ShieldWebControl">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldBarcode.Type">
+            <summary>
+            Specifies the supported barcode types.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldBarcode.Value">
+            <summary>
+            Specifies the value of the barcode.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldBarcode.EnableChecksum">
+            <summary>
+            Specifies whether to include checksum in encoded bars. Default is true.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldBarcode.BarcodeStyle">
+            <summary>
+            Gets the style of the barcode control.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldBarcode.Text">
+            <summary>
+            Gets the Text settings.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartAxisBase">
+            <summary>
+            Base class contains setting related to the X and Y axis of the chart.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.AxisType">
+            <summary>
+            Gets or sets the type of the axis.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.DecimalTicks">
+            <summary>
+            Specifies whether decimal (fractional) parts of the numbers are displayed.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.DrawColor">
+            <summary>
+            Gets or sets the color of the axis.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.DrawWidth">
+            <summary>
+            Gets or sets the line thickness of the axis.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.EndOffset">
+            <summary>
+            Gets or sets the offset of the maximum value relative to the axis length. Can be in the range 0 to 0.5
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.FixedEnd">
+            <summary>
+            Specifies whether the axis ends on the last tick or may be some longer.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.InverseOrder">
+            <summary>
+            Gets or sets whether to everse the rendering order of the axis.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.Max">
+            <summary>
+            Gets or sets an explicit maximum value for the axis. In not specified, it is automatically calculated based on the data for the axis.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.Min">
+            <summary>
+            Gets or sets an explicit minimum value for the axis. In not specified, it is automatically calculated based on the data for the axis.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.MinorPlotStripColor">
+            <summary>
+            Gets or sets the color stripes of the plot, as extensions of the minor ticks.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.MinorPlotStripDashStyle">
+            <summary>
+            Gets or sets the line style of the minor tick lines.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.MinorPlotStripWidth">
+            <summary>
+            Gets or sets the width of thickness of the minor plot lines.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.MinorTicksColor">
+            <summary>
+            Gets or sets the color of the minor ticks.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.MinorTicksHeight">
+            <summary>
+            Gets or sets the height (length) of the minor tick lines.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.MinorTicksRepeat">
+            <summary>
+            Specifies whether minor tick lines are displayed and in what distance, derived from the tick intervals.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.MinorTicksWidth">
+            <summary>
+            Gets or sets the width of the minor tick lines.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.Offset">
+            <summary>
+            Gets or sets the distance between the axis and the plot area.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.PlotStripColor">
+            <summary>
+            Specifies the color for the lines, forming the grid on the plot area.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.PlotStripDashStyle">
+            <summary>
+            Gets or sets the line style of the plot gridline.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.PlotStripWidth">
+            <summary>
+            Gets or sets the width of thickness of the plot grid lines.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.StartOffset">
+            <summary>
+            Specifies the offset (padding) of the minimum value to the length of the axis. Can be in the range 0 to 0.5
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.SwapLocation">
+            <summary>
+            Specifies whether the axis will be placed in the opposite location to its usual position.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.TicksColor">
+            <summary>
+            Gets or sets the color of the ticks.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.TicksHeight">
+            <summary>
+            Gets or sets the height (length) of the tick lines.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.TicksPlacement">
+            <summary>
+            Specifies the position of the ticks.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.TicksRepeat">
+            <summary>
+            Specifies the interval between the ticks. If the value is greater than 1, only evety n-th tick will be rendered.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.TicksWidth">
+            <summary>
+            Gets or sets the width of the tick lines.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.AxisTickText">
+            <summary>
+            Specifies the text, shown for each tick along the axis.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.Title">
+            <summary>
+            Gets the title for the axis.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.PlotLines">
+            <summary>
+            Gets or sets all settings related to the axis plot lines.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisBase.PlotBands">
+            <summary>
+            Gets or sets all settings related to the axis plot bands.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartAxisTickText">
+            <summary>
+            Contains settings related with the text, shown for each tick along the x axis.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisTickText.Format">
+            <summary>
+            Gets or sets a format string to generate custom axis tick text.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisTickText.FormatClientCallbackFunction">
+            <summary>
+            Gets ot sets a callback function or callback function name which will be used for axis tick text formatting.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisTickText.Enabled">
+            <summary>
+            Gets or sets whether the plot area tick labels are visible or not.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisTickText.Step">
+            <summary>
+            Specifies whether all, or every n'th label is disaplayed.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisTickText.Style">
+            <summary>
+            Gets the style of the axis labels text.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisTickText.TextAngle">
+            <summary>
+            Specifies the rotation angle of the axis labels text.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisTickText.X">
+            <summary>
+            Specifies the horizontal offset of the text to the label position. If negative, the label is displaced to the left. If positive the label is displaced to the right.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisTickText.Y">
+            <summary>
+            Specifies the vertical offset of the text to the label position. If negative, the label is moved up. If positive the label is moved down.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartAxisX">
+            <summary>
+            Class contains settings related to the X axis of the chart
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisX.CategoricalValuesField">
+            <summary>
+            The data field with the values of the axis along the CategoricalValues
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisX.CategoricalValues">
+            <summary>
+            Gets or sets named axis points for categorized axis instead of values, assigned to each point.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisX.DataFormatString">
+            <summary>
+            Gets or sets the string that specifies the display format for the categorical values.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartAxisY">
+            <summary>
+            Class contains settings related to the Y axis of the chart
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartTitle">
+            <summary>
+            The title for the axis.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartTitleBase">
+            <summary>
+            Base class for all chart titles and headers
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartTitleBase.Style">
+            <summary>
+            Gets or sets the style of the chart title element.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartTitleBase.Text">
+            <summary>
+            Gets or sets a text of the chart title.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartTitle.Align">
+            <summary>
+            Gets or sets the alignment for the title.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartTitle.Offset">
+            <summary>
+            Gets or sets space between the title and the axis.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartTitle.TextAngle">
+            <summary>
+            Specifies the angle of the text of the axis title.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartPlotBand">
+            <summary>
+            Represents the axis plot band.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPlotBand.Start">
+            <summary>
+            Specifies the start value at which the plot band will be shown.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPlotBand.End">
+            <summary>
+            Specifies the end value at which the plot band will be shown.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPlotBand.ZIndex">
+            <summary>
+            Specifies the z-index of the plot band among all axis lines and bands.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPlotBand.DrawColor">
+            <summary>
+            Specifies the plot line color.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartPlotLine">
+            <summary>
+            Represents the axis plot line.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPlotLine.Start">
+            <summary>
+            Specifies the axis value at which the plot line will be shown.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPlotLine.ZIndex">
+            <summary>
+            Specifies the z-index of the plot line among all axis lines and bands.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPlotLine.DrawWidth">
+            <summary>
+            Specifies the width of the plot line.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPlotLine.DrawColor">
+            <summary>
+            Specifies the plot line color.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartClientEvents">
+            <summary>
+            Options pertaining to the client events of the chart.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartClientEvents.Load">
+            <summary>
+            Gets or sets a name of a calback function to the client side load event.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartClientEvents.Repaint">
+            <summary>
+            Gets or sets a name of a calback function to the client side repaint event.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartClientEvents.Click">
+            <summary>
+            Gets or sets a name of a calback function to the client side click event.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartClientEvents.Zoom">
+            <summary>
+            Gets or sets a name of a calback function to the client side zoom event.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartClientEvents.SeriesClick">
+            <summary>
+            Gets or sets a name of a calback function to the client side seriesClick event.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartClientEvents.SeriesMouseOver">
+            <summary>
+            Gets or sets a name of a calback function to the client side seriesMouseOver event.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartClientEvents.SeriesMouseOut">
+            <summary>
+            Gets or sets a name of a calback function to the client side seriesMouseOut event.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartClientEvents.SeriesVisibilityChange">
+            <summary>
+            Gets or sets a name of a calback function to the client side seriesVisibilityChange event.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartClientEvents.PointSelect">
+            <summary>
+            Gets or sets a name of a calback function to the client side pointSelect event.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartClientEvents.PointDeselect">
+            <summary>
+            Gets or sets a name of a calback function to the client side pointDeselect event.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.SeriesType">
+            <summary>
+            Enumerates all chart types
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartXYMode">
+            <summary>
+            Enumerates all chart x,y and xy modes
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartElementsAlign">
+            <summary>
+            Enumerates all horizontal alignment options for an elements
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartAxisTitleAlign">
+            <summary>
+            Enumerates all options for alignment of the axis text(title).
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartAxisType">
+            <summary>
+            Enumerates all types of the axis
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.PlotStripDashStyle">
+            <summary>
+            Enumerates all line style of the tick lines
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartTicksPlacement">
+            <summary>
+            Enumerates all types of ticks position 
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartRnderDirection">
+            <summary>
+            Enumerates all redenring directions
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartVerticalAlign">
+            <summary>
+            Enumerates all vertical align options
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartStackMode">
+            <summary>
+            Enumerates all stack modes
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartHeader">
+            <summary>
+            Contains settings related to chart headers
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartHeader.Align">
+            <summary>
+            Gets or sets the alignment for the header.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartHeader.OffsetX">
+            <summary>
+            Gets or sets the x offset for the header text, relative to it’s position.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartHeader.OffsetY">
+            <summary>
+            Gets or sets the y offset for the header text, relative to it’s position.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartSeriesClickEventArgs">
+            <summary>
+            Event arguments passed when ShieldChart calls its SeriesClick event. 
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartSeriesItemBaseEventArgs">
+            <summary>
+            Base class for event arguments
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSeriesItemBaseEventArgs.Item">
+            <summary>
+            Gets the ChartSeriesItem which fired the event.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSeriesClickEventArgs.Series">
+            <summary>
+            Gets the ChartSeries which fired the event.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSeriesClickEventArgs.Name">
+            <summary>
+            Gets the name of the point.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartSelectionChangedEventArgs">
+            <summary>
+            Event arguments passed when ShieldChart calls its SelectionChanged event. 
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSelectionChangedEventArgs.Selected">
+            <summary>
+            Gets whether the point is selected.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartPieSeriesItemCollection">
+            <summary>
+            Collection which contains ChartSeriesItem objects
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.ChartPieSeriesItemCollection.GetItemById(System.String)">
+            <summary>
+            Gets item by its ID
+            </summary>
+            <param name="id">The ID of the item</param>
+        </member>
+        <member name="T:Shield.Web.UI.ChartSeriesItemCollection">
+            <summary>
+            Collection which contains ChartSeriesItem objects
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.ChartSeriesItemCollection.ClearSelectedItems">
+            <summary>
+            Clear selection of all items
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.ChartSeriesItemCollection.GetItemById(System.String)">
+            <summary>
+            Get item by its ID
+            </summary>
+            <param name="id">The ID of the item</param>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSeriesItemBase.Color">
+            <summary>
+            Gets or sets the color of the item.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSeriesItemBase.BorderColor">
+            <summary>
+            Gets or sets the color of the item's border.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSeriesItemBase.BorderWidth">
+            <summary>
+            Gets or sets the border width of the item.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSeriesItemBase.ValueX">
+            <summary>
+            Gets or sets the x value of the item.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSeriesItemBase.DataItem">
+            <summary>
+            Gets or sets the data item to which the series item is bound.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSeriesItemBase.ID">
+            <summary>
+            Gets or sets the ID of the series item.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartStyle">
+            <summary>
+             Represents the style of an element.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartStyle.Bold">
+            <summary>
+            Gets or sets a value that indicates whether the font is bold.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartStyle.Italic">
+            <summary>
+             Gets or sets a value that indicates whether the font is italic.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartStyle.Color">
+            <summary>
+             Gets or sets the text color.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartStyle.FontSize">
+            <summary>
+             Gets or sets the font size.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartStyle.FontFamily">
+            <summary>
+             Gets or sets the font family.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartExportOptions">
+            <summary>
+            Options pertaining to the exporting settings for the chart.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartExportOptions.ExportTooltip">
+            <summary>
+            Gets or sets a tooltip of the export to image button.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartExportOptions.AllowExportToImage">
+            <summary>
+            Indicates whether exporting to image is enabled. Defaults is true.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartExportOptions.AllowPrint">
+            <summary>
+            Indicates whether printing is enabled. Defaults to true.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartExportOptions.PrintTooltip">
+            <summary>
+            Gets or sets a tooltip of the print button.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartRangeSeriesItem">
+            <summary>
+            Represents the series' item object
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeSeriesItem.ValueLow">
+            <summary>
+            Gets or sets the low value of the item.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeSeriesItem.ValueHigh">
+            <summary>
+            Gets or sets the high value of the item.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartRangeSeriesItemCollection">
+            <summary>
+            Collection which contains ChartRangeSeriesItem objects
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.ChartRangeSeriesItemCollection.GetItemById(System.String)">
+            <summary>
+            Get item by its ID
+            </summary>
+            <param name="id">The ID of the item</param>
+        </member>
+        <member name="T:Shield.Web.UI.ChartRangeBarSeriesItem">
+            <summary>
+            Represents the series' item object
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeBarSeriesItem.Selected">
+            <summary>
+            Gets or sets a value, specifying whether the item is selected.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeBarSeriesItem.ValueLow">
+            <summary>
+            Gets or sets the low value of the item.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeBarSeriesItem.ValueHigh">
+            <summary>
+            Gets or sets the high value of the item.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartRangeBarSeriesItemCollection">
+            <summary>
+            Collection which contains ChartRangeSeriesItem objects
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.ChartRangeBarSeriesItemCollection.GetItemById(System.String)">
+            <summary>
+            Get item by its ID
+            </summary>
+            <param name="id">The ID of the item</param>
+        </member>
+        <member name="T:Shield.Web.UI.ChartTakeDataSourceEventArgs">
+            <summary>
+            Event arguments passed when ShieldChart calls its TakeDataSource event. 
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartBubbleSeriesItemCollection">
+            <summary>
+            Collection which contains ChartSeriesItem objects
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.ChartBubbleSeriesItemCollection.ClearSelectedItems">
+            <summary>
+            Clear selection of all items
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.ChartBubbleSeriesItemCollection.GetItemById(System.String)">
+            <summary>
+            Get item by its ID
+            </summary>
+            <param name="id">The ID of the item</param>
+        </member>
+        <member name="T:Shield.Web.UI.ChartSeriesItemDataBoundEventArgs">
+            <summary>
+            Event arguments passed when ShieldChart SeriesItem is databound.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartPaletteColor">
+            <summary>
+            Represents the possible colors for the pallete
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPaletteColor.Color">
+            <summary>
+            Gets or sets the color of the item.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartPaletteColorCollection">
+            <summary>
+            Collection which contains PaletteColor objects
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartPieSeriesItem">
+            <summary>
+            Represents the series' item object
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPieSeriesItem.ValueY">
+            <summary>
+            Gets or sets the y value of the item.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPieSeriesItem.Selected">
+            <summary>
+            Gets or sets a value, specifying whether the item is selected.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPieSeriesItem.Sliced">
+            <summary>
+            Gets or sets a value, specifying whether the item is sliced.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartBubbleSeriesItem">
+            <summary>
+            Represents the series' item object
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartBubbleSeriesItem.ValueY">
+            <summary>
+            Gets or sets the x value of the item.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartBubbleSeriesItem.ValueSize">
+            <summary>
+            Gets or sets the size value of the item.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartBubbleSeriesItem.ValuePointName">
+            <summary>
+            Gets or sets the point name value of the item.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartBubbleSeriesItem.Selected">
+            <summary>
+            Gets or sets a value, specifying whether the item is selected.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartLegend">
+            <summary>
+            Settings related to the legend of the chart.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLegend.Align">
+            <summary>
+            Gets or sets the positioning of the chart legend.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLegend.BackgroundColor">
+            <summary>
+            Specifies the background color of the legend.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLegend.BorderColor">
+            <summary>
+            Gets or sets the color of the legend border.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLegend.BorderRadius">
+            <summary>
+            Specifies the legend corners smooting value.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLegend.BorderWidth">
+            <summary>
+            Gets or sets the line thickness of the legend’s border.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLegend.Distance">
+            <summary>
+            Specifies the distance of the chart legend to the chart area.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLegend.Enabled">
+            <summary>
+            Gets or sets whether to show the chart legend.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLegend.InverseOrder">
+            <summary>
+            Gets or sets whether to reverse the order of the items in the chart’s legend.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLegend.RenderDirection">
+            <summary>
+            Gets or sets the render direction of the legend.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLegend.RtlLayout">
+            <summary>
+            Gets or sets whether the legend item will be rendered from right to left.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLegend.VerticalAlign">
+            <summary>
+            Gets or sets the vertical alignment of the legend.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLegend.Width">
+            <summary>
+            Specifies the explicit width for the chart legend.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLegend.X">
+            <summary>
+            Specifies the horizontal offset of legend position.If negative, it displaced to the left. If positive the legend is displaced to the right.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLegend.Y">
+            <summary>
+            Specifies the the vertical offset of legend position.If negative, it displaced to the top. If positive the legend is displaced to the bottom.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLegend.LegendItemSettings">
+            <summary>
+            Gets the setting for the items in the legend.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartLegendItemSettings">
+            <summary>
+            Setting for the items in the legend.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLegendItemSettings.BottomSpacing">
+            <summary>
+            Specifies the distance between the legend items and the legend’s box bottom.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLegendItemSettings.DisabledStyle">
+            <summary>
+            Gets the style for the legend items when disabled.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLegendItemSettings.ElementStyle">
+            <summary>
+            Gets the style for each element, or item in the legend.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLegendItemSettings.ElementWidth">
+            <summary>
+            Gets or sets the width of each legend entry.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLegendItemSettings.MouseOverStyle">
+            <summary>
+            Gets the style of the legend items when the user hovers over them with the mouse.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLegendItemSettings.TopSpacing">
+            <summary>
+            Gets or sets the the distance between the legend items and the legend’s box top.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartAreaActiveSettings">
+            <summary>
+            Settings related to the whole area series declaration, when the user hovers over it.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAreaActiveSettings.PointHoveredState">
+            <summary>
+            Gets the settings for the visual effects when the mouse is placed over a series point.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartAreaPointState">
+            <summary>
+            Contains settings for the visual effects when the mouse is placed over a series point.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAreaPointState.DrawWidth">
+            <summary>
+            Specifies the sereis line thickness.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAreaPointState.Enabled">
+            <summary>
+            Gets or sets whether visual effects are enabled.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartPolarAreaSettings">
+            <summary>
+            Contains all setting for the polar area series
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartAreaSettings">
+            <summary>
+            Contains all setting for the area series
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartSeriesSettingsBase">
+            <summary>
+            Base class for all series settings options
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSeriesSettingsBase.AddToLegend">
+            <summary>
+            Gets or sets whether to include the series in the legend.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSeriesSettingsBase.EnableAnimation">
+            <summary>
+            Gets or sets whether to include the series in the legend.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSeriesSettingsBase.AnimationDuration">
+            <summary>
+            Specifies the duration of the animation in milliseconds.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSeriesSettingsBase.Cursor">
+            <summary>
+            Gets or sets a name of a calback function to the client side load event.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSeriesSettingsBase.EnablePointSelection">
+            <summary>
+            Gets or sets whether selection of data points from the series is enabled.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSeriesSettingsBase.DataPointText">
+            <summary>
+            Gets the setting related to the data point text labels of each item in the series.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSeriesSettingsBase.Tooltip">
+            <summary>
+            Gets the group of settings, managing the tooltip for the series.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAreaSettings.BaseValue">
+            <summary>
+            Specifies the base value for the Y axis - bigger values will be above this value, while smaller will be below this line.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAreaSettings.Color">
+            <summary>
+            Specifies the color in which the complete data series is represented on the chart.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAreaSettings.DrawColor">
+            <summary>
+            Specifies the color of the line, connecting the data series points.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAreaSettings.DrawNullValues">
+            <summary>
+            Gets or sets whether null values points are drawn as part of the series.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAreaSettings.DrawWidth">
+            <summary>
+            Specifies the thickness of the line, connecting the data series points.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAreaSettings.InnerColor">
+            <summary>
+            Specifies the solid or gradient color in which the area between the area top line and the x axis is painted.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAreaSettings.SeriesDashStyle">
+            <summary>
+            Gets or sets the line style of area series line.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAreaSettings.StackMode">
+            <summary>
+            Specifies whether data series values are stacked over the other series or not. If enabled values can be added or represented as a percentile from their total.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAreaSettings.ActiveSettings">
+            <summary>
+            Gets the setting related to the whole area series declaration, when the user hovers over it.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAreaSettings.PointMark">
+            <summary>
+            Gets the setting for individual data series point mark.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartBarPointState">
+            <summary>
+            Contains settings for the visual effects when the mouse is placed over a series point.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartBarPointState.BorderWidth">
+            <summary>
+            Sets the border width of the bars.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartBarPointState.Enabled">
+            <summary>
+            Gets or sets whether visual effects are enabled.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartBarPointState.BorderColor">
+            <summary>
+            Sets the color of the border for the bars.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartBarPointState.BorderRadius">
+            <summary>
+            Sets the border radius for the bars.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartBarPointState.Color">
+            <summary>
+            Sets the color of the bar.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartBarActiveSettings">
+            <summary>
+            Settings related to the whole bar series declaration, when the user hovers over it.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartBarActiveSettings.PointHoveredState">
+            <summary>
+            Gets the settings for the visual effects when the mouse is placed over a series point.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartBarActiveSettings.PointSelectedState">
+            <summary>
+            Gets the settings when a data series point is selected.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartBarSettings">
+            <summary>
+            Contains all setting for the bar series
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartBarSettings.Color">
+            <summary>
+            Specifies the color in which the complete data series is represented on the chart.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartBarSettings.StackMode">
+            <summary>
+            Specifies whether data series values are stacked over the other series or not. If enabled values can be added or represented as a percentile from their total.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartBarSettings.BorderWidth">
+            <summary>
+            Specifies the line thickness of the border of each individual bar on the plot area.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartBarSettings.BorderRadius">
+            <summary>
+            Specifies each individual bar corner’s smoothness value.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartBarSettings.BorderColor">
+            <summary>
+            Specifies the color of each bar’s border on the plot area.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartBarSettings.BarOffset">
+            <summary>
+            Specifies the individual bars offsets to each other (between 0 and 1).
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartBarSettings.ActiveSettings">
+            <summary>
+            Gets the setting related to the whole bar series declaration, when the user hovers over it.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartActiveSettings">
+            <summary>
+            Settings related to the whole area series declaration, when the user hovers over it.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartActiveSettings.PointHoveredState">
+            <summary>
+            Gets the settings for the visual effects when the mouse is placed over a series point.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartDataPointText">
+            <summary>
+            Contains properties, related to the data point text labels of each item in the series.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartDataPointText.Format">
+            <summary>
+            Gets or sets a format string to generate custom data point text.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartDataPointText.FormatClientCallbackFunction">
+            <summary>
+            Gets ot sets a callback function or callback function name which will be used for data point formatting.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartDataPointText.BackgroundColor">
+            <summary>
+            Specifies the text background color.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartDataPointText.BorderColor">
+            <summary>
+            Specifies the color of the box border, surrounding the text.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartDataPointText.BorderRadius">
+            <summary>
+            Specifies the corners smoothing value for the datapoint text border.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartDataPointText.BorderWidth">
+            <summary>
+            Specifies the line thickness of the text border.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartDataPointText.Color">
+            <summary>
+            Specifies the color of the data point text.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartDataPointText.Enabled">
+            <summary>
+            Specifies whether data points text is enabled or not.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartDataPointText.Padding">
+            <summary>
+            Specifies the text offset to its surrounding box, given that the box is visible.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartDataPointText.Distance">
+            <summary>
+            Specifies the distance between the individual labels texts and the pie or donut edges.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartDataPointText.Style">
+            <summary>
+            Enables setting additional CSS properties for the text.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartDataPointText.TextAngle">
+            <summary>
+            Specifies the rotation of the text.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartDataPointText.X">
+            <summary>
+            Specifies the horizontal offset of the text relatively to the point position.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartDataPointText.Y">
+            <summary>
+            Specifies the vertical offset of the text relatively to the point position.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartPointMark">
+            <summary>
+            Represents the individual data series point mark.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartPointState">
+            <summary>
+            Contains settings for the visual effects when the mouse is placed over a series point.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPointState.DrawWidth">
+            <summary>
+            Specifies the sereis line thickness.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPointState.Enabled">
+            <summary>
+            Gets or sets whether visual effects are enabled.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPointState.DrawRadius">
+            <summary>
+            Specifies the size of the point mark when hovered with the mouse.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPointState.DrawColor">
+            <summary>
+            Specifies the color of the point mark border when hovered with the mouse.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPointState.InnerColor">
+            <summary>
+            Specifies the color of the point mark when hovered with the mouse.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPointMark.ActiveSettings">
+            <summary>
+            Specifies settings when data series point is selected or hovered.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartActiveSettingsExtended">
+            <summary>
+            Settings related to the whole area series declaration, when the user hovers over it.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartActiveSettingsExtended.PointSelectedState">
+            <summary>
+            Gets the settings when a data series point is selected.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartRangeDataPointText">
+            <summary>
+            Contains properties, related to the data point text labels of each item in the series.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeDataPointText.Format">
+            <summary>
+            Gets or sets a format string to generate custom data point text.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeDataPointText.FormatClientCallbackFunction">
+            <summary>
+            Gets ot sets a callback function or callback function name which will be used for data point formatting.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeDataPointText.BackgroundColor">
+            <summary>
+            Specifies the text background color.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeDataPointText.BorderColor">
+            <summary>
+            Specifies the color of the box border, surrounding the text.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeDataPointText.BorderRadius">
+            <summary>
+            Specifies the corners smoothing value for the datapoint text border.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeDataPointText.BorderWidth">
+            <summary>
+            Specifies the line thickness of the text border.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeDataPointText.Color">
+            <summary>
+            Specifies the color of the data point text.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeDataPointText.Enabled">
+            <summary>
+            Specifies whether data points text is enabled or not.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeDataPointText.Padding">
+            <summary>
+            Specifies the text offset to its surrounding box, given that the box is visible.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeDataPointText.Style">
+            <summary>
+            Enables setting additional CSS properties for the text.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeDataPointText.TextAngle">
+            <summary>
+            Specifies the rotation of the text.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeDataPointText.X">
+            <summary>
+            Specifies the horizontal offset of the text relatively to the point position.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartRangeSeriesSettingsBase">
+            <summary>
+            Base class for all series settings options
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeSeriesSettingsBase.AddToLegend">
+            <summary>
+            Gets or sets whether to include the series in the legend.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeSeriesSettingsBase.EnableAnimation">
+            <summary>
+            Gets or sets whether to include the series in the legend.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeSeriesSettingsBase.AnimationDuration">
+            <summary>
+            Specifies the duration of the animation in milliseconds.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeSeriesSettingsBase.Cursor">
+            <summary>
+            Gets or sets a name of a calback function to the client side load event.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeSeriesSettingsBase.EnablePointSelection">
+            <summary>
+            Gets or sets whether selection of data points from the series is enabled.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeSeriesSettingsBase.DataPointText">
+            <summary>
+            Gets the setting related to the data point text labels of each item in the series.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeSeriesSettingsBase.Tooltip">
+            <summary>
+            Gets the group of settings, managing the tooltip for the series.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartDonutPointState">
+            <summary>
+            Contains settings for the visual effects when the mouse is placed over a series point.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartDonutPointState.BorderWidth">
+            <summary>
+            Sets the border width of the bars.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartDonutPointState.Enabled">
+            <summary>
+            Gets or sets whether visual effects are enabled.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartDonutPointState.BorderColor">
+            <summary>
+            Specifies the border color.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartDonutActiveSettings">
+            <summary>
+            Settings related to the whole donut series declaration, when the user hovers over it.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartDonutActiveSettings.PointHoveredState">
+            <summary>
+            Gets the settings for the visual effects when the mouse is placed over a series point.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartDonutActiveSettings.PointSelectedState">
+            <summary>
+            Gets the settings when a data series point is selected.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartDonutSettings">
+            <summary>
+            Contains all setting for the donut series
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartDonutSettings.InnerSize">
+            <summary>
+             Determines the size of the inner circle. Can be in pixels , or a percent value.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartDonutSettings.BorderWidth">
+            <summary>
+            Sets the line thickness of each donut slice’s border.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartDonutSettings.BorderColor">
+            <summary>
+            Specifies the border color.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartDonutSettings.CenterX">
+            <summary>
+            Determines the x coordinates of the center of the pie, given that the upper-left corner of the chart is at coordinates [0, 0].
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartDonutSettings.CenterY">
+            <summary>
+            Determines the y coordinates of the center of the pie, given that the upper-left corner of the chart is at coordinates [0, 0].
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartDonutSettings.Size">
+            <summary>
+             Determines the size of the whole series.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartDonutSettings.SlicedOffset">
+            <summary>
+             Specifies the distance each individual slice moves away from the donut’s center when selected.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartDonutSettings.ActiveSettings">
+            <summary>
+            Gets the setting related to the whole donut series declaration, when the user hovers over it.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartLinePointState">
+            <summary>
+            Contains settings for the visual effects when the mouse is placed over a series point.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLinePointState.DrawWidth">
+            <summary>
+            Specifies the sereis line thickness.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLinePointState.Enabled">
+            <summary>
+            Gets or sets whether visual effects are enabled.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartLineActiveSettings">
+            <summary>
+            Settings related to the whole line series declaration, when the user hovers over it.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLineActiveSettings.PointHoveredState">
+            <summary>
+            Gets the settings for the visual effects when the mouse is placed over a series point.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartLineSettings">
+            <summary>
+            Contains all setting for the line series
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLineSettings.BaseValue">
+            <summary>
+            Specifies the base value for the Y axis - bigger values will be above this value, while smaller will be below this line.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLineSettings.Color">
+            <summary>
+            Specifies the color in which the complete data series is represented on the chart.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLineSettings.DrawNullValues">
+            <summary>
+            Specifies whether null values points are drawn as part of the series. Defaults to 'false'.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLineSettings.DrawWidth">
+            <summary>
+            Specifies the thickness of the line, connecting the data series points.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLineSettings.SeriesDashStyle">
+            <summary>
+            Gets or sets the line style of line series line.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLineSettings.StackMode">
+            <summary>
+            Specifies whether data series values are stacked over the other series or not. If enabled values can be added or represented as a percentile from their total.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLineSettings.ActiveSettings">
+            <summary>
+            Gets the setting related to the whole line series declaration, when the user hovers over it.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLineSettings.PointMark">
+            <summary>
+            Gets the setting for individual data series point mark.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartPieActiveSettings">
+            <summary>
+            Settings related to the whole pie series declaration, when the user hovers over it.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPieActiveSettings.PointHoveredState">
+            <summary>
+            Gets the settings for the visual effects when the mouse is placed over a series point.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPieActiveSettings.PointSelectedState">
+            <summary>
+            Gets the settings when a data series point is selected.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartPiePointState">
+            <summary>
+            Contains settings for the visual effects when the mouse is placed over a series point.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPiePointState.BorderWidth">
+            <summary>
+            Sets the border width of the bars.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPiePointState.Enabled">
+            <summary>
+            Gets or sets whether visual effects are enabled.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPiePointState.BorderColor">
+            <summary>
+            Specifies the border color.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartPieSettings">
+            <summary>
+            Contains all setting for the pie series
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPieSettings.BorderWidth">
+            <summary>
+            Sets the line thickness of each pie slice’s border.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPieSettings.BorderColor">
+            <summary>
+            Specifies the border color.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPieSettings.CenterX">
+            <summary>
+            Determines the x coordinates of the center of the pie, given that the upper-left corner of the chart is at coordinates [0, 0].
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPieSettings.CenterY">
+            <summary>
+            Determines the y coordinates of the center of the pie, given that the upper-left corner of the chart is at coordinates [0, 0].
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPieSettings.ActiveSettings">
+            <summary>
+            Gets the setting related to the whole pie series declaration, when the user hovers over it.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPieSettings.Size">
+            <summary>
+             Determines the size of the whole series.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPieSettings.SlicedOffset">
+            <summary>
+             Specifies the distance each individual slice moves away from the pie’s center when selected.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartRangeAreaActiveSettings">
+            <summary>
+            Settings related to the whole rangearea series declaration, when the user hovers over it.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeAreaActiveSettings.PointHoveredState">
+            <summary>
+            Gets the settings for the visual effects when the mouse is placed over a series point.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartRangeAreaPointState">
+            <summary>
+            Contains settings for the visual effects when the mouse is placed over a series point.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeAreaPointState.DrawWidth">
+            <summary>
+            Specifies the sereis line thickness.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeAreaPointState.Enabled">
+            <summary>
+            Gets or sets whether visual effects are enabled.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartRangeAreaSettings">
+            <summary>
+            Contains all setting for the rangearea series
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeAreaSettings.Color">
+            <summary>
+            Specifies the color in which the complete data series is represented on the chart.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeAreaSettings.DrawColor">
+            <summary>
+            Specifies the color of the line, connecting the data series points.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeAreaSettings.DrawWidth">
+            <summary>
+            Specifies the thickness of the line, connecting the data series points.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeAreaSettings.InnerColor">
+            <summary>
+            Specifies the solid or gradient color in which the rangearea between the rangearea top line and the x axis is painted.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeAreaSettings.SeriesDashStyle">
+            <summary>
+            Gets or sets the line style of rangearea series line.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeAreaSettings.ActiveSettings">
+            <summary>
+            Gets the setting related to the whole rangearea series declaration, when the user hovers over it.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartRangeBarSettings">
+            <summary>
+            Contains all setting for the rangebar series
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeBarSettings.BarOffset">
+            <summary>
+            Specifies the individual bars offsets to each other (between 0 and 1).
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeBarSettings.BorderWidth">
+            <summary>
+            Specifies the line thickness of the border of each individual bar on the plot area.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeBarSettings.BorderRadius">
+            <summary>
+            Specifies each individual bar corner’s smoothness value.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeBarSettings.BorderColor">
+            <summary>
+            Specifies the color of each bar’s border on the plot area.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeBarSettings.Color">
+            <summary>
+            Specifies the color in which the complete data series is represented on the chart.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeBarSettings.ActiveSettings">
+            <summary>
+            Gets the setting related to the whole rangebar series declaration, when the user hovers over it.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartRangeSplineAreaSettings">
+            <summary>
+            Contains all setting for the rangesplinearea series
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeSplineAreaSettings.Color">
+            <summary>
+            Specifies the color in which the complete data series is represented on the chart.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeSplineAreaSettings.DrawColor">
+            <summary>
+            Specifies the color of the line, connecting the data series points.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeSplineAreaSettings.InnerColor">
+            <summary>
+            Specifies the solid or gradient color in which the rangesplinearea between the rangesplinearea top line and the x axis is painted.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeSplineAreaSettings.SeriesDashStyle">
+            <summary>
+            Gets or sets the line style of rangesplinearea series line.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeSplineAreaSettings.ActiveSettings">
+            <summary>
+            Gets the setting related to the whole rangesplinearea series declaration, when the user hovers over it.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartScatterSettings">
+            <summary>
+            Contains all setting for the scatter series
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartScatterSettings.Color">
+            <summary>
+            Specifies the color in which the complete data series is represented on the chart.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartScatterSettings.BaseValue">
+            <summary>
+            Specifies the base value for the Y axis - bigger values will be above this value, while smaller will be below this line.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartScatterSettings.PointMark">
+            <summary>
+            Gets the setting for individual data series point mark.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartPolarScatterSettings">
+            <summary>
+            Contains all setting for the polar scatter series
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartSplineAreaSettings">
+            <summary>
+            Contains all setting for the splinearea series
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSplineAreaSettings.BaseValue">
+            <summary>
+            Specifies the base value for the Y axis - bigger values will be above this value, while smaller will be below this splinearea.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSplineAreaSettings.Color">
+            <summary>
+            Specifies the color in which the complete data series is represented on the chart.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSplineAreaSettings.DrawColor">
+            <summary>
+            Specifies the color of the splinearea, connecting the data series points.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSplineAreaSettings.DrawNullValues">
+            <summary>
+            Specifies whether null values points are drawn as part of the series. Defaults to 'false'.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSplineAreaSettings.DrawWidth">
+            <summary>
+            Specifies the thickness of the splinearea, connecting the data series points.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSplineAreaSettings.SeriesDashStyle">
+            <summary>
+            Gets or sets the line style of splinearea series line.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSplineAreaSettings.StackMode">
+            <summary>
+            Specifies whether data series values are stacked over the other series or not. If enabled values can be added or represented as a percentile from their total.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSplineAreaSettings.InnerColor">
+            <summary>
+            Specifies the solid or gradient color in which the splinearea between the splinearea line and the x axis is painted.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSplineAreaSettings.PointMark">
+            <summary>
+            Gets the setting for individual data series point mark.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartPolarSplineAreaSettings">
+            <summary>
+            Contains all setting for the polar splinearea series
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartSplineSettings">
+            <summary>
+            Contains all setting for the spline series
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartAreaSeries">
+            <summary>
+            Contains settings related to the area series in the chart
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartDataSeriesBase">
+            <summary>
+            Contains settings related to the data series in the chart
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSeriesBase.EnableValueXSorting">
+            <summary>
+            Gets or sets whether the series items will be sorted by ValueX field.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSeriesBase.Type">
+            <summary>
+            Gets the type of the series
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSeriesBase.DataFieldX">
+            <summary>
+            The data field with the values of the series along the X axis
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSeriesBase.CollectionAlias">
+            <summary>
+            Gets or sets alias or name of the series.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSeriesBase.DataStart">
+            <summary>
+            Specifies an explicit value for a data series start.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSeriesBase.DataStep">
+            <summary>
+            Specifies an explicit value for the interval between a data series member values.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSeriesBase.Visible">
+            <summary>
+            Specifies the default visibility of a chart series. Defaults to true.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSeriesBase.Index">
+            <summary>
+            Specifies the index for the series, which will affect the visibility of the series.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSeriesBase.OrderIndex">
+            <summary>
+            Specifies the index used to determine the position of the series entry in the legend.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSeriesBase.StackIndex">
+            <summary>
+            Specifies which stack the series belongs to, given that stacking is enabled.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSeriesBase.ID">
+            <summary>
+            Gets or sets the ID of the series.
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.ChartDataSeriesBase.LoadViewState(System.Object)">
+            <summary>
+            Loading ViewState data
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.ChartDataSeriesBase.SaveViewState">
+            <summary>
+            Saving ViewState
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.ChartDataSeriesBase.TrackViewState">
+            <summary>
+            Tracking ViewState
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartDataSeriesBase.Items">
+            <summary>
+            Gets a collection of SeriesItem objects that allows for specifying the series items.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartDataSeriesBase.DataFieldY">
+            <summary>
+            The data field with the values of the series along the Y axis
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAreaSeries.Settings">
+            <summary>
+            Gets the setting for the area series.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAreaSeries.AxisY">
+            <summary>
+            Specifies the particular axis to which the series is connected when using dual or multiple y axes.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartBarSeries">
+            <summary>
+            Contains settings related to the bar series in the chart
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartBarSeries.Settings">
+            <summary>
+            Gets the setting for the bar series.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartBarSeries.AxisY">
+            <summary>
+            Specifies the particular axis to which the series is connected when using dual or multiple y axes.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartSeriesItem">
+            <summary>
+            Represents the series' item object
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSeriesItem.ValueY">
+            <summary>
+            Gets or sets the x value of the item.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSeriesItem.Selected">
+            <summary>
+            Gets or sets a value, specifying whether the item is selected.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartDonutSeries">
+            <summary>
+            Contains settings related to the donut series in the chart
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartPieSeriesBase">
+            <summary>
+            Contains settings related to the data series in the chart
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.ChartPieSeriesBase.LoadViewState(System.Object)">
+            <summary>
+            Loading ViewState data
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.ChartPieSeriesBase.SaveViewState">
+            <summary>
+            Saving ViewState
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.ChartPieSeriesBase.TrackViewState">
+            <summary>
+            Tracking ViewState
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPieSeriesBase.Items">
+            <summary>
+            Gets a collection of SeriesItem objects that allows for specifying the series items.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPieSeriesBase.DataFieldY">
+            <summary>
+            The data field with the values of the series along the Y axis
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartDonutSeries.Settings">
+            <summary>
+            Gets the setting for the donut series.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartLineSeries">
+            <summary>
+            Contains settings related to the line series in the chart
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLineSeries.Settings">
+            <summary>
+            Gets the setting for the line series.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartLineSeries.AxisY">
+            <summary>
+            Specifies the particular axis to which the series is connected when using dual or multiple y axes.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartPieSeries">
+            <summary>
+            Contains settings related to the pie series in the chart
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPieSeries.Settings">
+            <summary>
+            Gets the setting for the pie series.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartRangeAreaSeries">
+            <summary>
+            Contains settings related to the rangearea series in the chart
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartRangeSeriesBase">
+            <summary>
+            Contains settings related to the data series in the chart
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.ChartRangeSeriesBase.LoadViewState(System.Object)">
+            <summary>
+            Loading ViewState data
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.ChartRangeSeriesBase.SaveViewState">
+            <summary>
+            Saving ViewState
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.ChartRangeSeriesBase.TrackViewState">
+            <summary>
+            Tracking ViewState
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeSeriesBase.Items">
+            <summary>
+            Gets a collection of SeriesItem objects that allows for specifying the series items.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeSeriesBase.DataFieldLow">
+            <summary>
+            The data field with the low values of the axis.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeSeriesBase.DataFieldHigh">
+            <summary>
+            The data field with the high values of the axis.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeAreaSeries.Settings">
+            <summary>
+            Gets the setting for the rangearea series.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeAreaSeries.AxisY">
+            <summary>
+            Specifies the particular axis to which the series is connected when using dual or multiple y axes.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartRangeBarSeries">
+            <summary>
+            Contains settings related to the rangebar series in the chart
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartRangeBarSeriesBase">
+            <summary>
+            Contains settings related to the data series in the chart
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.ChartRangeBarSeriesBase.LoadViewState(System.Object)">
+            <summary>
+            Loading ViewState data
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.ChartRangeBarSeriesBase.SaveViewState">
+            <summary>
+            Saving ViewState
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.ChartRangeBarSeriesBase.TrackViewState">
+            <summary>
+            Tracking ViewState
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeBarSeriesBase.Items">
+            <summary>
+            Gets a collection of SeriesItem objects that allows for specifying the series items.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeBarSeriesBase.DataFieldLow">
+            <summary>
+            The data field with the low values of the axis.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeBarSeriesBase.DataFieldHigh">
+            <summary>
+            The data field with the high values of the axis.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeBarSeries.Settings">
+            <summary>
+            Gets the setting for the rangebar series.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeBarSeries.AxisY">
+            <summary>
+            Specifies the particular axis to which the series is connected when using dual or multiple y axes.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartRangeSplineAreaSeries">
+            <summary>
+            Contains settings related to the rangesplinearea series in the chart
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeSplineAreaSeries.Settings">
+            <summary>
+            Gets the setting for the rangesplinearea series.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartRangeSplineAreaSeries.AxisY">
+            <summary>
+            Specifies the particular axis to which the series is connected when using dual or multiple y axes.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartScatterSeries">
+            <summary>
+            Contains settings related to the scatter series in the chart
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartScatterSeries.Settings">
+            <summary>
+            Gets the setting for the scatter series.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartScatterSeries.AxisY">
+            <summary>
+            Specifies the particular axis to which the series is connected when using dual or multiple y axes.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartSplineAreaSeries">
+            <summary>
+            Contains settings related to the splinearea series in the chart
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSplineAreaSeries.Settings">
+            <summary>
+            Gets the setting for the splinearea series.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSplineAreaSeries.AxisY">
+            <summary>
+            Specifies the particular axis to which the series is connected when using dual or multiple y axes.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartSplineSeries">
+            <summary>
+            Contains settings related to the spline series in the chart
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSplineSeries.Settings">
+            <summary>
+            Gets the setting for the spline series.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartSplineSeries.AxisY">
+            <summary>
+            Specifies the particular axis to which the series is connected when using dual or multiple y axes.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartStepAreaSeries">
+            <summary>
+            Contains settings related to the steparea series in the chart
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartStepLineSeries">
+            <summary>
+            Contains settings related to the stepline series in the chart
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartPolarLineSeries">
+            <summary>
+            Contains settings related to the polar line series in the chart
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartPolarAreaSeries">
+            <summary>
+            Contains settings related to the polar area series in the chart
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPolarAreaSeries.Settings">
+            <summary>
+            Gets the setting for the polar area series.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartPolarBarSeries">
+            <summary>
+            Contains settings related to the polar bar series in the chart
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartPolarSplineSeries">
+            <summary>
+            Contains settings related to the polar spline series in the chart
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartPolarSplineAreaSeries">
+            <summary>
+            Contains settings related to the polar splinearea series in the chart
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPolarSplineAreaSeries.Settings">
+            <summary>
+            Gets the setting for the polar splinearea series.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartPolarScatterSeries">
+            <summary>
+            Contains settings related to the polar scatter series in the chart
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartPolarScatterSeries.Settings">
+            <summary>
+            Gets the setting for the polar scatter series.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartBubbleSeries">
+            <summary>
+            Contains settings related to the bubble series in the chart
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartBubbleSeries.DataFieldPointName">
+            <summary>
+            The data field with the values of the series along the point name.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartBubbleSeries.DataFieldSize">
+            <summary>
+            The data field with the values of the series along the size.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartBubbleSeries.DataFieldY">
+            <summary>
+            The data field with the values of the series along the Y axis
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartBubbleSeries.Settings">
+            <summary>
+            Gets the setting for the scatter series.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartBubbleSeries.Items">
+            <summary>
+            Gets a collection of BubbleSeriesItem objects that allows for specifying the series items.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartBubbleSeries.AxisY">
+            <summary>
+            Specifies the particular axis to which the series is connected when using dual or multiple y axes.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ShieldChart">
+            <summary>
+            Defines the ShieldChart control.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.Common.ShieldDataBoundControl">
+            <exclude/>
+            <excludetoc/>
+        </member>
+        <member name="M:Shield.Web.UI.ShieldChart.OnTakeDataSource(Shield.Web.UI.ChartTakeDataSourceEventArgs)">
+            <summary>
+            Specifies the gradient color for the whole chart area-including plot area.
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.ShieldChart.PerformDataBinding(System.Collections.IEnumerable)">
+            <summary>
+            Bind data from the datasource to the control
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:Shield.Web.UI.ShieldChart.RegisterClientPostbackScript">
+            <summary>
+            Generate WebForm_InitCallback() javascript method
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.ShieldChart.OnLoad(System.EventArgs)">
+            <summary>
+            Handle PageLoad event
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.ShieldChart.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Renders the control to the specified HTML writer.
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.ShieldChart.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Renders the contents.
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.ShieldChart.GetSerizlizedProperties">
+            <summary>
+            Get all serizlized properties of the chart
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.ShieldChart.LoadViewState(System.Object)">
+            <summary>
+            Loading ViewState data
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.ShieldChart.SaveViewState">
+            <summary>
+            Saving ViewState
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.ShieldChart.TrackViewState">
+            <summary>
+            Tracking ViewState
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.ShieldChart.DataBind">
+            <summary>
+            Binds a data source to the invoked server control and all its child controls.
+            </summary>
+        </member>
+        <member name="M:Shield.Web.UI.ShieldChart.GetSeriesByID(System.String)">
+            <summary>
+            Gets the chart series obejct by its ID
+            </summary>
+            <param name="id">The ID of the series</param>
+            <returns>The series object</returns>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.AutoPostBack">
+            <summary>
+            Gets or sets a value indicating whether a postback to the server automatically
+            occurs when user iteraction event is fired.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.AllowMultiItemSelection">
+            <summary>
+            Gets or sets a value indicating whether a more than one item can be selected.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.UseCalbackFunction">
+            <summary>
+            Gets or sets whether the chart should be populated with data after page load from callback function. 
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.AppendDataBoundItems">
+            <summary>
+            Gets or sets whether the data bound items will be appended to the declarative items. 
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.DataSeries">
+            <summary>
+            Gets or sets all settings related to the data series in the chart.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.Height">
+            <summary>
+            Gets or sets the height of the Web server control.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.Width">
+            <summary>
+            Gets or sets the width of the chart control.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.AllowUTCFormatting">
+            <summary>
+            Specifies whether UTC time format is used for axis scaling.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.AnimationDuration">
+            <summary>
+            Gets or sets the animated effects for all events - chart loading, updating, selection changes and so on.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.BackColor">
+            <summary>
+            Specifies the solid color for the whole chart area-including plot area.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.BorderColor">
+            <summary>
+            Determines the border color of the whole chart.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.BorderWidth">
+            <summary>
+            Specifies the line thickness of the entire chart border.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.BorderRadius">
+            <summary>
+            Specifies the chart corners smooting value.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.AreaBackgroundColor">
+            <summary>
+            Specifies the color of the data area (the plot) of the chart.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.AreaBackgroundImage">
+            <summary>
+            Specifies an image addres, to be used as a background for the chart data area.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.AreaBorderColor">
+            <summary>
+            Specifies the border color of the data area of the chart.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.AreaBorderWidth">
+            <summary>
+            Specifies the thickness of the border, surrounding the chart’s data area.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.AreaPaddingBottom">
+            <summary>
+            The distance in pixels between the chart data area and the bottom border of the whole chart.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.AreaPaddingLeft">
+            <summary>
+            The distance in pixels between the chart data area and the left border of the whole chart.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.AreaPaddingRight">
+            <summary>
+            The distance in pixels between the chart data area and the right border of the whole chart.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.AreaPaddingTop">
+            <summary>
+            The distance in pixels between the chart data area and the top border of the whole chart.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.EnableAutoFit">
+            <summary>
+            Specifies whether the chart fits the container which is hosting it.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.IsInverted">
+            <summary>
+            Specifies whether the chart will inverse its rendering, resulting in swapped axes and repositioned series.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.MarginTop">
+            <summary>
+            Specifies an array of pixel values, corresponding to the for top margin.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.MarginBottom">
+            <summary>
+            Specifies an array of pixel values, corresponding to the for bottom margin.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.MarginLeft">
+            <summary>
+            Specifies an array of pixel values, corresponding to the for left margin.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.MarginRight">
+            <summary>
+            Specifies an array of pixel values, corresponding to the for right margin.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.Theme">
+            <summary>
+            The chart theme.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.ZoomMode">
+            <summary>
+            Specifies the zoom mode for the chart. Whether to zoom on axisX, axisY, or both axes.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.SeriesPalette">
+            <summary>
+            The series palette is an array of colors, which are used to color the series in the chart.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.TooltipSettings">
+            <summary>
+            Gets the group of settings, managing the tooltip for the chart.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.PrimaryHeader">
+            <summary>
+            Gets the group of settings pertaining to the primary header of the chart.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.SecondaryHeader">
+            <summary>
+            Gets the group of settings pertaining to the secondary header of the chart.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.Axes">
+            <summary>
+            Gets or sets all settings related to the data series in the chart.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.ClientEvents">
+            <summary>
+            Defines all client side events for the component.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.ExportOptions">
+            <summary>
+            Defines options pertaining to the exporting settings for the chart.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldChart.Legend">
+            <summary>
+            Defines settings related to the legend of the chart.
+            </summary>
+        </member>
+        <member name="E:Shield.Web.UI.ShieldChart.SelectionChanged">
+            <summary>
+            Fires when the chart's point is selected or deselected.
+            </summary>
+        </member>
+        <member name="E:Shield.Web.UI.ShieldChart.SeriesClick">
+            <summary>
+            Fires when the chart's series is clicked and AutoPostBack is set to true.
+            </summary>
+        </member>
+        <member name="E:Shield.Web.UI.ShieldChart.TakeDataSource">
+            <summary>
+            Fires when the chart is about to be bound and the data source must be assigned.
+            </summary>
+        </member>
+        <member name="E:Shield.Web.UI.ShieldChart.SeriesItemDataBound">
+            <summary>
+            Fires when the series item is bound.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartAxisMarkers">
+            <summary>
+            Contains settings related to the axis markers.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisMarkers.Color">
+            <summary>
+            Gets or sets the color of the axis' markers.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisMarkers.Enabled">
+            <summary>
+            Gets or sets whether the axis markers are enabled.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisMarkers.Mode">
+            <summary>
+            Indicating for which axis the axis markers are available for.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisMarkers.Width">
+            <summary>
+            An integer value, which specifies the width of the axis markers.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartAxisMarkers.ZIndex">
+            <summary>
+            An integer value, specifying the zIndex of the axis markers.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ChartTooltipSettings">
+            <summary>
+            A group of settings, managing the tooltip for the chart.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartTooltipSettings.CustomHeaderText">
+            <summary>
+            Gets or sets a format string to generate custom tooltip header.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartTooltipSettings.CustomPointText">
+            <summary>
+            Gets ot sets a value's format string.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartTooltipSettings.HeaderClientCallbackFunction">
+            <summary>
+            Gets ot sets a callback function or callback function name which will be used for header custom formatting.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartTooltipSettings.PointClientCallbackFunction">
+            <summary>
+            Gets ot sets a callback function or callback function name which will be used for value custom formatting.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartTooltipSettings.Enabled">
+            <summary>
+            Gets or sets a value, specifying whether the tooltip is enabled.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartTooltipSettings.ChartBound">
+            <summary>
+            Gets or sets a value, specifying whether the tooltip is shown when mouse is over the chart, not only over the series and the tooltip contains values for all rendered series.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartTooltipSettings.TooltipPositionX">
+            <summary>
+            Gets or sets a value, specifying the X coordinate position.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartTooltipSettings.TooltipPositionY">
+            <summary>
+            Gets or sets a value, specifying the Y coordinate position.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ChartTooltipSettings.AxisMarkers">
+            <summary>
+            Gets the settings related to the axis markers.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.QRcodeStyle">
+            <summary>
+             Represents the styles of the QR code control.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.QRcodeStyle.BackgroundColor">
+            <summary>
+            Specifies the background color.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.QRcodeStyle.BorderColor">
+            <summary>
+            Specifies the border color.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.QRcodeStyle.BorderStyle">
+            <summary>
+            Specifies the border style.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.QRcodeStyle.BorderWidth">
+            <summary>
+            Specifies the border width.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.QRcodeStyle.Color">
+            <summary>
+             Specifies the color.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.QRcodeStyle.Padding">
+            <summary>
+            Specifies the QR code padding.
+            </summary>
+        </member>
+        <member name="T:Shield.Web.UI.ShieldQRcode">
+            <summary>
+            Defines the ShieldQRcode control.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldQRcode.Mode">
+            <summary>
+            Specifies the encoding mode of the QR code.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldQRcode.ErrorLevel">
+            <summary>
+            Specifies the error level of the QR code.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldQRcode.Value">
+            <summary>
+            Specifies the value of the QR code.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldQRcode.Size">
+            <summary>
+            Specifies the size of the QR code rectangle in pixels.
+            </summary>
+        </member>
+        <member name="P:Shield.Web.UI.ShieldQRcode.QRcodeStyle">
+            <summary>
+            Gets the style of the QR code control.
+            </summary>
+        </member>
+    </members>
+</doc>

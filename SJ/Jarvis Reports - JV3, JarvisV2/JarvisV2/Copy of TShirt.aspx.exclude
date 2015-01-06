@@ -1,0 +1,50 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Copy of TShirt.aspx.cs" Inherits="_Default" %>
+
+<%@ Register Assembly="C1.Web.Wijmo.Controls.4" Namespace="C1.Web.Wijmo.Controls.C1GridView"
+    TagPrefix="wijmo" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+      <wijmo:C1GridView ID="C1GridView1" runat="server" AutogenerateColumns="false" 
+            ShowGroupArea="true" AllowColMoving="true" AllowSorting="true" 
+            oncolumngrouped="C1GridView1_ColumnGrouped" 
+            oncolumnungrouped="C1GridView1_ColumnUngrouped">
+
+       <Columns>
+              
+                <wijmo:C1ImageField DataImageUrlField="Family">
+                
+                    
+                </wijmo:C1ImageField>
+                <wijmo:C1BoundField DataField="Description"  HeaderText="Description" />
+                <wijmo:C1BoundField DataField="Barcode" HeaderText="Barcode"  />
+                <wijmo:C1BoundField DataField="cnt"  HeaderText="QOH" Aggregate="Sum"/>
+                <wijmo:C1BoundField DataField="SalesCount" HeaderText="Last Week Sales" Aggregate="Sum" />
+                
+            </Columns>
+                </wijmo:C1GridView>
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+            <Columns>
+              
+                <asp:ImageField DataImageUrlField="Family">
+                <ControlStyle  Width="100px"/>
+                    
+                </asp:ImageField>
+                <asp:BoundField DataField="Description"  HeaderText="Description" />
+                <asp:BoundField  DataField="Barcode" HeaderText="Barcode"  />
+                <asp:BoundField  DataField="cnt"  HeaderText="QOH"/>
+                <asp:BoundField DataField="SalesCount" HeaderText="Last Week Sales"  />
+                
+            </Columns>
+        </asp:GridView>
+    </div>
+    </form>
+</body>
+</html>
