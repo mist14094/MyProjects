@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SpeakToJarvis">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="speech" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SpeakToJarvisResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SpeakToJarvisResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SpeakToJarvisWithGrid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="speech" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Option" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SpeakToJarvisWithGridResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SpeakToJarvisWithGridResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="SpeakToJarvisSoapIn">
+    <wsdl:part name="parameters" element="tns:SpeakToJarvis" />
+  </wsdl:message>
+  <wsdl:message name="SpeakToJarvisSoapOut">
+    <wsdl:part name="parameters" element="tns:SpeakToJarvisResponse" />
+  </wsdl:message>
+  <wsdl:message name="SpeakToJarvisWithGridSoapIn">
+    <wsdl:part name="parameters" element="tns:SpeakToJarvisWithGrid" />
+  </wsdl:message>
+  <wsdl:message name="SpeakToJarvisWithGridSoapOut">
+    <wsdl:part name="parameters" element="tns:SpeakToJarvisWithGridResponse" />
+  </wsdl:message>
+  <wsdl:portType name="JarvisSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SpeakToJarvis">
+      <wsdl:input message="tns:SpeakToJarvisSoapIn" />
+      <wsdl:output message="tns:SpeakToJarvisSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SpeakToJarvisWithGrid">
+      <wsdl:input message="tns:SpeakToJarvisWithGridSoapIn" />
+      <wsdl:output message="tns:SpeakToJarvisWithGridSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="JarvisSoap" type="tns:JarvisSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpeakToJarvis">
+      <soap:operation soapAction="http://tempuri.org/SpeakToJarvis" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpeakToJarvisWithGrid">
+      <soap:operation soapAction="http://tempuri.org/SpeakToJarvisWithGrid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="JarvisSoap12" type="tns:JarvisSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpeakToJarvis">
+      <soap12:operation soapAction="http://tempuri.org/SpeakToJarvis" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpeakToJarvisWithGrid">
+      <soap12:operation soapAction="http://tempuri.org/SpeakToJarvisWithGrid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Jarvis">
+    <wsdl:port name="JarvisSoap" binding="tns:JarvisSoap">
+      <soap:address location="http://localhost:3385/Jarvis.asmx" />
+    </wsdl:port>
+    <wsdl:port name="JarvisSoap12" binding="tns:JarvisSoap12">
+      <soap12:address location="http://localhost:3385/Jarvis.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

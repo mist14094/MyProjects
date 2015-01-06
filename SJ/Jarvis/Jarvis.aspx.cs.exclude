@@ -1,0 +1,272 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Collections;
+using System.Text.RegularExpressions;
+using System.Data;
+using System.Configuration;
+using System.Data.SqlClient;
+
+public partial class Jarvis : System.Web.UI.Page
+{
+    public static string _RFIDSystem = ConfigurationManager.ConnectionStrings["RFIDString"].ConnectionString;
+   
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        CentralProcessor(Regex.Replace(TextBox1.Text, @"[^0-9a-zA-Z ]+", " "));
+    }
+
+    public void CentralProcessor(string Speech)
+    {
+        string Params="";
+        
+        string[] words= StringSplitter(Speech);
+        Params = QueryBuilder(words);
+        string SystemID = strSystemName(Params, _RFIDSystem);
+        string ReportID = strReportName(Params, _RFIDSystem, SystemID);
+
+        if (ReportID != "0")
+        {
+            Label1.Text = strSystemURL(SystemID, _RFIDSystem) + strReportURL(ReportID, _RFIDSystem)+strAttibuteBuilder(ReportID,Params,_RFIDSystem );
+        }
+        else
+        {
+            Label1.Text = "Not Enough Details / Report Not Configured yet";
+        }
+    }
+    public string[] StringSplitter(string text)
+    {
+        return text.Split(' ');
+        
+    }
+    public string QueryBuilder(string[] text)
+    {
+        string result="";
+        for (int i = 0; i < text.Count(); i++)
+        {
+            result = result + "'" + text[i] + "',";
+        }
+        if(result.Length>0)
+        {
+            result = result.Substring(0, result.Length - 1);
+        }
+        return result;
+    }
+    public string strSystemName(string Parameters, string ConString)
+    {
+        DataSet resultset = new DataSet();
+        string query = "  SELECT  TOP 1 SystemID FROM [SystemKeywords] WHERE Keyword in  ( "+ Parameters +")" ;
+        try
+        {
+
+            using (SqlDataAdapter dataAdapter = new SqlDataAdapter(query, ConString))
+            {
+                dataAdapter.Fill(resultset, "VendorName");
+            }
+
+            if (resultset != null)
+            {
+                if (resultset.Tables.Count > 0)
+                {
+                    if (resultset.Tables[0].Rows.Count > 0)
+                    {
+                        return resultset.Tables[0].Rows[0][0].ToString();
+                    }
+                }
+            }
+            else
+            {
+                return "1";
+            }
+        }
+        catch (Exception ex)
+        {
+
+        }
+        return "1";
+    }
+    public string strReportName(string Parameters, string ConString, string SystemID)
+    {
+        DataSet resultset = new DataSet();
+        string query = "  SELECT top 1 REPORTID FROM [ReportKeywords] WHERE ReportID IN (SELECT ID  FROM [ReportName] WHERE systemID =" + SystemID  + ") AND Keyword IN (" + Parameters + ")";
+        try
+        {
+
+            using (SqlDataAdapter dataAdapter = new SqlDataAdapter(query, ConString))
+            {
+                dataAdapter.Fill(resultset, "VendorName");
+            }
+
+            if (resultset != null)
+            {
+                if (resultset.Tables.Count > 0)
+                {
+                    if (resultset.Tables[0].Rows.Count > 0)
+                    {
+                        return resultset.Tables[0].Rows[0][0].ToString();
+                    }
+                }
+            }
+            else
+            {
+                return "0";
+            }
+        }
+        catch (Exception ex)
+        {
+
+        }
+        return "0";
+    }
+    public string strSystemURL(string Parameters, string ConString)
+    {
+        DataSet resultset = new DataSet();
+        string query = "  SELECT [PrefixURL]  FROM [Jarvis].[dbo].[Systems] WHERE id = "+Parameters;
+        try
+        {
+
+            using (SqlDataAdapter dataAdapter = new SqlDataAdapter(query, ConString))
+            {
+                dataAdapter.Fill(resultset, "VendorName");
+            }
+
+            if (resultset != null)
+            {
+                if (resultset.Tables.Count > 0)
+                {
+                    if (resultset.Tables[0].Rows.Count > 0)
+                    {
+                        return resultset.Tables[0].Rows[0][0].ToString();
+                    }
+                }
+            }
+            else
+            {
+                return "0";
+            }
+        }
+        catch (Exception ex)
+        {
+
+        }
+        return "0";
+    }
+    public string strReportURL(string Parameters, string ConString)
+    {
+        DataSet resultset = new DataSet();
+        string query = "  SELECT [ReportLink]  FROM [Jarvis].[dbo].[ReportName] WHERE id = " + Parameters;
+        try
+        {
+
+            using (SqlDataAdapter dataAdapter = new SqlDataAdapter(query, ConString))
+            {
+                dataAdapter.Fill(resultset, "VendorName");
+            }
+
+            if (resultset != null)
+            {
+                if (resultset.Tables.Count > 0)
+                {
+                    if (resultset.Tables[0].Rows.Count > 0)
+                    {
+                        return resultset.Tables[0].Rows[0][0].ToString();
+                    }
+                }
+            }
+            else
+            {
+                return "0";
+            }
+        }
+        catch (Exception ex)
+        {
+
+        }
+        return "0";
+    }
+    public string strAttibuteBuilder(string strReportID, string Parameters, string ConString)
+    {
+        string result ="";
+         DataSet ds = new DataSet();
+        ds= strReportAttribute(_RFIDSystem, strReportID);
+        {
+            if(ds.Tables.Count>0)
+            {
+                if(ds.Tables[0].Rows.Count>0)
+                {
+                    for(int i=0; i< ds.Tables[0].Rows.Count;i++)
+                    {
+                        if(i==0)
+                        {
+                            result=result+"?";
+                        }
+                        else
+                        {
+                            result=result+"&";
+                        }
+                        string temp=strReportAttributeKeywords( Parameters,_RFIDSystem,ds.Tables[0].Rows[i]["ID"].ToString());
+                        result=result + ds.Tables[0].Rows[i]["Value"]+"="+(temp !="0"?temp:ds.Tables[0].Rows[i]["DefaultValue"].ToString());
+
+                    }
+                }
+            }
+        }
+        
+        return result;
+    }
+    public string strReportAttributeKeywords(string Parameters, string ConString, string ID)
+    {
+        DataSet resultset = new DataSet();
+        string query = "SELECT TOP 1 Value  FROM [ReportAttributeKeywords] WHERE [ReportAttributeID] = '" + ID + "' AND keyword IN (" + Parameters + ")";
+        try
+        {
+
+            using (SqlDataAdapter dataAdapter = new SqlDataAdapter(query, ConString))
+            {
+                dataAdapter.Fill(resultset, "VendorName");
+            }
+
+            if (resultset != null)
+            {
+                if (resultset.Tables.Count > 0)
+                {
+                    if (resultset.Tables[0].Rows.Count > 0)
+                    {
+                        return resultset.Tables[0].Rows[0][0].ToString();
+                    }
+                }
+            }
+            else
+            {
+                return "0";
+            }
+        }
+        catch (Exception ex)
+        {
+
+        }
+        return "0";
+    }
+    public DataSet strReportAttribute( string ConString, string ID)
+    {
+        DataSet resultset = new DataSet();
+        string query = "SELECT * FROM [Jarvis].[dbo].[ReportAttributes] WHERE ReportID="+ID;
+
+            using (SqlDataAdapter dataAdapter = new SqlDataAdapter(query, ConString))
+            {
+                dataAdapter.Fill(resultset, "VendorName");
+            }
+
+             
+
+        return resultset;
+    }
+
+}

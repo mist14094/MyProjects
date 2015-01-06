@@ -1,0 +1,40 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="update.aspx.cs" Inherits="update" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<style>
+html, body { height: 100%; width: 100%; margin: 0; }
+div { height: 100%; width: 100%;  }
+</style>
+<body>
+  <form id="form1" runat="server">
+        <asp:ScriptManager ID="myScriptManager" runat="server" EnableCdn="true">
+        
+        
+   <Services>
+      <asp:ServiceReference Path="http://localhost:51283/Jarvis/Jarvis.asmx" />
+   </Services>
+
+
+</asp:ScriptManager>
+        <asp:UpdatePanel ID="firstUpdatePanel" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
+                <asp:TextBox ID="txtHelloWorld" runat="server"></asp:TextBox>
+                 <asp:Button ID="btnHelloWorld" runat="server" Text="Speak" 
+                    onclick="btnHelloWorld_Click" />
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        <asp:UpdatePanel ID="secondUpdatePanel" runat="server" UpdateMode="Conditional">
+            <ContentTemplate> 
+               <iframe runat="server" id="IFrame" frameborder="0" width="100%" height="95%" >
+  <p>Your browser does not support iframes.</p>
+</iframe>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+ </form>
+</body>
+</html>

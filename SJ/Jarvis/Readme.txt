@@ -1,0 +1,1 @@
+Check web config, correct  <add key="JarvisWebRefer.Jarvis" value="http://localhost:3385/Jarvis.asmx"/> with desired value
