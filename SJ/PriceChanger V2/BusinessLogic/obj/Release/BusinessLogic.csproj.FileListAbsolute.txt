@@ -1,0 +1,10 @@
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\BusinessLogic\bin\Release\NLog.config
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\BusinessLogic\bin\Release\BusinessLogic.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\BusinessLogic\bin\Release\BusinessLogic.pdb
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\BusinessLogic\bin\Release\DataLogic.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\BusinessLogic\bin\Release\NLog.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\BusinessLogic\bin\Release\DataLogic.pdb
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\BusinessLogic\bin\Release\NLog.xml
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\BusinessLogic\obj\Release\BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\BusinessLogic\obj\Release\BusinessLogic.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\BusinessLogic\obj\Release\BusinessLogic.pdb

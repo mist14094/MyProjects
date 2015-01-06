@@ -1,0 +1,8 @@
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\DataLogic\bin\Release\NLog.config
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\DataLogic\bin\Release\DataLogic.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\DataLogic\bin\Release\DataLogic.pdb
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\DataLogic\bin\Release\NLog.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\DataLogic\bin\Release\NLog.xml
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\DataLogic\obj\Release\DataLogic.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\DataLogic\obj\Release\DataLogic.pdb
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\DataLogic\obj\Release\DataLogic.csprojResolveAssemblyReference.cache

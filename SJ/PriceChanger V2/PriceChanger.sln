@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{2344FC4A-3190-42FD-ABA6-F7D074845F00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLogic", "DataLogic\DataLogic.csproj", "{0DB91C80-4F20-42CA-8E76-B959DEA14AED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceChangerWeb", "PriceChangerWeb\PriceChangerWeb.csproj", "{4ACAE4C8-02FD-46B0-B301-4C8D317BFAEE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2344FC4A-3190-42FD-ABA6-F7D074845F00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2344FC4A-3190-42FD-ABA6-F7D074845F00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2344FC4A-3190-42FD-ABA6-F7D074845F00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2344FC4A-3190-42FD-ABA6-F7D074845F00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DB91C80-4F20-42CA-8E76-B959DEA14AED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DB91C80-4F20-42CA-8E76-B959DEA14AED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DB91C80-4F20-42CA-8E76-B959DEA14AED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DB91C80-4F20-42CA-8E76-B959DEA14AED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ACAE4C8-02FD-46B0-B301-4C8D317BFAEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ACAE4C8-02FD-46B0-B301-4C8D317BFAEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ACAE4C8-02FD-46B0-B301-4C8D317BFAEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ACAE4C8-02FD-46B0-B301-4C8D317BFAEE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

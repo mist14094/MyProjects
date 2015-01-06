@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastUsedBuildConfiguration>Release</LastUsedBuildConfiguration>
+    <LastUsedPlatform>Any CPU</LastUsedPlatform>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Themes/Basic/Basic.skin">
+      <publishTime>10/28/2014 15:14:46</publishTime>
+    </File>
+    <File Include="App_Themes/Basic/GridView.css">
+      <publishTime>10/28/2014 15:13:54</publishTime>
+    </File>
+    <File Include="bin/AjaxControlToolkit.dll">
+      <publishTime>12/14/2013 12:04:02</publishTime>
+    </File>
+    <File Include="bin/AjaxMin.dll">
+      <publishTime>12/04/2013 17:25:36</publishTime>
+    </File>
+    <File Include="bin/ar/AjaxControlToolkit.resources.dll">
+      <publishTime>12/14/2013 12:04:03</publishTime>
+    </File>
+    <File Include="bin/BusinessLogic.dll">
+      <publishTime>10/31/2014 10:10:02</publishTime>
+    </File>
+    <File Include="bin/C1.C1Report.4.dll">
+      <publishTime>03/14/2013 11:51:20</publishTime>
+    </File>
+    <File Include="bin/c1.web.wijmo.controls.4.dll">
+      <publishTime>03/14/2013 11:53:28</publishTime>
+    </File>
+    <File Include="bin/cs/AjaxControlToolkit.resources.dll">
+      <publishTime>12/14/2013 12:04:03</publishTime>
+    </File>
+    <File Include="bin/DataLogic.dll">
+      <publishTime>10/31/2014 10:09:59</publishTime>
+    </File>
+    <File Include="bin/de/AjaxControlToolkit.resources.dll">
+      <publishTime>12/14/2013 12:04:03</publishTime>
+    </File>
+    <File Include="bin/de/Microsoft.Data.Edm.resources.dll">
+      <publishTime>12/04/2013 17:25:45</publishTime>
+    </File>
+    <File Include="bin/de/Microsoft.Data.OData.resources.dll">
+      <publishTime>12/04/2013 17:25:46</publishTime>
+    </File>
+    <File Include="bin/de/System.Spatial.resources.dll">
+      <publishTime>12/04/2013 17:25:46</publishTime>
+    </File>
+    <File Include="bin/es/AjaxControlToolkit.resources.dll">
+      <publishTime>12/14/2013 12:04:03</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.Data.Edm.resources.dll">
+      <publishTime>12/04/2013 17:25:45</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.Data.OData.resources.dll">
+      <publishTime>12/04/2013 17:25:46</publishTime>
+    </File>
+    <File Include="bin/es/System.Spatial.resources.dll">
+      <publishTime>12/04/2013 17:25:46</publishTime>
+    </File>
+    <File Include="bin/fr/AjaxControlToolkit.resources.dll">
+      <publishTime>12/14/2013 12:04:03</publishTime>
+    </File>
+    <File Include="bin/fr/Microsoft.Data.Edm.resources.dll">
+      <publishTime>12/04/2013 17:25:45</publishTime>
+    </File>
+    <File Include="bin/fr/Microsoft.Data.OData.resources.dll">
+      <publishTime>12/04/2013 17:25:46</publishTime>
+    </File>
+    <File Include="bin/fr/System.Spatial.resources.dll">
+      <publishTime>12/04/2013 17:25:46</publishTime>
+    </File>
+    <File Include="bin/he/AjaxControlToolkit.resources.dll">
+      <publishTime>12/14/2013 12:04:04</publishTime>
+    </File>
+    <File Include="bin/hi/AjaxControlToolkit.resources.dll">
+      <publishTime>12/14/2013 12:04:04</publishTime>
+    </File>
+    <File Include="bin/HtmlAgilityPack.dll">
+      <publishTime>12/04/2013 17:25:36</publishTime>
+    </File>
+    <File Include="bin/it/AjaxControlToolkit.resources.dll">
+      <publishTime>12/14/2013 12:04:04</publishTime>
+    </File>
+    <File Include="bin/it/Microsoft.Data.Edm.resources.dll">
+      <publishTime>12/04/2013 17:25:45</publishTime>
+    </File>
+    <File Include="bin/it/Microsoft.Data.OData.resources.dll">
+      <publishTime>12/04/2013 17:25:46</publishTime>
+    </File>
+    <File Include="bin/it/System.Spatial.resources.dll">
+      <publishTime>12/04/2013 17:25:46</publishTime>
+    </File>
+    <File Include="bin/ja/AjaxControlToolkit.resources.dll">
+      <publishTime>12/14/2013 12:04:04</publishTime>
+    </File>
+    <File Include="bin/ja/Microsoft.Data.Edm.resources.dll">
+      <publishTime>12/04/2013 17:25:46</publishTime>
+    </File>
+    <File Include="bin/ja/Microsoft.Data.OData.resources.dll">
+      <publishTime>12/04/2013 17:25:46</publishTime>
+    </File>
+    <File Include="bin/ja/System.Spatial.resources.dll">
+      <publishTime>12/04/2013 17:25:46</publishTime>
+    </File>
+    <File Include="bin/ko/AjaxControlToolkit.resources.dll">
+      <publishTime>12/14/2013 12:04:04</publishTime>
+    </File>
+    <File Include="bin/ko/Microsoft.Data.Edm.resources.dll">
+      <publishTime>12/04/2013 17:25:46</publishTime>
+    </File>
+    <File Include="bin/ko/Microsoft.Data.OData.resources.dll">
+      <publishTime>12/04/2013 17:25:46</publishTime>
+    </File>
+    <File Include="bin/ko/System.Spatial.resources.dll">
+      <publishTime>12/04/2013 17:25:46</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Data.Edm.dll">
+      <publishTime>12/04/2013 17:25:45</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Data.OData.dll">
+      <publishTime>12/04/2013 17:25:46</publishTime>
+    </File>
+    <File Include="bin/Microsoft.WindowsAzure.Storage.dll">
+      <publishTime>12/04/2013 17:25:46</publishTime>
+    </File>
+    <File Include="bin/nl/AjaxControlToolkit.resources.dll">
+      <publishTime>12/14/2013 12:04:04</publishTime>
+    </File>
+    <File Include="bin/NLog.config">
+      <publishTime>10/27/2014 09:36:31</publishTime>
+    </File>
+    <File Include="bin/NLog.dll">
+      <publishTime>10/27/2014 09:31:10</publishTime>
+    </File>
+    <File Include="bin/pl/AjaxControlToolkit.resources.dll">
+      <publishTime>12/14/2013 12:04:05</publishTime>
+    </File>
+    <File Include="bin/PriceChangerWeb.dll">
+      <publishTime>10/31/2014 10:10:04</publishTime>
+    </File>
+    <File Include="bin/pt/AjaxControlToolkit.resources.dll">
+      <publishTime>12/14/2013 12:04:04</publishTime>
+    </File>
+    <File Include="bin/ru/AjaxControlToolkit.resources.dll">
+      <publishTime>12/14/2013 12:04:05</publishTime>
+    </File>
+    <File Include="bin/ru/Microsoft.Data.Edm.resources.dll">
+      <publishTime>12/04/2013 17:25:46</publishTime>
+    </File>
+    <File Include="bin/ru/Microsoft.Data.OData.resources.dll">
+      <publishTime>12/04/2013 17:25:46</publishTime>
+    </File>
+    <File Include="bin/ru/System.Spatial.resources.dll">
+      <publishTime>12/04/2013 17:25:46</publishTime>
+    </File>
+    <File Include="bin/System.Spatial.dll">
+      <publishTime>12/04/2013 17:25:46</publishTime>
+    </File>
+    <File Include="bin/tr-TR/AjaxControlToolkit.resources.dll">
+      <publishTime>12/14/2013 12:04:05</publishTime>
+    </File>
+    <File Include="bin/zh-CHS/AjaxControlToolkit.resources.dll">
+      <publishTime>12/14/2013 12:04:05</publishTime>
+    </File>
+    <File Include="bin/zh-CHT/AjaxControlToolkit.resources.dll">
+      <publishTime>12/14/2013 12:04:05</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.Data.Edm.resources.dll">
+      <publishTime>12/04/2013 17:25:46</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.Data.OData.resources.dll">
+      <publishTime>12/04/2013 17:25:46</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Spatial.resources.dll">
+      <publishTime>12/04/2013 17:25:46</publishTime>
+    </File>
+    <File Include="bin/zh-Hant/Microsoft.Data.Edm.resources.dll">
+      <publishTime>12/04/2013 17:25:46</publishTime>
+    </File>
+    <File Include="bin/zh-Hant/Microsoft.Data.OData.resources.dll">
+      <publishTime>12/04/2013 17:25:46</publishTime>
+    </File>
+    <File Include="bin/zh-Hant/System.Spatial.resources.dll">
+      <publishTime>12/04/2013 17:25:46</publishTime>
+    </File>
+    <File Include="css/grd_alt.png">
+      <publishTime>03/03/2008 15:23:50</publishTime>
+    </File>
+    <File Include="css/grd_head.png">
+      <publishTime>03/03/2008 14:52:14</publishTime>
+    </File>
+    <File Include="css/grd_pgr.png">
+      <publishTime>03/03/2008 15:20:56</publishTime>
+    </File>
+    <File Include="css/style.css">
+      <publishTime>10/28/2014 15:23:45</publishTime>
+    </File>
+    <File Include="Login.aspx">
+      <publishTime>10/30/2014 08:48:31</publishTime>
+    </File>
+    <File Include="Login1.aspx">
+      <publishTime>10/30/2014 08:43:23</publishTime>
+    </File>
+    <File Include="NLog.config">
+      <publishTime>10/27/2014 09:36:31</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>10/27/2014 09:31:21</publishTime>
+    </File>
+    <File Include="PriceChange.aspx">
+      <publishTime>10/31/2014 10:05:20</publishTime>
+    </File>
+    <File Include="PriceChangeWOCA.aspx">
+      <publishTime>10/31/2014 10:06:03</publishTime>
+    </File>
+    <File Include="Search.aspx">
+      <publishTime>10/31/2014 10:08:04</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>10/31/2014 10:10:05</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

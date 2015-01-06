@@ -1,0 +1,214 @@
+c:\users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\NLog.config
+c:\users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\PriceChangerWeb.dll
+c:\users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\PriceChangerWeb.pdb
+c:\users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\NLog.dll
+c:\users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\NLog.xml
+c:\users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\obj\Debug\PriceChangerWeb.csprojResolveAssemblyReference.cache
+c:\users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\obj\Debug\PriceChangerWeb.dll
+c:\users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\obj\Debug\PriceChangerWeb.pdb
+c:\users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\BusinessLogic.dll
+c:\users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\DataLogic.dll
+c:\users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\BusinessLogic.pdb
+c:\users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\DataLogic.pdb
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\AjaxControlToolkit.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\Microsoft.WindowsAzure.Storage.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\HtmlAgilityPack.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\AjaxMin.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\Microsoft.Data.OData.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\Microsoft.Data.Edm.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\System.Spatial.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\AjaxControlToolkit.pdb
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\Microsoft.WindowsAzure.Storage.xml
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\Microsoft.Data.OData.xml
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\Microsoft.Data.Edm.xml
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\System.Spatial.xml
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\ar\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\cs\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\de\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\es\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\fr\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\he\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\hi\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\it\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\ja\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\ko\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\nl\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\pl\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\pt\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\ru\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\tr-TR\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\zh-CHS\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\zh-CHT\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\de\Microsoft.Data.OData.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\es\Microsoft.Data.OData.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\it\Microsoft.Data.OData.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\de\System.Spatial.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\es\System.Spatial.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\fr\System.Spatial.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\it\System.Spatial.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\ja\System.Spatial.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\ko\System.Spatial.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\ru\System.Spatial.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\zh-Hans\System.Spatial.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\c1.web.wijmo.controls.4.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\C1.C1Report.4.dll
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\bin\c1.web.wijmo.controls.4.xml
+C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\PriceChangerWeb\obj\Debug\PriceChangerWeb.dll.licenses
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\NLog.config
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\PriceChangerWeb.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\PriceChangerWeb.pdb
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\BusinessLogic.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\c1.web.wijmo.controls.4.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\NLog.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\DataLogic.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\Microsoft.WindowsAzure.Storage.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\HtmlAgilityPack.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\AjaxMin.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\C1.C1Report.4.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\Microsoft.Data.OData.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\Microsoft.Data.Edm.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\System.Spatial.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\BusinessLogic.pdb
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\AjaxControlToolkit.pdb
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\c1.web.wijmo.controls.4.xml
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\NLog.xml
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\DataLogic.pdb
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\Microsoft.WindowsAzure.Storage.xml
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\Microsoft.Data.OData.xml
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\Microsoft.Data.Edm.xml
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\System.Spatial.xml
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\ar\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\cs\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\de\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\es\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\fr\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\he\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\hi\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\it\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\ja\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\ko\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\nl\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\pl\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\pt\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\ru\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\tr-TR\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\zh-CHS\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\zh-CHT\AjaxControlToolkit.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\de\Microsoft.Data.OData.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\es\Microsoft.Data.OData.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\it\Microsoft.Data.OData.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\de\System.Spatial.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\es\System.Spatial.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\fr\System.Spatial.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\it\System.Spatial.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\ja\System.Spatial.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\ko\System.Spatial.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\ru\System.Spatial.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\zh-Hans\System.Spatial.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\obj\Debug\PriceChangerWeb.csprojResolveAssemblyReference.cache
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\obj\Debug\PriceChangerWeb.dll.licenses
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\obj\Debug\PriceChangerWeb.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\PriceChanger V2\PriceChangerWeb\obj\Debug\PriceChangerWeb.pdb
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\NLog.config
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\PriceChangerWeb.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\PriceChangerWeb.pdb
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\BusinessLogic.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\c1.web.wijmo.controls.4.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\NLog.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\DataLogic.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\Microsoft.WindowsAzure.Storage.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\HtmlAgilityPack.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\AjaxMin.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\C1.C1Report.4.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\Microsoft.Data.OData.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\Microsoft.Data.Edm.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\System.Spatial.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\BusinessLogic.pdb
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\AjaxControlToolkit.pdb
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\c1.web.wijmo.controls.4.xml
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\NLog.xml
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\DataLogic.pdb
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\Microsoft.WindowsAzure.Storage.xml
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\Microsoft.Data.OData.xml
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\Microsoft.Data.Edm.xml
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\System.Spatial.xml
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\ar\AjaxControlToolkit.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\cs\AjaxControlToolkit.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\de\AjaxControlToolkit.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\es\AjaxControlToolkit.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\fr\AjaxControlToolkit.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\he\AjaxControlToolkit.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\hi\AjaxControlToolkit.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\it\AjaxControlToolkit.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\ja\AjaxControlToolkit.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\ko\AjaxControlToolkit.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\nl\AjaxControlToolkit.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\pl\AjaxControlToolkit.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\pt\AjaxControlToolkit.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\ru\AjaxControlToolkit.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\tr-TR\AjaxControlToolkit.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\zh-CHS\AjaxControlToolkit.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\zh-CHT\AjaxControlToolkit.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\de\Microsoft.Data.OData.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\es\Microsoft.Data.OData.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\fr\Microsoft.Data.OData.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\it\Microsoft.Data.OData.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\ja\Microsoft.Data.OData.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\ko\Microsoft.Data.OData.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\ru\Microsoft.Data.OData.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\de\Microsoft.Data.Edm.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\es\Microsoft.Data.Edm.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\fr\Microsoft.Data.Edm.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\it\Microsoft.Data.Edm.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\ja\Microsoft.Data.Edm.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\ko\Microsoft.Data.Edm.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\ru\Microsoft.Data.Edm.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\de\System.Spatial.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\es\System.Spatial.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\fr\System.Spatial.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\it\System.Spatial.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\ja\System.Spatial.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\ko\System.Spatial.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\ru\System.Spatial.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\zh-Hans\System.Spatial.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\bin\zh-Hant\System.Spatial.resources.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\obj\Debug\PriceChangerWeb.csprojResolveAssemblyReference.cache
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\obj\Debug\PriceChangerWeb.dll.licenses
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\obj\Debug\PriceChangerWeb.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\PriceChangerWeb\obj\Debug\PriceChangerWeb.pdb
