@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="3f3c8acc-8c2a-46e7-a804-a89d84a30966"
+  name="UI"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="cb56ac87-7e23-457d-8c93-e3f5fb2d133d"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DShield.Web.UI"
+      tag="ViewCode" />
+  </referencesInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="558176c8-4857-4483-a9d4-86dbd9166534">
+      <profileInstance
+        Id="ee9e0cad-8eec-4dd0-9df6-8ead5d1ff553"
+        name="CSharpProfile" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="906a03cc-ba75-490d-8466-cde9f0df2e0a"
+        name="ShieldChart"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="b114bc99-3801-4940-b4dc-89694d95d9b8"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDesktop%2F4.5%2FNET45%2FShield.Web.UI.dll Namespace%3DShield.Web.UI Type%3DShieldChart"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="992cd6a0-8e4a-4ce8-ab4b-00c33b08fc21"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="df94639e-5cf3-4c12-8d64-de9103ee7c66">
+                <propertyInstance
+                  Id="74a679f7-d04b-4aa2-9cb8-f494e361ab46"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="76ccc756-7551-479a-9bc6-2739ef950f54">
+                <propertyInstance
+                  Id="0a478466-4433-4644-a93f-2d2020294276"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8de6f6e1-8c68-4704-8873-f9a66fcd06fd">
+                <propertyInstance
+                  Id="9173c2f6-fbc4-4ce6-8c8f-1e93bfab8603"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a4442421-ab0d-49ef-ac98-5dfe9e89f497">
+                <propertyInstance
+                  Id="822bcb4f-d22d-4828-a5da-9c0dfaf48376"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="31c64653-1ba8-4f98-b523-df6e9f6cc18a">
+                <propertyInstance
+                  Id="9bb17a97-16bb-457c-a692-4a0f5fd3d2a8"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="52a4a317-b819-4f4b-91e2-39e8106a5f0f"
+        name="ChartXYMode"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="53ff3412-74d2-4e71-9955-bab9c86b71aa"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDesktop%2F4.5%2FNET45%2FShield.Web.UI.dll Namespace%3DShield.Web.UI Type%3DChartXYMode"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="ec709877-098d-4daf-bdf9-e5cd79b77022"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="44d257fc-0973-4125-bf1f-251aa1fd5081">
+                <propertyInstance
+                  Id="d27207a2-ff39-41a2-a90d-d57951778767"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="79c7b271-19ec-4b1c-adf8-3e0247240241">
+                <propertyInstance
+                  Id="7f500ea8-2d72-4392-9a53-115235aa14c1"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="96d861f5-f7e7-4bc2-9ff5-640e089f6d95">
+                <propertyInstance
+                  Id="2e3a422b-0734-491f-90bf-eca6cfb57011"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="8432af76-3f55-43f4-9e95-3b9c2a0a54d8"
+        name="ChartAxisY"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="0fb36ce8-209f-40b5-987c-bda9d0c57eb5"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDesktop%2F4.5%2FNET45%2FShield.Web.UI.dll Namespace%3DShield.Web.UI Type%3DChartAxisY"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="4243a3b4-ea48-49f1-a056-fb48be1a848f"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a688a06a-891b-4d1b-b7be-0ca9db1e969b">
+                <propertyInstance
+                  Id="00b098c1-c11a-46a7-a40b-19ee90649b41"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d1b6350e-8bfe-4b1f-95e9-ead1dd0ab606">
+                <propertyInstance
+                  Id="e0fed632-f5e7-4040-9b7f-ec3ebda89563"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="400ab4a1-cb03-4152-be0d-8de8ddf3430b">
+                <propertyInstance
+                  Id="616e1743-c0dc-4239-a33c-c03e34a66c19"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b4834bba-ec51-4b04-a9e6-681c4cc69dfc">
+                <propertyInstance
+                  Id="7e44075a-6359-4bfe-864e-c471f10b0570"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="20ca0eee-0fa1-4c05-b3fd-01a99dda87e3">
+                <propertyInstance
+                  Id="5909e08d-33db-4c31-bb64-3e73f94f5e29"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="469c9058-4be9-4b5a-b9ca-77ed3b16f476"
+        name="ChartAxisX"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="434c99a5-1c7a-4e53-8d69-3cc666762201"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDesktop%2F4.5%2FNET45%2FShield.Web.UI.dll Namespace%3DShield.Web.UI Type%3DChartAxisX"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="761d318e-2447-4268-964a-fab98d6a986f"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="924dc0cc-7bae-423e-ba95-c0a7e15190cf">
+                <propertyInstance
+                  Id="9d9e986b-2213-4667-a7e1-7082b3509df0"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="63211f5a-8bb9-45f3-911d-695a71fc5ce4">
+                <propertyInstance
+                  Id="619acd7f-db9f-465e-9d0a-343fedbe12cd"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6c03a364-1893-49cb-9d18-acb318805dee">
+                <propertyInstance
+                  Id="f12e1f28-4c1c-4a75-a4e9-05f18c5404e2"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ad944690-d238-4a4a-851f-84fb0abc9eb0">
+                <propertyInstance
+                  Id="7c46c6ad-0a6e-4175-83dc-61969f778f94"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7dd25b53-89c3-4426-9b66-02ffc06ae602">
+                <propertyInstance
+                  Id="c47b7219-cb08-4791-931d-4aa7ae3522bd"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

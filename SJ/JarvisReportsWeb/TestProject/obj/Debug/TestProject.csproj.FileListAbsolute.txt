@@ -1,0 +1,6 @@
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\TestProject\bin\Debug\NLog.config
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\TestProject\bin\Debug\TestProject.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\TestProject\bin\Debug\TestProject.pdb
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\TestProject\obj\Debug\TestProject.csprojResolveAssemblyReference.cache
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\TestProject\obj\Debug\TestProject.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\TestProject\obj\Debug\TestProject.pdb

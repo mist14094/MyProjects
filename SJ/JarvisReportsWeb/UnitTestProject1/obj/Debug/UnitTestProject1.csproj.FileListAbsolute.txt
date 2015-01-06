@@ -1,0 +1,32 @@
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\UnitTestProject1\obj\Debug\UnitTestProject1.csprojResolveAssemblyReference.cache
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\UnitTestProject1\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\UnitTestProject1\bin\Debug\JarvisReportsConstant.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\UnitTestProject1\bin\Debug\JarvisReportsConstant.pdb
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\UnitTestProject1\bin\Debug\NLog.config
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\UnitTestProject1\bin\Debug\JarvisDataAccess.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\UnitTestProject1\bin\Debug\NLog.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\UnitTestProject1\bin\Debug\JarvisDataAccess.pdb
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\UnitTestProject1\bin\Debug\NLog.xml
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\UnitTestProject1\bin\Debug\UnitTestProject1.dll.config
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\UnitTestProject1\bin\Debug\JarvisBusinessAccess.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\UnitTestProject1\bin\Debug\JarvisBusinessAccess.pdb
+D:\Projects\MyProjects\SJ\JarvisReportsWeb\UnitTestProject1\bin\Debug\NLog.config
+D:\Projects\MyProjects\SJ\JarvisReportsWeb\UnitTestProject1\bin\Debug\UnitTestProject1.dll.config
+D:\Projects\MyProjects\SJ\JarvisReportsWeb\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+D:\Projects\MyProjects\SJ\JarvisReportsWeb\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+D:\Projects\MyProjects\SJ\JarvisReportsWeb\UnitTestProject1\bin\Debug\JarvisBusinessAccess.dll
+D:\Projects\MyProjects\SJ\JarvisReportsWeb\UnitTestProject1\bin\Debug\JarvisDataAccess.dll
+D:\Projects\MyProjects\SJ\JarvisReportsWeb\UnitTestProject1\bin\Debug\JarvisReportsConstant.dll
+D:\Projects\MyProjects\SJ\JarvisReportsWeb\UnitTestProject1\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
+D:\Projects\MyProjects\SJ\JarvisReportsWeb\UnitTestProject1\bin\Debug\NLog.dll
+D:\Projects\MyProjects\SJ\JarvisReportsWeb\UnitTestProject1\bin\Debug\JarvisBusinessAccess.pdb
+D:\Projects\MyProjects\SJ\JarvisReportsWeb\UnitTestProject1\bin\Debug\JarvisDataAccess.pdb
+D:\Projects\MyProjects\SJ\JarvisReportsWeb\UnitTestProject1\bin\Debug\JarvisReportsConstant.pdb
+D:\Projects\MyProjects\SJ\JarvisReportsWeb\UnitTestProject1\bin\Debug\NLog.xml
+D:\Projects\MyProjects\SJ\JarvisReportsWeb\UnitTestProject1\obj\Debug\UnitTestProject1.csprojResolveAssemblyReference.cache
+D:\Projects\MyProjects\SJ\JarvisReportsWeb\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+D:\Projects\MyProjects\SJ\JarvisReportsWeb\UnitTestProject1\obj\Debug\UnitTestProject1.pdb

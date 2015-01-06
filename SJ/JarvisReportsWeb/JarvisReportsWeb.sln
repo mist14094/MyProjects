@@ -1,0 +1,71 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "JarvisReportsWeb", "http://localhost:14111", "{678EB1DE-E47A-4076-875A-D9915F32F616}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = "{1e43017d-110b-4733-850c-5b704cdb6e44}|JarvisBusinessAccess.dll;{27EFE65D-639C-4053-A737-E669AFB85682}|JarvisReportsConstant.dll;{E8AA3EA8-F232-4B8C-9A8A-BC33E0ABC5DF}|JarvisDataAccess.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_14111"
+		Debug.AspNetCompiler.PhysicalPath = "JarvisReportsWeb\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_14111\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_14111"
+		Release.AspNetCompiler.PhysicalPath = "JarvisReportsWeb\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_14111\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "JarvisReportsWeb\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JarvisReportsConstant", "JarvisReportsConstant\JarvisReportsConstant.csproj", "{27EFE65D-639C-4053-A737-E669AFB85682}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JarvisDataAccess", "JarvisDataAccess\JarvisDataAccess.csproj", "{E8AA3EA8-F232-4B8C-9A8A-BC33E0ABC5DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JarvisBusinessAccess", "JarvisBusinessAccess\JarvisBusinessAccess.csproj", "{1E43017D-110B-4733-850C-5B704CDB6E44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{093F6DCF-C742-4506-87B4-C91FCF3461A5}"
+EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "JarvisModeling", "JarvisModeling\JarvisModeling.modelproj", "{9DC3F236-D3D5-4437-A948-653CC80F7B89}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{678EB1DE-E47A-4076-875A-D9915F32F616}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{678EB1DE-E47A-4076-875A-D9915F32F616}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{678EB1DE-E47A-4076-875A-D9915F32F616}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{678EB1DE-E47A-4076-875A-D9915F32F616}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{27EFE65D-639C-4053-A737-E669AFB85682}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27EFE65D-639C-4053-A737-E669AFB85682}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27EFE65D-639C-4053-A737-E669AFB85682}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27EFE65D-639C-4053-A737-E669AFB85682}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8AA3EA8-F232-4B8C-9A8A-BC33E0ABC5DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8AA3EA8-F232-4B8C-9A8A-BC33E0ABC5DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8AA3EA8-F232-4B8C-9A8A-BC33E0ABC5DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8AA3EA8-F232-4B8C-9A8A-BC33E0ABC5DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E43017D-110B-4733-850C-5B704CDB6E44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E43017D-110B-4733-850C-5B704CDB6E44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E43017D-110B-4733-850C-5B704CDB6E44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E43017D-110B-4733-850C-5B704CDB6E44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{093F6DCF-C742-4506-87B4-C91FCF3461A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{093F6DCF-C742-4506-87B4-C91FCF3461A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{093F6DCF-C742-4506-87B4-C91FCF3461A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{093F6DCF-C742-4506-87B4-C91FCF3461A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DC3F236-D3D5-4437-A948-653CC80F7B89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DC3F236-D3D5-4437-A948-653CC80F7B89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DC3F236-D3D5-4437-A948-653CC80F7B89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DC3F236-D3D5-4437-A948-653CC80F7B89}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

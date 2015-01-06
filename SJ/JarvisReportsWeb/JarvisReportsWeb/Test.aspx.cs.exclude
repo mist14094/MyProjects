@@ -1,0 +1,131 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
+using System.Security.Cryptography;
+using System.Web;
+using System.Web.DynamicData;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using JarvisBusinessAccess;
+using Microsoft.VisualStudio.Web.PageInspector.Runtime;
+
+public partial class Test : System.Web.UI.Page
+{
+    DefaultBusinessAccess defaultaccess = new DefaultBusinessAccess();
+    public static  DataTable tempDataforYAxis = new DataTable();
+    
+    protected void Page_Load(object sender, EventArgs e)
+    {
+          
+        if (!IsPostBack)
+        {
+            ddlSelectDataBase.DataSource = defaultaccess.GetAllDataBaseConnection();
+            ddlSelectDataBase.DataValueField = "Sno";
+            ddlSelectDataBase.DataTextField = "EquivalentString";
+            ddlSelectDataBase.DataBind();
+            ddlSelectDataBase.Items.Insert(0,"");
+
+        }
+
+    }
+    protected void ddlSelectDataBase_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if (ddlSelectDataBase.SelectedValue != "")
+        {
+            ddlDataBaseElements.DataSource = defaultaccess.GetDataElements(ddlSelectDataBase.SelectedValue, true,
+                "'V','C'");
+            ddlDataBaseElements.DataTextField = "ElementAliasName";
+            ddlDataBaseElements.DataValueField = "sno";
+            ddlDataBaseElements.DataBind();
+            ddlDataBaseElements.DataBind();
+            ddlDataBaseElements.Items.Insert(0, "");
+        }
+    }
+    protected void ddlDataBaseElements_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+        if (ddlDataBaseElements.SelectedValue != "")
+        {
+            //DynamicBusinessAccess businessAccess = new DynamicBusinessAccess(defaultaccess.GetDataBaseConnectionStringRef(int.Parse(ddlDataBaseElements.SelectedValue)));
+            tempDataforYAxis = defaultaccess.GetSampleData(ddlDataBaseElements.SelectedValue);
+            grdSampleData.DataSource = tempDataforYAxis;
+            grdSampleData.DataBind();
+            ddlColumn.DataSource = tempDataforYAxis.Columns.Cast<DataColumn>()
+                                 .Select(x => x.ColumnName)
+                                 .ToArray();  
+            ddlColumn.DataBind();
+
+        
+        }
+
+
+    }
+    protected void ddlColumn_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        ddlYColumn.DataSource = tempDataforYAxis.Columns.Cast<DataColumn>()
+            .Select(x => x.ColumnName)
+            .Where(s =>! s.Equals(ddlColumn.SelectedValue))
+            
+            .ToArray();
+        ddlYColumn.DataBind();
+        
+
+    }
+
+    private void Initializer(int Level)
+    {
+        if (Level > 1)
+        {
+            ddlYColumn.DataSource = null;
+            ddlYColumn.DataBind();                    
+            if (Level > 2)
+            {
+                ddlColumn.DataSource = null;
+                ddlColumn.DataBind();
+                
+
+                if (Level > 3)
+                {
+                    grdSampleData.DataSource = null;
+                    grdSampleData.DataBind();
+                    
+                    if (Level >4)
+                    {
+                        ddlDataBaseElements.DataSource = null;
+                        ddlDataBaseElements.DataBind();
+
+                        if (Level >5)
+                        {
+                            ddlSelectDataBase.DataSource = null;
+                            ddlSelectDataBase.DataBind();
+                        }
+                    }
+                }
+            }
+
+        }
+
+    
+
+        
+
+        
+
+        
+
+    }
+    protected void ddlChartTypes_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+    protected void ddlYColumn_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        ddlChartTypes.DataSource = defaultaccess.GetCharttypes();
+        ddlChartTypes.DataTextField = "ChartType";
+        ddlChartTypes.DataValueField = "Sno";
+        ddlChartTypes.DataBind();
+
+    }
+}

@@ -1,0 +1,222 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="MainChartAxisBase.aspx.cs" Inherits="MainChartAxisBase" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style2 {
+            height: 23px;
+        }
+        .auto-style3 {
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    
+        <table class="auto-style1">
+            <tr>
+                <td>
+                    <asp:Label ID="lblSno" runat="server" Text="Sno"></asp:Label>
+                </td>
+                <td>
+                    <asp:Label ID="lblSnoValue" runat="server" Text=""></asp:Label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblMainChartReferenceChartNo" runat="server" Text="Main Chart Reference No"></asp:Label>
+                </td>
+                <td>
+                    <asp:DropDownList ID="ddlMainChartReferenceNo" runat="server">
+
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblAxisType" runat="server" Text="Axis Type"></asp:Label>
+                </td>
+                <td>
+                    <asp:DropDownList ID="ddlMainChartReferenceNo0" runat="server">
+                        <asp:ListItem Value="0">X Axis</asp:ListItem>
+                        <asp:ListItem Value="1">Y Axis</asp:ListItem>
+
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblSortOrder" runat="server" Text="Sort Order"></asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox ID="txtSortOrder" runat="server" Text="0"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style3">
+                    <asp:Label ID="lblTicksRepeat" runat="server" Text="Ticks Repeat"></asp:Label>
+                </td>
+                <td class="auto-style3">  
+                    <asp:TextBox ID="txtTicksRepeat" runat="server" Text="1"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblSwapLocation" runat="server" Text="Swap Loaction"></asp:Label>
+                </td>
+                <td>  <asp:CheckBox ID="chkPrint" Text="Enable" runat="server" Checked="True" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblColumnName" runat="server" Text="X Axis - Column Name"></asp:Label>
+                </td>
+                <td>
+                    <asp:DropDownList ID="ddlColumnName" runat="server">
+
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblTextAngle" runat="server" Text="Axis Text Angle "></asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox ID="txtWidth" runat="server" Text="900"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblAxisTextAngleX" runat="server" Text="Axis Text Angle - X Axis"></asp:Label>
+                </td>
+                <td>  
+                    <asp:TextBox ID="txtWidth0" runat="server" Text="900"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style2">
+                    <asp:Label ID="lblAxisTextAngleY" runat="server" Text="Axis Text Angle - Y Axis"></asp:Label>
+                </td>
+                <td class="auto-style2">
+                    <asp:DropDownList ID="ddlZoomMode" runat="server">
+                        <asp:ListItem Value="0" Selected="True">None</asp:ListItem>
+                        <asp:ListItem Value="1">X</asp:ListItem>
+                        <asp:ListItem Value="2">Y</asp:ListItem>
+                        <asp:ListItem Value="3">XY</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblAxisTextAngleStep" runat="server" Text="Axis Text Angle - Step"></asp:Label>
+                </td>
+                <td>  <asp:CheckBox ID="chkAxisMarkerEnabled" Text="Enable" runat="server" Checked="True" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblTitleText" runat="server" Text="Title"></asp:Label>
+                </td>
+                <td>
+                    <asp:DropDownList ID="ddlAxisMarkerMode" runat="server">
+                        <asp:ListItem Value="0" >None</asp:ListItem>
+                        <asp:ListItem Value="1">X</asp:ListItem>
+                        <asp:ListItem Value="2">Y</asp:ListItem>
+                        <asp:ListItem Value="3" Selected="True">XY</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblIsValid" runat="server" Text="Is Valid"></asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox ID="txtAxisWidth" runat="server" Text="1"></asp:TextBox></td>
+            </tr>
+           
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            </table>
+    
+    </div>
+        <br />
+        <br />
+        <asp:Panel runat="server" ID="YAxisValues">
+            <table class="auto-style1">
+            <tr>
+                <td>
+                    <asp:Label ID="lblDataFieldY" runat="server" Text="Sno"></asp:Label>
+                </td>
+                <td>
+                    <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblCollectionAlias" runat="server" Text="Main Chart Reference No"></asp:Label>
+                </td>
+                <td>
+                    <asp:DropDownList ID="DropDownList1" runat="server">
+
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblEnablePointSelection" runat="server" Text="Axis Type"></asp:Label>
+                </td>
+                <td>
+                    <asp:DropDownList ID="DropDownList2" runat="server">
+                        <asp:ListItem Value="0">X Axis</asp:ListItem>
+                        <asp:ListItem Value="1">Y Axis</asp:ListItem>
+
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblDrawWidth" runat="server" Text="Sort Order"></asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox ID="TextBox1" runat="server" Text="0"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style3">
+                    <asp:Label ID="lblDrawRadius" runat="server" Text="Ticks Repeat"></asp:Label>
+                </td>
+                <td class="auto-style3">  
+                    <asp:TextBox ID="TextBox2" runat="server" Text="1"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblStackMode" runat="server" Text="Swap Loaction"></asp:Label>
+                </td>
+                <td>  <asp:CheckBox ID="CheckBox1" Text="Enable" runat="server" Checked="True" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblYaxisIsValid" runat="server" Text="X Axis - Column Name"></asp:Label>
+                </td>
+                <td>
+                    <asp:DropDownList ID="DropDownList3" runat="server">
+
+                    </asp:DropDownList>
+                </td>
+            </tr>
+     
+            </table>
+        </asp:Panel>
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+    </form>
+</body>
+</html>

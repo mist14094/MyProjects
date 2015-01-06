@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JarvisDataAccess.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:JarvisDataAccess.Fakes.ShimConnectionStrings">
+            <summary>Shim type of JarvisDataAccess.ConnectionStrings</summary>
+        </member>
+        <member name="M:JarvisDataAccess.Fakes.ShimConnectionStrings.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:JarvisDataAccess.Fakes.ShimConnectionStrings.#ctor(JarvisDataAccess.ConnectionStrings)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:JarvisDataAccess.Fakes.ShimConnectionStrings.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:JarvisDataAccess.Fakes.ShimConnectionStrings.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.ShimConnectionStrings.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.ShimConnectionStrings.ConnectionstringNameGet">
+            <summary>Sets the shim of ConnectionStrings.get_ConnectionstringName()</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.ShimConnectionStrings.ConnectionstringNameSetString">
+            <summary>Sets the shim of ConnectionStrings.set_ConnectionstringName(String value)</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.ShimConnectionStrings.ConnectionstringValueGet">
+            <summary>Sets the shim of ConnectionStrings.get_ConnectionstringValue()</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.ShimConnectionStrings.ConnectionstringValueSetString">
+            <summary>Sets the shim of ConnectionStrings.set_ConnectionstringValue(String value)</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.ShimConnectionStrings.Constructor">
+            <summary>Sets the shim of ConnectionStrings.ConnectionStrings()</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.ShimConnectionStrings.GetConnectionStrings">
+            <summary>Sets the shim of ConnectionStrings.GetConnectionStrings()</summary>
+        </member>
+        <member name="T:JarvisDataAccess.Fakes.ShimConnectionStrings.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.ShimConnectionStrings.AllInstances.ConnectionstringNameGet">
+            <summary>Sets the shim of ConnectionStrings.get_ConnectionstringName()</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.ShimConnectionStrings.AllInstances.ConnectionstringNameSetString">
+            <summary>Sets the shim of ConnectionStrings.set_ConnectionstringName(String value)</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.ShimConnectionStrings.AllInstances.ConnectionstringValueGet">
+            <summary>Sets the shim of ConnectionStrings.get_ConnectionstringValue()</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.ShimConnectionStrings.AllInstances.ConnectionstringValueSetString">
+            <summary>Sets the shim of ConnectionStrings.set_ConnectionstringValue(String value)</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.ShimConnectionStrings.AllInstances.GetConnectionStrings">
+            <summary>Sets the shim of ConnectionStrings.GetConnectionStrings()</summary>
+        </member>
+        <member name="T:JarvisDataAccess.Fakes.ShimCreateReport">
+            <summary>Shim type of JarvisDataAccess.CreateReport</summary>
+        </member>
+        <member name="M:JarvisDataAccess.Fakes.ShimCreateReport.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:JarvisDataAccess.Fakes.ShimCreateReport.#ctor(JarvisDataAccess.CreateReport)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:JarvisDataAccess.Fakes.ShimCreateReport.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:JarvisDataAccess.Fakes.ShimCreateReport.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.ShimCreateReport.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.ShimCreateReport.Constructor">
+            <summary>Sets the shim of CreateReport.CreateReport()</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.ShimCreateReport.GetDatabaseElementNamesString">
+            <summary>Sets the shim of CreateReport.GetDatabaseElementNames(String ReferenceSNO)</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.ShimCreateReport.GetInitialDataBaseNames">
+            <summary>Sets the shim of CreateReport.GetInitialDataBaseNames()</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.ShimCreateReport.GetSampleDataViewString">
+            <summary>Sets the shim of CreateReport.GetSampleDataView(String ViewName)</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.ShimCreateReport.GetViewColumnNameString">
+            <summary>Sets the shim of CreateReport.GetViewColumnName(String ViewName)</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.ShimCreateReport.GetViewandProcedureName">
+            <summary>Sets the shim of CreateReport.GetViewandProcedureName()</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.ShimCreateReport.SelectDataBaseNames">
+            <summary>Sets the shim of CreateReport.SelectDataBaseNames()</summary>
+        </member>
+        <member name="T:JarvisDataAccess.Fakes.ShimCreateReport.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.ShimCreateReport.AllInstances.GetDatabaseElementNamesString">
+            <summary>Sets the shim of CreateReport.GetDatabaseElementNames(String ReferenceSNO)</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.ShimCreateReport.AllInstances.GetInitialDataBaseNames">
+            <summary>Sets the shim of CreateReport.GetInitialDataBaseNames()</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.ShimCreateReport.AllInstances.GetSampleDataViewString">
+            <summary>Sets the shim of CreateReport.GetSampleDataView(String ViewName)</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.ShimCreateReport.AllInstances.GetViewColumnNameString">
+            <summary>Sets the shim of CreateReport.GetViewColumnName(String ViewName)</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.ShimCreateReport.AllInstances.GetViewandProcedureName">
+            <summary>Sets the shim of CreateReport.GetViewandProcedureName()</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.ShimCreateReport.AllInstances.SelectDataBaseNames">
+            <summary>Sets the shim of CreateReport.SelectDataBaseNames()</summary>
+        </member>
+        <member name="T:JarvisDataAccess.Fakes.ShimJarvisDataAccessBase">
+            <summary>Shim type of JarvisDataAccess.JarvisDataAccessBase</summary>
+        </member>
+        <member name="M:JarvisDataAccess.Fakes.ShimJarvisDataAccessBase.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:JarvisDataAccess.Fakes.ShimJarvisDataAccessBase.#ctor(JarvisDataAccess.JarvisDataAccessBase)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:JarvisDataAccess.Fakes.ShimJarvisDataAccessBase.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:JarvisDataAccess.Fakes.ShimJarvisDataAccessBase.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.ShimJarvisDataAccessBase.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.ShimJarvisDataAccessBase.Constructor">
+            <summary>Sets the shim of JarvisDataAccessBase.JarvisDataAccessBase()</summary>
+        </member>
+        <member name="T:JarvisDataAccess.Fakes.ShimJarvisDataAccessBase.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="T:JarvisDataAccess.Fakes.StubConnectionStrings">
+            <summary>Stub type of JarvisDataAccess.ConnectionStrings</summary>
+        </member>
+        <member name="M:JarvisDataAccess.Fakes.StubConnectionStrings.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:JarvisDataAccess.Fakes.StubConnectionStrings.InitializeStub">
+            <summary>Initializes a new instance of type StubConnectionStrings</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.StubConnectionStrings.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.StubConnectionStrings.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.StubConnectionStrings.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:JarvisDataAccess.Fakes.StubCreateReport">
+            <summary>Stub type of JarvisDataAccess.CreateReport</summary>
+        </member>
+        <member name="M:JarvisDataAccess.Fakes.StubCreateReport.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:JarvisDataAccess.Fakes.StubCreateReport.InitializeStub">
+            <summary>Initializes a new instance of type StubCreateReport</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.StubCreateReport.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.StubCreateReport.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.StubCreateReport.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:JarvisDataAccess.Fakes.StubJarvisDataAccessBase">
+            <summary>Stub type of JarvisDataAccess.JarvisDataAccessBase</summary>
+        </member>
+        <member name="M:JarvisDataAccess.Fakes.StubJarvisDataAccessBase.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:JarvisDataAccess.Fakes.StubJarvisDataAccessBase.InitializeStub">
+            <summary>Initializes a new instance of type StubJarvisDataAccessBase</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.StubJarvisDataAccessBase.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.StubJarvisDataAccessBase.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:JarvisDataAccess.Fakes.StubJarvisDataAccessBase.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+    </members>
+</doc>

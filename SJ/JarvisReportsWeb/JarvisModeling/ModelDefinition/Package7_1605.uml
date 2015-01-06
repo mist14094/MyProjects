@@ -1,0 +1,3025 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="f989ca89-1611-4328-a2ec-b490483d536f"
+  name="JarvisDataAccess"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="3a52fc3e-a92b-44d2-a15b-8d0a3c5a7c03"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DJarvisDataAccess"
+      tag="ViewCode" />
+  </referencesInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="b52c4d92-b935-4b41-bd69-c191b7d00358">
+      <profileInstance
+        Id="e5dcfde8-0663-420e-a44b-1bfc06da5597"
+        name="CSharpProfile" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="600a4b9d-2c13-4d3e-92a1-fdd50b50a50f"
+        name="DefaultDataAccess"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="7e350dd0-55fc-47cc-b9a7-9c0d984d0d97"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDefaultDataAccess"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="4c1d04f7-3d9b-46bc-8bca-7098b630d47c"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6641cc68-546e-4ce2-a526-78d939f689f5">
+                <propertyInstance
+                  Id="42578543-20f4-4996-bb4a-4d4566d12069"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4f96ebc7-7c2b-4334-b247-5e7d79111c36">
+                <propertyInstance
+                  Id="e5122d1c-04c8-43d9-b5a0-2ceb5e514b7f"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4d445901-b3c4-41ac-893d-1ee486954e31">
+                <propertyInstance
+                  Id="97e43dba-baa0-4f3c-a034-67aa5631c14b"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a095169e-fc23-4d48-b9fa-4e3723a0ba0e">
+                <propertyInstance
+                  Id="8dace2e7-117a-470d-bf30-044e996400a3"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="361f5352-4ccd-4456-af63-06f8ff3c7caa">
+                <propertyInstance
+                  Id="a9507d10-bf32-45f2-97e0-559cac3197fc"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="c18a3ee7-f2b4-47aa-9400-7210955141d0"
+            name="nlog"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="436fbe7b-61ab-4784-9971-7977df4fb41a"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDefaultDataAccess Member%3Dnlog"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7082f8a1-8698-4005-86f4-66741d959157"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="17298176-c40a-499f-8b47-59df93eb615d">
+                    <propertyInstance
+                      Id="ed96da34-87c4-48a4-939b-59cd2a3fd90a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9f320954-95a0-4bb9-8603-737b38f35837">
+                    <propertyInstance
+                      Id="10cdd48c-f041-468f-acee-b527feb58898"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="26b6f4f0-dc01-4e56-9faf-265b4f746aa7">
+                    <propertyInstance
+                      Id="0b0ea1f3-0755-4c1d-ba10-fbd43122a2b2"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="981dc2da-9f06-4552-82e0-60b7d7d2a724">
+                    <propertyInstance
+                      Id="0414a77d-a150-4387-9f37-c8ca6256f530"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0368d71a-cc53-4c60-904f-68b6282d616e">
+                    <propertyInstance
+                      Id="c8851ce9-cba9-4f78-b133-9bb99e0e839b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="5ceb92db-7d6c-4859-8880-2d40a8e735a8"
+                LastKnownName="Logger"
+                LastKnownLocation="Package6_1605.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="adfc499a-4342-4b13-ab1d-987b38b32236"
+            name="Constants"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="d42e0a01-111a-4301-8f67-900db491aa0d"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDefaultDataAccess Member%3DConstants"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a8ac6337-8f71-4a51-a06f-8a22347b74da"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d086e502-f367-43c5-a3f0-a40bbde5d002">
+                    <propertyInstance
+                      Id="b6882436-3d30-45bb-a6f9-4ff2b4f40056"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e84ed968-5f67-44d1-b4e6-809858900a15">
+                    <propertyInstance
+                      Id="016ec559-9479-4f64-9b2e-d806960d2d30"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1e1f588f-2759-44d0-86f2-ea120fa93169">
+                    <propertyInstance
+                      Id="a421045c-2089-4eaf-a14c-4b9abca70d86"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4a36d4ae-5722-4bee-89d4-65a2954778f5">
+                    <propertyInstance
+                      Id="9921f121-d2b1-4913-b363-e3dd14ec3e45"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a17d7ed4-e794-4c31-b0fa-9cf26fe8c4c7">
+                    <propertyInstance
+                      Id="d7b0ed47-7c33-4c14-b076-467c5ab212bf"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="74a6c32d-832c-4ab3-a5ea-7d51ac1955fe"
+                LastKnownName="GlobalConstants"
+                LastKnownLocation="Package9_1605.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="2aa2b920-5b14-4035-9c72-e435cca0dc3f"
+            name="_connectionString"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="7e4b0506-6c55-4fa2-a668-462bf04c917b"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDefaultDataAccess Member%3D_connectionString"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5eb6c8bd-d3cb-4bee-b3b7-233d2ef97131"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="423d4317-b4db-46e2-a761-e83cd93b862d">
+                    <propertyInstance
+                      Id="6659197e-8466-4442-8eb5-fa941e2c16d1"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="96ee7a56-a6cb-419a-8381-05e876c36697">
+                    <propertyInstance
+                      Id="e3adf5ae-e8c8-4770-83ab-46ba64658c3e"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d53b57d1-7aa7-4e10-83b8-3e720660fecf">
+                    <propertyInstance
+                      Id="1885865b-9bb7-41b0-bd11-de2fe0fcd0b9"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bbc6c577-bfd9-4692-850d-1858333ebe5c">
+                    <propertyInstance
+                      Id="93e0b414-39fb-4f38-930b-cd80498e8d0c"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fc2ff156-adcf-4239-b682-c11509b78162">
+                    <propertyInstance
+                      Id="23b03d77-dc76-4f8e-856f-aa16dc1eb7fd"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="JarvisModeling.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="41190759-45ef-44e9-bf38-0257e7cc99af"
+            name="GetConnectionString"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="01ae77e7-158c-4c4e-8aa2-01f6e2b3f693"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDefaultDataAccess Member%3D(Name%3DGetConnectionString OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="1c5adaf1-1ff8-4626-aa06-73fb7fc171d4"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fefbd171-bac1-4239-80d5-b16fd697ff90">
+                    <propertyInstance
+                      Id="f91e7540-4c1f-4e2f-953d-27e5f068eeff"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="422f8a63-1bc1-40c1-bd30-628c1399d63a">
+                    <propertyInstance
+                      Id="7a0668b4-feab-497d-8b26-8fd8ae3e80ba"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f5134425-4950-4143-af70-98a67640ddbf">
+                    <propertyInstance
+                      Id="e870a7a5-7f96-48e2-85c7-861148feb96e"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ec864648-abbd-4382-92e0-026efe906e2d">
+                    <propertyInstance
+                      Id="718de527-4d83-4ea8-9668-c85e464ea4c4"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="17f8b13e-f2d9-4213-8458-ac75a7dde2f5">
+                    <propertyInstance
+                      Id="2c76e755-b5ff-4fb2-8238-1613e9106bb0"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6467ff06-d6aa-44d2-8663-a75cd954a5be">
+                    <propertyInstance
+                      Id="0c647e01-8472-4488-8b49-c85fdf174e0f"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d75e234e-6d26-465b-8e1f-872aca302341"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="JarvisModeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a86b8378-cbff-4297-b6d1-ce9f128884e9"
+                  name="sno"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="4545262d-4f1d-460f-8919-db27c77e901c"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDefaultDataAccess Member%3D(Name%3DGetConnectionString OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3Dsno"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="JarvisModeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="3fc149ef-f7a5-4679-950c-71729bab2a95"
+            name="GetAllDataBaseConnection"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="775adeff-26f5-4483-85c1-ee699e31acaf"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDefaultDataAccess Member%3DGetAllDataBaseConnection"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b8003308-a0da-4345-9946-3948086ecfcc"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9eb7eaa7-d16b-4422-adc5-8fbd3384e21a">
+                    <propertyInstance
+                      Id="a3c6f959-37d4-4155-82c3-769318761998"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cae2e91a-150d-4dcf-b72c-2cf6b03669b4">
+                    <propertyInstance
+                      Id="4e1bd74b-0f57-4d5e-8408-08f4f6301076"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8d114e50-24dc-45a9-b72b-a1b6fc15ad05">
+                    <propertyInstance
+                      Id="a563a962-bf3a-4aa9-b4c7-c61389e56ab6"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c5d762b7-f190-440a-b738-b1ce66a113e4">
+                    <propertyInstance
+                      Id="e8d6744d-2d16-49d4-af06-a7eb92e83cc4"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="129666f5-1376-45d0-81fa-6323bfdd18f8">
+                    <propertyInstance
+                      Id="7c0ee6a5-19f4-42b6-af4b-85ba06c50758"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="74c5361c-5c1d-4ed4-84d0-44db59b0445f">
+                    <propertyInstance
+                      Id="6dd4a4c5-a773-4b99-8ba9-adc2623681f0"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="73ee637b-ea7d-4873-8766-9e3ec9e7ad34"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="7b8560d5-567c-4cbb-9866-2989751babbc"
+                      LastKnownName="DataTable"
+                      LastKnownLocation="Package5_1605.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="50f82427-e72a-46d0-971d-c79387d000ef"
+            name="GetDataElements"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="41c6b05b-bd41-4745-88a6-3c528019c343"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDefaultDataAccess Member%3D(Name%3DGetDataElements OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="66c903d8-be9b-4401-96ff-aa6e8082f956"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a9f08ebd-4797-4750-95e8-c690b7a08de5">
+                    <propertyInstance
+                      Id="0a276d72-8408-47b8-baeb-b8305c5e80cd"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d951cfb7-6f3d-468a-b28b-67ef07d58848">
+                    <propertyInstance
+                      Id="228cb2d5-b233-40f5-9964-44320066e95b"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d95b8dc1-33f5-4abe-889e-dce7cb6a4db6">
+                    <propertyInstance
+                      Id="d1b0bd63-01b0-47e6-ad4b-278d7b1b9b66"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f9b20922-4da5-4250-a9b8-6f199e45c970">
+                    <propertyInstance
+                      Id="8d1fa796-3e7e-4908-b3c8-4f3beb465de7"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cfe67444-2ea4-4dc7-8728-799ccfd8e46c">
+                    <propertyInstance
+                      Id="39d17179-9984-46d6-b133-fb04a5efe5a4"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="367caf1e-c685-4637-b515-4d8a97a4d677">
+                    <propertyInstance
+                      Id="87361a54-af8d-4c7c-994a-7a640bd019db"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3e7ca441-55a9-401a-ab29-536edd04e988"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="7b8560d5-567c-4cbb-9866-2989751babbc"
+                      LastKnownName="DataTable"
+                      LastKnownLocation="Package5_1605.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="47de1ebf-59c7-437d-9138-020f2ff28465"
+                  name="referenceDataBaseName"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="55bf508c-6727-4fb2-9cc8-058f00b4075f"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDefaultDataAccess Member%3D(Name%3DGetDataElements OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DreferenceDataBaseName"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="JarvisModeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="56ecd359-9b2b-45f5-8d02-0538909a1cad"
+                  name="enabled"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="451ed31e-5e86-4d6c-be1a-ad51061a0b73"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDefaultDataAccess Member%3D(Name%3DGetDataElements OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Denabled"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="JarvisModeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="537ec6b6-b9a8-467d-ba3f-6935d6c3f39d"
+                  name="elementType"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="ea32fe22-25dd-4ca9-bb04-caca0aad9138"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDefaultDataAccess Member%3D(Name%3DGetDataElements OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DelementType"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="JarvisModeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="f5d662d0-2351-4741-b892-eb9694fd4b08"
+            name="GetDataBaseConnectionStringRef"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="c7e1a624-4de7-40f1-a195-101a26b68610"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDefaultDataAccess Member%3D(Name%3DGetDataBaseConnectionStringRef OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="9864acae-8259-4e3e-bb2e-04632d4f21eb"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="72e2293f-9e10-46cd-acb3-961173019992">
+                    <propertyInstance
+                      Id="f904ddf6-9b11-4d05-aceb-26ab405c4ab4"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f3749952-f686-4f05-a2ee-4c8ff3ef790f">
+                    <propertyInstance
+                      Id="3bf9f6f2-0763-4a54-b1cf-f9064170fcb0"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="01439cd1-add1-471d-aff3-eb5e236a206c">
+                    <propertyInstance
+                      Id="c5834a60-a994-46b1-a0a3-141aef8494d8"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="19cb999f-3a96-4354-ad49-d41752ed35c3">
+                    <propertyInstance
+                      Id="68ece3d6-da2e-47c4-83cd-cce02c6c237b"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="483151ca-a249-4977-9eb5-f186d50ffc13">
+                    <propertyInstance
+                      Id="2cbf5665-d75e-4b4d-a7e2-6b9aa81662a2"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b4fdced2-a3f2-4ed3-b0b7-3d18df6d4313">
+                    <propertyInstance
+                      Id="7b0defee-f91f-4dd0-90d4-ce91f83e4f0f"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="750657d5-7eff-4905-93b0-f48620de8579"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="JarvisModeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6354885c-a344-44fd-bc55-fee79290f22a"
+                  name="sno"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="ce1a56b4-508b-48d8-9fce-cb25d9de5d93"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDefaultDataAccess Member%3D(Name%3DGetDataBaseConnectionStringRef OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3Dsno"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="JarvisModeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="27be2f1f-57a7-47e7-a724-5199f99773f9"
+            name="GetExecutionScript"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="132059d0-9ead-48e8-9d9e-84de2dcda0ac"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDefaultDataAccess Member%3D(Name%3DGetExecutionScript OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="bef698d6-7be6-4410-8d1f-1a2961694b61"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7b1320cb-2626-4dd5-a4ec-00d2714a29b9">
+                    <propertyInstance
+                      Id="f2872ba7-2f29-4219-b9c3-d40b4908bd08"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d0cf6018-5862-47b6-bc67-11ff40859685">
+                    <propertyInstance
+                      Id="3c141fee-e8e2-426e-92a4-ded46cc4b8f7"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c629fdd1-749d-48e9-be75-6ed55b2a4e65">
+                    <propertyInstance
+                      Id="6299ea22-85b0-42bb-ba98-f571b3197976"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f3d11974-5403-42aa-b0a6-56e549b84793">
+                    <propertyInstance
+                      Id="b9f7c74d-1917-4f7b-98a3-b1a050d7261d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a9467b92-a83d-4ca8-b38d-f68295bfd20e">
+                    <propertyInstance
+                      Id="5f53e4ab-6576-470c-a77a-a59c22e8953d"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="587e0719-ac3f-40d2-919a-bc1575054aaf">
+                    <propertyInstance
+                      Id="2399b6d0-98cf-403c-b390-18f99fc29b30"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2b9f4b57-b8a0-40d3-b23b-4dfc9d1941e9"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="JarvisModeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ac7ecc90-c4e2-4bbe-87d8-205ac5e1189d"
+                  name="sno"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="f97b158a-9458-45f8-ad9a-9abd3dfc7abf"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDefaultDataAccess Member%3D(Name%3DGetExecutionScript OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dsno"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="JarvisModeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="52c199e3-c293-42a2-b962-25c8e56e2d09"
+            name="GetCharttypes"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="679f34ac-57ba-4fe9-a06f-4782c6bfdb27"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDefaultDataAccess Member%3DGetCharttypes"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="471f3cb0-daea-4147-9f20-9dac150190d4"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="84869488-0210-43d7-ba61-ea5babef05e2">
+                    <propertyInstance
+                      Id="1213900e-13b6-4b38-854c-d27e5198b0d6"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1934ca86-1d9c-4f33-b92f-90a2f85ac458">
+                    <propertyInstance
+                      Id="244a695a-e180-437f-aa1f-639c29b432e3"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d3667dc0-c853-40fa-8a34-c738bae96d17">
+                    <propertyInstance
+                      Id="dcdec385-5661-4e86-8207-7d976cc9a11f"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="728b742c-6289-4fa1-9f9c-fc615bec5461">
+                    <propertyInstance
+                      Id="8e111344-9e1d-4fa1-b527-3937bcf0b3c1"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1d02dfc0-522f-4a5e-91b2-12cc62db4cbc">
+                    <propertyInstance
+                      Id="243487b3-39ad-4809-b85e-fd933b9a560b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="db2d14a1-81f0-4ac1-872c-021e53a0571e">
+                    <propertyInstance
+                      Id="9331437a-1eb9-4566-9802-a1496b41b166"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d42e606a-3d3a-46a7-9a9a-ec00432fdf08"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="7b8560d5-567c-4cbb-9866-2989751babbc"
+                      LastKnownName="DataTable"
+                      LastKnownLocation="Package5_1605.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="3850c8ce-d7aa-4d42-a943-9a935b9fa011"
+            name="GetChartValues"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="194e3263-dbb0-4a50-996c-88ef9494458c"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDefaultDataAccess Member%3D(Name%3DGetChartValues OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="c8701027-bd79-4735-beca-c57f5032166e"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="be255374-7f25-4231-9931-b8dd641572ed">
+                    <propertyInstance
+                      Id="12244702-4be9-4593-b62f-73c65d5a044f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="182ef94f-f1ef-446a-a888-08955ebbf9ee">
+                    <propertyInstance
+                      Id="3f5d4deb-e508-4b80-a13b-9e8cb044ba33"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fd001493-e5fd-4f07-a36b-f4276962d99a">
+                    <propertyInstance
+                      Id="40cd4362-589c-4d59-afd1-36036e6f6277"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="32484162-9414-41af-b80f-d747790c98a8">
+                    <propertyInstance
+                      Id="2c9d912d-b5e5-4518-aff4-6ec20e9b1678"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d5902bed-344a-4212-8f33-646f8219cfd3">
+                    <propertyInstance
+                      Id="218305f4-fd5e-48f0-bfe4-6399d2715bdf"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e40cc68d-8be8-417f-a2e7-716302b31a49">
+                    <propertyInstance
+                      Id="60ad3f95-e9a5-43e4-b879-e3f1bfa9a9bc"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="dc48ea2b-76dd-4493-970b-57e14ae5c1aa"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="7b8560d5-567c-4cbb-9866-2989751babbc"
+                      LastKnownName="DataTable"
+                      LastKnownLocation="Package5_1605.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="770cb603-0ed1-470f-9025-dff5cd8235e6"
+                  name="sno"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="55733b3e-d7bb-43cf-bb96-d8143f600a58"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDefaultDataAccess Member%3D(Name%3DGetChartValues OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dsno"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="JarvisModeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="d4611f04-6cef-4396-88eb-22f37a9a0d91"
+            name="GetAxisConfiguration"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="fa78da21-50d7-4ba5-ac21-440c1fe2dc6b"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDefaultDataAccess Member%3D(Name%3DGetAxisConfiguration OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="088e6e27-4b9e-49c5-97d0-4065c9e5f74c"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0daae3a9-60ab-4c1c-9207-c1902508a085">
+                    <propertyInstance
+                      Id="f5ddd686-a3ac-40dc-9d67-9be69dcd8d66"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="203a85e5-3c11-4ee0-9744-386f16aec3bc">
+                    <propertyInstance
+                      Id="72144124-1dd5-40d7-a611-9cc2231419b0"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="db93ccea-6a94-465a-a05b-a82bac73ff6d">
+                    <propertyInstance
+                      Id="a7060364-b865-40ba-8d7f-f6fd94a8364e"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dab257bf-745f-4003-9778-4f97685fc3c4">
+                    <propertyInstance
+                      Id="9d0747cb-944b-4f95-9c25-185a96c60451"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fd5813a8-23e2-43b6-9b42-62d133024655">
+                    <propertyInstance
+                      Id="d5b3df93-e91c-44e0-a2f3-d864539f58ee"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ab60a85d-da68-4171-b346-1ad7f62a4e22">
+                    <propertyInstance
+                      Id="cb87393e-5761-4564-9fd1-8ca943eb5666"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f422f682-8562-4f07-b04c-95f2515ecff6"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="7b8560d5-567c-4cbb-9866-2989751babbc"
+                      LastKnownName="DataTable"
+                      LastKnownLocation="Package5_1605.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cb3216d3-7be1-4c12-9686-6237ea1ad93d"
+                  name="ReferenceChartNo"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="82fa6f34-fe9b-4af4-8e7a-605f1aaa7a41"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDefaultDataAccess Member%3D(Name%3DGetAxisConfiguration OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DReferenceChartNo"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="JarvisModeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2fe7ffb5-6cfa-403e-a9cc-27709402f080"
+                  name="AxisType"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="fa863963-1a4b-4c7b-bc83-baaab5bd2683"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDefaultDataAccess Member%3D(Name%3DGetAxisConfiguration OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DAxisType"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="JarvisModeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="92a7a726-6309-46f2-847a-c5d46693d9d4"
+            name="GetChartLineSeries"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="0c63575a-c192-4ae2-afe2-3a417e46e8df"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDefaultDataAccess Member%3D(Name%3DGetChartLineSeries OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="70690c6e-7854-4be7-90c6-7fc7afe806aa"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="02047468-cec1-4c2f-b988-ce9e7bbd49ec">
+                    <propertyInstance
+                      Id="8e7110c8-520b-457b-b22f-9d14f568d936"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a0c73f0c-1b1a-45c0-a502-1749fa6234d7">
+                    <propertyInstance
+                      Id="48899421-bee1-49f8-8193-fdae1f46fe22"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1bcecb90-b87f-450c-a629-9b8bc6b279a8">
+                    <propertyInstance
+                      Id="5bbccd81-845e-4cb2-85a7-eb0298a59b2e"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6a0587fe-f50d-42eb-a5bf-97a86624476b">
+                    <propertyInstance
+                      Id="7b79cd90-f0d6-401c-9cbf-27e37184f82e"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="98f50ec7-eb55-4957-9457-0611b328c81d">
+                    <propertyInstance
+                      Id="1703624c-6f52-4162-9ead-05740da55e2f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0a4d69e4-8c0f-497c-a54e-df4ba47eb0cb">
+                    <propertyInstance
+                      Id="01718a66-45ff-477e-aac8-07f893116190"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fdbd4a4f-6494-48a2-8136-ff640dac30f8"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="7b8560d5-567c-4cbb-9866-2989751babbc"
+                      LastKnownName="DataTable"
+                      LastKnownLocation="Package5_1605.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f17bc3fe-9c1b-4a23-80f8-e79c71a52e26"
+                  name="MainChartAxisBaseSno"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="fed2355a-f9cc-4647-93ba-67f156a8695a"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDefaultDataAccess Member%3D(Name%3DGetChartLineSeries OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DMainChartAxisBaseSno"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="JarvisModeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="e0fad25c-2da3-4313-b228-e1928bcdcaa1"
+            name="DefaultDataAccess"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="2fba3a1f-58a5-4e10-8567-6d22850f8fe6"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDefaultDataAccess Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="4aac24ae-19df-4ba6-be96-e9ebda3caa38"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3a05e16c-3821-4d31-9657-af17b1f31028">
+                    <propertyInstance
+                      Id="9f80f94d-9900-4c70-b492-f3bd123602c5"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a66d2bc6-c12a-4cdb-b103-7d364860a045">
+                    <propertyInstance
+                      Id="e773aab8-8303-4d9d-b731-0f6afa09e7b3"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5efa77c5-8e01-4652-9f70-639f8a8f7289">
+                    <propertyInstance
+                      Id="d06ea0bc-8014-47cb-95de-85f2223f359e"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d830fe99-219a-4267-927c-d98d863f7c55">
+                    <propertyInstance
+                      Id="c6a364fc-29c6-4934-8f25-1d9cc1a6f5e1"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7ce454ea-2695-4b60-9ec3-fec5eb2ebb93">
+                    <propertyInstance
+                      Id="885eb813-1700-4af7-8f48-d19dbe65cee1"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="df08f815-ff98-4755-b6b0-3386d4ba3476">
+                    <propertyInstance
+                      Id="1d8417e0-0254-484d-ac85-a9c35cc4fa40"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="86c537c1-a23e-4fb2-a2ed-427cedee4b26"
+        name="DynamicDataAccess"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="2edb3f63-c482-4f1a-82ce-af5ec3848394"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDynamicDataAccess"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="1b15d2c0-62e8-4d57-87ba-60f268022d88"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9e6e1ef6-2977-45a6-98a1-0319d2406f75">
+                <propertyInstance
+                  Id="fbd16099-b71d-4bac-9c05-82b48fe9591c"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c4b4290b-80f6-400c-bbc4-2edee6a8e50c">
+                <propertyInstance
+                  Id="0c95eaa2-0480-4c83-81ec-909d1a120f0a"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7b796697-2c5d-44cd-8c7d-8a4b852febd1">
+                <propertyInstance
+                  Id="9726a02c-3fa6-480b-8850-e557787637ab"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c58dad02-2925-41cd-9c8a-a140fa3f0e70">
+                <propertyInstance
+                  Id="23408378-a282-46b5-a812-054b1cbdcd8d"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2dffbb9f-9e88-4144-af49-d55d76b70812">
+                <propertyInstance
+                  Id="06f89caf-5a97-467b-850e-3ed7f903df7d"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="7c48bac1-9d71-43c0-8ee7-d0446c875e41"
+            name="nlog"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="a1aeab99-640e-4992-a9a5-5340879dc565"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDynamicDataAccess Member%3Dnlog"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a4562f7e-7e0e-4ba0-953a-b4f7d6196c48"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bf1154f1-716c-44da-946a-eb416e4287f8">
+                    <propertyInstance
+                      Id="6e5a3f6a-f965-4237-8f65-3deefe00f3c8"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="957b13af-4888-4efc-b670-202d4275197f">
+                    <propertyInstance
+                      Id="4b0a2fc3-6c09-4543-934d-e5de7b9a401a"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8e7a63ea-c9cb-4702-8d65-68c943ab9789">
+                    <propertyInstance
+                      Id="01650f30-8ef2-4e9c-8762-f5061f489126"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1c125043-ea4c-4698-8514-a7f466fd98df">
+                    <propertyInstance
+                      Id="f38306f4-fcd3-4627-86d8-9d8a62e39c64"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="568e26b6-31a3-4b1c-bd1f-6844ab18e87f">
+                    <propertyInstance
+                      Id="8443f615-77dc-4ae9-8194-e1c654e5da52"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="5ceb92db-7d6c-4859-8880-2d40a8e735a8"
+                LastKnownName="Logger"
+                LastKnownLocation="Package6_1605.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="733bd8d8-a58d-41b8-9870-dc380157e8f6"
+            name="Constants"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="a0e510f7-ceb0-42f1-a1d4-125d21a972f5"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDynamicDataAccess Member%3DConstants"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f31e09fd-f355-45ee-93bf-87e12b7401bc"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="739a4bc2-3ed5-4a4a-bbb6-0a2cea4eb783">
+                    <propertyInstance
+                      Id="5cec57ee-bf18-4622-8247-3658c4aa08ef"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d49c65d4-fb14-4c56-815e-54401a71b300">
+                    <propertyInstance
+                      Id="ab691e93-1236-4002-b79e-3c22d912e65b"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6f8ec9e1-4d95-4974-a030-f12d71ac500f">
+                    <propertyInstance
+                      Id="f9c6d809-1964-4307-9536-5489458b1628"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7b629a2a-6a53-478a-82c2-8396a5ec688b">
+                    <propertyInstance
+                      Id="34b850f8-5c73-47d8-9b1c-918ab71d0def"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ae49828e-8612-485e-bb7a-d8fb78d4f384">
+                    <propertyInstance
+                      Id="731889a6-869f-44ae-b306-b3214224f781"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="74a6c32d-832c-4ab3-a5ea-7d51ac1955fe"
+                LastKnownName="GlobalConstants"
+                LastKnownLocation="Package9_1605.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="579bdc7c-6f1b-4396-aab1-7be61825928d"
+            name="_connectionString"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="e6b6f695-cb78-479d-8127-84b0d2353d6c"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDynamicDataAccess Member%3D_connectionString"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b86354a9-cc38-410f-be32-f9b1321e5260"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="97a4beb8-d361-4643-8aa5-c1241c294fcd">
+                    <propertyInstance
+                      Id="7538aacc-a3ba-4659-b32e-aa46ad579d55"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="853fd126-fd3b-48d3-9673-23b25a8cd133">
+                    <propertyInstance
+                      Id="4c24fbc0-5824-45dc-a2a0-668fa91992ce"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9ad1b1f8-4314-4a68-b36f-c611ec4179d1">
+                    <propertyInstance
+                      Id="3929db4e-1f73-4edb-b1cc-526b7ccee236"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="71e122a5-3645-41f1-9c08-e6f2e34b5119">
+                    <propertyInstance
+                      Id="b470b057-0725-4357-8134-e5c8f8568ee3"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d70acd13-b0bc-4bba-8ad3-478d2b9f8c4a">
+                    <propertyInstance
+                      Id="0c599f97-07e1-4176-8ca2-ef1a9d1a8d41"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="JarvisModeling.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="44b09032-df65-4989-8e06-65ffc8f7fdf8"
+            name="DynamicDataAccess"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="464b7634-349c-4e8d-809f-be8704f1b019"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDynamicDataAccess Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="ce6b5f65-e1b0-4b07-99b3-ecece8877211"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e5512eb0-b64a-4a6f-8acb-83ce4a334339">
+                    <propertyInstance
+                      Id="47028608-48f9-4775-a42e-a854745333b8"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2888b441-c36f-43cd-bf67-00149cd467f4">
+                    <propertyInstance
+                      Id="e9d5e53b-73bd-4d81-8bf3-f3aaa9a6a94c"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4f977170-85bb-4661-b9d1-8cf0e55dfe61">
+                    <propertyInstance
+                      Id="32538578-0eb7-47c7-9296-3e34493d5d69"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9048a319-2e84-4f88-8f74-3600dd80a3b9">
+                    <propertyInstance
+                      Id="feb71263-64e7-4667-b8d7-d4b224bc34f1"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8e3cb47c-ef9e-43bc-b908-02755c7aa2fa">
+                    <propertyInstance
+                      Id="a4f2c662-c5ac-4aaf-849e-babc54a61477"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bd7155ba-6314-45c3-93b7-8b74ed2e6450">
+                    <propertyInstance
+                      Id="1848cf64-555f-4017-804f-4fa964387e9b"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="60169972-78c8-4972-b77e-f6e08064108b"
+                  name="connectionString"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="698632f4-770b-445e-8755-a17e32a3d195"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDynamicDataAccess Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3DconnectionString"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="JarvisModeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="09c0f651-f7dd-4621-aefa-f6621c4a91ba"
+            name="GetConnectionString"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="d4cddcc2-bc89-46de-a936-a682bf53e486"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDynamicDataAccess Member%3D(Name%3DGetConnectionString OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="c8cbaa71-7f79-49fa-b67c-a971789db3f6"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1cd77de2-935a-457d-b1da-989290a9d139">
+                    <propertyInstance
+                      Id="07233018-e8f4-4769-9009-f0962a59833c"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="da66fc7f-35aa-4cb4-a006-8e149be25cbd">
+                    <propertyInstance
+                      Id="9345d4e2-018c-46f8-b32e-8161efa631db"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a4cd3121-1ab0-47e2-b03e-57719446a842">
+                    <propertyInstance
+                      Id="23613757-95e9-4e7f-a546-c72e559c9110"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4914cabf-88c1-46fb-b921-d817c92fefc2">
+                    <propertyInstance
+                      Id="84269d2a-b4e8-48e3-ac33-e63eaf006745"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="61b2d639-1688-47ee-89e4-0dc636095e5e">
+                    <propertyInstance
+                      Id="2d58c1ff-ef63-405b-b4e0-a66add813f02"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cef4d15e-4143-4a01-81d4-380aa3a4d6b3">
+                    <propertyInstance
+                      Id="883276ea-550c-41ca-b5f0-8897497cbc33"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fdac02a8-e5a6-46d6-b317-d4251a577666"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="JarvisModeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3461d2d3-8b87-49ca-8a79-4767809b3fa8"
+                  name="sno"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="368e667c-46e2-41cc-9362-200bdb946421"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDynamicDataAccess Member%3D(Name%3DGetConnectionString OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3Dsno"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="JarvisModeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="c6b136b9-3786-4f9d-bb23-e0307255e8fe"
+            name="GetSampleData"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="702402c2-89f5-41ec-8fef-c152f93dd48c"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDynamicDataAccess Member%3D(Name%3DGetSampleData OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="66f2122f-1f5c-4edc-8393-d1dc73b88c69"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e459c0f4-d373-4ed7-abda-c8fc1f9f21d6">
+                    <propertyInstance
+                      Id="832e174c-e2c7-4b3e-9245-d13b712b5636"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="71df168d-d327-4c64-a3af-adda456df727">
+                    <propertyInstance
+                      Id="b8b5da6a-ad0e-4eab-a29b-9bcebe48f2fc"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9b088cbb-f3ed-4d8b-ab14-b50648b777f1">
+                    <propertyInstance
+                      Id="dbe46ea8-8fac-4d4a-a865-f9c8a4a01141"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="adcd85a6-8b70-4e86-978d-d95614886427">
+                    <propertyInstance
+                      Id="48bdfc2d-fd1d-4f98-a739-c3d2f4b4d09f"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="33e022d9-5091-46be-89cc-d43488fc4b4e">
+                    <propertyInstance
+                      Id="49a3f9bb-dc26-408b-8bc8-c04b3354661e"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9b022b24-57cf-4895-b77e-0569e2d72e0f">
+                    <propertyInstance
+                      Id="3ce6cf33-b4e4-4066-8669-277b3a6a68fc"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f4a2cafb-220d-48f2-b923-c8d62ada4079"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="7b8560d5-567c-4cbb-9866-2989751babbc"
+                      LastKnownName="DataTable"
+                      LastKnownLocation="Package5_1605.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="67a0e9b5-3fab-4fa3-9bf8-a1f22c35a175"
+                  name="ExecutionScript"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="743e03c8-cb62-419f-a86d-429ef6bec3d5"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDynamicDataAccess Member%3D(Name%3DGetSampleData OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DExecutionScript"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="JarvisModeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="45528f4e-0819-4c5b-8b8c-29483f93111b"
+            name="GetRealData"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="f4f6984d-1825-4dc3-b246-7f23d2e4fb7c"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDynamicDataAccess Member%3D(Name%3DGetRealData OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="51c8adcf-61c2-4e38-bcac-2ff31e88eae5"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="850e6616-896a-4260-b805-3c0c26f72605">
+                    <propertyInstance
+                      Id="0b016456-80f0-43c4-ae88-f0416eab7458"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f3b7a53c-0e41-4a90-864b-b9d6779da084">
+                    <propertyInstance
+                      Id="3e0c57a8-0221-4200-b8ef-23cbedfbb41c"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d9f279ad-44e9-44ae-a4cf-bbac9a677f82">
+                    <propertyInstance
+                      Id="3938c155-10cd-479f-9f20-fb32b40fe195"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="69428970-9f13-4c4f-a42c-4b266a8cc72a">
+                    <propertyInstance
+                      Id="6537a0da-4531-47c1-b127-ee8cad3b13ab"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b43c8070-adbc-457a-80d5-74eb35a01f1f">
+                    <propertyInstance
+                      Id="816b1ab4-a213-4203-9cbc-71735e87f06e"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="12c8e4e7-5280-4fed-83b0-ed8e4407b385">
+                    <propertyInstance
+                      Id="cd32f184-0469-4275-9762-7e0ed45b6e1d"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1e51e764-1234-4c8c-9cfd-66842ca3e74e"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="7b8560d5-567c-4cbb-9866-2989751babbc"
+                      LastKnownName="DataTable"
+                      LastKnownLocation="Package5_1605.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f64f1b67-d200-4269-9b49-65870715a83a"
+                  name="ExecutionScript"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="cc5c4c5e-1143-4af5-9908-d3f94cd89009"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DDynamicDataAccess Member%3D(Name%3DGetRealData OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DExecutionScript"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="JarvisModeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7534d609-a22d-4d18-af77-e9c315c05411"
+        name="CreateReport"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="0bdebce7-ba95-4b47-93b6-f6f10d7699b2"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DCreateReport"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="f503f2b9-3649-4210-86a4-246cc1273cfa"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="aab54fb8-2bf1-405c-8e42-085a4a77b398">
+                <propertyInstance
+                  Id="c2cc5114-de44-484e-aa05-10e465b7e699"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="eadd95f1-5673-45e7-aa34-6a1b1384c22f">
+                <propertyInstance
+                  Id="5b6d25c1-c47b-4af0-ba01-6f730e7e952d"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9014b601-61ea-428b-a238-c46ec1e2f84f">
+                <propertyInstance
+                  Id="3d0f34ce-299f-448e-9b1d-cf81edde1382"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ec56ea4d-e2a3-4765-a2dc-56b221542841">
+                <propertyInstance
+                  Id="c57194de-10f8-4886-99cb-8bc48b004198"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="992468a1-d7c9-4f21-a8ac-915786dfb1bc">
+                <propertyInstance
+                  Id="f8a84691-422a-46c2-81de-fc30f40859db"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="46fee531-83ba-4b0c-a116-252e9bdc4b28"
+            isSubstitutable="false">
+            <classMoniker
+              Id="600c78d2-47ca-4680-8413-d50941f74b5c"
+              LastKnownName="JarvisDataAccessBase"
+              LastKnownLocation="Package7_1605.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="62603426-3771-4657-9793-5783c66fb999"
+            name="GetViewandProcedureName"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="355d821a-d1ea-4c89-bfc2-ed5b563476c1"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DCreateReport Member%3DGetViewandProcedureName"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="6443e870-3395-4ec8-aa79-df4a082a738e"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f60de6e6-4d47-4ce4-8642-608509350c65">
+                    <propertyInstance
+                      Id="fffa2067-c41a-4341-9df9-97409d36f1ec"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ab36b98b-5b65-46ff-89e5-7071f169449d">
+                    <propertyInstance
+                      Id="6f601a06-774d-4e54-8bff-7dd5fc3d911c"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c6b1963f-f8d0-4465-97fa-e09910e8af61">
+                    <propertyInstance
+                      Id="d326a773-2ed9-411b-bb5e-5390f77212bb"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="27f9e6a4-ccf6-49b9-8372-1c1155330d9d">
+                    <propertyInstance
+                      Id="d8aed888-5bb7-44d8-a06c-0c3f5f08760f"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a8b937e2-ecef-41dc-9609-c5da7eaa7f1b">
+                    <propertyInstance
+                      Id="bfb0114b-bdfb-4dce-b67d-2478dd744f20"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0bf01b4f-bc38-4a7f-8db8-0e171e5a59a3">
+                    <propertyInstance
+                      Id="aa62d0ec-f219-4cd0-94fd-7bb7378c80a7"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="05d45045-7fbc-4f4f-83c8-4b54b791a65e"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="a2221e7d-c8ff-4301-96c1-24c34e75f414"
+                      LastKnownName="DataSet"
+                      LastKnownLocation="Package5_1605.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="b5646bd1-e0a7-4935-9e7c-e6729508fb60"
+            name="GetSampleDataView"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="06cd56c0-ea82-4550-9fa0-f97966876b30"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DCreateReport Member%3D(Name%3DGetSampleDataView OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="2db7de89-4e53-4a60-953f-4bef254450e8"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="49ed39a5-5d5e-4b32-94ba-af3a5e5351ba">
+                    <propertyInstance
+                      Id="f6d16c4f-76f0-4e91-adfc-d65305a1a44e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1bd65218-12f6-48cc-8c88-fa5e2d795690">
+                    <propertyInstance
+                      Id="495242e2-22bc-4711-8fd1-dce53ff6a8a2"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bdb8ac1f-f762-4e3c-80bd-c05042ce4360">
+                    <propertyInstance
+                      Id="07991a6c-b886-4cdd-a3dd-6e2a7d06e74c"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="57add4d0-3fd7-414f-89b8-ee3d54106916">
+                    <propertyInstance
+                      Id="ec09725f-1940-45c8-b4bb-2c0f16c52404"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bde4f851-9ba7-469c-b64b-996e74988b37">
+                    <propertyInstance
+                      Id="a368205e-4be8-478d-b39c-1a0b569d51b1"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a955f255-5da2-493e-9f9f-12fea00c30a4">
+                    <propertyInstance
+                      Id="8185650c-fc53-44a6-9b6f-007d5d66b52d"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="913acbd5-f205-4e72-b933-0421d7e4593f"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="a2221e7d-c8ff-4301-96c1-24c34e75f414"
+                      LastKnownName="DataSet"
+                      LastKnownLocation="Package5_1605.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f36a517c-d138-432c-92a2-c7f0ff24190c"
+                  name="ViewName"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="381280f4-0b04-4737-a104-8d5d6a39a70f"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DCreateReport Member%3D(Name%3DGetSampleDataView OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DViewName"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="JarvisModeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="45fac193-7ed1-4a7e-8470-5d3b7b0e4ceb"
+            name="GetViewColumnName"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="ec7f924b-c8e3-4721-b96d-59782675c143"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DCreateReport Member%3D(Name%3DGetViewColumnName OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b770fa31-a97a-412f-beca-e61584a281ad"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4038472b-243d-4ab7-a60b-cd6f106dae9d">
+                    <propertyInstance
+                      Id="0a238d5c-cc14-4f5d-a624-e81222964b24"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="96fff03a-31ad-4f41-912b-6f7450c35034">
+                    <propertyInstance
+                      Id="55eb4afc-431e-48db-b5c1-f2cc635fd58f"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d8f4a18b-27e2-4dde-86cb-011e905d3062">
+                    <propertyInstance
+                      Id="a040993a-84df-45e1-8fd5-1cb7c68d5765"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c00caf8c-b1b8-4b0a-8609-cb5cc7a19464">
+                    <propertyInstance
+                      Id="284c2796-97ef-4835-952d-8e3ac67b5456"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a5ec9be3-39fa-4888-9466-90e8830ae833">
+                    <propertyInstance
+                      Id="bc668b3c-29a9-48c6-819c-0e8af9801fcb"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="802e8f5d-d305-48d2-b823-58123196d148">
+                    <propertyInstance
+                      Id="ffb771ec-6546-443b-8349-47bbb01b6d57"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="22f1f244-8dd4-4de0-a5da-b8556acab4b9"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="a2221e7d-c8ff-4301-96c1-24c34e75f414"
+                      LastKnownName="DataSet"
+                      LastKnownLocation="Package5_1605.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="730fa88d-6cca-4817-b81b-b2705cd4c0ba"
+                  name="ViewName"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="a31af9f5-47e4-42c9-a5f9-b2017f95a8a8"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DCreateReport Member%3D(Name%3DGetViewColumnName OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DViewName"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="JarvisModeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="9716a3f9-daba-4cea-b82e-f943e7634bab"
+            name="SelectDataBaseNames"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="5bc1c1d4-6af3-4140-92dc-f12fa24a65bd"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DCreateReport Member%3DSelectDataBaseNames"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="dd5a3272-aebb-472d-af68-5248cbfd37c2"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7371faf7-c38a-446a-9016-62b1d41d7f7e">
+                    <propertyInstance
+                      Id="cc5213e8-178b-4704-b2e3-948795036fcb"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="37a345cd-6495-4136-b8f2-b6b42979bbd2">
+                    <propertyInstance
+                      Id="a77b661c-1ce4-44a8-983c-9400746cffd3"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a13895b6-48bb-481e-8267-840fd45abbc9">
+                    <propertyInstance
+                      Id="3127f4a0-5887-46d8-bf33-b1ab7e114573"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dd8bd7f3-7609-4430-a6b7-94bf9b2d77d6">
+                    <propertyInstance
+                      Id="93e8db92-f045-4409-a258-8d523de118ec"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="379c8e00-d22d-45eb-a4ac-d40862f83594">
+                    <propertyInstance
+                      Id="26cca77a-cf3f-4b19-a895-0ea6168a9062"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f48a5e36-8d22-4917-beac-c85836939f51">
+                    <propertyInstance
+                      Id="38c1e951-e970-4437-9023-4002c477ca7f"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ed343771-43d7-4b66-bb31-36c6ed2f73b6"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="a2221e7d-c8ff-4301-96c1-24c34e75f414"
+                      LastKnownName="DataSet"
+                      LastKnownLocation="Package5_1605.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="7bc8359a-2175-4cfb-8634-6518216af5f4"
+            name="GetDatabaseElementNames"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="b3429afe-ae4a-4342-8a12-c5fa89331ad6"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DCreateReport Member%3D(Name%3DGetDatabaseElementNames OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="057c4cae-3322-4c15-bd04-87a52843787d"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b8789571-9135-4e17-ad01-5fa575737520">
+                    <propertyInstance
+                      Id="4d603be9-f6ec-466f-a984-08f74d8451d5"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bb53ad08-deb6-44c8-9d39-ef7773b4c7ef">
+                    <propertyInstance
+                      Id="a3419cdf-1842-4145-87ba-68c05de33961"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3b7f1b93-cfb4-489d-936e-a7993a7add60">
+                    <propertyInstance
+                      Id="dda0217f-cb20-49c9-97df-18a2833b1829"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6d0859a5-2d9e-4c0a-acc5-46cb483f4338">
+                    <propertyInstance
+                      Id="6fda4309-b48a-4090-ae6d-44e5dad22fb1"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5659d863-c154-4fc7-b20b-35d35c439b47">
+                    <propertyInstance
+                      Id="aa80ee40-139a-47f0-931e-27a086ad55d4"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7c453ad4-3af4-4674-b5c1-6d247c63545b">
+                    <propertyInstance
+                      Id="7114d302-3501-4d6e-9643-4bdfdc316717"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3af53d7c-9717-4b95-9272-9db6c82069ea"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="a2221e7d-c8ff-4301-96c1-24c34e75f414"
+                      LastKnownName="DataSet"
+                      LastKnownLocation="Package5_1605.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c61e956b-2141-4526-b693-7ce7f58a8d60"
+                  name="ReferenceSNO"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="240ce80c-bb48-4a58-91d0-9c30189563ab"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DCreateReport Member%3D(Name%3DGetDatabaseElementNames OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DReferenceSNO"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="JarvisModeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="0eb6244e-6c87-4f80-af71-257619e56646"
+            name="GetInitialDataBaseNames"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="eeb74fdd-8740-407d-b04a-96ab442be45e"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DCreateReport Member%3DGetInitialDataBaseNames"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="236907df-509f-42da-a82e-b75a803f452b"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e82e7a0c-f095-456f-aa53-5351a3bca8e6">
+                    <propertyInstance
+                      Id="b4e796dd-d8bd-4cb4-9c0f-56b9a9a85ad1"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9c0fbdb7-fba9-43eb-a5ef-949fe5b3608a">
+                    <propertyInstance
+                      Id="559f1fd2-7ae5-4786-bc11-47daad84b490"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="651dd4bd-821c-453d-b134-ac448627dea3">
+                    <propertyInstance
+                      Id="609bcb9b-5888-469a-a5c9-6f8dd1fb4d04"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ab6418a2-429a-4ae1-8379-b64003ada353">
+                    <propertyInstance
+                      Id="bb02ee33-9a68-4275-8da5-5ab1fa085e25"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c01c771c-f9ab-4c56-ae6b-d3327caced6c">
+                    <propertyInstance
+                      Id="90aa791c-b1e3-4161-b8fe-0028a7c8b0a3"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="73ce1588-9ebc-4b4a-beb3-6885d1a7d76c">
+                    <propertyInstance
+                      Id="ab434f1f-1e05-4b67-9d5b-c38d00fb2c9f"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="12682325-ae64-4f5f-ae67-6d0d6b8e4cae"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="a2221e7d-c8ff-4301-96c1-24c34e75f414"
+                      LastKnownName="DataSet"
+                      LastKnownLocation="Package5_1605.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="8f0596c7-dfc1-461e-81f3-a24243403dcb"
+            name="CreateReport"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="4adbaa02-cc5e-4791-80d5-f700c87f9fa2"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DCreateReport Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="9bb01fb0-9b02-48f3-9872-8e575548b871"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7733ead1-ae42-4012-abf4-c7c30e099497">
+                    <propertyInstance
+                      Id="1cd6fc46-efec-46cb-a114-3101fd79ed8b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5877df0c-4421-43dd-bff1-d9739a1a299e">
+                    <propertyInstance
+                      Id="71bee6ee-4339-410e-a7a0-a8f70699ed27"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="287282f2-2ba3-4ebc-acfb-8cc07b566e66">
+                    <propertyInstance
+                      Id="e807b251-bb1d-4d28-8325-7558b7746198"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1723b7c3-49f6-4dc3-b486-79ec46d0fc8e">
+                    <propertyInstance
+                      Id="1a4cbd62-55dd-45fb-9230-f09dc5e650f8"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="32c8e9b3-ef80-41cc-8e3a-4872ce4cdb0c">
+                    <propertyInstance
+                      Id="2879bbe3-0a1f-4f71-bb47-16d1f441375a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="20705ed0-95b7-4006-b98e-e848371c36b5">
+                    <propertyInstance
+                      Id="302057cc-ab6d-43e2-8025-18edd9ac409c"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="600c78d2-47ca-4680-8413-d50941f74b5c"
+        name="JarvisDataAccessBase"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="0d4edd2e-e513-42ef-abd5-50344f94eee9"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DJarvisDataAccessBase"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="7c59deee-d98d-4adf-bf1d-a83756400c62"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ab2ec2f7-6464-46e7-bbc3-b6c7648f5639">
+                <propertyInstance
+                  Id="680d7c40-ef9c-49ec-885b-67f43ae156c2"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="74b362ae-b21c-4a36-9aad-386f7c116a03">
+                <propertyInstance
+                  Id="096940de-944f-407c-a8a5-57dd7ad33957"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="50fb0e31-c8d6-45be-8d2f-cbaa49744ef5">
+                <propertyInstance
+                  Id="e0c9a35b-b747-4b44-bb7c-ec3e015b657d"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="dc41b228-0284-456d-b2d2-f43d96e195d5">
+                <propertyInstance
+                  Id="b7b51aa4-ff09-431e-a23c-5a7fd97d78ed"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2f9be1eb-79f6-49c7-a7ec-b91b137057d6">
+                <propertyInstance
+                  Id="dabe8502-4b70-4458-b485-2024c97d998d"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="7b93db0b-f145-46d6-bc73-539887ef24ad"
+            name="RFIDSQLConnection"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="c0048204-cc87-4fdb-a2b8-a6cf94a0902e"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DJarvisDataAccessBase Member%3DRFIDSQLConnection"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="d0301e05-af97-47fb-b449-86002c111c40"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3013cf24-8877-4840-a28b-68b1e7b249c8">
+                    <propertyInstance
+                      Id="58d95f01-7ae1-4046-a8c4-99ac913dbeec"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b1f59a82-0715-4961-89c7-8ab5930e620a">
+                    <propertyInstance
+                      Id="91651b14-d007-4048-a0e3-1b6d719420b3"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="065a948e-e4bb-4030-8b2a-3e2d0f1d41e7">
+                    <propertyInstance
+                      Id="f52ae079-c080-4640-8dc9-0dd2cf8dcc46"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="70fb8597-cbfd-4b41-95db-fcc5e7c62694">
+                    <propertyInstance
+                      Id="4995e1f6-4e46-4332-a102-a3ead6d89c1b"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ebe1114f-3a07-4141-98e4-edf943cbcfac">
+                    <propertyInstance
+                      Id="2ab41df1-740d-4bb8-bf19-804358db80c5"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="ffe65089-de3b-4f75-81dd-4f3605a28d72"
+                LastKnownName="SqlConnection"
+                LastKnownLocation="Package8_1605.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="3c2f0e26-e39c-419d-9896-f06de1ede8d1"
+            name="SYSPROSQLConnection"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="f0f07e98-fd6f-4fb5-8135-d3109bc4718d"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DJarvisDataAccessBase Member%3DSYSPROSQLConnection"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a01c0130-3f13-47b3-a8c8-bf3104431286"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e25afbd0-9789-4168-934f-693799e0bbe8">
+                    <propertyInstance
+                      Id="326275d9-cbc4-4a66-8783-bf02057a8f16"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9ff8b9c4-19c4-4000-b5d1-22f39ef6bee8">
+                    <propertyInstance
+                      Id="ef10ac77-2859-40d6-8c2b-9c0a5acc63f0"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ab235c30-a5c2-45ee-8e30-fb292934d0ec">
+                    <propertyInstance
+                      Id="ae9579c7-f511-411e-9959-876448d7fe51"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a8829bf7-a0a9-4fb2-8181-3c940d845e40">
+                    <propertyInstance
+                      Id="a68130ae-765a-41ab-afb7-304393f191c8"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="076e51ad-aeac-44e2-b7d9-ef47d463bbbe">
+                    <propertyInstance
+                      Id="fa60abe4-3527-4511-8b55-9caa65fa0114"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="ffe65089-de3b-4f75-81dd-4f3605a28d72"
+                LastKnownName="SqlConnection"
+                LastKnownLocation="Package8_1605.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="004040e4-0653-4ceb-966f-1613ef4a2d1a"
+            name="EPMSQLConnection"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="619e2e40-6b70-483b-824c-dd7734e1d811"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DJarvisDataAccessBase Member%3DEPMSQLConnection"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="3047af47-21f7-4ef2-bf07-358eca45b76d"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a7aef120-c80a-4984-b9b7-c1516a494556">
+                    <propertyInstance
+                      Id="fa494bb2-beeb-4a86-8d3d-6d5148d18312"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9f82161c-d83e-4efc-a1de-155477901d70">
+                    <propertyInstance
+                      Id="af0fe716-78bf-4046-8fb1-6554f4da6e59"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="74bfe2d6-2aa1-4297-8c42-ad9d7c5b0937">
+                    <propertyInstance
+                      Id="3ec6d233-6a43-432e-99e0-d0519d843674"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f3de82c3-fdfc-432c-b256-651482b629e0">
+                    <propertyInstance
+                      Id="9727f669-bd48-4878-ac28-c11c58b2dbd1"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="147668ef-5363-47cb-94f8-b9e12abf1b93">
+                    <propertyInstance
+                      Id="0f851383-5064-4d1a-be6c-faa5886fd5bb"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="ffe65089-de3b-4f75-81dd-4f3605a28d72"
+                LastKnownName="SqlConnection"
+                LastKnownLocation="Package8_1605.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="158cb32d-8a8a-4973-a737-5d60a12e6a1a"
+            name="JarvisConstant"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="51f6cf4f-e791-4f45-9021-dec9ae1c29d4"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DJarvisDataAccessBase Member%3DJarvisConstant"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="1d61d695-65af-4346-b22a-f0e66ba6bec2"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3b6e06a0-ffe9-4803-a964-67700b143c0e">
+                    <propertyInstance
+                      Id="ef5e7ca4-1291-4b6f-8100-5de216e56e66"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bb346e14-6d43-4278-8738-4add1712d86e">
+                    <propertyInstance
+                      Id="0101c63e-582d-4570-a150-f8223010b023"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cd99b02f-067b-46e1-8eca-fedd5f6dcef9">
+                    <propertyInstance
+                      Id="875583e3-906e-4e81-afdd-56ea11dfa906"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1e24eb27-fe5c-460d-be16-b088daf8f12c">
+                    <propertyInstance
+                      Id="e88583aa-0017-485d-af8e-0a3cb57d4eba"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f60c0d15-bf76-4c1b-98ed-bce14338f647">
+                    <propertyInstance
+                      Id="4895fbd7-dfd3-4012-8a00-b355ce6a2023"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="74a6c32d-832c-4ab3-a5ea-7d51ac1955fe"
+                LastKnownName="GlobalConstants"
+                LastKnownLocation="Package9_1605.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="fca36f9d-4111-42c0-a717-70c6dc2f2cba"
+            name="nlog"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="a779301d-a0bc-4100-b7b2-bcc2b9967f1e"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DJarvisDataAccessBase Member%3Dnlog"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="ccf4f8c5-af4a-47d6-81a3-b0134148f29d"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="41809db7-8869-4b3b-853f-1e0ae8cf9f73">
+                    <propertyInstance
+                      Id="13b38c32-a026-4a91-b765-d37bc81d7301"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5a03baa6-d9cb-4185-8ba3-5bf3f060842a">
+                    <propertyInstance
+                      Id="7b7b838c-cd47-4456-ac4c-81a2ffc00793"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0f4c064d-439b-4e3e-aeee-38bfb5f05f01">
+                    <propertyInstance
+                      Id="cb007b94-e01e-482f-853b-c0eee74b5126"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3ca29cb2-8af0-4e74-8dc4-507589f4d12a">
+                    <propertyInstance
+                      Id="7aeb8a9d-6c43-48db-baee-583a46353a52"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cd3a0a69-7622-4946-b298-21a8f39439ec">
+                    <propertyInstance
+                      Id="c3ff3626-852b-4f4f-a766-ffa974e75e2c"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="5ceb92db-7d6c-4859-8880-2d40a8e735a8"
+                LastKnownName="Logger"
+                LastKnownLocation="Package6_1605.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="00a75ec8-c267-4c71-8431-622ce29934d4"
+            name="JarvisDataAccessBase"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="a02def7f-3702-4cad-80c8-01923818f1e0"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2Fvramalingam%2FDocuments%2FVisual Studio 2012%2FProjects%2FJarvisReportsWeb%2FJarvisDataAccess%2Fbin%2FDebug%2FJarvisDataAccess.dll&quot; Namespace%3DJarvisDataAccess Type%3DJarvisDataAccessBase Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="8b20f3d8-7976-4d88-9e6c-165c08957aa9"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d0dff0b5-e68d-40e1-b905-7973800a85ef">
+                    <propertyInstance
+                      Id="9f30eebe-1003-443a-876a-cc8cfa49dda4"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8b09eb07-9782-4533-9471-960aefe747d2">
+                    <propertyInstance
+                      Id="15bc7403-ef50-41d5-8866-ca0fd1e492a2"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3e31c7e2-2dea-4f8e-82af-90d6a2683019">
+                    <propertyInstance
+                      Id="4e891c0b-75ac-4f13-9ce1-a5ca42633e86"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="26b4cd8e-e09a-49c0-a0cb-262bb8d7f52a">
+                    <propertyInstance
+                      Id="b3391e5d-db4a-485b-afd7-db0364758d10"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6213affa-ae98-4cf2-b9ab-dafa89cc4336">
+                    <propertyInstance
+                      Id="63a51f36-8d83-49b6-ad52-b66cda1dab73"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aca5b179-6218-49c8-a292-3444e6fd8c55">
+                    <propertyInstance
+                      Id="ece88315-d341-4ee1-be74-2c487fbee1fb"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

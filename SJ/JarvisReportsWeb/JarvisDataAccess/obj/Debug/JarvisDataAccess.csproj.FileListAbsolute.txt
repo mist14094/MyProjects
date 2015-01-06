@@ -1,0 +1,20 @@
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\JarvisDataAccess\bin\Debug\NLog.config
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\JarvisDataAccess\bin\Debug\JarvisDataAccess.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\JarvisDataAccess\bin\Debug\JarvisDataAccess.pdb
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\JarvisDataAccess\bin\Debug\JarvisReportsConstant.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\JarvisDataAccess\bin\Debug\NLog.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\JarvisDataAccess\bin\Debug\JarvisReportsConstant.pdb
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\JarvisDataAccess\bin\Debug\NLog.xml
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\JarvisDataAccess\obj\Debug\JarvisDataAccess.csprojResolveAssemblyReference.cache
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\JarvisDataAccess\obj\Debug\JarvisDataAccess.dll
+C:\Users\vramalingam\Documents\Visual Studio 2012\Projects\JarvisReportsWeb\JarvisDataAccess\obj\Debug\JarvisDataAccess.pdb
+D:\Projects\MyProjects\SJ\JarvisReportsWeb\JarvisDataAccess\bin\Debug\NLog.config
+D:\Projects\MyProjects\SJ\JarvisReportsWeb\JarvisDataAccess\bin\Debug\JarvisDataAccess.dll
+D:\Projects\MyProjects\SJ\JarvisReportsWeb\JarvisDataAccess\bin\Debug\JarvisDataAccess.pdb
+D:\Projects\MyProjects\SJ\JarvisReportsWeb\JarvisDataAccess\bin\Debug\JarvisReportsConstant.dll
+D:\Projects\MyProjects\SJ\JarvisReportsWeb\JarvisDataAccess\bin\Debug\NLog.dll
+D:\Projects\MyProjects\SJ\JarvisReportsWeb\JarvisDataAccess\bin\Debug\JarvisReportsConstant.pdb
+D:\Projects\MyProjects\SJ\JarvisReportsWeb\JarvisDataAccess\bin\Debug\NLog.xml
+D:\Projects\MyProjects\SJ\JarvisReportsWeb\JarvisDataAccess\obj\Debug\JarvisDataAccess.csprojResolveAssemblyReference.cache
+D:\Projects\MyProjects\SJ\JarvisReportsWeb\JarvisDataAccess\obj\Debug\JarvisDataAccess.dll
+D:\Projects\MyProjects\SJ\JarvisReportsWeb\JarvisDataAccess\obj\Debug\JarvisDataAccess.pdb
