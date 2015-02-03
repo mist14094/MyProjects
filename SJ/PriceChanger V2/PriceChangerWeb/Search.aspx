@@ -83,7 +83,7 @@
               <asp:TemplateField>
     <ItemTemplate>
         
-  <a href="#" onclick="javascript:w= window.open('<%# "PriceChangeWOCA.aspx?UPC=" +Eval("UPC")+"&SKU=" +Eval("SKU") %>','DownloadFile'+'<%# Eval("UPC") %>','left=20,top=20,width=1000,height=600,toolbar=0,resizable=0,scrollbars=yes');return false;" >Select</a>
+    <a href="#" onclick="javascript:w= window.open('<%# "PriceChangeWOCA.aspx?UPC=" +Eval("UPC")+"&SKU=" +Eval("SKU") %>','DownloadFile'+'<%# Eval("UPC") %>','left=20,top=20,width=1000,height=600,toolbar=0,resizable=0,scrollbars=yes');return false;" >Select</a>
         
     </ItemTemplate>
 </asp:TemplateField>

@@ -1,0 +1,5 @@
+D:\Projects\MyProjects\SJ\QuickSales\QuickSales\bin\QuickSales.dll.config
+D:\Projects\MyProjects\SJ\QuickSales\QuickSales\bin\QuickSales.dll
+D:\Projects\MyProjects\SJ\QuickSales\QuickSales\bin\QuickSales.pdb
+D:\Projects\MyProjects\SJ\QuickSales\QuickSales\obj\Debug\QuickSales.dll
+D:\Projects\MyProjects\SJ\QuickSales\QuickSales\obj\Debug\QuickSales.pdb

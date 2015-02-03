@@ -12,10 +12,10 @@ public partial class GenerateChart : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["Username"] == null)
-        {
-            Response.Redirect("Login.aspx");
-        }
+       // if (Session["Username"] == null)
+       // {
+        //    Response.Redirect("Login.aspx");
+       // }
 
         JarvisBusinessAccess.DefaultLineChart chart = new DefaultLineChart();
         DefaultBusinessAccess access = new DefaultBusinessAccess();
