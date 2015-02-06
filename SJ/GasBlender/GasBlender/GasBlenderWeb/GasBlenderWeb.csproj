@@ -38,6 +38,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>C:\Users\vramalingam\Desktop\ajax\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="NLog, Version=3.2.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -61,7 +64,19 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SetupTruck.aspx" />
+    <Content Include="CSS\images\add-button.gif" />
+    <Content Include="CSS\images\button.gif" />
+    <Content Include="CSS\images\close.gif" />
+    <Content Include="CSS\images\del.gif" />
+    <Content Include="CSS\images\edit.gif" />
+    <Content Include="CSS\images\footer.gif" />
+    <Content Include="CSS\images\header.gif" />
+    <Content Include="CSS\images\msg-error.gif" />
+    <Content Include="CSS\images\msg-ok.gif" />
+    <Content Include="CSS\images\pagging.gif" />
+    <Content Include="CSS\images\tab.gif" />
+    <Content Include="CSS\images\th.gif" />
+    <Content Include="Default.aspx" />
     <Content Include="ReceiveTruck.aspx" />
     <Content Include="CSS\css\images\add-button.gif" />
     <Content Include="CSS\css\images\button.gif" />
@@ -77,17 +92,13 @@
     <Content Include="CSS\css\images\th.gif" />
     <Content Include="CSS\css\style.css" />
     <Content Include="CSS\index.html" />
-    <Content Include="Default.aspx" />
-    <Content Include="Login.aspx" />
+    <Content Include="TruckSetup.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SetupTruck.aspx.cs">
-      <DependentUpon>SetupTruck.aspx</DependentUpon>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SetupTruck.aspx.designer.cs">
-      <DependentUpon>SetupTruck.aspx</DependentUpon>
     </Compile>
     <Compile Include="ReceiveTruck.aspx.cs">
       <DependentUpon>ReceiveTruck.aspx</DependentUpon>
@@ -95,20 +106,6 @@
     </Compile>
     <Compile Include="ReceiveTruck.aspx.designer.cs">
       <DependentUpon>ReceiveTruck.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Main.Master.cs">
       <DependentUpon>Main.Master</DependentUpon>
@@ -118,6 +115,13 @@
       <DependentUpon>Main.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TruckSetup.aspx.cs">
+      <DependentUpon>TruckSetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TruckSetup.aspx.designer.cs">
+      <DependentUpon>TruckSetup.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -141,6 +145,7 @@
       <Name>GBBusiness</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -154,7 +159,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>10375</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:26826/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

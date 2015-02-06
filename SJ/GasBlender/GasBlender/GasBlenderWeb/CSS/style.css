@@ -75,7 +75,7 @@ h3 a{ text-decoration: none; }
 
 
 #main {}
-#content { float:left; width:800px; }
+#content { float:left; width:100%; }
 #sidebar { float:right; width:225px; }
 
 
@@ -165,3 +165,59 @@ a{ color:#fff; }
 .msg p { -moz-border-radius:6px; -webkit-border-radius:6px; }
 
 .button { -moz-box-shadow: 0 0 2px #978f6c; -webkit-box-shadow: 0 0 2px #978f6c;}
+ .modalBackground
+    {
+        background-color: Black;
+        filter: alpha(opacity=40);
+        opacity: 0.4;
+    }
+    .modalPopup
+    {
+        background-color: #FFFFFF;
+        width: 600px;
+        border: 3px solid #ba4c32;
+        padding:10px;
+        font-family:Arial;
+        font-size:large;
+    }
+    .modalPopup .header
+    {
+        background-color: #ba4c32;
+        height: 30px;
+        color: White;
+        line-height: 30px;
+        text-align: center;
+        font-weight: bold;
+             font-size:large;
+    }
+    .modalPopup .body
+    {
+        min-height: 50px;
+        line-height: 30px;
+        text-align: center;
+        font-weight: bold;
+             font-size:large;
+    }
+    .modalPopup .footer
+    {
+        padding: 3px;
+    }
+    .modalPopup .yes, .modalPopup .no
+    {
+        height: 23px;
+        color: White;
+        line-height: 23px;
+        text-align: center;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .modalPopup .yes
+    {
+        background-color: #2FBDF1;
+        border: 1px solid #0DA9D0;
+    }
+    .modalPopup .no
+    {
+        background-color: #9F9F9F;
+        border: 1px solid #5C5C5C;
+    }
