@@ -10,7 +10,7 @@
 namespace GasBlenderWeb {
     
     
-    public partial class TruckSetup {
+    public partial class SetupTrailer {
         
         /// <summary>
         /// ToolkitScriptManager1 control.

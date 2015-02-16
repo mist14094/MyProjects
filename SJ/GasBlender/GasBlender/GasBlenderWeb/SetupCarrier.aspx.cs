@@ -7,10 +7,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using GBBusiness;
+using System.Net;
 
 namespace GasBlenderWeb
 {
-    public partial class TruckSetup : System.Web.UI.Page
+    public partial class SetupCarrier : System.Web.UI.Page
     {
         private GBBusiness.BusinessAccess _businessAccess = new BusinessAccess();
         protected void Page_Load(object sender, EventArgs e)
@@ -25,7 +26,7 @@ namespace GasBlenderWeb
         private void BindData()
         {
 
-            GridView1.DataSource = _businessAccess.GetActiveTrailer();
+            GridView1.DataSource = _businessAccess.GetCarrier();
             GridView1.DataBind();
         }
 
@@ -38,13 +39,11 @@ namespace GasBlenderWeb
 
         protected void Add(object sender, EventArgs e)
         {
-            txtaddTrailerNumber.Text = string.Empty;
-            txtaddCompartment1.Text = string.Empty;
-            txtaddCompartment2.Text = string.Empty;
-            txtaddCompartment3.Text = string.Empty;
-            txtaddCompartment4.Text = string.Empty;
-            txtaddCompartment5.Text = string.Empty;
-            lblAddError.Text = "";
+            txtaddName.Text = string.Empty;
+            txtaddTollNumber.Text = string.Empty;
+            txtaddlocalContact.Text = string.Empty;
+            txtaddlocalNumber.Text = string.Empty;
+            
             popupAdd.Show();
         }
 
@@ -52,13 +51,12 @@ namespace GasBlenderWeb
         {
               try
             {
-                _businessAccess.AddTrailer(txtaddTrailerNumber.Text, txtaddCompartment1.Text, txtaddCompartment2.Text,
-                    txtaddCompartment3.Text, txtaddCompartment4.Text, txtaddCompartment5.Text);
+                _businessAccess.InsertCarrier(txtaddName.Text, txtaddTollNumber.Text, txtaddlocalContact.Text, txtaddlocalNumber.Text);
                 BindData();
             }
             catch (Exception)
             {
-                lblAddError.Text = "* Check Values";
+                //lblAddError.Text = "* Check Values";
                  throw;
             }
         }
@@ -69,18 +67,12 @@ namespace GasBlenderWeb
             using (GridViewRow row = (GridViewRow)((LinkButton)sender).Parent.Parent)
             {
 
-                lblValueTrailerID.Text = row.Cells[0].Text;
-                txtTrailerNumber.Text = row.Cells[1].Text;
-                txtcompartment1Size.Text = row.Cells[2].Text;
-                txtcompartment2Size.Text = row.Cells[3].Text;
-                txtcompartment3Size.Text = row.Cells[4].Text;
-                txtcompartment4Size.Text = row.Cells[5].Text;
-                txtcompartment5Size.Text = row.Cells[6].Text;
+                lblCarrierID.Text = row.Cells[0].Text;
+                txtName.Text = HttpUtility.HtmlDecode(row.Cells[1].Text);
+                txtTollNumber.Text = HttpUtility.HtmlDecode(row.Cells[2].Text);
+                txtlocalContact.Text = HttpUtility.HtmlDecode(row.Cells[3].Text); 
+                txtLocalNumber.Text = HttpUtility.HtmlDecode(row.Cells[4].Text);
                 lblEditError.Text = "";
-                //txtCustomerID.ReadOnly = true;
-                //txtCustomerID.Text = row.Cells[0].Text;
-                //txtContactName.Text = row.Cells[1].Text;
-                //txtCompany.Text = row.Cells[2].Text;
                 popupEdit.Show();
             }
         }
@@ -89,8 +81,8 @@ namespace GasBlenderWeb
         {
             try
             {
-                _businessAccess.UpdateTrailer(txtTrailerNumber.Text, txtcompartment1Size.Text, txtcompartment2Size.Text,
-                    txtcompartment3Size.Text, txtcompartment4Size.Text, txtcompartment5Size.Text, lblValueTrailerID.Text);
+                _businessAccess.UpdateCarrier(txtName.Text, txtTollNumber.Text, txtlocalContact.Text,
+                    txtLocalNumber.Text, lblCarrierID.Text);
                 BindData();
             }
             catch (Exception)
@@ -115,7 +107,7 @@ namespace GasBlenderWeb
         {
             try
             {
-                _businessAccess.RemoveTrailer(lblRemove.Text);
+                _businessAccess.RemoveCarrier(lblRemove.Text);
                 BindData();
             }
             catch (Exception)

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="false" CodeBehind="Default.aspx.cs" Inherits="GasBlenderWeb.Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="True" CodeBehind="Default.aspx.cs" Inherits="GasBlenderWeb.Default" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit.HTMLEditor" TagPrefix="cc1" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Register TagPrefix="cc1" Namespace="AjaxControlToolkit" Assembly="AjaxControlToolkit, Version=4.1.7.1213, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e" %>
@@ -26,17 +26,18 @@
     </asp:ToolkitScriptManager>
     <div style="margin-left: 100px;margin-right
     : 100px;">
+       
     <div style="margin: 50px; width: 600px; ">
         <table class="auto-style1">
             <tr>
                 <td>Regular Gas</td>
                 <td> : </td>
-                <td class="ar"> 33373</td>
+                <td class="ar"> <asp:Label runat="server" ID="lblRGasTotal" Text=""/> </td>
                 <td class="ac"> /</td>
-                <td class="al"> 12000.1 </td>
+                <td class="al">  <asp:Label runat="server" ID="lblRTankSize" Text=""/> </td>
                 <td> Gallons</td>
                 <td>&nbsp;&nbsp; = </td>
-                <td class="ar">2278.1%</td>
+                <td class="ar"> <asp:Label runat="server" ID="lblRTotal" Text=""/> </td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
@@ -56,12 +57,12 @@
 
                 <td>Super Gas</td>
                 <td> : </td>
-                <td class="ar"> 3410</td>
+                <td class="ar"> <asp:Label runat="server" ID="lblSGasTotal" Text=""/> </td>
                 <td class="ac"> /</td>
-                <td class="al"> 12000 </td>
+                <td class="al">  <asp:Label runat="server" ID="lblSTankSize" Text=""/>  </td>
                 <td> Gallons</td>
                 <td>&nbsp;&nbsp; = </td>
-                <td class="ar">28.4%</td>
+                <td class="ar"><asp:Label runat="server" ID="lblSTotal" Text=""/></td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
@@ -80,12 +81,12 @@
             <tr>
                 <td>Ethanol</td>
                 <td> : </td>
-                <td class="ar"> -1192769</td>
+                <td class="ar"> <asp:Label runat="server" ID="lblEGasTotal" Text=""/></td>
                 <td class="ac"> /</td>
-                <td class="al"> 28079 </td>
+                <td class="al"> <asp:Label runat="server" ID="lblETankSize" Text=""/>   </td>
                 <td> Gallons</td>
                 <td>&nbsp;&nbsp; = </td>
-                <td class="ar">-4247.9%</td>
+                <td class="ar"><asp:Label runat="server" ID="lblETotal" Text=""/></td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
@@ -100,7 +101,8 @@
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td class="ar">&nbsp;</td>
-                <td>&nbsp;</td>xcept 
+                <td>&nbsp;</td> <asp:Label runat="server" ID="lblError" ForeColor="red"/>
+
             </tr>
 
             <tr>
@@ -144,21 +146,25 @@
             <td>Regular Gas</td>
             <td>&nbsp;</td>
             <td>
-                <asp:TextBox ID="TextBox1" runat="server" Font-Size="large" ></asp:TextBox>
+                <asp:TextBox ID="txtRGasAdj" runat="server" Font-Size="large" ></asp:TextBox>
+                <asp:FilteredTextBoxExtender runat="server" ID="FilteredTextBoxExtender1" Enabled="True" TargetControlID="txtRGasAdj" FilterType="Numbers, Custom" ValidChars="." />
             </td>
         </tr>
         <tr>
             <td>Super Gas</td>
             <td>&nbsp;</td>
             <td>
-                <asp:TextBox ID="TextBox2" runat="server" Font-Size="large" ></asp:TextBox>
+                <asp:TextBox ID="txtSGasAdj" runat="server" Font-Size="large" ></asp:TextBox>
+                <asp:FilteredTextBoxExtender runat="server" ID="FilteredTextBoxExtender2" Enabled="True" TargetControlID="txtSGasAdj" FilterType="Numbers, Custom" ValidChars="." />
+
             </td>
         </tr>
         <tr>
             <td>Ethanol</td>
             <td>&nbsp;</td>
             <td>
-                <asp:TextBox ID="TextBox3" runat="server" Font-Size="large"></asp:TextBox>
+                <asp:TextBox ID="txtEAdj" runat="server" Font-Size="large"></asp:TextBox>
+                <asp:FilteredTextBoxExtender runat="server" ID="FilteredTextBoxExtender3" Enabled="True" TargetControlID="txtEAdj" FilterType="Numbers, Custom" ValidChars="." />
             </td>
         </tr>
                               <tr>
@@ -195,21 +201,24 @@
             <td>Regular Gas</td>
             <td>&nbsp;</td>
             <td>
-                <asp:TextBox ID="TextBox4" runat="server" Font-Size="large" ></asp:TextBox>
+                <asp:TextBox ID="txtRGasSetup" runat="server" Font-Size="large" ></asp:TextBox>
+                <asp:FilteredTextBoxExtender runat="server" ID="FilteredTextBoxExtender4" Enabled="True" TargetControlID="txtRGasSetup" FilterType="Numbers, Custom" ValidChars="." />
             </td>
         </tr>
         <tr>
             <td>Super Gas</td>
             <td>&nbsp;</td>
             <td>
-                <asp:TextBox ID="TextBox5" runat="server" Font-Size="large" ></asp:TextBox>
+                <asp:TextBox ID="txtSGasSetup" runat="server" Font-Size="large" ></asp:TextBox>
+                <asp:FilteredTextBoxExtender runat="server" ID="FilteredTextBoxExtender5" Enabled="True" TargetControlID="txtSGasSetup" FilterType="Numbers, Custom" ValidChars="." />
             </td>
         </tr>
         <tr>
             <td>Ethanol</td>
             <td>&nbsp;</td>
             <td>
-                <asp:TextBox ID="TextBox6" runat="server" Font-Size="large"></asp:TextBox>
+                <asp:TextBox ID="txtEthSetup" runat="server" Font-Size="large"></asp:TextBox>
+                <asp:FilteredTextBoxExtender runat="server" ID="FilteredTextBoxExtender6" Enabled="True" TargetControlID="txtEthSetup" FilterType="Numbers, Custom" ValidChars="." />
             </td>
         </tr>
                               <tr>
@@ -222,7 +231,7 @@
                                   <td>&nbsp;</td>
                                   <td>
                                       <div>
-                                      <asp:Button ID="Button1" runat="server" CssClass="buttons" OnClick="btnYes_Click" Text="Save"  />
+                                      <asp:Button ID="btnEditHolding" runat="server" CssClass="buttons" Text="Save" OnClick="btnEditHolding_Click"  />
                                       &nbsp;&nbsp;&nbsp;
                                       <asp:Button ID="Button2" runat="server" CssClass="buttons" Text="Cancel" /></div>
                                      </td>
@@ -234,5 +243,6 @@
                     <div class="footer" align="right">
                     </div>
                 </asp:Panel>
-    </div></div>
+    </div>
+    </div>
 </asp:Content>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="TruckSetup.aspx.cs" Inherits="GasBlenderWeb.TruckSetup" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="SetupLocation.aspx.cs" Inherits="GasBlenderWeb.SetupLocation" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
@@ -50,18 +50,17 @@
     <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
-            <asp:Button ID="btnAdd" runat="server" Text="Add New Truck" OnClick="Add" CssClass="buttons" Style="margin-left: 30px; margin-top: 10px;" />
+            <asp:Button ID="btnAdd" runat="server" Text="Add New Location" OnClick="Add" CssClass="buttons" Style="margin-left: 30px; margin-top: 10px;" />
             <asp:GridView ID="GridView1" runat="server" Width="90%" Style="margin: 30px;" Height="500px" Font-Size="12px"
                 AutoGenerateColumns="False" AlternatingRowStyle-BackColor="#C2D69B" CellSpacing="100"
                 HeaderStyle-BackColor="green" CellPadding="4" ForeColor="#333333">
                 <Columns>
-                    <asp:BoundField DataField="trailerID" HeaderText="Trailer ID" HtmlEncode="true" />
-                    <asp:BoundField DataField="trailerNumber" HeaderText="Trailer Number" HtmlEncode="true" />
-                    <asp:BoundField DataField="compartment1Size" HeaderText="Compartment 1" HtmlEncode="true" />
-                    <asp:BoundField DataField="compartment2Size" HeaderText="Compartment 2" HtmlEncode="true" />
-                    <asp:BoundField DataField="compartment3Size" HeaderText="Compartment 3" HtmlEncode="true" />
-                    <asp:BoundField DataField="compartment4Size" HeaderText="Compartment 4" HtmlEncode="true" />
-                    <asp:BoundField DataField="compartment5Size" HeaderText="Compartment 5" HtmlEncode="true" />
+                    <asp:BoundField DataField="locationID" HeaderText="Location ID" HtmlEncode="False" />
+                    <asp:BoundField DataField="locationName" HeaderText="Location Name" HtmlEncode="False" />
+                    <asp:BoundField DataField="address" HeaderText="Address" HtmlEncode="False" />
+                    <asp:BoundField DataField="city" HeaderText="City" HtmlEncode="False" />
+                     <asp:BoundField DataField="State" HeaderText="State" HtmlEncode="False" />
+                    <asp:BoundField DataField="zip" HeaderText="Zip" HtmlEncode="False" />
                     <asp:TemplateField ItemStyle-Width="120px" HeaderText="Edit" ItemStyle-Height="30px">
                         <ItemTemplate>
                             <asp:LinkButton ID="lnkEdit" runat="server" Text="Edit" OnClick="Edit" ForeColor="Blue"></asp:LinkButton>
@@ -89,72 +88,65 @@
                 <div>
 
                     <div class="header">
-                        Trailer Details
+                        Location Details
                     </div>
                     <div class="body">
                         <center> <asp:Label runat="server" ID="lblEditError" Text=""></asp:Label>
                         <div style="text-align: left; vertical-align: central;">
                             <table class="auto-style2">
                                 <tr>
-                                    <td>
-                                        <asp:Label ID="lblTrailerID" runat="server" Text="TrailerID"></asp:Label>
+                                    <td> Location ID 
+                                       
                                     </td>
                                     <td>
-                                        <asp:Label ID="lblValueTrailerID" runat="server"></asp:Label>
+                                        <asp:Label ID="lblLocationID" runat="server" Text="Location ID"></asp:Label>
+                                       
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <asp:Label ID="lblTrailerNumber" runat="server" Text="Trailer Number"></asp:Label>
+                                        <asp:Label ID="lblLocationName" runat="server" Text="Location Name"></asp:Label>
                                     </td>
                                     <td>
-                                        <asp:TextBox ID="txtTrailerNumber" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtLocationName" runat="server"></asp:TextBox>
 
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <asp:Label ID="lblcompartment1Size" runat="server" Text="Compartment - 1"></asp:Label>
+                                        <asp:Label ID="lblAddress" runat="server" Text="Address"></asp:Label>
                                     </td>
                                     <td>
-                                        <asp:TextBox ID="txtcompartment1Size" runat="server"></asp:TextBox>
-                                        <cc1:FilteredTextBoxExtender runat="server" ID="FTLcmp1" Enabled="True" TargetControlID="txtcompartment1Size" FilterType="Numbers, Custom" ValidChars="." />
+                                        <asp:TextBox ID="txtAddress" runat="server"></asp:TextBox>
+                                    </td>
+                                </tr>
+                              
+                                  <tr>
+                                    <td>
+                                        <asp:Label ID="lblCity" runat="server" Text="City"></asp:Label>
+                                    </td>
+                                    <td>
+                                        <asp:TextBox ID="txtCity" runat="server"></asp:TextBox>
+                                        
+                                    </td>
+                                </tr>
+                                  <tr>
+                                    <td>
+                                        <asp:Label ID="lblState" runat="server" Text="State"></asp:Label>
+                                    </td>
+                                    <td>
+                                        <asp:TextBox ID="txtState" runat="server"></asp:TextBox>
+                                        <cc1:MaskedEditExtender runat="server" ID="MaskedEditExtender1" TargetControlID="txtState" Mask="LL"/>
+                                        
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <asp:Label ID="lblcompartment2Size" runat="server" Text="Compartment - 2"></asp:Label>
+                                        <asp:Label ID="lblZip" runat="server" Text="Zip"></asp:Label>
                                     </td>
                                     <td>
-                                        <asp:TextBox ID="txtcompartment2Size" runat="server"></asp:TextBox>
-                                        <cc1:FilteredTextBoxExtender runat="server" ID="FTLcmp2" Enabled="True" TargetControlID="txtcompartment2Size" FilterType="Numbers, Custom" ValidChars="." />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <asp:Label ID="lblcompartment3Size" runat="server" Text="Compartment - 3"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:TextBox ID="txtcompartment3Size" runat="server"></asp:TextBox>
-                                        <cc1:FilteredTextBoxExtender runat="server" ID="FTLcmp3" Enabled="True" TargetControlID="txtcompartment3Size" FilterType="Numbers, Custom" ValidChars="." />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <asp:Label ID="lblcompartment4Size" runat="server" Text="Compartment - 4"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:TextBox ID="txtcompartment4Size" runat="server"></asp:TextBox>
-                                        <cc1:FilteredTextBoxExtender runat="server" ID="FTLcmp4" Enabled="True" TargetControlID="txtcompartment4Size" FilterType="Numbers, Custom" ValidChars="." />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <asp:Label ID="lblcompartment5Size" runat="server" Text="Compartment - 5"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:TextBox ID="txtcompartment5Size" runat="server"></asp:TextBox>
-                                        <cc1:FilteredTextBoxExtender runat="server" ID="FTLcmp5" Enabled="True" TargetControlID="txtcompartment5Size" FilterType="Numbers, Custom" ValidChars="." />
+                                        <asp:TextBox ID="txtZip" runat="server"></asp:TextBox>
+                                        
                                     </td>
                                 </tr>
 
@@ -192,68 +184,60 @@
                 <div>
 
                     <div class="header">
-                        Trailer Details - New
+                        Location Details - New
                     </div>
 
                     <div class="body">
                         <div style="text-align: left; vertical-align: central;">
-                            <center> <asp:Label runat="server" ID="lblAddError" Text="dfg"></asp:Label></center>
+                            <center> <asp:Label runat="server" ID="lblAddLocationID" ></asp:Label></center>
                             <table class="auto-style2">
       
                                 <tr>
                                     <td>
-                                        <asp:Label ID="lbladdTrailerNumber" runat="server" Text="Trailer Number"></asp:Label>
+                                        <asp:Label ID="lbladdLocationName" runat="server" Text="Location Name"></asp:Label>
                                     </td>
                                     <td>
-                                        <asp:TextBox ID="txtaddTrailerNumber" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtaddLocationName" runat="server"></asp:TextBox>
 
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <asp:Label ID="lbladdCompartment1" runat="server" Text="Compartment - 1"></asp:Label>
+                                        <asp:Label ID="lbladdAddress" runat="server" Text="Address"></asp:Label>
                                     </td>
                                     <td>
-                                        <asp:TextBox ID="txtaddCompartment1" runat="server"></asp:TextBox>
-                                        <cc1:FilteredTextBoxExtender runat="server" ID="FilteredTextBoxExtender1" Enabled="True" TargetControlID="txtcompartment1Size" FilterType="Numbers, Custom" ValidChars="." />
+                                        <asp:TextBox ID="txtaddAddress" runat="server"></asp:TextBox>
+                                        
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <asp:Label ID="lbladdCompartment2" runat="server" Text="Compartment - 2"></asp:Label>
+                                        <asp:Label ID="lbladdCity" runat="server" Text="City"></asp:Label>
                                     </td>
                                     <td>
-                                        <asp:TextBox ID="txtaddCompartment2" runat="server"></asp:TextBox>
-                                        <cc1:FilteredTextBoxExtender runat="server" ID="FilteredTextBoxExtender2" Enabled="True" TargetControlID="txtcompartment2Size" FilterType="Numbers, Custom" ValidChars="." />
+                                        <asp:TextBox ID="txtaddCity" runat="server"></asp:TextBox>
+                                        
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <asp:Label ID="lbladdCompartment3" runat="server" Text="Compartment - 3"></asp:Label>
+                                        <asp:Label ID="lblAddState" runat="server" Text="State"></asp:Label>
                                     </td>
                                     <td>
-                                        <asp:TextBox ID="txtaddCompartment3" runat="server"></asp:TextBox>
-                                        <cc1:FilteredTextBoxExtender runat="server" ID="FilteredTextBoxExtender3" Enabled="True" TargetControlID="txtcompartment3Size" FilterType="Numbers, Custom" ValidChars="." />
+                                        <asp:TextBox ID="txtaddState" runat="server"></asp:TextBox>
+                                        <cc1:MaskedEditExtender runat="server" ID="WordLimter" TargetControlID="txtaddState" Mask="LL"/>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <asp:Label ID="lbladdCompartment4" runat="server" Text="Compartment - 4"></asp:Label>
+                                        <asp:Label ID="lbladdZip" runat="server" Text="Zip Code"></asp:Label>
                                     </td>
                                     <td>
-                                        <asp:TextBox ID="txtaddCompartment4" runat="server"></asp:TextBox>
-                                        <cc1:FilteredTextBoxExtender runat="server" ID="FilteredTextBoxExtender4" Enabled="True" TargetControlID="txtcompartment4Size" FilterType="Numbers, Custom" ValidChars="." />
+                                        <asp:TextBox ID="txtaddZip" runat="server"></asp:TextBox>
+                                        
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <asp:Label ID="lbladdCompartment5" runat="server" Text="Compartment - 5"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:TextBox ID="txtaddCompartment5" runat="server"></asp:TextBox>
-                                        <cc1:FilteredTextBoxExtender runat="server" ID="FilteredTextBoxExtender5" Enabled="True" TargetControlID="txtcompartment5Size" FilterType="Numbers, Custom" ValidChars="." />
-                                    </td>
-                                </tr>
+                               
 
                                 <tr>
                                     <td>
@@ -289,12 +273,12 @@
                 <div>
 
                     <div class="header">
-                        Do you want to delete the Trailer
+                        Do you want to delete the Location
                         <asp:Label runat="server" ID="lblRemove" Text=""></asp:Label>
                     </div>
                     <div class="body">
                         <div style="text-align: left; vertical-align: central; margin:60px;">
-                            Delete Trailer ? &nbsp;&nbsp;  &nbsp;&nbsp;
+                            Delete Location ? &nbsp;&nbsp;  &nbsp;&nbsp;
                           <asp:Button ID="btnRemove" runat="server" Text="Yes" OnClick="SaveRemove" CssClass="buttons" />
                             &nbsp;&nbsp;
                             <asp:Button ID="btnRemoveCancel" runat="server" Text="Cancel" CssClass="buttons"  OnClick="Cancel"  />
