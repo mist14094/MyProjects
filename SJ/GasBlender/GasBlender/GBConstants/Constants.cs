@@ -100,5 +100,10 @@ namespace GBConstants
 
         public string UpdateSetupTable =
             "UPDATE setupTBL SET regularStored=regularStored + {0}, superStored=superStored + {1}, ethanolStored=ethanolStored + {2}";
+
+        public string GetBOL =
+            "GetBOL";
+        public string BOLLog =
+            "BOLLog";
     }
 }

@@ -965,7 +965,80 @@ namespace GBData
                     System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
             }
         }
+        public DataSet GetBOL(string LoadTableID)
+        {
+            Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            var dataTable = new DataSet();
+            var selectCommand = new SqlCommand
+            {
+                CommandText = string.Format(_constants.GetBOL),
+                CommandType = CommandType.StoredProcedure
+                
+            };
+            selectCommand.Parameters.Add("@LoadTableID", LoadTableID);
+            var adapter = new SqlDataAdapter(selectCommand);
+            var connection = new SqlConnection(_constants.DefaultConnectionString);
+            selectCommand.Connection = connection;
+            try
+            {
+                connection.Open();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                Nlog.Trace(
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Error", ex);
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+                connection.Dispose();
+                Nlog.Trace(message:
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
+            }
+        }
 
+        public DataSet BOLLog(DateTime startTime, DateTime endTime)
+        {
+            Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            var dataTable = new DataSet();
+            var selectCommand = new SqlCommand
+            {
+                CommandText = string.Format(_constants.BOLLog),
+                CommandType = CommandType.StoredProcedure
+                
+            };
+            selectCommand.Parameters.Add("@startDate", startTime);
+            selectCommand.Parameters.Add("@endDate", endTime);
+            var adapter = new SqlDataAdapter(selectCommand);
+            var connection = new SqlConnection(_constants.DefaultConnectionString);
+            selectCommand.Connection = connection;
+            try
+            {
+                connection.Open();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                Nlog.Trace(
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Error", ex);
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+                connection.Dispose();
+                Nlog.Trace(message:
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
+            }
+        }
 
     }
 }

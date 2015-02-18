@@ -1,0 +1,12 @@
+D:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBBusiness\bin\Release\NLog.config
+D:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBBusiness\bin\Release\GBBusiness.dll
+D:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBBusiness\bin\Release\GBBusiness.pdb
+D:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBBusiness\bin\Release\GBData.dll
+D:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBBusiness\bin\Release\NLog.dll
+D:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBBusiness\bin\Release\GBConstants.dll
+D:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBBusiness\bin\Release\GBData.pdb
+D:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBBusiness\bin\Release\NLog.xml
+D:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBBusiness\bin\Release\GBConstants.pdb
+D:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBBusiness\obj\Release\GBBusiness.csprojResolveAssemblyReference.cache
+D:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBBusiness\obj\Release\GBBusiness.dll
+D:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBBusiness\obj\Release\GBBusiness.pdb

@@ -206,5 +206,15 @@ namespace GBBusiness
         {
             return _access.UpdateSetupTable(regularStored, superStored, ethanolStored);
         }
+
+        public DataSet GetBOL(string LoadTableID)
+        {
+            return _access.GetBOL(LoadTableID);
+        }
+
+        public DataSet BOLLog(DateTime startTime, DateTime endTime)
+        {
+            return _access.BOLLog(startTime, endTime);
+        }
     }
 }
