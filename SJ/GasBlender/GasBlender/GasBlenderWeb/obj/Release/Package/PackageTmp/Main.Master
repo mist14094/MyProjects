@@ -20,22 +20,27 @@
                     <div id="top">
                         <h1><a href="#">Gas Blender</a></h1>
                         <div id="top-navigation">
-                            Welcome <a href="#">Administrator</a>
+                            
+
+                            Welcome <asp:LinkButton ID="lnkUserName" runat="server" PostBackUrl="SEditUser.aspx"></asp:LinkButton>  
                             <span>|</span>
 
-                            <a href="#">Log out</a>
+                            <asp:LinkButton ID="lnkLogout" runat="server" OnClick="lnkLogout_Click">Log out</asp:LinkButton>
+                          
                         </div>
                     </div>
                     <!-- End Logo + Top Nav -->
 
                     <!-- Main Nav -->
                     <div id="navigation">
-                        <ul>
-                            <li><a href="#" id="Tab1" runat="server"><span>Receive Truck</span></a></li>
-                            <li><a href="#" id="Tab2" runat="server"><span>BOL</span></a></li>
-                            <li><a href="#" id="Tab3" runat="server"><span>Setup</span></a></li>
-                            <li><a href="#" id="Tab4" runat="server"><span>Reports</span></a></li>
-                            <li><a href="#" id="Tab5" runat="server"><span>Status</span></a></li>
+                        <ul id="ULMain" runat="server">
+                            <li><a href="Default.aspx" id="Tab1" runat="server"><span>Home</span></a></li>
+                            <li><a href="ReceiveTruck.aspx" id="Tab2" runat="server"><span>Receive Truck</span></a></li>
+                            <li><a href="HomeBOL.aspx" id="Tab3" runat="server"><span>BOL</span></a></li>
+                            <li><a href="HomeSetup.aspx" id="Tab4" runat="server"><span>Setup</span></a></li>
+                            <li><a href="HomeReports.aspx" id="Tab5" runat="server"><span>Reports</span></a></li>
+                            
+                          
 
                         </ul>
                     </div>
@@ -50,7 +55,7 @@
 
                     <!-- Small Nav -->
                     <div class="small-nav">
-                        <a href="#">  <asp:Label runat="server" Text="d" ID="LV3"></asp:Label></a>
+                        <a href="Default.aspx">  <asp:Label runat="server" Text="d" ID="LV3"></asp:Label></a>
                         <span>&gt;</span>
                         <asp:Label runat="server" Text="d" ID="LV2"></asp:Label>
                

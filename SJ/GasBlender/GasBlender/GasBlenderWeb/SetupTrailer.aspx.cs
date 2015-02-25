@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using GBBusiness;
 
@@ -19,6 +20,19 @@ namespace GasBlenderWeb
             {
                 this.BindData();
                 Session["Option"] = "";
+
+                if (Master != null)
+                {
+                    Label l1 = (Label)Master.FindControl("LV1");
+                    l1.Text = "Setup - Trailer";
+                    Label l2 = (Label)Master.FindControl("LV2");
+                    l2.Text = "Setup";
+                    Label l3 = (Label)Master.FindControl("LV3");
+                    l3.Text = "Home";
+                    HtmlAnchor CurrentMenu;
+                    CurrentMenu = (HtmlAnchor)Master.FindControl("Tab4");
+                    CurrentMenu.Attributes.Add("class", "active");
+                }
             }
         }
 

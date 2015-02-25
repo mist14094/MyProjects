@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Security.Cryptography;
 using System.Text;
 using GBData;
 using NLog;
@@ -216,5 +218,134 @@ namespace GBBusiness
         {
             return _access.BOLLog(startTime, endTime);
         }
+
+        public DataTable LoadTBLData(string loadId)
+        {
+            return _access.LoadTBLData(loadId);
+        }
+
+        public DataTable SelectLoadTBL(string loadId)
+        {
+            return _access.SelectLoadTBL(loadId);
+        }
+
+        public DataTable DeleteLoadTBL(string loadId)
+        {
+            return _access.DeleteLoadTBL(loadId);
+        }
+
+        public DataTable GetLoad()
+        {
+            return _access.GetLoad();
+        }
+
+        public DataTable UpdateLoadTBL(string refNum, string loadType, string trailerID, string C1Type, string C1Amount, string C2Type, string C2Amount, string C3Type, string C3Amount, string C4Type, string C4Amount, string C5Type, string C5Amount, string sumRegular, string sumSuper, string sumEthanol, string C1LocationID, string C2LocationID, string C3LocationID, string C4LocationID, string C5LocationID, string driver, string truck, string carrierID, string note, string loadID)
+        {
+            return _access.UpdateLoadTBL(refNum, loadType, trailerID, C1Type, C1Amount, C2Type, C2Amount, C3Type, C3Amount, C4Type, C4Amount, C5Type, C5Amount, sumRegular, sumSuper, sumEthanol, C1LocationID, C2LocationID, C3LocationID, C4LocationID, C5LocationID, driver, truck, carrierID, note, loadID);
+        }
+
+        public DataTable UpdateLineTBL(string CType, string CAmount, string CLocationID, string RAdd, string SAdd,
+            string EAdd, string combined, string loadid, string compartment)
+        {
+            return _access.UpdateLineTBL( CType,  CAmount,  CLocationID,  RAdd,  SAdd,
+             EAdd,  combined,  loadid,  compartment);
+        }
+
+        public DataTable UpdateAfterSetupTable(string regularStored, string superStored, string ethanolStored)
+        {
+            return _access.UpdateAfterSetupTable(regularStored, superStored, ethanolStored);
+        }
+
+        private string Encrypt(string clearText)
+        {
+            string EncryptionKey = "GASBLENDERSMOKINJOE2293";
+            byte[] clearBytes = Encoding.Unicode.GetBytes(clearText);
+            using (Aes encryptor = Aes.Create())
+            {
+                Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
+                encryptor.Key = pdb.GetBytes(32);
+                encryptor.IV = pdb.GetBytes(16);
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateEncryptor(), CryptoStreamMode.Write))
+                    {
+                        cs.Write(clearBytes, 0, clearBytes.Length);
+                        cs.Close();
+                    }
+                    clearText = Convert.ToBase64String(ms.ToArray());
+                }
+            }
+            return clearText;
+        }
+
+        private string Decrypt(string cipherText)
+        {
+            string EncryptionKey = "GASBLENDERSMOKINJOE2293";
+            byte[] cipherBytes = Convert.FromBase64String(cipherText);
+            using (Aes encryptor = Aes.Create())
+            {
+                Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
+                encryptor.Key = pdb.GetBytes(32);
+                encryptor.IV = pdb.GetBytes(16);
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateDecryptor(), CryptoStreamMode.Write))
+                    {
+                        cs.Write(cipherBytes, 0, cipherBytes.Length);
+                        cs.Close();
+                    }
+                    cipherText = Encoding.Unicode.GetString(ms.ToArray());
+                }
+            }
+            return cipherText;
+        }
+
+        public DataTable InsertUser(string username, string Name, string Password, string Email, bool isadmin, DateTime DateCreated)
+        {
+            return _access.InsertUser(username, Name, Encrypt(Password), Email, isadmin, DateCreated);
+        }
+
+        public DataTable CheckUser(string username, string password)
+        {
+          return  _access.CheckUser(username, Encrypt(password));
+            //DataTable dt = new DataTable();
+            //dt = _access.CheckUser(username,Encrypt(password));
+            //if (dt != null)
+            //{
+            //    if (dt.Rows.Count > 0)
+            //    {
+            //        return int.Parse(dt.Rows[0]["ID"].ToString());
+            //    }
+            //    else
+            //    {
+            //        return null;
+            //    }
+            //}
+            //else
+            //{
+            //    return null;
+            //}
+        }
+
+        public DataTable GetUser()
+        {
+            return _access.GetUser();
+        }
+
+        public DataTable EditUser(string username, string Name,  string Email, bool isadmin, string ID)
+        {
+            return _access.EditUser(username,Name,   Email, isadmin, ID);
+        }
+
+        public DataTable ChangePassword(string password, string ID)
+        {
+            return _access.ChangePassword(Encrypt(password), ID);
+        }
+
+        public DataTable DeleteUser(string ID)
+        {
+            return _access.DeleteUser(ID);
+        }
+
     }
 }

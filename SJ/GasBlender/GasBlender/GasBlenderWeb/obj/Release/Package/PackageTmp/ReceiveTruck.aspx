@@ -7,12 +7,19 @@
 <script src="scripts/jquery-1.3.2.min.js" type="text/javascript"></script>
 <script src="scripts/jquery.blockUI.js" type="text/javascript"></script>
 <script type = "text/javascript">
+    
+    function PrintPanel() {
+
+        this.document.print();
+     
+        return false;
+    }
     function BlockUI(elementID) {
         var prm = Sys.WebForms.PageRequestManager.getInstance();
         prm.add_beginRequest(function () {
             $("#" + elementID).block({
                 message: '<table align = "center"><tr><td>' +
-         '<img src="images/loadingAnim.gif"/></td></tr></table>',
+                    '<img src="images/loadingAnim.gif"/></td></tr></table>',
                 css: {},
                 overlayCSS: {
                     backgroundColor: '#000000', opacity: 0.6
@@ -27,7 +34,7 @@
 
         $.blockUI.defaults.css = {};
     });
-      
+
 </script>
     <style type="text/css">
         .auto-style3 {
@@ -385,9 +392,9 @@
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td class="ac">&nbsp;</td>
-            <td class="ac"><asp:Button ID="btnPrint" runat="server" Text="Print"  Height="25px" Width="60px"/></td>
+            <td class="ac"><asp:Button ID="btnPrint" runat="server" Text="Print"  Height="25px" Width="60px" OnClientClick="javascript:window.print();" OnClick="btnPrint_Click"/></td>
             <td class="ac"><asp:Button ID="btnSave" runat="server" Text="Save"  Height="25px" Width="60px" OnClick="btnSave_Click"/></td>
-            <td class="ac"><asp:Button ID="btnCancel" runat="server" Text="Cancel"  Height="25px" Width="60px"/></td>
+            <td class="ac"><asp:Button ID="btnCancel" runat="server" Text="Clear"  Height="25px" Width="60px" OnClick="btnCancel_Click"/></td>
             <td class="ac">&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -395,7 +402,9 @@
         </tr>
     </table>
         
-
+        <div>
+            <asp:Label runat="server" ID="lblMessage" Text="" ForeColor="Red"></asp:Label>
+        </div>
         <table class="auto-style3">
             <tr>
                 <td>&nbsp;</td>

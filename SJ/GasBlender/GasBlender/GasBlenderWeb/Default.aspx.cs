@@ -24,7 +24,7 @@ namespace GasBlenderWeb
                 Label l3 = (Label)Master.FindControl("LV3");
                 l3.Text = "Home";
                 HtmlAnchor CurrentMenu;
-                CurrentMenu = (HtmlAnchor)Master.FindControl("Tab5");
+                CurrentMenu = (HtmlAnchor)Master.FindControl("Tab1");
                 CurrentMenu.Attributes.Add("class","active");
             }
             if (!IsPostBack)

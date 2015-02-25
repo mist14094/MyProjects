@@ -50,7 +50,7 @@
     <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
-            <asp:Button ID="btnAdd" runat="server" Text="Add New Truck" OnClick="Add" CssClass="buttons" Style="margin-left: 30px; margin-top: 10px;" />
+            <asp:Button ID="btnAdd" runat="server" Text="Add New Trailer" OnClick="Add" CssClass="buttons" Style="margin-left: 30px; margin-top: 10px;" />
             <asp:GridView ID="GridView1" runat="server" Width="90%" Style="margin: 30px;" Height="500px" Font-Size="12px"
                 AutoGenerateColumns="False" AlternatingRowStyle-BackColor="#C2D69B" CellSpacing="100"
                 HeaderStyle-BackColor="green" CellPadding="4" ForeColor="#333333">
