@@ -62,6 +62,8 @@ namespace GasBlenderWeb
               try
             {
                 _businessAccess.InsertDriver(txtaddName.Text);
+                _businessAccess.InsertLog(Session["ID"].ToString(),
+System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
                 BindData();
             }
             catch (Exception)
@@ -89,6 +91,8 @@ namespace GasBlenderWeb
             try
             {
                _businessAccess.UpdateDriver(txtName.Text, lblDriverID.Text);
+               _businessAccess.InsertLog(Session["ID"].ToString(),
+ System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
                 BindData();
             }
             catch (Exception)
@@ -106,6 +110,8 @@ namespace GasBlenderWeb
             {
                 lblRemove.Text = row.Cells[0].Text;
                 popupDelete.Show();
+                _businessAccess.InsertLog(Session["ID"].ToString(),
+  System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
             }
         }
 
@@ -115,6 +121,8 @@ namespace GasBlenderWeb
             {
                 _businessAccess.RemoveDriver(lblRemove.Text);
                 BindData();
+                _businessAccess.InsertLog(Session["ID"].ToString(),
+  System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
             }
             catch (Exception)
             {

@@ -65,6 +65,8 @@ namespace GasBlenderWeb
               try
             {
                 _businessAccess.InsertCarrier(txtaddName.Text, txtaddTollNumber.Text, txtaddlocalContact.Text, txtaddlocalNumber.Text);
+                _businessAccess.InsertLog(Session["ID"].ToString(),
+System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
                 BindData();
             }
             catch (Exception)
@@ -96,6 +98,8 @@ namespace GasBlenderWeb
             {
                 _businessAccess.UpdateCarrier(txtName.Text, txtTollNumber.Text, txtlocalContact.Text,
                     txtLocalNumber.Text, lblCarrierID.Text);
+                _businessAccess.InsertLog(Session["ID"].ToString(),
+  System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
                 BindData();
             }
             catch (Exception)
@@ -121,6 +125,8 @@ namespace GasBlenderWeb
             try
             {
                 _businessAccess.RemoveCarrier(lblRemove.Text);
+                _businessAccess.InsertLog(Session["ID"].ToString(),
+  System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
                 BindData();
             }
             catch (Exception)

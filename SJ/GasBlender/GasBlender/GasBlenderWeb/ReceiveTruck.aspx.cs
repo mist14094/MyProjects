@@ -9,8 +9,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 using GBBusiness;
 using System.Net;
+using Label = System.Web.UI.WebControls.Label;
 
 namespace GasBlenderWeb
 {
@@ -177,6 +179,31 @@ namespace GasBlenderWeb
             lblTotalRight2.Text = "0";
             lblTotalRight3.Text = "0";
             lblFinalTotal.Text = "0";
+            ////////////////////////////////////////////////////////////////////////////////
+            for (int i = 1; i <= 12; i++)
+            {
+                ddlHourStart.Items.Add(i.ToString("D2"));
+            }
+
+
+            for (int i = 0; i < 60; i++)
+            {
+                ddlMinuteStart.Items.Add(i.ToString("D2"));
+
+                ddlSecondStart.Items.Add(i.ToString("D2"));
+            }
+
+            ddlAMStart.Items.Add("AM"); ddlAMStart.Items.Add("PM");
+
+            txtStartDate.Text = DateTime.Now.ToString("d");
+
+            ddlHourStart.SelectedIndex = ddlHourStart.Items.IndexOf(new ListItem(DateTime.Now.ToString("hh")));
+
+            ddlMinuteStart.SelectedIndex = ddlMinuteStart.Items.IndexOf(new ListItem(DateTime.Now.ToString("mm")));
+
+            ddlSecondStart.SelectedIndex = ddlSecondStart.Items.IndexOf(new ListItem(DateTime.Now.ToString("ss")));
+
+            ddlAMStart.SelectedIndex = ddlAMStart.Items.IndexOf(new ListItem(DateTime.Now.ToString("tt")));
 
         }
 
@@ -300,156 +327,223 @@ namespace GasBlenderWeb
             FixValues();
             if (ddlGasType1.SelectedValue == "1" && compartmentID == 1)
             {
-                txtReg1.Text = (float.Parse(txt90P1.Text) - float.Parse(txtOnBoard1.Text)).ToString();
-                txtEthanol1.Text = (float.Parse(txtSize1.Text) - float.Parse(txt90P1.Text)).ToString();
+              //  txtReg1.Text = (float.Parse(txt90P1.Text) - float.Parse(txtOnBoard1.Text)).ToString();
+              //  txtEthanol1.Text = (float.Parse(txtSize1.Text) - float.Parse(txt90P1.Text)).ToString();
+              //  txtSuper1.Text = "0";
+              //  lblTotalLoad1.Text = ((int)float.Parse(txtSize1.Text)).ToString();
+                txtReg1.Text = "0";
                 txtSuper1.Text = "0";
-                lblTotalLoad1.Text = ((int)float.Parse(txtSize1.Text)).ToString();
+                txtEthanol1.Text = ((int)((float.Parse(txtOnBoard1.Text) / 100) * 10.5)).ToString();
 
             }
 
             if (ddlGasType2.SelectedValue == "1" && compartmentID == 2)
             {
-                txtReg2.Text = (float.Parse(txt90P2.Text) - float.Parse(txtOnBoard2.Text)).ToString();
-                txtEthanol2.Text = ((int)(float.Parse(txtSize2.Text) - float.Parse(txt90P2.Text))).ToString();
+                //txtReg2.Text = (float.Parse(txt90P2.Text) - float.Parse(txtOnBoard2.Text)).ToString();
+                //txtEthanol2.Text = ((int)(float.Parse(txtSize2.Text) - float.Parse(txt90P2.Text))).ToString();
+                //txtSuper2.Text = "0";
+                //lblTotalLoad2.Text = ((int)float.Parse(txtSize2.Text)).ToString();
+                txtReg2.Text = "0";
                 txtSuper2.Text = "0";
-                lblTotalLoad2.Text = ((int)float.Parse(txtSize2.Text)).ToString();
+                txtEthanol2.Text = ((int)((float.Parse(txtOnBoard2.Text) / 100) * 10.5)).ToString();
             }
             if (ddlGasType3.SelectedValue == "1" && compartmentID == 3)
             {
-                txtReg3.Text = (float.Parse(txt90P3.Text) - float.Parse(txtOnBoard3.Text)).ToString();
-                txtEthanol3.Text = ((int)(float.Parse(txtSize3.Text) - float.Parse(txt90P3.Text))).ToString();
+                //txtReg3.Text = (float.Parse(txt90P3.Text) - float.Parse(txtOnBoard3.Text)).ToString();
+                //txtEthanol3.Text = ((int)(float.Parse(txtSize3.Text) - float.Parse(txt90P3.Text))).ToString();
+                //txtSuper3.Text = "0";
+                //lblTotalLoad3.Text = ((int)float.Parse(txtSize3.Text)).ToString();
+
+                txtReg3.Text = "0";
                 txtSuper3.Text = "0";
-                lblTotalLoad3.Text = ((int)float.Parse(txtSize3.Text)).ToString();
+                txtEthanol3.Text = ((int)((float.Parse(txtOnBoard3.Text) / 100) * 10.5)).ToString();
             }
             if (ddlGasType4.SelectedValue == "1" && compartmentID == 4)
             {
-                txtReg4.Text = (float.Parse(txt90P4.Text) - float.Parse(txtOnBoard4.Text)).ToString();
-                txtEthanol4.Text = ((int)(float.Parse(txtSize4.Text) - float.Parse(txt90P4.Text))).ToString();
+                //txtReg4.Text = (float.Parse(txt90P4.Text) - float.Parse(txtOnBoard4.Text)).ToString();
+                //txtEthanol4.Text = ((int)(float.Parse(txtSize4.Text) - float.Parse(txt90P4.Text))).ToString();
+                //txtSuper4.Text = "0";
+                //lblTotalLoad4.Text = ((int)float.Parse(txtSize4.Text)).ToString();
+                txtReg4.Text = "0";
                 txtSuper4.Text = "0";
-                lblTotalLoad4.Text = ((int)float.Parse(txtSize4.Text)).ToString();
+                txtEthanol4.Text = ((int)((float.Parse(txtOnBoard4.Text) / 100) * 10.5)).ToString();
             }
             if (ddlGasType5.SelectedValue == "1" && compartmentID == 5)
             {
-                txtReg5.Text = (float.Parse(txt90P5.Text) - float.Parse(txtOnBoard5.Text)).ToString();
-                txtEthanol5.Text = ((int)(float.Parse(txtSize5.Text) - float.Parse(txt90P5.Text))).ToString();
+                //txtReg5.Text = (float.Parse(txt90P5.Text) - float.Parse(txtOnBoard5.Text)).ToString();
+                //txtEthanol5.Text = ((int)(float.Parse(txtSize5.Text) - float.Parse(txt90P5.Text))).ToString();
+                //txtSuper5.Text = "0";
+                //lblTotalLoad5.Text = ((int)float.Parse(txtSize5.Text)).ToString();
+                txtReg5.Text = "0";
                 txtSuper5.Text = "0";
-                lblTotalLoad5.Text = ((int)float.Parse(txtSize5.Text)).ToString();
+                txtEthanol5.Text = ((int)((float.Parse(txtOnBoard5.Text) / 100) * 10.5)).ToString();
             }
 
             ////////////////////////////////////////////////////////////////////////////////////////////
 
             if (ddlGasType1.SelectedValue == "2" && compartmentID == 1)
             {
-                txtReg1.Text = (float.Parse(txt90P1.Text) / 2).ToString();
-                txtSuper1.Text = ((int)(float.Parse(txtReg1.Text) - float.Parse(txtOnBoard1.Text))).ToString();
-                txtEthanol1.Text = ((int)(float.Parse(txtSize1.Text) - float.Parse(txt90P1.Text))).ToString();
-                lblTotalLoad1.Text = ((int)float.Parse(txtSize5.Text)).ToString();
+                //txtReg1.Text = (float.Parse(txt90P1.Text) / 2).ToString();
+                //txtSuper1.Text = ((int)(float.Parse(txtReg1.Text) - float.Parse(txtOnBoard1.Text))).ToString();
+                //txtEthanol1.Text = ((int)(float.Parse(txtSize1.Text) - float.Parse(txt90P1.Text))).ToString();
+                //lblTotalLoad1.Text = ((int)float.Parse(txtSize5.Text)).ToString();
+                txtReg1.Text = "0";
+                txtSuper1.Text = "0";
+                txtEthanol1.Text = ((int)((float.Parse(txtOnBoard1.Text) / 100) * 0.5)).ToString();
             }
 
             if (ddlGasType2.SelectedValue == "2" && compartmentID == 2)
             {
-                txtReg2.Text = (float.Parse(txt90P2.Text) / 2).ToString();
-                txtSuper2.Text = ((int)(float.Parse(txtReg2.Text) - float.Parse(txtOnBoard2.Text))).ToString();
-                txtEthanol2.Text = ((int)(float.Parse(txtSize2.Text) - float.Parse(txt90P2.Text))).ToString();
-                lblTotalLoad2.Text = ((int)float.Parse(txtSize2.Text)).ToString();
+                //txtReg2.Text = (float.Parse(txt90P2.Text) / 2).ToString();
+                //txtSuper2.Text = ((int)(float.Parse(txtReg2.Text) - float.Parse(txtOnBoard2.Text))).ToString();
+                //txtEthanol2.Text = ((int)(float.Parse(txtSize2.Text) - float.Parse(txt90P2.Text))).ToString();
+                //lblTotalLoad2.Text = ((int)float.Parse(txtSize2.Text)).ToString();
+                txtReg2.Text = "0";
+                txtSuper2.Text = "0";
+                txtEthanol2.Text = ((int)((float.Parse(txtOnBoard2.Text) / 100) * 0.5)).ToString();
             }
             if (ddlGasType3.SelectedValue == "2" && compartmentID == 3)
             {
-                txtReg3.Text = (float.Parse(txt90P3.Text) / 2).ToString();
-                txtSuper3.Text = ((int)(float.Parse(txtReg3.Text) - float.Parse(txtOnBoard3.Text))).ToString();
-                txtEthanol3.Text = ((int)(float.Parse(txtSize3.Text) - float.Parse(txt90P3.Text))).ToString();
-                lblTotalLoad3.Text = ((int)float.Parse(txtSize3.Text)).ToString();
+                //txtReg3.Text = (float.Parse(txt90P3.Text) / 2).ToString();
+                //txtSuper3.Text = ((int)(float.Parse(txtReg3.Text) - float.Parse(txtOnBoard3.Text))).ToString();
+                //txtEthanol3.Text = ((int)(float.Parse(txtSize3.Text) - float.Parse(txt90P3.Text))).ToString();
+                //lblTotalLoad3.Text = ((int)float.Parse(txtSize3.Text)).ToString();
+                txtReg3.Text = "0";
+                txtSuper3.Text = "0";
+                txtEthanol3.Text = ((int)((float.Parse(txtOnBoard3.Text) / 100) * 0.5)).ToString();
             }
             if (ddlGasType4.SelectedValue == "2" && compartmentID == 4)
             {
-                txtReg4.Text = (float.Parse(txt90P4.Text) / 2).ToString();
-                txtSuper4.Text = ((int)(float.Parse(txtReg4.Text) - float.Parse(txtOnBoard4.Text))).ToString();
-                txtEthanol4.Text = ((int)(float.Parse(txtSize4.Text) - float.Parse(txt90P4.Text))).ToString();
-                lblTotalLoad4.Text = ((int)float.Parse(txtSize4.Text)).ToString();
+                //txtReg4.Text = (float.Parse(txt90P4.Text) / 2).ToString();
+                //txtSuper4.Text = ((int)(float.Parse(txtReg4.Text) - float.Parse(txtOnBoard4.Text))).ToString();
+                //txtEthanol4.Text = ((int)(float.Parse(txtSize4.Text) - float.Parse(txt90P4.Text))).ToString();
+                //lblTotalLoad4.Text = ((int)float.Parse(txtSize4.Text)).ToString();
+                txtReg4.Text = "0";
+                txtSuper4.Text = "0";
+                txtEthanol4.Text = ((int)((float.Parse(txtOnBoard4.Text) / 100) * 0.5)).ToString();
             }
             if (ddlGasType5.SelectedValue == "2" && compartmentID == 5)
             {
-                txtReg5.Text = (float.Parse(txt90P5.Text) / 2).ToString();
-                txtSuper5.Text = ((int)(float.Parse(txtReg5.Text) - float.Parse(txtOnBoard5.Text))).ToString();
-                txtEthanol5.Text = ((int)(float.Parse(txtSize5.Text) - float.Parse(txt90P5.Text))).ToString();
-                lblTotalLoad5.Text = ((int)float.Parse(txtSize5.Text)).ToString();
+                //txtReg5.Text = (float.Parse(txt90P5.Text) / 2).ToString();
+                //txtSuper5.Text = ((int)(float.Parse(txtReg5.Text) - float.Parse(txtOnBoard5.Text))).ToString();
+                //txtEthanol5.Text = ((int)(float.Parse(txtSize5.Text) - float.Parse(txt90P5.Text))).ToString();
+                //lblTotalLoad5.Text = ((int)float.Parse(txtSize5.Text)).ToString();
+                txtReg5.Text = "0";
+                txtSuper5.Text = "0";
+                txtEthanol5.Text = ((int)((float.Parse(txtOnBoard5.Text) / 100) * 0.5)).ToString();
             }
 
             ///////////////////////////////////////////////////////////////////////////////////////////////////////
             if (ddlGasType1.SelectedValue == "3" && compartmentID == 1)
             {
+                //txtReg1.Text = "0";
+                //txtSuper1.Text = "0";
+                //txtEthanol1.Text = ((int)(float.Parse(txtOnBoard1.Text) * -1)).ToString();
+                //lblTotalLoad1.Text = "0";
                 txtReg1.Text = "0";
                 txtSuper1.Text = "0";
-                txtEthanol1.Text = ((int)(float.Parse(txtOnBoard1.Text) * -1)).ToString();
-                lblTotalLoad1.Text = "0";
+                txtEthanol1.Text = "0";
+                
             }
 
             if (ddlGasType2.SelectedValue == "3" && compartmentID == 2)
             {
+                //txtReg2.Text = "0";
+                //txtSuper2.Text = "0";
+                //txtEthanol2.Text = ((int)(float.Parse(txtOnBoard2.Text) * -1)).ToString();
+                //lblTotalLoad1.Text = "0";
                 txtReg2.Text = "0";
                 txtSuper2.Text = "0";
-                txtEthanol2.Text = ((int)(float.Parse(txtOnBoard2.Text) * -1)).ToString();
-                lblTotalLoad1.Text = "0";
+                txtEthanol2.Text = "0";
+                
             }
             if (ddlGasType3.SelectedValue == "3" && compartmentID == 3)
             {
+                //txtReg3.Text = "0";
+                //txtSuper3.Text = "0";
+                //txtEthanol3.Text = ((int)(float.Parse(txtOnBoard3.Text) * -1)).ToString();
+                //lblTotalLoad1.Text = "0";
                 txtReg3.Text = "0";
                 txtSuper3.Text = "0";
-                txtEthanol3.Text = ((int)(float.Parse(txtOnBoard3.Text) * -1)).ToString();
-                lblTotalLoad1.Text = "0";
+                txtEthanol3.Text = "0";
+                
             }
             if (ddlGasType4.SelectedValue == "3" && compartmentID == 4)
             {
+                //txtReg4.Text = "0";
+                //txtSuper4.Text = "0";
+                //txtEthanol4.Text = ((int)(float.Parse(txtOnBoard4.Text) * -1)).ToString();
+                //lblTotalLoad1.Text = "0";
                 txtReg4.Text = "0";
                 txtSuper4.Text = "0";
-                txtEthanol4.Text = ((int)(float.Parse(txtOnBoard4.Text) * -1)).ToString();
-                lblTotalLoad1.Text = "0";
+                txtEthanol4.Text = "0";
+                
             }
             if (ddlGasType5.SelectedValue == "3" && compartmentID == 5)
             {
+                //txtReg5.Text = "0";
+                //txtSuper5.Text = "0";
+                //txtEthanol5.Text = ((int)(float.Parse(txtOnBoard5.Text) * -1)).ToString();
+                //lblTotalLoad1.Text = "0";
+
                 txtReg5.Text = "0";
                 txtSuper5.Text = "0";
-                txtEthanol5.Text = ((int)(float.Parse(txtOnBoard5.Text) * -1)).ToString();
-                lblTotalLoad1.Text = "0";
+                txtEthanol5.Text = "0";
+                
             }
 
             ///////////////////////////////////////////////////////////////////////////////////////////////////////
             if (ddlGasType1.SelectedValue == "4" && compartmentID == 1)
             {
+                //txtReg1.Text = "0";
+                //txtSuper1.Text = "0";
+                //txtEthanol1.Text = ((int)(float.Parse(txtOnBoard1.Text) / 10)).ToString();
+                //lblTotalLoad1.Text = ((int)(float.Parse(txtOnBoard1.Text) + float.Parse(txtEthanol1.Text))).ToString();
                 txtReg1.Text = "0";
                 txtSuper1.Text = "0";
-                txtEthanol1.Text = ((int)(float.Parse(txtOnBoard1.Text) / 10)).ToString();
-                lblTotalLoad1.Text = ((int)(float.Parse(txtOnBoard1.Text) + float.Parse(txtEthanol1.Text))).ToString();
+                txtEthanol1.Text = ((int)((float.Parse(txtOnBoard1.Text) / 100) * 0.5)).ToString();
 
             }
 
             if (ddlGasType2.SelectedValue == "4" && compartmentID == 2)
             {
+                //txtReg2.Text = "0";
+                //txtSuper2.Text = "0";
+                //txtEthanol2.Text = ((int)(float.Parse(txtOnBoard2.Text) / 10)).ToString();
+                //lblTotalLoad2.Text = ((int)(float.Parse(txtOnBoard2.Text) + float.Parse(txtEthanol2.Text))).ToString();
                 txtReg2.Text = "0";
                 txtSuper2.Text = "0";
-                txtEthanol2.Text = ((int)(float.Parse(txtOnBoard2.Text) / 10)).ToString();
-                lblTotalLoad2.Text = ((int)(float.Parse(txtOnBoard2.Text) + float.Parse(txtEthanol2.Text))).ToString();
+                txtEthanol2.Text = ((int)((float.Parse(txtOnBoard2.Text) / 100) * 0.5)).ToString();
             }
             if (ddlGasType3.SelectedValue == "4" && compartmentID == 3)
             {
+                //txtReg3.Text = "0";
+                //txtSuper3.Text = "0";
+                //txtEthanol3.Text = ((int)(float.Parse(txtOnBoard3.Text) / 10)).ToString();
+                //lblTotalLoad3.Text = ((int)(float.Parse(txtOnBoard3.Text) + float.Parse(txtEthanol3.Text))).ToString();
                 txtReg3.Text = "0";
                 txtSuper3.Text = "0";
-                txtEthanol3.Text = ((int)(float.Parse(txtOnBoard3.Text) / 10)).ToString();
-                lblTotalLoad3.Text = ((int)(float.Parse(txtOnBoard3.Text) + float.Parse(txtEthanol3.Text))).ToString();
+                txtEthanol3.Text = ((int)((float.Parse(txtOnBoard3.Text) / 100) * 0.5)).ToString();
             }
             if (ddlGasType4.SelectedValue == "4" && compartmentID == 4)
             {
+                //txtReg4.Text = "0";
+                //txtSuper4.Text = "0";
+                //txtEthanol4.Text = ((int)(float.Parse(txtOnBoard4.Text) / 10)).ToString();
+                //lblTotalLoad4.Text = ((int)(float.Parse(txtOnBoard4.Text) + float.Parse(txtEthanol4.Text))).ToString();
                 txtReg4.Text = "0";
                 txtSuper4.Text = "0";
-                txtEthanol4.Text = ((int)(float.Parse(txtOnBoard4.Text) / 10)).ToString();
-                lblTotalLoad4.Text = ((int)(float.Parse(txtOnBoard4.Text) + float.Parse(txtEthanol4.Text))).ToString();
+                txtEthanol4.Text = ((int)((float.Parse(txtOnBoard4.Text) / 100) * 0.5)).ToString();
             }
             if (ddlGasType5.SelectedValue == "4" && compartmentID == 5)
             {
+                //txtReg5.Text = "0";
+                //txtSuper5.Text = "0";
+                //txtEthanol5.Text = ((int)(float.Parse(txtOnBoard5.Text) / 10)).ToString();
+                //lblTotalLoad5.Text = ((int)(float.Parse(txtOnBoard5.Text) + float.Parse(txtEthanol5.Text))).ToString();
                 txtReg5.Text = "0";
                 txtSuper5.Text = "0";
-                txtEthanol5.Text = ((int)(float.Parse(txtOnBoard5.Text) / 10)).ToString();
-                lblTotalLoad5.Text = ((int)(float.Parse(txtOnBoard5.Text) + float.Parse(txtEthanol5.Text))).ToString();
+                txtEthanol5.Text = ((int)((float.Parse(txtOnBoard5.Text) / 100) * 0.5)).ToString();
             }
 
             ///////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -695,7 +789,7 @@ namespace GasBlenderWeb
                     lblTotalRight1.Text, lblTotalRight2.Text, lblTotalRight3.Text,
                     ddlDeliver1.SelectedValue, ddlDeliver2.SelectedValue, ddlDeliver3.SelectedValue,
                     ddlDeliver4.SelectedValue, ddlDeliver5.SelectedValue,
-                    ddlDriver.SelectedItem.Text, ddlTractor.SelectedItem.Text, "");
+                    ddlDriver.SelectedItem.Text, ddlTractor.SelectedItem.Text, "", Convert.ToDateTime(txtStartDate.Text + " " + ddlHourStart.SelectedValue + ":" + ddlMinuteStart.SelectedValue + ":" + ddlSecondStart.SelectedValue + " " + ddlAMStart.SelectedValue).ToString("yyyy-MM-dd hh:mm:ss"));
                 if (dt != null)
                 {
                     if (dt.Rows.Count > 0)
@@ -734,6 +828,12 @@ namespace GasBlenderWeb
                                 lblTotalRight3.Text);
                         }
 
+                        lnkLink.Visible = true;
+                        lnkLink.PostBackUrl = "BOLReport.aspx?ID=" + strLoadID;
+                        btnSave.Enabled = false;
+                        _businessAccess.InsertLog(Session["ID"].ToString(),
+                  System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
+                        lblMessage.Text = "Save Successful";
                         int intId = 100;
 
                         string strPopup = "<script language='javascript' ID='script1'>"
@@ -741,15 +841,17 @@ namespace GasBlenderWeb
                         // Passing intId to popup window.
                         + "window.open('BOLReport.aspx?ID=" + strLoadID
 
-                        + "','Report', 'top=90, left=200, width=700, height=700, dependant=no, location=0, alwaysRaised=no, menubar=no, resizeable=no, scrollbars=n, toolbar=no, status=no, center=yes')"
+                        + "','Report')"
 
                         + "</script>";
 
                         ScriptManager.RegisterStartupScript((Page)HttpContext.Current.Handler, typeof(Page), "Script1", strPopup, false);
 
-
+                        
                     //  Response.Redirect("Default.aspx");
-                        btnSave.Enabled = false;
+
+                       
+                
                     }
                 }
             }

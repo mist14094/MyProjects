@@ -4,7 +4,7 @@
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-<script src="scripts/jquery-1.3.2.min.js" type="text/javascript"></script>
+    <script src="scripts/jquery-1.3.2.min.js" type="text/javascript"></script>
 <script src="scripts/jquery.blockUI.js" type="text/javascript"></script>
 <script type = "text/javascript">
     function BlockUI(elementID) {
@@ -385,9 +385,9 @@
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td class="ac">&nbsp;</td>
-            <td class="ac"><asp:Button ID="btnPrint" runat="server" Text="Print"  Height="25px" Width="60px"/></td>
-            <td class="ac"><asp:Button ID="btnSave" runat="server" Text="Save"  Height="25px" Width="60px" OnClick="btnSave_Click" Enabled="False"/></td>
-            <td class="ac"><asp:Button ID="btnCancel" runat="server" Text="Cancel"  Height="25px" Width="60px"/></td>
+            <td class="ac"><asp:Button ID="btnPrint" runat="server" Text="Print"  Height="25px" Width="60px" OnClientClick="javascript:window.print();"/></td>
+            <td class="ac"><asp:Button ID="btnSave" runat="server" Text="Save"  Height="25px" Width="60px" OnClick="btnSave_Click" OnClientClick="return confirm('Make sure all the information is right, Do you want to SAVE? ')" Enabled="False"/></td>
+            <td class="ac"><asp:Button ID="btnCancel" runat="server" Text="Reset"  Height="25px" Width="60px"  OnClick="btnCancel_Click"/></td>
             <td class="ac">&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -398,7 +398,7 @@
 
         <table class="auto-style3">
             <tr>
-                <td><asp:Label runat="server" ID="lblMessg" Text="" /></td>
+                <td><asp:Label runat="server" ID="lblMessg" Text="" />&nbsp;<asp:LinkButton ID="lnkLink" runat="server" Visible="False" ForeColor="red">Click here if it's not redirected to Print</asp:LinkButton></td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -25,10 +26,13 @@ namespace GasBlenderWeb
                 HtmlAnchor CurrentMenu;
                 CurrentMenu = (HtmlAnchor)Master.FindControl("Tab5");
                 CurrentMenu.Attributes.Add("class", "active");
+                _businessAccess.InsertLog(Session["ID"].ToString(),
+                  System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
+                
             }
             if (!IsPostBack)
             {
-                GridView1.DataSource = _businessAccess.GetLoad();
+                GridView1.DataSource = GetResult(txtBolID.Text);
                 GridView1.DataBind();
             }
         }
@@ -36,7 +40,8 @@ namespace GasBlenderWeb
       
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-           
+            GridView1.DataSource = GetResult(txtBolID.Text);
+            GridView1.DataBind();
         }
 
 
@@ -57,19 +62,20 @@ namespace GasBlenderWeb
             {
                 // ClientScript.RegisterStartupScript(this.GetType(), "newWindow", "<script>window.open('BOLReport.aspx?ID=" + row.Cells[0].Text +
                 //                "','Report','left=20,top=20,width=1000,height=600,toolbar=0,resizable=0,scrollbars=yes');</script>");
-                int intId = 100;
+                //int intId = 100;
 
-                string strPopup = "<script language='javascript' ID='script1'>"
+                //string strPopup = "<script language='javascript' ID='script1'>"
 
-                // Passing intId to popup window.
-                + "window.open('BOLReport.aspx?ID=" + row.Cells[0].Text
+                //// Passing intId to popup window.
+                //+ "window.open('BOLReport.aspx?ID=" + row.Cells[0].Text
 
-                + "','Report', 'top=90, left=200, width=700, height=700, dependant=no, location=0, alwaysRaised=no, menubar=no, resizeable=no, scrollbars=n, toolbar=no, status=no, center=yes')"
+                //+ "','Report', 'top=90, left=200, width=700, height=700, dependant=no, location=0, alwaysRaised=no, menubar=no, resizeable=no, scrollbars=n, toolbar=no, status=no, center=yes')"
 
-                + "</script>";
+                //+ "</script>";
 
-                ScriptManager.RegisterStartupScript((Page)HttpContext.Current.Handler, typeof(Page), "Script1", strPopup, false);
+                //ScriptManager.RegisterStartupScript((Page)HttpContext.Current.Handler, typeof(Page), "Script1", strPopup, false);
 
+                Response.Redirect("BOLReport.aspx?ID=" + row.Cells[0].Text);
             }
         }
 
@@ -89,8 +95,23 @@ namespace GasBlenderWeb
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             GridView1.PageIndex = e.NewPageIndex;
-            GridView1.DataSource = _businessAccess.GetLoad();
+            GridView1.DataSource = GetResult(txtBolID.Text);
             GridView1.DataBind();
         }
+
+        public DataTable GetResult(string BOLid)
+        {
+            DataTable dt = new DataTable();
+            if (BOLid != "")
+            {
+                return _businessAccess.SelectLoadTBL(txtBolID.Text);
+            }
+            else
+            {
+                return _businessAccess.GetLoad();
+            }
+        }
+
+
     }
 }

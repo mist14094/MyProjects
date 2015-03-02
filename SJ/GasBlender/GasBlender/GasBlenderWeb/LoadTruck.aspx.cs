@@ -826,24 +826,65 @@ namespace GasBlenderWeb
                 ddlGasType4.SelectedItem.Text, txtOnBoard4.Text, ddlGasType5.SelectedItem.Text, txtOnBoard5.Text,
                 lblTotalRight1.Text, lblTotalRight2.Text, lblTotalRight3.Text,
                 ddlDeliver1.SelectedValue,ddlDeliver2.SelectedValue,ddlDeliver3.SelectedValue,ddlDeliver4.SelectedValue,ddlDeliver5.SelectedValue,
-                ddlDriver.SelectedItem.Text, ddlTractor.SelectedItem.Text, ddlCarrier.SelectedValue, "Updated on " +DateTime.Now.ToString("G"),strLoadID );
+                ddlDriver.SelectedItem.Text, ddlTractor.SelectedItem.Text, ddlCarrier.SelectedValue, "",strLoadID );
+
+            _businessAccess.DeleteLine(strLoadID);
+
+
+            if (lblTotalLoad1.Text != "0")
+            {
+                _businessAccess.InsertLineData(strLoadID, ddlGasType1.SelectedItem.Text, txtOnBoard1.Text,
+                    ddlDeliver1.SelectedValue,
+                    txtReg1.Text, txtSuper1.Text, txtEthanol1.Text, "1", "f", "");
+            }
+            if (lblTotalLoad2.Text != "0")
+            {
+                _businessAccess.InsertLineData(strLoadID, ddlGasType2.SelectedItem.Text, txtOnBoard2.Text,
+                    ddlDeliver2.SelectedValue,
+                    txtReg2.Text, txtSuper2.Text, txtEthanol2.Text, "2", "f", "");
+            }
+            if (lblTotalLoad3.Text != "0")
+            {
+                _businessAccess.InsertLineData(strLoadID, ddlGasType3.SelectedItem.Text, txtOnBoard3.Text,
+                    ddlDeliver3.SelectedValue,
+                    txtReg3.Text, txtSuper3.Text, txtEthanol3.Text, "3", "f", "");
+            }
+            if (lblTotalLoad4.Text != "0")
+            {
+                _businessAccess.InsertLineData(strLoadID, ddlGasType4.SelectedItem.Text, txtOnBoard4.Text,
+                    ddlDeliver4.SelectedValue,
+                    txtReg4.Text, txtSuper4.Text, txtEthanol4.Text, "4", "f", "");
+            }
+            if (lblTotalLoad5.Text != "0")
+            {
+                _businessAccess.InsertLineData(strLoadID, ddlGasType5.SelectedItem.Text, txtOnBoard5.Text,
+                    ddlDeliver5.SelectedValue,
+                    txtReg5.Text, txtSuper5.Text, txtEthanol5.Text, "5", "f", "");
+                _businessAccess.UpdateSetupTable(lblTotalRight1.Text, lblTotalRight2.Text,
+                    lblTotalRight3.Text);
+            }
+
 
                   //  strLoadID = dt.Rows[0][0].ToString();
-                    _businessAccess.UpdateLineTBL( ddlGasType1.SelectedItem.Text, txtOnBoard1.Text,
-                        ddlDeliver1.SelectedValue,
-                        txtReg1.Text, txtSuper1.Text, txtEthanol1.Text, "f",strLoadID,"1");
-                    _businessAccess.UpdateLineTBL( ddlGasType2.SelectedItem.Text, txtOnBoard2.Text,
-                        ddlDeliver2.SelectedValue,
-                        txtReg2.Text, txtSuper2.Text, txtEthanol2.Text, "f", strLoadID, "2");
-                    _businessAccess.UpdateLineTBL( ddlGasType3.SelectedItem.Text, txtOnBoard3.Text,
-                        ddlDeliver3.SelectedValue,
-                        txtReg3.Text, txtSuper3.Text, txtEthanol3.Text, "f", strLoadID, "3");
-                    _businessAccess.UpdateLineTBL( ddlGasType4.SelectedItem.Text, txtOnBoard4.Text,
-                        ddlDeliver4.SelectedValue,
-                        txtReg4.Text, txtSuper4.Text, txtEthanol4.Text, "f", strLoadID, "4");
-                    _businessAccess.UpdateLineTBL( ddlGasType5.SelectedItem.Text, txtOnBoard5.Text,
-                        ddlDeliver5.SelectedValue,
-                        txtReg5.Text, txtSuper5.Text, txtEthanol5.Text, "f", strLoadID, "5");
+                    //_businessAccess.UpdateLineTBL( ddlGasType1.SelectedItem.Text, txtOnBoard1.Text,
+                    //    ddlDeliver1.SelectedValue,
+                    //    txtReg1.Text, txtSuper1.Text, txtEthanol1.Text, "f",strLoadID,"1");
+
+
+                    //_businessAccess.UpdateLineTBL( ddlGasType2.SelectedItem.Text, txtOnBoard2.Text,
+                    //    ddlDeliver2.SelectedValue,
+                    //    txtReg2.Text, txtSuper2.Text, txtEthanol2.Text, "f", strLoadID, "2");
+                    //_businessAccess.UpdateLineTBL( ddlGasType3.SelectedItem.Text, txtOnBoard3.Text,
+                    //    ddlDeliver3.SelectedValue,
+                    //    txtReg3.Text, txtSuper3.Text, txtEthanol3.Text, "f", strLoadID, "3");
+                    //_businessAccess.UpdateLineTBL( ddlGasType4.SelectedItem.Text, txtOnBoard4.Text,
+                    //    ddlDeliver4.SelectedValue,
+                    //    txtReg4.Text, txtSuper4.Text, txtEthanol4.Text, "f", strLoadID, "4");
+                    //_businessAccess.UpdateLineTBL( ddlGasType5.SelectedItem.Text, txtOnBoard5.Text,
+                    //    ddlDeliver5.SelectedValue,
+                    //    txtReg5.Text, txtSuper5.Text, txtEthanol5.Text, "f", strLoadID, "5");
+
+
 
                     _businessAccess.UpdateAfterSetupTable(Session["lblTotalRight1"].ToString(), Session["lblTotalRight2"].ToString(), Session["lblTotalRight3"].ToString());
                     _businessAccess.UpdateSetupTable(lblTotalRight1.Text,lblTotalRight2.Text,lblTotalRight3.Text);
@@ -851,8 +892,34 @@ namespace GasBlenderWeb
                     Session["lblTotalRight1"] = lblTotalRight1.Text;
                     Session["lblTotalRight2"] = lblTotalRight2.Text;
                     Session["lblTotalRight3"] = lblTotalRight3.Text;
+                    _businessAccess.InsertLog(Session["ID"].ToString(),
+                          System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
+
+                    lnkLink.Visible = true;
+                    lnkLink.PostBackUrl = "BOLReport.aspx?ID=" + strLoadID;
+                    string strPopup = "<script language='javascript' ID='script1'>"
+
+                                // Passing intId to popup window.
+                                + "window.open('BOLReport.aspx?ID=" + strLoadID
+
+                                + "','Report')"
+
+                                + "</script>";
+
+                    ScriptManager.RegisterStartupScript((Page)HttpContext.Current.Handler, typeof(Page), "Script1", strPopup, false);
+
+                    btnSave.Enabled = false;
+                    _businessAccess.InsertLog(Session["ID"].ToString(),
+              System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
+                
 
             lblMessg.Text = "Save succesful";
+
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(Request.RawUrl);
 
         }
 

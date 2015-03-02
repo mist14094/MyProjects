@@ -53,19 +53,19 @@ namespace GasBlenderWeb
             ddlAMEnd.Items.Add("AM"); ddlAMEnd.Items.Add("PM");
 
             txtEndDate.Text = DateTime.Now.ToString("d");
-            txtStartDate.Text = DateTime.Now.AddDays(-30).ToString("d");
+            txtStartDate.Text = DateTime.Now.AddDays(-15).ToString("d");
 
-            ddlHourStart.SelectedIndex = ddlHourStart.Items.IndexOf(new ListItem(DateTime.Now.ToString("hh")));
-            ddlHourEnd.SelectedIndex = ddlHourEnd.Items.IndexOf(new ListItem(DateTime.Now.ToString("hh")));
+            ddlHourStart.SelectedIndex = ddlHourStart.Items.IndexOf(new ListItem("12"));
+            ddlHourEnd.SelectedIndex = ddlHourEnd.Items.IndexOf(new ListItem("11"));
 
-            ddlMinuteEnd.SelectedIndex = ddlMinuteEnd.Items.IndexOf(new ListItem(DateTime.Now.ToString("mm")));
-            ddlMinuteStart.SelectedIndex = ddlMinuteStart.Items.IndexOf(new ListItem(DateTime.Now.ToString("mm")));
+            ddlMinuteEnd.SelectedIndex = ddlMinuteEnd.Items.IndexOf(new ListItem("59"));
+            ddlMinuteStart.SelectedIndex = ddlMinuteStart.Items.IndexOf(new ListItem("00"));
 
-            ddlSecondEnd.SelectedIndex = ddlSecondEnd.Items.IndexOf(new ListItem(DateTime.Now.ToString("ss")));
-            ddlSecondStart.SelectedIndex = ddlSecondStart.Items.IndexOf(new ListItem(DateTime.Now.ToString("ss")));
+            ddlSecondEnd.SelectedIndex = ddlSecondEnd.Items.IndexOf(new ListItem("59"));
+            ddlSecondStart.SelectedIndex = ddlSecondStart.Items.IndexOf(new ListItem("00"));
 
-            ddlAMStart.SelectedIndex = ddlAMStart.Items.IndexOf(new ListItem(DateTime.Now.ToString("tt")));
-            ddlAMEnd.SelectedIndex = ddlAMEnd.Items.IndexOf(new ListItem(DateTime.Now.ToString("tt")));
+            ddlAMStart.SelectedIndex = ddlAMStart.Items.IndexOf(new ListItem("AM"));
+            ddlAMEnd.SelectedIndex = ddlAMEnd.Items.IndexOf(new ListItem("PM"));
 
 
 
@@ -76,20 +76,22 @@ namespace GasBlenderWeb
 
         protected void btnGetData_Click(object sender, EventArgs e)
         {
-            int intId = 100;
+            //int intId = 100;
 
-            string strPopup = "<script language='javascript' ID='script1'>"
+            //string strPopup = "<script language='javascript' ID='script1'>"
 
-            // Passing intId to popup window.
-            + "window.open('TransactionReport.aspx?Start=" + txtStartDate.Text+" "+ddlHourStart.SelectedValue+":"+ddlMinuteStart.SelectedValue+":"+ddlSecondStart.SelectedValue+" "+ddlAMStart.SelectedValue+"&End="
-            + txtEndDate.Text + " " + ddlHourEnd.SelectedValue + ":" + ddlMinuteEnd.SelectedValue + ":" + ddlSecondEnd.SelectedValue + " " +ddlAMEnd.SelectedValue
-            + "','Report', 'top=90, left=200, width=700, height=700, dependant=no, location=0, alwaysRaised=no, menubar=no, resizeable=no, scrollbars=n, toolbar=no, status=no, center=yes')"
+            //// Passing intId to popup window.
+            //+ "window.open('TransactionReport.aspx?Start=" + txtStartDate.Text+" "+ddlHourStart.SelectedValue+":"+ddlMinuteStart.SelectedValue+":"+ddlSecondStart.SelectedValue+" "+ddlAMStart.SelectedValue+"&End="
+            //+ txtEndDate.Text + " " + ddlHourEnd.SelectedValue + ":" + ddlMinuteEnd.SelectedValue + ":" + ddlSecondEnd.SelectedValue + " " +ddlAMEnd.SelectedValue
+            //+ "','Report', 'top=90, left=200, width=700, height=700, dependant=no, location=0, alwaysRaised=no, menubar=no, resizeable=no, scrollbars=n, toolbar=no, status=no, center=yes')"
 
-            + "</script>";
+            //+ "</script>";
 
-            ScriptManager.RegisterStartupScript((Page)HttpContext.Current.Handler, typeof(Page), "Script1", strPopup, false);
+            //ScriptManager.RegisterStartupScript((Page)HttpContext.Current.Handler, typeof(Page), "Script1", strPopup, false);
 
 
+            Response.Redirect("TransactionReport.aspx?Start=" + txtStartDate.Text+" "+ddlHourStart.SelectedValue+":"+ddlMinuteStart.SelectedValue+":"+ddlSecondStart.SelectedValue+" "+ddlAMStart.SelectedValue+"&End="
+            + txtEndDate.Text + " " + ddlHourEnd.SelectedValue + ":" + ddlMinuteEnd.SelectedValue + ":" + ddlSecondEnd.SelectedValue + " " +ddlAMEnd.SelectedValue);
             //  Response.Redirect("Default.aspx");
        //     btnSave.Enabled = false;
         }

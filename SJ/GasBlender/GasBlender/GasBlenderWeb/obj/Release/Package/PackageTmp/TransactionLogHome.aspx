@@ -25,7 +25,7 @@
                 <td>
                     <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
 
-                    <asp:ImageButton runat="Server" ID="ibStartDate" ImageUrl="../Images/calendar.png" AlternateText="Click here to display calendar" />
+                    <asp:ImageButton runat="Server" ID="ibStartDate" ImageUrl="Images/calendar.png" AlternateText="Click here to display calendar" />
                     <asp:TextBox ID="txtStartDate" runat="server" Enabled="False"></asp:TextBox>
                     <cc1:CalendarExtender runat="server" ID="clExtenderStart" TargetControlID="txtStartDate" PopupButtonID="ibStartDate" />
                     &nbsp;
@@ -44,7 +44,7 @@
                 <td class="auto-style2">End Date :
                 </td>
                 <td>
-                    <asp:ImageButton runat="Server" ID="ibEndDate" ImageUrl="../Images/calendar.png" AlternateText="Click here to display calendar" />
+                    <asp:ImageButton runat="Server" ID="ibEndDate" ImageUrl="Images/calendar.png" AlternateText="Click here to display calendar" />
                     <asp:TextBox ID="txtEndDate" runat="server"  Enabled="False"></asp:TextBox>
                     <cc1:CalendarExtender runat="server" ID="clExtenderEnd" TargetControlID="txtEndDate" PopupButtonID="ibEndDate" />
                     &nbsp;

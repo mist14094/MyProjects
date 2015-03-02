@@ -63,6 +63,8 @@ namespace GasBlenderWeb
             {
                 _businessAccess.InsertTractor(txtaddName.Text);
                 BindData();
+                _businessAccess.InsertLog(Session["ID"].ToString(),
+System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
             }
             catch (Exception)
             {
@@ -81,6 +83,7 @@ namespace GasBlenderWeb
                 txtName.Text = HttpUtility.HtmlDecode(row.Cells[1].Text);
                 lblEditError.Text = "";
                 popupEdit.Show();
+
             }
         }
 
@@ -89,6 +92,8 @@ namespace GasBlenderWeb
             try
             {
                _businessAccess.UpdateTractor(txtName.Text, lblTractorID.Text);
+               _businessAccess.InsertLog(Session["ID"].ToString(),
+ System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
                 BindData();
             }
             catch (Exception)
@@ -105,6 +110,8 @@ namespace GasBlenderWeb
             using (GridViewRow row = (GridViewRow)((LinkButton)sender).Parent.Parent)
             {
                 lblRemove.Text = row.Cells[0].Text;
+                _businessAccess.InsertLog(Session["ID"].ToString(),
+  System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
                 popupDelete.Show();
             }
         }
@@ -114,6 +121,8 @@ namespace GasBlenderWeb
             try
             {
                 _businessAccess.RemoveTractor(lblRemove.Text);
+                _businessAccess.InsertLog(Session["ID"].ToString(),
+  System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
                 BindData();
             }
             catch (Exception)

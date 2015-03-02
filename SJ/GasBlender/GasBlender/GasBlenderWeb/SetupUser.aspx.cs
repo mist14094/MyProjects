@@ -56,6 +56,8 @@ namespace GasBlenderWeb
             }
             GridView1.DataSource = _businessAccess.GetUser();
             GridView1.DataBind();
+            _businessAccess.InsertLog(Session["ID"].ToString(),
+  System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
         }
 
         public void Edit(object sender, EventArgs e)
@@ -66,6 +68,8 @@ namespace GasBlenderWeb
             }
             GridView1.DataSource = _businessAccess.GetUser();
             GridView1.DataBind();
+            _businessAccess.InsertLog(Session["ID"].ToString(),
+  System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
         }
     }
 }

@@ -68,6 +68,8 @@ namespace GasBlenderWeb
                 _businessAccess.InsertLocation(txtaddLocationName.Text, txtaddAddress.Text,   txtaddCity.Text, txtaddState.Text,
                   txtaddZip.Text);
                 BindData();
+                _businessAccess.InsertLog(Session["ID"].ToString(),
+System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
             }
             catch (Exception)
             {
@@ -100,6 +102,8 @@ namespace GasBlenderWeb
                 _businessAccess.UpdateLocation(txtLocationName.Text, txtAddress.Text, txtCity.Text,
                     txtState.Text, txtZip.Text, lblLocationID.Text);
                 BindData();
+                _businessAccess.InsertLog(Session["ID"].ToString(),
+  System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
             }
             catch (Exception)
             {

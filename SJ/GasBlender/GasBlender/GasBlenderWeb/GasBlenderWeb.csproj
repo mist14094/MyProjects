@@ -1197,12 +1197,15 @@
     <Content Include="aspnet_client\system_web\4_0_30319\crystalreportviewers13\prompting\js\promptengine_strings_zh_TW.js" />
     <Content Include="aspnet_client\system_web\4_0_30319\crystalreportviewers13\urlreporting\activexviewer.js" />
     <Content Include="aspnet_client\system_web\4_0_30319\crystalreportviewers13\urlreporting\appletviewer.js" />
+    <Content Include="ReceiveTruck.aspx" />
+    <Content Include="ReceiveTruckOLDSunday.aspx" />
     <Content Include="Images\calendar.png" />
     <Content Include="Scripts\jquery-1.3.2.min.js" />
     <Content Include="Scripts\jquery.blockUI.js" />
     <Content Include="SEditUser.aspx" />
     <Content Include="EditUser.aspx" />
     <Content Include="InsertUser.aspx" />
+    <Content Include="Test.aspx" />
     <Content Include="TransactionLogHome.aspx" />
     <Content Include="Images\aspnet_client\system_web\2_0_50727\crystalreportviewers13\ActiveXControls\PrintControl.cab" />
     <Content Include="Images\aspnet_client\system_web\2_0_50727\crystalreportviewers13\ActiveXControls\PrintControl_res_cs.cab" />
@@ -2353,7 +2356,7 @@
     <Content Include="WebForm3.aspx" />
     <Content Include="WReceiveTruck.aspx" />
     <Content Include="SetupCarrier.aspx" />
-    <Content Include="ReceiveTruck.aspx" />
+    <Content Include="ReceiveTruck_old.aspx" />
     <Content Include="SetupDriver.aspx" />
     <Content Include="SetupTractor.aspx" />
     <Content Include="SetupLocation.aspx" />
@@ -2389,6 +2392,20 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ReceiveTruck.aspx.cs">
+      <DependentUpon>ReceiveTruck.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReceiveTruck.aspx.designer.cs">
+      <DependentUpon>ReceiveTruck.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReceiveTruckOLDSunday.aspx.cs">
+      <DependentUpon>ReceiveTruckOLDSunday.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReceiveTruckOLDSunday.aspx.designer.cs">
+      <DependentUpon>ReceiveTruckOLDSunday.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SEditUser.aspx.cs">
       <DependentUpon>SEditUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2409,6 +2426,13 @@
     </Compile>
     <Compile Include="InsertUser.aspx.designer.cs">
       <DependentUpon>InsertUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
     </Compile>
     <Compile Include="TransactionLogHome.aspx.cs">
       <DependentUpon>TransactionLogHome.aspx</DependentUpon>
@@ -2550,12 +2574,12 @@
     <Compile Include="SetupCarrier.aspx.designer.cs">
       <DependentUpon>SetupCarrier.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ReceiveTruck.aspx.cs">
-      <DependentUpon>ReceiveTruck.aspx</DependentUpon>
+    <Compile Include="ReceiveTruck_old.aspx.cs">
+      <DependentUpon>ReceiveTruck_old.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ReceiveTruck.aspx.designer.cs">
-      <DependentUpon>ReceiveTruck.aspx</DependentUpon>
+    <Compile Include="ReceiveTruck_old.aspx.designer.cs">
+      <DependentUpon>ReceiveTruck_old.aspx</DependentUpon>
     </Compile>
     <Compile Include="SetupDriver.aspx.cs">
       <DependentUpon>SetupDriver.aspx</DependentUpon>

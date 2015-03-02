@@ -38,6 +38,9 @@ namespace GasBlenderWeb
                     // CrystalReportViewer1.HasToggleGroupTreeButton = true;
                         Reports.ToolPanelView = CrystalDecisions.Web.ToolPanelViewType.None;
                     //CrystalReportViewer1.GroupTreeStyle.
+                        _businessAccess.InsertLog(Session["ID"].ToString(),
+                      System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
+                
                 }
             }
             catch (Exception ex)

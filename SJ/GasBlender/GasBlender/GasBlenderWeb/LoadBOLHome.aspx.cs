@@ -44,6 +44,9 @@ namespace GasBlenderWeb
             {
                 GridView1.DataSource = _businessAccess.SelectLoadTBL(TextBox1.Text);
                 GridView1.DataBind();
+                _businessAccess.InsertLog(Session["ID"].ToString(),
+                  System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
+                
             }
             catch (Exception)
             {
@@ -61,6 +64,9 @@ namespace GasBlenderWeb
                // ClientScript.RegisterStartupScript(this.GetType(), "newWindow", "<script>window.open('BOLReport.aspx?ID=" + row.Cells[0].Text +
                //                "','Report','left=20,top=20,width=1000,height=600,toolbar=0,resizable=0,scrollbars=yes');</script>");
                 Response.Redirect("LoadTruck.aspx?ID=" +row.Cells[0].Text);
+                _businessAccess.InsertLog(Session["ID"].ToString(),
+                  System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
+                
        
             }
         }

@@ -33,6 +33,9 @@ namespace GasBlenderWeb
                 _businessAccess.InsertUser(txtUserName.Text, txtName.Text, txtPassword.Text, txtEmail.Text, chkAdmin.Checked, DateTime.Now);
                 lblError.Text = "*Save Succesful";
                 btnSave.Enabled = false;
+                _businessAccess.InsertLog(Session["ID"].ToString(),
+                  System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
+                
             }
             catch (Exception ex)
             {

@@ -71,6 +71,9 @@ namespace GasBlenderWeb
             {
                      _businessAccess.UpdateStoredTank(txtRGasAdj.Text, txtSGasAdj.Text, txtEAdj.Text);
                     BindData();
+                    _businessAccess.InsertLog(Session["ID"].ToString(),
+                      System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
+                
             }
             catch (Exception)
             {
@@ -86,6 +89,9 @@ namespace GasBlenderWeb
             {
             _businessAccess.UpdateTankSize(txtRGasSetup.Text, txtSGasSetup.Text, txtEthSetup.Text);
             BindData();
+            _businessAccess.InsertLog(Session["ID"].ToString(),
+              System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
+                
             }
             catch (Exception)
             {

@@ -68,6 +68,8 @@ namespace GasBlenderWeb
             {
                 _businessAccess.AddTrailer(txtaddTrailerNumber.Text, txtaddCompartment1.Text, txtaddCompartment2.Text,
                     txtaddCompartment3.Text, txtaddCompartment4.Text, txtaddCompartment5.Text);
+                _businessAccess.InsertLog(Session["ID"].ToString(),
+System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
                 BindData();
             }
             catch (Exception)
@@ -105,6 +107,8 @@ namespace GasBlenderWeb
             {
                 _businessAccess.UpdateTrailer(txtTrailerNumber.Text, txtcompartment1Size.Text, txtcompartment2Size.Text,
                     txtcompartment3Size.Text, txtcompartment4Size.Text, txtcompartment5Size.Text, lblValueTrailerID.Text);
+                _businessAccess.InsertLog(Session["ID"].ToString(),
+  System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
                 BindData();
             }
             catch (Exception)

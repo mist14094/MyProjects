@@ -36,7 +36,7 @@
                         <ul id="ULMain" runat="server">
                             <li><a href="Default.aspx" id="Tab1" runat="server"><span>Home</span></a></li>
                             <li><a href="ReceiveTruck.aspx" id="Tab2" runat="server"><span>Receive Truck</span></a></li>
-                            <li><a href="HomeBOL.aspx" id="Tab3" runat="server"><span>BOL</span></a></li>
+                            <li><a href="HomeBOL.aspx" id="Tab3" runat="server"  style="display: none;"><span>BOL</span></a></li>
                             <li><a href="HomeSetup.aspx" id="Tab4" runat="server"><span>Setup</span></a></li>
                             <li><a href="HomeReports.aspx" id="Tab5" runat="server"><span>Reports</span></a></li>
                             

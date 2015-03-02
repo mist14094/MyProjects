@@ -53,6 +53,9 @@ namespace GasBlenderWeb
         {
             _businessAccess.EditUser(txtUserName.Text, txtName.Text, txtEmail.Text, chkAdmin.Checked, Request.QueryString["ID"]);
             lblError.Text = "*Saved";
+            _businessAccess.InsertLog(Session["ID"].ToString(),
+                  System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
+                
         }
 
         protected void btnPassword_Click(object sender, EventArgs e)
@@ -61,6 +64,9 @@ namespace GasBlenderWeb
             {
                 _businessAccess.ChangePassword(txtPassword.Text, Request.QueryString["ID"]);
                 lblError.Text = "*Saved";
+                _businessAccess.InsertLog(Session["ID"].ToString(),
+                  System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
+                
             }
             else
             {

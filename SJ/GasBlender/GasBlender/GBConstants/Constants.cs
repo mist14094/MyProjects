@@ -93,7 +93,7 @@ namespace GBConstants
             "SELECT [trailerID] ,[trailerNumber] ,CAST ([compartment1Size]  AS FLOAT) compartment1Size ,CAST ([compartment2Size]  AS FLOAT) compartment2Size ,CAST ([compartment3Size]  AS FLOAT) compartment3Size ,CAST ([compartment4Size]  AS FLOAT) compartment4Size ,CAST ([compartment5Size]  AS FLOAT) compartment5Size ,[isactive]  FROM [trailerTBL]";
 
         public string ReceiveTruckLoad =
-            "INSERT INTO loadTBL (carrierID,refNum,loadType, trailerID, C1Type, C1Amount, C2Type, C2Amount, C3Type, C3Amount, C4Type, C4Amount, C5Type, C5Amount, sumRegular, sumSuper, sumEthanol,C1LocationID,C2LocationID,C3LocationID,C4LocationID,C5LocationID,driver,truck,note) VALUES ({0},'{1}','{2}',{3},'{4}',{5},'{6}',{7},'{8}',{9},'{10}',{11},'{12}',{13},{14},{15},{16},{17},{18},{19},{20},{21},'{22}','{23}','{24}' ) SELECT @@IDENTITY";
+            "INSERT INTO loadTBL (carrierID,refNum,loadType, trailerID, C1Type, C1Amount, C2Type, C2Amount, C3Type, C3Amount, C4Type, C4Amount, C5Type, C5Amount, sumRegular, sumSuper, sumEthanol,C1LocationID,C2LocationID,C3LocationID,C4LocationID,C5LocationID,driver,truck,note,stamp) VALUES ({0},'{1}','{2}',{3},'{4}',{5},'{6}',{7},'{8}',{9},'{10}',{11},'{12}',{13},{14},{15},{16},{17},{18},{19},{20},{21},'{22}','{23}','{24}','{25}' ) SELECT @@IDENTITY";
 
         public string InsertLineData =
             "INSERT INTO lineTBL (loadID,CType,CAmount,CLocationID,RAdd,SAdd,EAdd,compartment,combined,note) VALUES ({0},'{1}',{2},{3},{4},{5},{6},{7},'{8}','{9}')";
@@ -117,12 +117,18 @@ namespace GBConstants
             "SELECT *  FROM [loadTBL] where loadID= {0}";
 
         public string DeleteLoadTBL =
-            @"UPDATE setupTBL SET regularStored=regularStored-(SELECT sum(Radd) as sumRadd FROM linetbl WHERE loadID = {0} group by loadID), 
-              superStored=superStored-(SELECT  sum(sadd) as sumEadd FROM linetbl WHERE loadID = {0} group by loadID), 
-              ethanolStored=ethanolStored-(SELECT  sum(Eadd) as sumEadd FROM linetbl WHERE loadID = {0 }group by loadID)
-              DELETE FROM loadTBL where loadid={0}
-              DELETE FROM lineTBL where loadid={0}";
-
+            @"UPDATE setupTBL SET regularStored=regularStored-(SELECT ISNULL(sum(Radd),0) as sumRadd FROM linetbl WHERE loadID = {0}), 
+superStored=superStored-(SELECT ISNULL(sum(Sadd),0) as sumSadd FROM linetbl WHERE loadID = {0}), 
+ethanolStored=ethanolStored-(SELECT ISNULL(sum(Eadd),0) as sumEadd FROM linetbl WHERE loadID = {0})
+DELETE FROM loadTBL where loadid={0}
+DELETE FROM lineTBL where loadid={0}";
+ 
+//        public string DeleteLoadTBL =
+//            @"UPDATE setupTBL SET regularStored=regularStored-(SELECT sum(Radd) as sumRadd FROM linetbl WHERE loadID = {0} group by loadID), 
+//              superStored=superStored-(SELECT  sum(sadd) as sumEadd FROM linetbl WHERE loadID = {0} group by loadID), 
+//              ethanolStored=ethanolStored-(SELECT  sum(Eadd) as sumEadd FROM linetbl WHERE loadID = {0 }group by loadID)
+//              DELETE FROM loadTBL where loadid={0}
+//              DELETE FROM lineTBL where loadid={0}";
         public string GetLoad = "SELECT [loadID],[refNum],[stamp]  FROM [loadTBL] ORDER BY loadID DESC";
 
         public string UpdateLoadTBL = @"UPDATE [loadTBL] SET [refNum] = '{0}',[loadType] = '{1}',[trailerID] = '{2}',[C1Type] = '{3}',[C1Amount] = '{4}',[C2Type] = '{5}',[C2Amount] = '{6}'
@@ -130,7 +136,7 @@ namespace GBConstants
                                         ,[C1LocationID] = '{16}',[C2LocationID] = '{17}',[C3LocationID] = '{18}',[C4LocationID] = '{19}',[C5LocationID] = '{20}',[driver] ='{21}',[truck] = '{22}'
                                         ,[carrierID] = '{23}',[note] = '{24}' WHERE loadID='{25}'";
 
-        public string UpdateLineTBL = "UPDATE lineTBL set CType='{0}',CAmount={1},CLocationID={2},RAdd={3},SAdd={4},EAdd={5},combined='{6}'  WHERE loadid={7}and compartment = {8}";
+        public string UpdateLineTBL = "UPDATE lineTBL set CType='{0}',CAmount={1},CLocationID={2},RAdd={3},SAdd={4},EAdd={5},combined='{6}'  WHERE loadid={7} and compartment = {8}";
 
         public string InsertUser =
             "INSERT INTO [userTBL]([Username],[Password],[Name] ,[Email] ,[IsAdmin] ,[DateCreated]) VALUES (@username, @Password,@Name, @Email, @IsAdmin, @DateCreated)";
@@ -149,5 +155,11 @@ namespace GBConstants
 
         public string GetUser =
             "SELECT [ID] ,[Username],[Name] ,[Email] ,[IsAdmin] ,[DateCreated]  FROM userTBL order by ID";
+
+        public string InsertLog =
+            "INSERT INTO [logTBL] ([UserID] ,[Action] ,[Page] ,[DateCreated]) VALUES (@UserID, @Action, @Page, @DateCreated)";
+
+        public string DeleteLine =
+            "DELETE FROM [lineTBL] WHERE loadID={0}";
     }
 }

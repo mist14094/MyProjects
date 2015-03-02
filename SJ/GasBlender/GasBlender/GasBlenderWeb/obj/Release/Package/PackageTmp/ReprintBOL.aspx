@@ -12,7 +12,11 @@
     <table class="auto-style1">
         <tr>
             <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td>Search BOL :
+                <asp:TextBox ID="txtBolID" runat="server" Width="265px"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click"  CssClass="buttons"/>
+            </td>
             <td>&nbsp;</td>
         </tr>
        

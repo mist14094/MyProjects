@@ -189,11 +189,11 @@ namespace GBBusiness
             string c4Type, string c4Amount,
             string c5Type, string c5Amount, string sumRegular, string sumSuper, string sumEthanol, string c1LocationID,
             string c2LocationID, string c3LocationID, string c4LocationID, string c5LocationID,
-            string driver, string truck, string note)
+            string driver, string truck, string note,string stamp)
         {
             return _access.ReceiveTruckLoad(carrierID, refNum, loadType, trailerID, c1Type, c1Amount, c2Type, c2Amount,
                 c3Type, c3Amount, c4Type, c4Amount, c5Type, c5Amount, sumRegular, sumSuper, sumEthanol, c1LocationID,
-                c2LocationID, c3LocationID, c4LocationID, c5LocationID, driver, truck, note);
+                c2LocationID, c3LocationID, c4LocationID, c5LocationID, driver, truck, note,stamp);
         }
 
         public DataTable InsertLineData(string loadId, string cType, string cAmount, string cLocation, string rAdd,
@@ -239,16 +239,22 @@ namespace GBBusiness
             return _access.GetLoad();
         }
 
-        public DataTable UpdateLoadTBL(string refNum, string loadType, string trailerID, string C1Type, string C1Amount, string C2Type, string C2Amount, string C3Type, string C3Amount, string C4Type, string C4Amount, string C5Type, string C5Amount, string sumRegular, string sumSuper, string sumEthanol, string C1LocationID, string C2LocationID, string C3LocationID, string C4LocationID, string C5LocationID, string driver, string truck, string carrierID, string note, string loadID)
+        public DataTable UpdateLoadTBL(string refNum, string loadType, string trailerID, string C1Type, string C1Amount,
+            string C2Type, string C2Amount, string C3Type, string C3Amount, string C4Type, string C4Amount,
+            string C5Type, string C5Amount, string sumRegular, string sumSuper, string sumEthanol, string C1LocationID,
+            string C2LocationID, string C3LocationID, string C4LocationID, string C5LocationID, string driver,
+            string truck, string carrierID, string note, string loadID)
         {
-            return _access.UpdateLoadTBL(refNum, loadType, trailerID, C1Type, C1Amount, C2Type, C2Amount, C3Type, C3Amount, C4Type, C4Amount, C5Type, C5Amount, sumRegular, sumSuper, sumEthanol, C1LocationID, C2LocationID, C3LocationID, C4LocationID, C5LocationID, driver, truck, carrierID, note, loadID);
+            return _access.UpdateLoadTBL(refNum, loadType, trailerID, C1Type, C1Amount, C2Type, C2Amount, C3Type,
+                C3Amount, C4Type, C4Amount, C5Type, C5Amount, sumRegular, sumSuper, sumEthanol, C1LocationID,
+                C2LocationID, C3LocationID, C4LocationID, C5LocationID, driver, truck, carrierID, note, loadID);
         }
 
         public DataTable UpdateLineTBL(string CType, string CAmount, string CLocationID, string RAdd, string SAdd,
             string EAdd, string combined, string loadid, string compartment)
         {
-            return _access.UpdateLineTBL( CType,  CAmount,  CLocationID,  RAdd,  SAdd,
-             EAdd,  combined,  loadid,  compartment);
+            return _access.UpdateLineTBL(CType, CAmount, CLocationID, RAdd, SAdd,
+                EAdd, combined, loadid, compartment);
         }
 
         public DataTable UpdateAfterSetupTable(string regularStored, string superStored, string ethanolStored)
@@ -262,7 +268,8 @@ namespace GBBusiness
             byte[] clearBytes = Encoding.Unicode.GetBytes(clearText);
             using (Aes encryptor = Aes.Create())
             {
-                Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
+                Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey,
+                    new byte[] {0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76});
                 encryptor.Key = pdb.GetBytes(32);
                 encryptor.IV = pdb.GetBytes(16);
                 using (MemoryStream ms = new MemoryStream())
@@ -284,7 +291,8 @@ namespace GBBusiness
             byte[] cipherBytes = Convert.FromBase64String(cipherText);
             using (Aes encryptor = Aes.Create())
             {
-                Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
+                Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey,
+                    new byte[] {0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76});
                 encryptor.Key = pdb.GetBytes(32);
                 encryptor.IV = pdb.GetBytes(16);
                 using (MemoryStream ms = new MemoryStream())
@@ -300,14 +308,15 @@ namespace GBBusiness
             return cipherText;
         }
 
-        public DataTable InsertUser(string username, string Name, string Password, string Email, bool isadmin, DateTime DateCreated)
+        public DataTable InsertUser(string username, string Name, string Password, string Email, bool isadmin,
+            DateTime DateCreated)
         {
             return _access.InsertUser(username, Name, Encrypt(Password), Email, isadmin, DateCreated);
         }
 
         public DataTable CheckUser(string username, string password)
         {
-          return  _access.CheckUser(username, Encrypt(password));
+            return _access.CheckUser(username, Encrypt(password));
             //DataTable dt = new DataTable();
             //dt = _access.CheckUser(username,Encrypt(password));
             //if (dt != null)
@@ -332,9 +341,9 @@ namespace GBBusiness
             return _access.GetUser();
         }
 
-        public DataTable EditUser(string username, string Name,  string Email, bool isadmin, string ID)
+        public DataTable EditUser(string username, string Name, string Email, bool isadmin, string ID)
         {
-            return _access.EditUser(username,Name,   Email, isadmin, ID);
+            return _access.EditUser(username, Name, Email, isadmin, ID);
         }
 
         public DataTable ChangePassword(string password, string ID)
@@ -347,5 +356,14 @@ namespace GBBusiness
             return _access.DeleteUser(ID);
         }
 
+        public DataTable InsertLog(string UserID, string Action, string Page, DateTime DateCreated)
+        {
+            return _access.InsertLog(UserID, Action, Page, DateCreated);
+        }
+
+        public DataTable DeleteLine(string LoadID)
+        {
+            return _access.DeleteLine(LoadID);
+        }
     }
 }

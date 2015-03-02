@@ -32,7 +32,10 @@ namespace GasBlenderWeb
                     Session["ID"] = dt.Rows[0]["ID"].ToString();
                     Session["IsAdmin"] = dt.Rows[0]["IsAdmin"].ToString();
                     Session["Name"] = dt.Rows[0]["Name"].ToString();
+                    _businessAccess.InsertLog(Session["ID"].ToString(),
+                      System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
                     Response.Redirect("Default.aspx");
+                  
                 }
                 else
                 {

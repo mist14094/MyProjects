@@ -45,6 +45,8 @@ namespace GasBlenderWeb
 
                     TransactionLogReport.ReportSource = rdoc;
                     TransactionLogReport.DataBind();
+                    _businessAccess.InsertLog(Session["ID"].ToString(),
+  System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
 
                 }
             }

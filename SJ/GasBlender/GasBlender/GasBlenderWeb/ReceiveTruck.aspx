@@ -4,10 +4,12 @@
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-<script src="scripts/jquery-1.3.2.min.js" type="text/javascript"></script>
+    <script src="scripts/jquery-1.3.2.min.js" type="text/javascript"></script>
 <script src="scripts/jquery.blockUI.js" type="text/javascript"></script>
+
 <script type = "text/javascript">
     
+
     function PrintPanel() {
 
         this.document.print();
@@ -57,6 +59,24 @@
      <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
     <table class="auto-style3">
+        <tr>
+            <td>&nbsp;</td>
+            <td colspan="8">Date&nbsp;&nbsp;
+                <asp:ImageButton ID="ibStartDate" runat="Server" AlternateText="Click here to display calendar" ImageUrl="Images/calendar.png" />
+                <asp:TextBox ID="txtStartDate" runat="server" Enabled="False" Width="143px"></asp:TextBox>
+                <cc1:CalendarExtender ID="clExtenderStart" runat="server" PopupButtonID="ibStartDate" TargetControlID="txtStartDate" />
+                &nbsp;
+                       
+                    <asp:DropDownList ID="ddlHourStart" runat="server">
+                    </asp:DropDownList>
+                    <asp:DropDownList ID="ddlMinuteStart" runat="server">
+                    </asp:DropDownList>
+                    <asp:DropDownList ID="ddlSecondStart" runat="server">
+                    </asp:DropDownList>
+                    <asp:DropDownList ID="ddlAMStart" runat="server">
+                    </asp:DropDownList>
+            </td>
+        </tr>
         <tr>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -393,7 +413,7 @@
             <td>&nbsp;</td>
             <td class="ac">&nbsp;</td>
             <td class="ac"><asp:Button ID="btnPrint" runat="server" Text="Print"  Height="25px" Width="60px" OnClientClick="javascript:window.print();" OnClick="btnPrint_Click"/></td>
-            <td class="ac"><asp:Button ID="btnSave" runat="server" Text="Save"  Height="25px" Width="60px" OnClick="btnSave_Click"/></td>
+            <td class="ac"><asp:Button ID="btnSave" runat="server" Text="Save"  Height="25px" Width="60px"   OnClick="btnSave_Click"  OnClientClick="return confirm('Make sure all the information is right, Do you want to SAVE? ')"/></td>
             <td class="ac"><asp:Button ID="btnCancel" runat="server" Text="Clear"  Height="25px" Width="60px" OnClick="btnCancel_Click"/></td>
             <td class="ac">&nbsp;</td>
             <td>&nbsp;</td>
@@ -404,6 +424,8 @@
         
         <div>
             <asp:Label runat="server" ID="lblMessage" Text="" ForeColor="Red"></asp:Label>
+            &nbsp;
+            <asp:LinkButton ID="lnkLink" runat="server" Visible="False" ForeColor="red">Click here if it's not redirected to Print</asp:LinkButton>
         </div>
         <table class="auto-style3">
             <tr>
@@ -420,5 +442,6 @@
 
 </div>
               </ContentTemplate>
+
          </asp:UpdatePanel>
 </asp:Content>

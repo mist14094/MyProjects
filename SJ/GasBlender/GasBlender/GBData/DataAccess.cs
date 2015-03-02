@@ -863,13 +863,13 @@ namespace GBData
 
         public DataTable ReceiveTruckLoad(string carrierID, string refNum, string loadType, string trailerID, string c1Type, string c1Amount ,string c2Type, string c2Amount, string c3Type, string c3Amount, string c4Type, string c4Amount,
                                           string c5Type, string c5Amount, string sumRegular, string sumSuper, string sumEthanol, string c1LocationID, string c2LocationID, string c3LocationID, string c4LocationID, string c5LocationID,
-                                          string  driver, string truck, string  note )
+                                          string  driver, string truck, string  note,string stamp )
         {
             Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
             var dataTable = new DataTable();
             var selectCommand = new SqlCommand
             {
-                CommandText = string.Format(_constants.ReceiveTruckLoad, carrierID, refNum, loadType, trailerID,c1Type, c1Amount, c2Type, c2Amount, c3Type, c3Amount, c4Type, c4Amount, c5Type, c5Amount, sumRegular, sumSuper, sumEthanol, c1LocationID, c2LocationID, c3LocationID, c4LocationID, c5LocationID, driver, truck, note)
+                CommandText = string.Format(_constants.ReceiveTruckLoad, carrierID, refNum, loadType, trailerID,c1Type, c1Amount, c2Type, c2Amount, c3Type, c3Amount, c4Type, c4Amount, c5Type, c5Amount, sumRegular, sumSuper, sumEthanol, c1LocationID, c2LocationID, c3LocationID, c4LocationID, c5LocationID, driver, truck, note,stamp)
             };
             var adapter = new SqlDataAdapter(selectCommand);
             var connection = new SqlConnection(_constants.DefaultConnectionString);
@@ -1480,6 +1480,80 @@ namespace GBData
                 CommandText = string.Format(_constants.DeleteUser)
             };
             selectCommand.Parameters.AddWithValue("@id", ID);
+            var adapter = new SqlDataAdapter(selectCommand);
+            var connection = new SqlConnection(_constants.DefaultConnectionString);
+            selectCommand.Connection = connection;
+            try
+            {
+                connection.Open();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                Nlog.Trace(
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Error", ex);
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+                connection.Dispose();
+                Nlog.Trace(message:
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
+            }
+        }
+
+
+        public DataTable InsertLog(string UserID, string Action, string Page, DateTime DateCreated)
+        {
+            Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            var dataTable = new DataTable();
+            var selectCommand = new SqlCommand
+            {
+                CommandText = string.Format(_constants.InsertLog)
+            };
+            selectCommand.Parameters.AddWithValue("@UserID", UserID);
+            selectCommand.Parameters.AddWithValue("@Action", Action);
+            selectCommand.Parameters.AddWithValue("@Page", Page);
+            selectCommand.Parameters.AddWithValue("@DateCreated", DateCreated);
+            var adapter = new SqlDataAdapter(selectCommand);
+            var connection = new SqlConnection(_constants.DefaultConnectionString);
+            selectCommand.Connection = connection;
+            try
+            {
+                connection.Open();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                Nlog.Trace(
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Error", ex);
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+                connection.Dispose();
+                Nlog.Trace(message:
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
+            }
+        }
+
+        public DataTable DeleteLine(string LoadID)
+        {
+            Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            var dataTable = new DataTable();
+            var selectCommand = new SqlCommand
+            {
+                CommandText = string.Format(_constants.DeleteLine,LoadID)
+            };
+
             var adapter = new SqlDataAdapter(selectCommand);
             var connection = new SqlConnection(_constants.DefaultConnectionString);
             selectCommand.Connection = connection;
