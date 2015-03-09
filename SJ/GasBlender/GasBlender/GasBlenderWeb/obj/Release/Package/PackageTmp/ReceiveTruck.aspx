@@ -4,6 +4,21 @@
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .divWaiting{
+   
+position: absolute;
+background-color: #FAFAFA;
+z-index: 2147483647 !important;
+opacity: 0.8;
+overflow: hidden;
+text-align: center; top: 0; left: 0;
+height: 100%;
+width: 100%;
+padding-top:20%;
+} 
+         
+    </style>
     <script src="scripts/jquery-1.3.2.min.js" type="text/javascript"></script>
 <script src="scripts/jquery.blockUI.js" type="text/javascript"></script>
 
@@ -55,8 +70,12 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
-     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+         
+    </asp:ToolkitScriptManager>
+    <asp:Panel runat="server" ID="pnlUpdate">
+     <asp:UpdatePanel ID="UpdatePanel1" runat="server" EnableViewState="True">
+         
         <ContentTemplate>
     <table class="auto-style3">
         <tr>
@@ -232,23 +251,24 @@
 &nbsp;</td>
             <td class="auto-style4"></td>
             <td class="auto-style5">
-                <asp:TextBox ID="txtOnBoard1" runat="server" Width="50px" AutoPostBack="True" OnTextChanged="txtOnBoard1_TextChanged"></asp:TextBox>
+                <asp:TextBox ID="txtOnBoard1" runat="server" Width="50px" AutoPostBack="True" OnTextChanged="txtOnBoard1_TextChanged" BackColor="#CCCCFF"></asp:TextBox>
                 <cc1:FilteredTextBoxExtender runat="server" ID="FilteredTextBoxExtender5" Enabled="True" TargetControlID="txtOnBoard1" FilterType="Numbers,Custom" ValidChars="."  />
             </td>
             <td class="auto-style5">
-                <asp:TextBox ID="txtOnBoard2" runat="server" Width="50px" AutoPostBack="True" OnTextChanged="txtOnBoard2_TextChanged"></asp:TextBox>
+                
+                <asp:TextBox ID="txtOnBoard2" runat="server" Width="50px" AutoPostBack="True" OnTextChanged="txtOnBoard2_TextChanged" BackColor="#CCCCFF"></asp:TextBox>
                 <cc1:FilteredTextBoxExtender runat="server" ID="FilteredTextBoxExtender6" Enabled="True" TargetControlID="txtOnBoard2" FilterType="Numbers,Custom" ValidChars="."   />
             </td>
             <td class="auto-style5">
-                <asp:TextBox ID="txtOnBoard3" runat="server" Width="50px" AutoPostBack="True" OnTextChanged="txtOnBoard3_TextChanged"></asp:TextBox>
+                <asp:TextBox ID="txtOnBoard3" runat="server" Width="50px" AutoPostBack="True" OnTextChanged="txtOnBoard3_TextChanged" BackColor="#CCCCFF"></asp:TextBox>
                 <cc1:FilteredTextBoxExtender runat="server" ID="FilteredTextBoxExtender7" Enabled="True" TargetControlID="txtOnBoard3" FilterType="Numbers,Custom" ValidChars="."   />
             </td>
             <td class="auto-style5">
-                <asp:TextBox ID="txtOnBoard4" runat="server" Width="50px" AutoPostBack="True" OnTextChanged="txtOnBoard4_TextChanged"></asp:TextBox>
+                <asp:TextBox ID="txtOnBoard4" runat="server" Width="50px" AutoPostBack="True" OnTextChanged="txtOnBoard4_TextChanged" BackColor="#CCCCFF"></asp:TextBox>
                 <cc1:FilteredTextBoxExtender runat="server" ID="FilteredTextBoxExtender8" Enabled="True" TargetControlID="txtOnBoard4" FilterType="Numbers,Custom" ValidChars="."   />
             </td>
             <td class="auto-style5">
-                <asp:TextBox ID="txtOnBoard5" runat="server" Width="50px" AutoPostBack="True" OnTextChanged="txtOnBoard5_TextChanged"></asp:TextBox>
+                <asp:TextBox ID="txtOnBoard5" runat="server" Width="50px" AutoPostBack="True" OnTextChanged="txtOnBoard5_TextChanged" BackColor="#CCCCFF"></asp:TextBox>
                 <cc1:FilteredTextBoxExtender runat="server" ID="FilteredTextBoxExtender9" Enabled="True" TargetControlID="txtOnBoard5" FilterType="Numbers,Custom" ValidChars="."   />
             </td>
             <td class="auto-style4"></td>
@@ -372,7 +392,7 @@
             <td>Deliver to </td>
             <td>&nbsp;</td>
             <td class="ac">
-                <asp:DropDownList ID="ddlDeliver1" runat="server" Width="54px">
+                <asp:DropDownList ID="ddlDeliver1" runat="server" Width="54px" AutoPostBack="True" OnSelectedIndexChanged="ddlDeliver1_SelectedIndexChanged">
                 </asp:DropDownList>
             </td>
             <td class="ac">
@@ -442,6 +462,17 @@
 
 </div>
               </ContentTemplate>
+         
+                </asp:UpdatePanel></asp:Panel>
+     <asp:UpdateProgress ID="UpdateProgress1" runat="server">
+         <ProgressTemplate>
+   <div class="divWaiting">            
+	<asp:Label ID="lblWait" runat="server" 
+	Text=" Please wait... " />
+	<asp:Image ID="imgWait" runat="server" 
+	ImageAlign="Middle" ImageUrl="Images/loadingAnim.gif" />
+  </div>
+             </ProgressTemplate>
+    </asp:UpdateProgress>
 
-         </asp:UpdatePanel>
 </asp:Content>

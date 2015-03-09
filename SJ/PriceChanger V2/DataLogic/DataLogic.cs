@@ -366,6 +366,51 @@ namespace DataLogic
             }
             return dt;
         }
+
+        public DataTable InsertCatagory(DataTable CatagoriesInsert, int Createdby, DateTime ModifiedDate)
+        {
+            nlog.Trace("DataLogic:DataLogic:GETUPCSKUDetails::Entering");
+            var dt = new DataTable();
+            SqlConnection connection = null;
+            try
+            {
+                using (connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DBConnectionString"].ToString()))
+                {
+                    SqlCommand sqlCommand;
+                    using (sqlCommand = new SqlCommand())
+                    {
+                        int totalRowsAfected;
+                        sqlCommand.CommandText = "InsertCatagory";
+                        sqlCommand.CommandType = CommandType.StoredProcedure;
+                        sqlCommand.Parameters.Add(new SqlParameter("@CatagoriesInsert", CatagoriesInsert));
+                        sqlCommand.Parameters.Add(new SqlParameter("@Createdby", Createdby));
+                        sqlCommand.Parameters.Add(new SqlParameter("@ModifiedDate", ModifiedDate));
+                        sqlCommand.Connection = connection;
+                        connection.Open();
+                        SqlDataReader sqlDataReader;
+                        using (sqlDataReader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader: sqlDataReader);
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                nlog.Error("DataLogic:DataLogic:GETUPCSKUDetails::Error", ex);
+                throw ex;
+            }
+            finally
+            {
+                nlog.Trace("DataLogic:DataLogic:GETUPCSKUDetails::Leaving");
+                if (connection != null) connection.Close();
+            }
+            return dt;
+        }
+
+
+
     }
 
 

@@ -1200,6 +1200,7 @@
     <Content Include="ReceiveTruck.aspx" />
     <Content Include="ReceiveTruckOLDSunday.aspx" />
     <Content Include="Images\calendar.png" />
+    <Content Include="Scripts\Focus.js" />
     <Content Include="Scripts\jquery-1.3.2.min.js" />
     <Content Include="Scripts\jquery.blockUI.js" />
     <Content Include="SEditUser.aspx" />

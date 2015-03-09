@@ -67,6 +67,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Themes\Basic\GridView.css" />
+    <Content Include="CatgSearch.aspx" />
+    <Content Include="CTRLCatgSearch.aspx" />
     <Content Include="css\grd_alt.png" />
     <Content Include="css\grd_head.png" />
     <Content Include="css\grd_pgr.png" />
@@ -79,6 +81,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CatgSearch.aspx.cs">
+      <DependentUpon>CatgSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatgSearch.aspx.designer.cs">
+      <DependentUpon>CatgSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CTRLCatgSearch.aspx.cs">
+      <DependentUpon>CTRLCatgSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CTRLCatgSearch.aspx.designer.cs">
+      <DependentUpon>CTRLCatgSearch.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

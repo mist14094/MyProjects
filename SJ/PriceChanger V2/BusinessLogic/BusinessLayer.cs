@@ -245,5 +245,27 @@ namespace BusinessLogic
                 nlog.Trace("BusinessLogic:BusinessLayer:GetSimpleProductDetails::Exiting");
             }
         }
+
+
+        public DataTable InsertCatagory(DataTable CatagoriesInsert, int Createdby, DateTime ModifiedDate)
+        {
+            nlog.Trace("BusinessLogic:BusinessLayer:PriceChangeLog::Entering");
+
+            try
+            {
+                return dl.InsertCatagory(CatagoriesInsert, Createdby,ModifiedDate);
+
+
+            }
+            catch (Exception exception)
+            {
+                nlog.Error("DataLogic:DataLogic:PriceChangeLog::Error", exception);
+                throw;
+            }
+            finally
+            {
+                nlog.Trace("BusinessLogic:BusinessLayer:PriceChangeLog::Exiting");
+            }
+        }
     }
 }

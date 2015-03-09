@@ -22,7 +22,7 @@ namespace PriceChangerWeb
             if (txtUserID.Text == "admin" && txtPassword.Text == "Smokin2293" )
             {
                 Session["Username"] = "admin";
-                Response.Redirect("Search.aspx");
+                Response.Redirect("catgSearch.aspx");
             }
             else
             {
