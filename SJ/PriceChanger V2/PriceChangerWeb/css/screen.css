@@ -1,0 +1,23 @@
+Html, body {
+      Padding: 0;
+      Margin: 0;
+      Height: 100%;
+}
+
+#page {
+    Min-height: 100%; /* for all other browsers */
+    height: 100%; /* for IE */
+    position: relative;
+}
+ 
+#main {
+      Padding-bottom: 75px;   /* This value is the height of your footer */
+}
+ 
+#footer {
+      Position: absolute;
+      Width: 100%;
+      Bottom: 0;
+      Height: 75px;  /* This value is the height of your footer */
+      text-align: center;
+}

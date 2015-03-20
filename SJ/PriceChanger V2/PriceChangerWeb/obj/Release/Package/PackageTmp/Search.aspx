@@ -60,6 +60,12 @@
                  <pagersettings Position="TopAndBottom" />
 <AlternatingRowStyle CssClass="alt"></AlternatingRowStyle>
             <Columns>
+                
+                 <asp:TemplateField>
+            <ItemTemplate>
+                <asp:CheckBox ID="chkRow" runat="server" />
+            </ItemTemplate>
+        </asp:TemplateField>
                 <asp:BoundField DataField="UPC" HeaderText="UPC" />
                   <asp:BoundField DataField="SKU" HeaderText="SKU" />
                   <asp:BoundField DataField="desc" HeaderText="Description" />
@@ -77,7 +83,7 @@
               <asp:TemplateField>
     <ItemTemplate>
         
-  <a href="#" onclick="javascript:w= window.open('<%# "PriceChangeWOCA.aspx?UPC=" +Eval("UPC")+"&SKU=" +Eval("SKU") %>','DownloadFile'+'<%# Eval("UPC") %>','left=20,top=20,width=1000,height=600,toolbar=0,resizable=0,scrollbars=yes');return false;" >Select</a>
+    <a href="#" onclick="javascript:w= window.open('<%# "PriceChangeWOCA.aspx?UPC=" +Eval("UPC")+"&SKU=" +Eval("SKU") %>','DownloadFile'+'<%# Eval("UPC") %>','left=20,top=20,width=1000,height=600,toolbar=0,resizable=0,scrollbars=yes');return false;" >Select</a>
         
     </ItemTemplate>
 </asp:TemplateField>

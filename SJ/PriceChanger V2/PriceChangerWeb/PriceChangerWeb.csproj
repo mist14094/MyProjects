@@ -67,7 +67,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Themes\Basic\GridView.css" />
+    <Content Include="CatagoriesExpl.aspx" />
     <Content Include="CatgSearch.aspx" />
+    <Content Include="CatagoriesDetail.aspx" />
+    <Content Include="css\icon_search.png" />
+    <Content Include="css\screen.css" />
+    <Content Include="LandingMenu.aspx" />
+    <Content Include="NewCatgrySearch.aspx" />
     <Content Include="CTRLCatgSearch.aspx" />
     <Content Include="css\grd_alt.png" />
     <Content Include="css\grd_head.png" />
@@ -78,15 +84,45 @@
     <Content Include="PriceChangeWOCA.aspx" />
     <Content Include="Search.aspx" />
     <Content Include="Login1.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CatagoriesExpl.aspx.cs">
+      <DependentUpon>CatagoriesExpl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatagoriesExpl.aspx.designer.cs">
+      <DependentUpon>CatagoriesExpl.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CatgSearch.aspx.cs">
       <DependentUpon>CatgSearch.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CatgSearch.aspx.designer.cs">
       <DependentUpon>CatgSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CatagoriesDetail.aspx.cs">
+      <DependentUpon>CatagoriesDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatagoriesDetail.aspx.designer.cs">
+      <DependentUpon>CatagoriesDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LandingMenu.aspx.cs">
+      <DependentUpon>LandingMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LandingMenu.aspx.designer.cs">
+      <DependentUpon>LandingMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewCatgrySearch.aspx.cs">
+      <DependentUpon>NewCatgrySearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewCatgrySearch.aspx.designer.cs">
+      <DependentUpon>NewCatgrySearch.aspx</DependentUpon>
     </Compile>
     <Compile Include="CTRLCatgSearch.aspx.cs">
       <DependentUpon>CTRLCatgSearch.aspx</DependentUpon>

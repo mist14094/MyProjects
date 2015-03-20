@@ -8,3 +8,13 @@ C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\Business
 C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\BusinessLogic\obj\Release\BusinessLogic.csprojResolveAssemblyReference.cache
 C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\BusinessLogic\obj\Release\BusinessLogic.dll
 C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\BusinessLogic\obj\Release\BusinessLogic.pdb
+D:\Projects\MyProjects\SJ\PriceChanger V2\BusinessLogic\bin\Release\NLog.config
+D:\Projects\MyProjects\SJ\PriceChanger V2\BusinessLogic\bin\Release\BusinessLogic.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\BusinessLogic\bin\Release\BusinessLogic.pdb
+D:\Projects\MyProjects\SJ\PriceChanger V2\BusinessLogic\bin\Release\DataLogic.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\BusinessLogic\bin\Release\NLog.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\BusinessLogic\bin\Release\DataLogic.pdb
+D:\Projects\MyProjects\SJ\PriceChanger V2\BusinessLogic\bin\Release\NLog.xml
+D:\Projects\MyProjects\SJ\PriceChanger V2\BusinessLogic\obj\Release\BusinessLogic.csprojResolveAssemblyReference.cache
+D:\Projects\MyProjects\SJ\PriceChanger V2\BusinessLogic\obj\Release\BusinessLogic.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\BusinessLogic\obj\Release\BusinessLogic.pdb

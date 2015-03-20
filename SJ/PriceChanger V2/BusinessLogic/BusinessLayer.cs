@@ -11,7 +11,7 @@ namespace BusinessLogic
 {
     public class BusinessLayer
     {
-        DataLogic.DataLogic dl = new DataLogic.DataLogic();
+        private DataLogic.DataLogic dl = new DataLogic.DataLogic();
         internal Logger nlog = LogManager.GetCurrentClassLogger();
 
         public DataTable GetTableSearchCriteria()
@@ -31,7 +31,7 @@ namespace BusinessLogic
             {
                 nlog.Trace("BusinessLogic:BusinessLayer:GetTableSearchCriteria::Exiting");
             }
-           
+
 
         }
 
@@ -57,7 +57,7 @@ namespace BusinessLogic
             }
         }
 
-        public List<Product> GETUPCSKUDetails(string UPC,string SKU)
+        public List<Product> GETUPCSKUDetails(string UPC, string SKU)
         {
             nlog.Trace("BusinessLogic:BusinessLayer:GETUPCSKUDetails::Entering");
 
@@ -100,7 +100,7 @@ namespace BusinessLogic
 
 
 
-        private  List<Product> ToProduct(DataTable ds)
+        private List<Product> ToProduct(DataTable ds)
         {
             return ds.AsEnumerable()
                 .Select(row => new Product
@@ -153,8 +153,8 @@ namespace BusinessLogic
                     StyleCode = row.Field<string>("StyleCode"),
                     StyleDesc = row.Field<string>("StyleDesc"),
                     UPC = row.Field<string>("UPC"),
-                    VendorName = row.Field<string>("VendorName")//,
-              //      rowguid = row.Field<Guid>("rowguid")
+                    VendorName = row.Field<string>("VendorName") //,
+                    //      rowguid = row.Field<Guid>("rowguid")
                 }).ToList();
         }
 
@@ -170,8 +170,9 @@ namespace BusinessLogic
 
             try
             {
-                return dl.UpdatePriceWOCategory(UPC, SKU, StoreID, OldPrice, NewPrice, OldCost, newCost, OldDesc, NewDesc, ModifiedBy);
-               
+                return dl.UpdatePriceWOCategory(UPC, SKU, StoreID, OldPrice, NewPrice, OldCost, newCost, OldDesc,
+                    NewDesc, ModifiedBy);
+
 
             }
             catch (Exception exception)
@@ -193,7 +194,8 @@ namespace BusinessLogic
 
             try
             {
-                return dl.UpdatePrice(UPC, SKU, StoreID, OldPrice, NewPrice, OldCost, newCost, OldDesc, NewDesc, ModifiedBy, catlog);
+                return dl.UpdatePrice(UPC, SKU, StoreID, OldPrice, NewPrice, OldCost, newCost, OldDesc, NewDesc,
+                    ModifiedBy, catlog);
 
 
             }
@@ -222,7 +224,7 @@ namespace BusinessLogic
                         ColorDesc = row.Field<string>("ColorDesc"),
                         //DateModified = row.Field<DateTime?>("DateModified"),
                         Desc = row.Field<string>("Desc"),
-                        Price = row.Field<decimal?>("Price"),
+                        Price = row.Field<int?>("TotalCatagCount"),
                         SKU = row.Field<string>("SKU"),
                         SizeCode = row.Field<string>("SizeCode"),
                         SizeDesc = row.Field<string>("SizeDesc"),
@@ -253,7 +255,7 @@ namespace BusinessLogic
 
             try
             {
-                return dl.InsertCatagory(CatagoriesInsert, Createdby,ModifiedDate);
+                return dl.InsertCatagory(CatagoriesInsert, Createdby, ModifiedDate);
 
 
             }
@@ -265,6 +267,123 @@ namespace BusinessLogic
             finally
             {
                 nlog.Trace("BusinessLogic:BusinessLayer:PriceChangeLog::Exiting");
+            }
+        }
+
+
+
+        public DataTable SearchCategory(string Category)
+        {
+            nlog.Trace("BusinessLogic:BusinessLayer:PriceChangeLog::Entering");
+
+            try
+            {
+                return dl.SearchCategory(Category);
+            }
+            catch (Exception exception)
+            {
+                nlog.Error("DataLogic:DataLogic:PriceChangeLog::Error", exception);
+                throw;
+            }
+            finally
+            {
+                nlog.Trace("BusinessLogic:BusinessLayer:PriceChangeLog::Exiting");
+            }
+        }
+
+        public DataTable GetCatagoriesIDforUPCSKU(string upc, string sku)
+        {
+            nlog.Trace("BusinessLogic:BusinessLayer:PriceChangeLog::Entering");
+
+            try
+            {
+                return dl.GetCatagoriesIDforUPCSKU(upc, sku);
+            }
+            catch (Exception exception)
+            {
+                nlog.Error("DataLogic:DataLogic:PriceChangeLog::Error", exception);
+                throw;
+            }
+            finally
+            {
+                nlog.Trace("BusinessLogic:BusinessLayer:PriceChangeLog::Exiting");
+            }
+        }
+
+        public DataTable DeleteCatagory(string upc, string sku, string catagoryID)
+        {
+            nlog.Trace("BusinessLogic:BusinessLayer:DeleteCatagory::Entering");
+
+            try
+            {
+                return dl.DeleteCatagory(upc, sku, catagoryID);
+            }
+            catch (Exception exception)
+            {
+                nlog.Error("DataLogic:DataLogic:DeleteCatagory::Error", exception);
+                throw;
+            }
+            finally
+            {
+                nlog.Trace("BusinessLogic:BusinessLayer:DeleteCatagory::Exiting");
+            }
+        }
+
+
+        public DataTable GetCatagIDUPC(string CatagID)
+        {
+            nlog.Trace("BusinessLogic:BusinessLayer:GetCatagIDUPC::Entering");
+
+            try
+            {
+                return dl.GetCatagIDUPC(CatagID);
+            }
+            catch (Exception exception)
+            {
+                nlog.Error("DataLogic:DataLogic:GetCatagIDUPC::Error", exception);
+                throw;
+            }
+            finally
+            {
+                nlog.Trace("BusinessLogic:BusinessLayer:GetCatagIDUPC::Exiting");
+            }
+        }
+
+        public DataTable GetProductsCatagory(string catagoryId)
+        {
+            nlog.Trace("BusinessLogic:BusinessLayer:DeleteCatagory::Entering");
+
+            try
+            {
+                return dl.GetProductsCatagory(catagoryId);
+            }
+            catch (Exception exception)
+            {
+                nlog.Error("DataLogic:DataLogic:DeleteCatagory::Error", exception);
+                throw;
+            }
+            finally
+            {
+                nlog.Trace("BusinessLogic:BusinessLayer:DeleteCatagory::Exiting");
+            }
+        }
+
+        public DataTable CatagoryDetails(string CatagID)
+        {
+            nlog.Trace("BusinessLogic:BusinessLayer:CatagoryDetails::Entering");
+
+            try
+            {
+                return dl.CatagoryDetails(CatagID);
+            }
+            catch (Exception exception)
+            {
+                nlog.Error("DataLogic:DataLogic:CatagoryDetails::Error", exception);
+                throw;
+            }
+            finally
+            {
+                nlog.Trace("BusinessLogic:BusinessLayer:CatagoryDetails::Exiting");
             }
         }
     }

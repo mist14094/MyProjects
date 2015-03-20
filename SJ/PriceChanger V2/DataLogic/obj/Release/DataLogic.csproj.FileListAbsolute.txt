@@ -6,3 +6,11 @@ C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\DataLogi
 C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\DataLogic\obj\Release\DataLogic.dll
 C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\DataLogic\obj\Release\DataLogic.pdb
 C:\Users\vramalingam\documents\visual studio 2012\Projects\PriceChanger\DataLogic\obj\Release\DataLogic.csprojResolveAssemblyReference.cache
+D:\Projects\MyProjects\SJ\PriceChanger V2\DataLogic\bin\Release\NLog.config
+D:\Projects\MyProjects\SJ\PriceChanger V2\DataLogic\bin\Release\DataLogic.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\DataLogic\bin\Release\DataLogic.pdb
+D:\Projects\MyProjects\SJ\PriceChanger V2\DataLogic\bin\Release\NLog.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\DataLogic\bin\Release\NLog.xml
+D:\Projects\MyProjects\SJ\PriceChanger V2\DataLogic\obj\Release\DataLogic.csprojResolveAssemblyReference.cache
+D:\Projects\MyProjects\SJ\PriceChanger V2\DataLogic\obj\Release\DataLogic.dll
+D:\Projects\MyProjects\SJ\PriceChanger V2\DataLogic\obj\Release\DataLogic.pdb

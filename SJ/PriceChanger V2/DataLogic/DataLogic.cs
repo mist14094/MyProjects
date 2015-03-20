@@ -234,9 +234,50 @@ namespace DataLogic
                 if (connection != null) connection.Close();
             }
             return dt;
+        }
+
+
+        public DataTable SearchCategory(string Category)
+        {
+            nlog.Trace("DataLogic:DataLogic:GetAllCategory::Entering");
+            var dt = new DataTable();
+            SqlConnection connection = null;
+            try
+            {
+                using (connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DBConnectionString"].ToString()))
+                {
+                    SqlCommand sqlCommand;
+                    using (sqlCommand = new SqlCommand())
+                    {
+                        int totalRowsAfected;
+                        sqlCommand.CommandText =  string.Format("SELECT sno,[Result]  FROM [Jarvis].[dbo].[Catalog] where isvalid=1 and  Result LIKE '%{0}%' ORDER BY sno",Category);
+                        //sqlCommand.CommandType = CommandType.StoredProcedure;
+                        //sqlCommand.Parameters.Add(new SqlParameter("@sample", sample));
+                        sqlCommand.Connection = connection;
+                        connection.Open();
+                        SqlDataReader sqlDataReader;
+                        using (sqlDataReader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader: sqlDataReader);
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                nlog.Error("DataLogic:DataLogic:GetAllCategory::Error", ex);
+                throw ex;
+            }
+            finally
+            {
+                nlog.Trace("DataLogic:DataLogic:GetAllCategory::Leaving");
+                if (connection != null) connection.Close();
+            }
+            return dt;
         } 
         
-        
+
         
         public DataTable GetSimpleProductDetails(string columnName, string searchText)
         {
@@ -251,7 +292,7 @@ namespace DataLogic
                     using (sqlCommand = new SqlCommand())
                     {
                         int totalRowsAfected;
-                        sqlCommand.CommandText = "SELECT DISTINCT upc,  sku,[Desc],Price,custom1,vendorname,stylecode, StyleDesc,SizeDesc,ColorCode,ColorDesc,SizeCode,SizeDesc FROM TrackerRetail.dbo.Products WHERE [" + columnName + "] LIKE '%" + searchText + "%' ORDER BY [desc] ";
+                        sqlCommand.CommandText = "SELECT DISTINCT p1.upc,  p1.sku,[Desc],Price,custom1,vendorname,stylecode, StyleDesc,SizeDesc,ColorCode,ColorDesc,SizeCode,SizeDesc, ISNULL(Catagories.TotalCatagCount,0) AS TotalCatagCount FROM TrackerRetail.dbo.Products P1 LEFT OUTER JOIN  (SELECT UPC,SKU, COUNT(*)AS TotalCatagCount FROM (SELECT DISTINCT UPC, sku, CatagoryID  FROM [Jarvis].[dbo].[prc_ProductCatagory])DistinctCatag GROUP BY upc, SKU)Catagories ON P1.UPC = Catagories.UPC AND P1.UPC = Catagories.UPC WHERE p1.[" + columnName + "] LIKE '%" + searchText + "%' ORDER BY [desc] ";
                         //sqlCommand.CommandType = CommandType.StoredProcedure;
                         //sqlCommand.Parameters.Add(new SqlParameter("@sample", sample));
                         sqlCommand.Connection = connection;
@@ -326,6 +367,129 @@ namespace DataLogic
             }
            return "0";
         }
+        public DataTable GetCatagoriesIDforUPCSKU(string upc, string sku)
+        {
+            nlog.Trace("DataLogic:DataLogic:GETUPCSKUDetails::Entering");
+            var dt = new DataTable();
+            SqlConnection connection = null;
+            try
+            {
+                using (connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DBConnectionString"].ToString()))
+                {
+                    SqlCommand sqlCommand;
+                    using (sqlCommand = new SqlCommand())
+                    {
+                        int totalRowsAfected;
+                        sqlCommand.CommandText = "SELECT SNO,[Result]  FROM [Jarvis].[dbo].[Catalog] WHERE SNO IN (SELECT [CatagoryID]  FROM [Jarvis].[dbo].[prc_ProductCatagory]  WHERE UPC ='"+upc+"' AND SKU='"+sku+"')";
+                        //sqlCommand.CommandType = CommandType.StoredProcedure;
+                        //sqlCommand.Parameters.Add(new SqlParameter("@sample", sample));
+                        sqlCommand.Connection = connection;
+                        connection.Open();
+                        SqlDataReader sqlDataReader;
+                        using (sqlDataReader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader: sqlDataReader);
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                nlog.Error("DataLogic:DataLogic:GETUPCSKUDetails::Error", ex);
+                throw ex;
+            }
+            finally
+            {
+                nlog.Trace("DataLogic:DataLogic:GETUPCSKUDetails::Leaving");
+                if (connection != null) connection.Close();
+            }
+            return dt;
+        }  
+        
+        
+        
+        public DataTable DeleteCatagory(string upc, string sku, string catagoryId)
+        {
+            nlog.Trace("DataLogic:DataLogic:DeleteCatagory::Entering");
+            var dt = new DataTable();
+            SqlConnection connection = null;
+            try
+            {
+                using (connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DBConnectionString"].ToString()))
+                {
+                    SqlCommand sqlCommand;
+                    using (sqlCommand = new SqlCommand())
+                    {
+                        int totalRowsAfected;
+                        sqlCommand.CommandText = "DELETE FROM [prc_ProductCatagory] WHERE upc='"+ upc+"' AND sku='"+sku+"' AND catagoryID='"+catagoryId+"'";
+                        //sqlCommand.CommandType = CommandType.StoredProcedure;
+                        //sqlCommand.Parameters.Add(new SqlParameter("@sample", sample));
+                        sqlCommand.Connection = connection;
+                        connection.Open();
+                        SqlDataReader sqlDataReader;
+                        using (sqlDataReader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader: sqlDataReader);
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                nlog.Error("DataLogic:DataLogic:DeleteCatagory::Error", ex);
+                throw ex;
+            }
+            finally
+            {
+                nlog.Trace("DataLogic:DataLogic:DeleteCatagory::Leaving");
+                if (connection != null) connection.Close();
+            }
+            return dt;
+        }
+
+        public DataTable GetProductsCatagory(string catagoryId)
+        {
+            nlog.Trace("DataLogic:DataLogic:GetProductsCatagory::Entering");
+            var dt = new DataTable();
+            SqlConnection connection = null;
+            try
+            {
+                using (connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DBConnectionString"].ToString()))
+                {
+                    SqlCommand sqlCommand;
+                    using (sqlCommand = new SqlCommand())
+                    {
+                        int totalRowsAfected;
+                        sqlCommand.CommandText = "SELECT DISTINCT [CatagoryID], ProductCatg.upc, ProductCatg.sku,[desc] FROM [Jarvis].[dbo].[prc_ProductCatagory] ProductCatg LEFT OUTER JOIN (SELECT DISTINCT UPC, SKU, [DESC] from TrackerRetail.dbo.Products ) ProductsTrack ON ProductCatg.SKU = ProductsTrack.SKU AND ProductCatg.UPC = ProductsTrack.UPC  WHERE CatagoryID='"+catagoryId+"'";
+                        //sqlCommand.CommandType = CommandType.StoredProcedure;
+                        //sqlCommand.Parameters.Add(new SqlParameter("@sample", sample));
+                        sqlCommand.Connection = connection;
+                        connection.Open();
+                        SqlDataReader sqlDataReader;
+                        using (sqlDataReader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader: sqlDataReader);
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                nlog.Error("DataLogic:DataLogic:GetProductsCatagory::Error", ex);
+                throw ex;
+            }
+            finally
+            {
+                nlog.Trace("DataLogic:DataLogic:GetProductsCatagory::Leaving");
+                if (connection != null) connection.Close();
+            }
+            return dt;
+        }
+
+
 
         public DataTable GETUPCSKUDetails(string upc, string sku)
         {
@@ -366,6 +530,88 @@ namespace DataLogic
             }
             return dt;
         }
+
+
+        public DataTable GetCatagIDUPC(string CatagID)
+        {
+            nlog.Trace("DataLogic:DataLogic:GetCatagIDUPC::Entering");
+            var dt = new DataTable();
+            SqlConnection connection = null;
+            try
+            {
+                using (connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DBConnectionString"].ToString()))
+                {
+                    SqlCommand sqlCommand;
+                    using (sqlCommand = new SqlCommand())
+                    {
+                        int totalRowsAfected;
+                        sqlCommand.CommandText = "SELECT DISTINCT [CatagoryID], ProductCatg.upc, ProductCatg.sku,[desc] FROM [Jarvis].[dbo].[prc_ProductCatagory] ProductCatg LEFT OUTER JOIN (SELECT DISTINCT UPC, SKU, [DESC] from TrackerRetail.dbo.Products ) ProductsTrack ON ProductCatg.SKU = ProductsTrack.SKU AND ProductCatg.UPC = ProductsTrack.UPC  WHERE CatagoryID='"+CatagID+"'";
+                        //sqlCommand.CommandType = CommandType.StoredProcedure;
+                        //sqlCommand.Parameters.Add(new SqlParameter("@sample", sample));
+                        sqlCommand.Connection = connection;
+                        connection.Open();
+                        SqlDataReader sqlDataReader;
+                        using (sqlDataReader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader: sqlDataReader);
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                nlog.Error("DataLogic:DataLogic:GetCatagIDUPC::Error", ex);
+                throw ex;
+            }
+            finally
+            {
+                nlog.Trace("DataLogic:DataLogic:GetCatagIDUPC::Leaving");
+                if (connection != null) connection.Close();
+            }
+            return dt;
+        }
+
+        public DataTable CatagoryDetails(string CatagID)
+        {
+            nlog.Trace("DataLogic:DataLogic:CatagoryDetails::Entering");
+            var dt = new DataTable();
+            SqlConnection connection = null;
+            try
+            {
+                using (connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DBConnectionString"].ToString()))
+                {
+                    SqlCommand sqlCommand;
+                    using (sqlCommand = new SqlCommand())
+                    {
+                        int totalRowsAfected;
+                        sqlCommand.CommandText = "SELECT [Result]  FROM [Jarvis].[dbo].[Catalog] WHERE sno ='"+CatagID+"'";
+                        //sqlCommand.CommandType = CommandType.StoredProcedure;
+                        //sqlCommand.Parameters.Add(new SqlParameter("@sample", sample));
+                        sqlCommand.Connection = connection;
+                        connection.Open();
+                        SqlDataReader sqlDataReader;
+                        using (sqlDataReader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(reader: sqlDataReader);
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                nlog.Error("DataLogic:DataLogic:CatagoryDetails::Error", ex);
+                throw ex;
+            }
+            finally
+            {
+                nlog.Trace("DataLogic:DataLogic:CatagoryDetails::Leaving");
+                if (connection != null) connection.Close();
+            }
+            return dt;
+        }
+
 
         public DataTable InsertCatagory(DataTable CatagoriesInsert, int Createdby, DateTime ModifiedDate)
         {
