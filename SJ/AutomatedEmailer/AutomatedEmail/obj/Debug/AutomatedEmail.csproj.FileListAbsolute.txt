@@ -7,3 +7,9 @@ D:\Projects\MyProjects\SJ\AutomatedEmailer\AutomatedEmail\bin\NLog.xml
 D:\Projects\MyProjects\SJ\AutomatedEmailer\AutomatedEmail\obj\Debug\AutomatedEmail.csprojResolveAssemblyReference.cache
 D:\Projects\MyProjects\SJ\AutomatedEmailer\AutomatedEmail\obj\Debug\AutomatedEmail.dll
 D:\Projects\MyProjects\SJ\AutomatedEmailer\AutomatedEmail\obj\Debug\AutomatedEmail.pdb
+D:\Projects\MyProjects\SJ\AutomatedEmailer\AutomatedEmail\bin\AUBusinessAccess.dll
+D:\Projects\MyProjects\SJ\AutomatedEmailer\AutomatedEmail\bin\AUConstants.dll
+D:\Projects\MyProjects\SJ\AutomatedEmailer\AutomatedEmail\bin\AUDataAccess.dll
+D:\Projects\MyProjects\SJ\AutomatedEmailer\AutomatedEmail\bin\AUBusinessAccess.pdb
+D:\Projects\MyProjects\SJ\AutomatedEmailer\AutomatedEmail\bin\AUConstants.pdb
+D:\Projects\MyProjects\SJ\AutomatedEmailer\AutomatedEmail\bin\AUDataAccess.pdb

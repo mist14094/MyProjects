@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\vramalingam\Desktop\AutomatedEmail</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="AutomatedEmail.aspx">
+      <publishTime>03/31/2015 14:18:02</publishTime>
+    </File>
+    <File Include="bin/AUBusinessAccess.dll">
+      <publishTime>04/06/2015 10:46:31</publishTime>
+    </File>
+    <File Include="bin/AUConstants.dll">
+      <publishTime>04/06/2015 10:46:29</publishTime>
+    </File>
+    <File Include="bin/AUDataAccess.dll">
+      <publishTime>04/06/2015 10:46:31</publishTime>
+    </File>
+    <File Include="bin/AutomatedEmail.dll">
+      <publishTime>04/06/2015 10:46:33</publishTime>
+    </File>
+    <File Include="bin/NLog.config">
+      <publishTime>03/09/2015 13:14:04</publishTime>
+    </File>
+    <File Include="bin/NLog.dll">
+      <publishTime>03/09/2015 13:10:48</publishTime>
+    </File>
+    <File Include="EmailExchange.asmx">
+      <publishTime>04/01/2015 11:24:15</publishTime>
+    </File>
+    <File Include="EmailTshirtReplenishment.html">
+      <publishTime>04/01/2015 12:00:21</publishTime>
+    </File>
+    <File Include="HtmlPage.html">
+      <publishTime>04/01/2015 12:01:16</publishTime>
+    </File>
+    <File Include="NLog.config">
+      <publishTime>03/09/2015 13:12:45</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>03/09/2015 13:11:56</publishTime>
+    </File>
+    <File Include="SalesReport.html">
+      <publishTime>04/06/2015 10:33:01</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>04/01/2015 14:02:57</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

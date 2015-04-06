@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmailFunctions.cs" />
+    <Compile Include="JarvisBusinessLr.cs" />
     <Compile Include="EPMBusinessLr.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

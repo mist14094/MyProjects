@@ -30,7 +30,8 @@ namespace AUDataAccess
             var selectCommand = new SqlCommand
             {
                 CommandText = string.Format(_constants.SalesTransationsGroupedByItem)
-                ,CommandTimeout = 180
+                ,CommandTimeout = 180,
+                CommandType = CommandType.StoredProcedure
             };
             selectCommand.Parameters.AddWithValue("@startdate", startdate);
             selectCommand.Parameters.AddWithValue("@enddate", enddate);

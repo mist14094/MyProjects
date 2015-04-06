@@ -70,9 +70,11 @@
     <Content Include="CatagoriesExpl.aspx" />
     <Content Include="CatgSearch.aspx" />
     <Content Include="CatagoriesDetail.aspx" />
+    <Content Include="css1\style.css" />
     <Content Include="css\icon_search.png" />
     <Content Include="css\screen.css" />
     <Content Include="LandingMenu.aspx" />
+    <Content Include="logonew.png" />
     <Content Include="NewCatgrySearch.aspx" />
     <Content Include="CTRLCatgSearch.aspx" />
     <Content Include="css\grd_alt.png" />
@@ -84,6 +86,10 @@
     <Content Include="PriceChangeWOCA.aspx" />
     <Content Include="Search.aspx" />
     <Content Include="Login1.aspx" />
+    <Content Include="style\accordian.pack.js" />
+    <Content Include="style\bullet.png" />
+    <Content Include="style\graphic.jpg" />
+    <Content Include="style\style.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

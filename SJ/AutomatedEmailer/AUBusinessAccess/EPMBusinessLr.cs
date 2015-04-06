@@ -33,6 +33,7 @@ namespace AUBusinessAccess
                 this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
                 System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
             return _access.SalesTransationsGroupedByItem(startdate, enddate, strNbr);
+           
         }
 
 

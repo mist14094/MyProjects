@@ -1,0 +1,12 @@
+D:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\bin\Release\NLog.config
+D:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\bin\Release\AUBusinessAccess.dll
+D:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\bin\Release\AUBusinessAccess.pdb
+D:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\bin\Release\AUConstants.dll
+D:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\bin\Release\AUDataAccess.dll
+D:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\bin\Release\NLog.dll
+D:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\bin\Release\AUConstants.pdb
+D:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\bin\Release\AUDataAccess.pdb
+D:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\bin\Release\NLog.xml
+D:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\obj\Release\AUBusinessAccess.csprojResolveAssemblyReference.cache
+D:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\obj\Release\AUBusinessAccess.dll
+D:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\obj\Release\AUBusinessAccess.pdb

@@ -61,6 +61,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EmailExchange.asmx" />
+    <Content Include="SalesReport.html" />
+    <Content Include="EmailTshirtReplenishment.html" />
+    <Content Include="HtmlPage.html" />
     <Content Include="packages.config" />
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -68,6 +72,7 @@
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\PublishProfiles\AutomatedEmail.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -79,7 +84,21 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmailExchange.asmx.cs">
+      <DependentUpon>EmailExchange.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AUBusinessAccess\AUBusinessAccess.csproj">
+      <Project>{785181f6-80fb-4541-8044-512b10bd5577}</Project>
+      <Name>AUBusinessAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AUConstants\AUConstants.csproj">
+      <Project>{6c99e8c8-806e-4391-b015-28bb762758d6}</Project>
+      <Name>AUConstants</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

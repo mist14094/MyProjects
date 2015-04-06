@@ -1,0 +1,10 @@
+D:\Projects\MyProjects\SJ\AutomatedEmailer\AUDataAccess\bin\Release\NLog.config
+D:\Projects\MyProjects\SJ\AutomatedEmailer\AUDataAccess\bin\Release\AUDataAccess.dll
+D:\Projects\MyProjects\SJ\AutomatedEmailer\AUDataAccess\bin\Release\AUDataAccess.pdb
+D:\Projects\MyProjects\SJ\AutomatedEmailer\AUDataAccess\bin\Release\AUConstants.dll
+D:\Projects\MyProjects\SJ\AutomatedEmailer\AUDataAccess\bin\Release\NLog.dll
+D:\Projects\MyProjects\SJ\AutomatedEmailer\AUDataAccess\bin\Release\AUConstants.pdb
+D:\Projects\MyProjects\SJ\AutomatedEmailer\AUDataAccess\bin\Release\NLog.xml
+D:\Projects\MyProjects\SJ\AutomatedEmailer\AUDataAccess\obj\Release\AUDataAccess.csprojResolveAssemblyReference.cache
+D:\Projects\MyProjects\SJ\AutomatedEmailer\AUDataAccess\obj\Release\AUDataAccess.dll
+D:\Projects\MyProjects\SJ\AutomatedEmailer\AUDataAccess\obj\Release\AUDataAccess.pdb
