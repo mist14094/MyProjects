@@ -20,13 +20,14 @@ public partial class _Default : System.Web.UI.Page
         try
         {
            
-            table.Columns.Add("Sno", typeof(int));
-            table.Columns.Add("StockCode", typeof(string));
+            table.Columns.Add("Sno#", typeof(int));
+            table.Columns.Add("Stockcode", typeof(string));
             table.Columns.Add("Description", typeof(string));
-            table.Columns.Add("LongDesc", typeof(string));
-            table.Columns.Add("AlternateKey1", typeof(string));
-            table.Columns.Add("UnitCost", typeof(string));
-            table.Columns.Add("SellingPrice", typeof(string));
+            table.Columns.Add("Long Description", typeof(string));
+            table.Columns.Add("UPC", typeof(string));
+            table.Columns.Add("Unit Cost", typeof(string));
+            table.Columns.Add("Selling Price", typeof(string));
+            table.Columns.Add("Supplier", typeof(string));
             string query = "SELECT a.StockCode, a.Description, a.LongDesc, a.AlternateKey1, a.AlternateKey2, a.StockUom, a.AlternateUom, a.OtherUom, a.Mass, a.Volume, a.Supplier, a.ProductClass, a.KitType, a.Buyer, a.Planner, a.LeadTime, a.PartCategory, a.WarehouseToUse, a.BuyingRule, a.Decimals, a.Ebq, a.PanSize, a.UserField1, a.UserField2, a.UserField3, a.UserField4, a.UserField5, a.DrawOfficeNum, b.QtyOnHand, b.QtyAllocated, b.QtyOnOrder, b.QtyOnBackOrder, b.QtyInTransit, b.QtyAllocatedWip, b.QtyInInspection, b.MinimumQty, b.MaximumQty, b.UnitCost, b.DefaultBin, b.UserField1, b.UserField2, b.UserField3, c.SellingPrice, c.PriceBasis, a.EccFlag, a.Version, a.Release, a.EccUser, a.ClearingFlag FROM SysproCompanyH..InvMaster a WITH (NOLOCK) LEFT JOIN SysproCompanyH..InvWarehouse b WITH (NOLOCK) ON (a.StockCode = b.StockCode AND a.WarehouseToUse = b.Warehouse) LEFT JOIN SysproCompanyH..InvPrice c WITH (NOLOCK) ON (a.StockCode = c.StockCode AND a.ListPriceCode = c.PriceCode) WHERE  ( a.StockCode LIKE samplequery12345 ) OR ( a.Description LIKE samplequery12345 ) OR ( a.LongDesc LIKE samplequery12345 ) OR ( a.AlternateKey1 LIKE samplequery12345 ) OR ( a.AlternateKey2 LIKE samplequery12345 ) OR ( a.Supplier LIKE samplequery12345 ) ";
             string str = TextBox1.Text;
             str = str.Replace("\r\n", ",");
@@ -41,12 +42,12 @@ public partial class _Default : System.Web.UI.Page
                     {
                         for (int j = 0; j < dt.Rows.Count; j++)
                         {
-                            table.Rows.Add(i, dt.Rows[j]["StockCode"], dt.Rows[j]["Description"], dt.Rows[j]["LongDesc"], dt.Rows[j]["AlternateKey1"], dt.Rows[j]["UnitCost"], dt.Rows[j]["SellingPrice"]);
+                            table.Rows.Add(i, dt.Rows[j]["StockCode"], dt.Rows[j]["Description"], dt.Rows[j]["LongDesc"], dt.Rows[j]["AlternateKey1"], dt.Rows[j]["UnitCost"], dt.Rows[j]["SellingPrice"], dt.Rows[j]["Supplier"]);
                         }
                     }
                     else
                     {
-                        table.Rows.Add(i, "", "", "", words[i], "", "");
+                        table.Rows.Add(i, "", "", "", words[i], "", "","");
                     }
                 }
 
