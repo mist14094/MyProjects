@@ -1,12 +1,17 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
+using System.Net.Security;
 using System.Text;
 using System.Threading.Tasks;
 using AUDataAccess;
 using NLog;
 using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 
 namespace AUBusinessAccess
 {
@@ -15,6 +20,7 @@ namespace AUBusinessAccess
 
         private readonly Logger _nlog = LogManager.GetCurrentClassLogger();
         private AUDataAccess.EPMDataLr _access;
+      
 
         public EPMBusinessLr()
         {
@@ -35,6 +41,7 @@ namespace AUBusinessAccess
             return _access.SalesTransationsGroupedByItem(startdate, enddate, strNbr);
            
         }
+
 
 
     }

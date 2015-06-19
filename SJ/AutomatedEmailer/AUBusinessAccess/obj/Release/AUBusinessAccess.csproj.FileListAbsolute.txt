@@ -10,3 +10,15 @@ D:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\bin\Release\NLog.xml
 D:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\obj\Release\AUBusinessAccess.csprojResolveAssemblyReference.cache
 D:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\obj\Release\AUBusinessAccess.dll
 D:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\obj\Release\AUBusinessAccess.pdb
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\bin\Release\NLog.config
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\bin\Release\AUBusinessAccess.dll
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\bin\Release\AUBusinessAccess.pdb
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\bin\Release\AUConstants.dll
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\bin\Release\AUDataAccess.dll
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\bin\Release\NLog.dll
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\bin\Release\AUConstants.pdb
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\bin\Release\AUDataAccess.pdb
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\bin\Release\NLog.xml
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\obj\Release\AUBusinessAccess.csprojResolveAssemblyReference.cache
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\obj\Release\AUBusinessAccess.dll
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\obj\Release\AUBusinessAccess.pdb

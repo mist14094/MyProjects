@@ -6,3 +6,11 @@ D:\Projects\MyProjects\SJ\AutomatedEmailer\AUConstants\bin\Debug\NLog.xml
 D:\Projects\MyProjects\SJ\AutomatedEmailer\AUConstants\obj\Debug\AUConstants.csprojResolveAssemblyReference.cache
 D:\Projects\MyProjects\SJ\AutomatedEmailer\AUConstants\obj\Debug\AUConstants.dll
 D:\Projects\MyProjects\SJ\AutomatedEmailer\AUConstants\obj\Debug\AUConstants.pdb
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUConstants\bin\Debug\NLog.config
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUConstants\bin\Debug\AUConstants.dll
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUConstants\bin\Debug\AUConstants.pdb
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUConstants\bin\Debug\NLog.dll
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUConstants\bin\Debug\NLog.xml
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUConstants\obj\Debug\AUConstants.csprojResolveAssemblyReference.cache
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUConstants\obj\Debug\AUConstants.dll
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUConstants\obj\Debug\AUConstants.pdb

@@ -29,6 +29,7 @@ namespace AUConstants
 
         public string LogEmail = "atm_SP_EmailLog";
 
+        public string GetAllCatagoryImageName = "select * from CategoryWithImageLink";
     }
 
 

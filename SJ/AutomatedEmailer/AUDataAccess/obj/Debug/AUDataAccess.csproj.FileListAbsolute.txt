@@ -8,3 +8,13 @@ D:\Projects\MyProjects\SJ\AutomatedEmailer\AUDataAccess\bin\Debug\NLog.xml
 D:\Projects\MyProjects\SJ\AutomatedEmailer\AUDataAccess\obj\Debug\AUDataAccess.csprojResolveAssemblyReference.cache
 D:\Projects\MyProjects\SJ\AutomatedEmailer\AUDataAccess\obj\Debug\AUDataAccess.dll
 D:\Projects\MyProjects\SJ\AutomatedEmailer\AUDataAccess\obj\Debug\AUDataAccess.pdb
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUDataAccess\bin\Debug\NLog.config
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUDataAccess\bin\Debug\AUDataAccess.dll
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUDataAccess\bin\Debug\AUDataAccess.pdb
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUDataAccess\bin\Debug\AUConstants.dll
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUDataAccess\bin\Debug\NLog.dll
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUDataAccess\bin\Debug\AUConstants.pdb
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUDataAccess\bin\Debug\NLog.xml
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUDataAccess\obj\Debug\AUDataAccess.csprojResolveAssemblyReference.cache
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUDataAccess\obj\Debug\AUDataAccess.dll
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUDataAccess\obj\Debug\AUDataAccess.pdb

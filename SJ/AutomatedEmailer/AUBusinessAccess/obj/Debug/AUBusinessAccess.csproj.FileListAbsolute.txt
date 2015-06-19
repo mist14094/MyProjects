@@ -10,3 +10,15 @@ D:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\bin\Debug\NLog.xml
 D:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\obj\Debug\AUBusinessAccess.csprojResolveAssemblyReference.cache
 D:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\obj\Debug\AUBusinessAccess.dll
 D:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\obj\Debug\AUBusinessAccess.pdb
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\bin\Debug\NLog.config
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\bin\Debug\AUBusinessAccess.dll
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\bin\Debug\AUBusinessAccess.pdb
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\bin\Debug\AUConstants.dll
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\bin\Debug\AUDataAccess.dll
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\bin\Debug\NLog.dll
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\bin\Debug\AUConstants.pdb
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\bin\Debug\AUDataAccess.pdb
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\bin\Debug\NLog.xml
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\obj\Debug\AUBusinessAccess.csprojResolveAssemblyReference.cache
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\obj\Debug\AUBusinessAccess.dll
+G:\Projects\MyProjects\SJ\AutomatedEmailer\AUBusinessAccess\obj\Debug\AUBusinessAccess.pdb
