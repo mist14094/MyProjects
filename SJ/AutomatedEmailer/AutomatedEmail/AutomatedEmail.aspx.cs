@@ -16,7 +16,7 @@ namespace AutomatedEmail
         AUBusinessAccess.EmailFunctions email = new EmailFunctions();
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Write(CreateEMailString(DateTime.Now.AddDays(-3), DateTime.Now));
+           // Response.Write(CreateEMailString(DateTime.Now.AddDays(-3), DateTime.Now));
         }
 
         private string CreateEMailString(  DateTime FromDate , DateTime ToDate)

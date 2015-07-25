@@ -13,22 +13,25 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/31/2015 14:18:02</publishTime>
     </File>
     <File Include="bin/AUBusinessAccess.dll">
-      <publishTime>06/19/2015 09:20:27</publishTime>
+      <publishTime>07/08/2015 13:33:21</publishTime>
     </File>
     <File Include="bin/AUConstants.dll">
-      <publishTime>06/19/2015 09:20:26</publishTime>
+      <publishTime>07/08/2015 13:33:20</publishTime>
     </File>
     <File Include="bin/AUDataAccess.dll">
-      <publishTime>06/19/2015 09:20:27</publishTime>
+      <publishTime>07/08/2015 13:33:20</publishTime>
     </File>
     <File Include="bin/AutomatedEmail.dll">
-      <publishTime>06/19/2015 10:27:13</publishTime>
+      <publishTime>07/08/2015 13:33:22</publishTime>
     </File>
     <File Include="bin/NLog.config">
       <publishTime>06/06/2015 15:47:58</publishTime>
     </File>
     <File Include="bin/NLog.dll">
       <publishTime>06/06/2015 15:47:59</publishTime>
+    </File>
+    <File Include="CostoSales.html">
+      <publishTime>07/08/2015 12:29:46</publishTime>
     </File>
     <File Include="EmailExchange.asmx">
       <publishTime>06/06/2015 15:47:58</publishTime>

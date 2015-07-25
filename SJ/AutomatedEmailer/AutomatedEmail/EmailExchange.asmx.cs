@@ -82,6 +82,22 @@ namespace AutomatedEmail
            
         }
 
+        [WebMethod]
+        public string CostcoSaleseport(string fromDate, string toDate, string storeNumber,string EmailListNo)
+        {
+            try
+            {
+                Lr.CostcoSaleseport(readFile("~/" + "CostoSales.html"), Convert.ToDateTime(fromDate), Convert.ToDateTime(toDate), storeNumber, EmailListNo);
+                return "Mail Sent";
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
         public string readFile(string FilePath)
         {
             string path = HttpContext.Current.Server.MapPath(FilePath);

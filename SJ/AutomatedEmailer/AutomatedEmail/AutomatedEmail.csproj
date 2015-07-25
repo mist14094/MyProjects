@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="EmailExchange.asmx" />
+    <Content Include="CostoSales.html" />
     <Content Include="SalesReport.html" />
     <Content Include="EmailTshirtReplenishment.html" />
     <Content Include="HtmlPage.html" />

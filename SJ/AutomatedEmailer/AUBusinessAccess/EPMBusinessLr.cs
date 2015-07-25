@@ -42,6 +42,14 @@ namespace AUBusinessAccess
            
         }
 
+        public DataTable CostcoSalesReport(DateTime startdate, DateTime enddate, int strNbr)
+        {
+            _nlog.Trace(message:
+             this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+             System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            return _access.CostcoSalesReport(startdate, enddate, strNbr);
+        }
+
 
 
     }

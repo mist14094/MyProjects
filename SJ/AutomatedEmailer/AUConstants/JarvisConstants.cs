@@ -30,6 +30,9 @@ namespace AUConstants
         public string LogEmail = "atm_SP_EmailLog";
 
         public string GetAllCatagoryImageName = "select * from CategoryWithImageLink";
+
+        public string GetProductImage =
+            "SELECT   upc, sku, StoreID, [Desc],  ProductImage FROM TrackerRetail.dbo.Products WHERE ProductImage IS NOT NULL";
     }
 
 

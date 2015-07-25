@@ -24,6 +24,7 @@ namespace AUConstants
 
         public string SalesTransationsGroupedByItem = "SalesTransationsGroupedByItem";
         public string StoreSalesGroupedByItem = "[EPM].[EPM_DW].[dbo].[SalesTransationsGroupedByItem]";
+        public string CostcoSalesReport = "CostcoSalesMvmt";
 
     }
 

@@ -388,6 +388,148 @@ namespace AUBusinessAccess
             return dt;
         }
 
+        public DataTable GetProductImage()
+        {
+            _nlog.Trace(message:
+               this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+               System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            return _access.GetProductImage();
+        }
 
+        //////////////////////////////////////////////////Costco Report
+        public string CostcoSaleseport(string EmailContent, DateTime FromDate, DateTime ToDate, string StoreNumber, string EmailListNo)
+        {
+            string strreadFile = EmailContent;
+            DataTable dtImage = new DataTable();
+            DataTable catagoryWithImage = GetAllCatagoryImageName();
+
+
+            DataTable v1 = epmlr.CostcoSalesReport(FromDate, ToDate, Convert.ToInt16(StoreNumber));
+            DataTable dtstr10Sales = GetGroupedSalesCostco(v1);
+
+            string strIncSales;
+          
+
+            try
+            {
+
+
+                string Sales = v1.AsEnumerable()
+                    .Sum(row => row.Field<decimal>("Item_amt"))
+                    .ToString("#.##");
+                strreadFile = strreadFile.Replace("INCSales", Sales);
+                strreadFile = strreadFile.Replace("Store10Sales", email.TableCreator(dtstr10Sales));
+
+            }
+            catch (Exception ex)
+            {
+                strreadFile = strreadFile.Replace("Store10Sales", "No Sales");
+            }
+
+
+
+
+            strreadFile = strreadFile.Replace("FDate", String.Format("{0:M/d/yyyy HH:mm:ss}", FromDate));
+            strreadFile = strreadFile.Replace("TDate", String.Format("{0:M/d/yyyy HH:mm:ss}", ToDate));
+
+            DataTable dt =
+                atm_GetEmailList()
+                    .AsEnumerable()
+                    .Where(row => row["Sno"].ToString() == EmailListNo)
+                    .CopyToDataTable();
+
+
+            if (dt.Rows.Count > 0)
+            {
+         string result = SendAlert(dt.Rows[0]["EmailTo"].ToString(), dt.Rows[0]["EmailSubject"].ToString(), strreadFile);
+       LogEmail(Convert.ToInt16(EmailListNo), dt.Rows[0]["EmailTo"].ToString(),
+        dt.Rows[0]["EmailSubject"].ToString(), strreadFile, result);
+            }
+
+            ;
+            //     = email.TableCreator(v1);
+            return strreadFile;
+        }
+
+        private DataTable GetGroupedSalesCostco(DataTable CostcoSales)
+        {
+            DataTable dtTable = new DataTable();
+            dtTable.Columns.Add("Store Number");
+            dtTable.Columns.Add("Sales($)");
+            dtTable.Columns.Add("Returns($)");
+            dtTable.Columns.Add("Item(s) Sold");
+            dtTable.Columns.Add("Item(s) Returned");
+            dtTable.Columns.Add("Total($)");
+
+            string[] storeNumber = { "1", "2", "3", "4", "6", "7", "9", "10" };
+            foreach (var store in storeNumber)
+            {
+                try
+                {
+                        var totalSales = CostcoSales.AsEnumerable()
+                            .Where(row => row["Str_nbr"].ToString()==store )
+                            .Where(row => decimal.Parse(row["Item_qty"].ToString())> 0 )
+                            .Sum(row => row.Field<decimal>("Item_amt"))
+                            .ToString("#.##");
+                        var totalReturns = CostcoSales.AsEnumerable()
+                            .Where(row => row["Str_nbr"].ToString()==store )
+                            .Where(row => decimal.Parse(row["Item_qty"].ToString()) < 0)
+                            .Sum(row => row.Field<decimal>("Item_amt"))
+                            .ToString("#.##");
+                        var numberSold = CostcoSales.AsEnumerable()
+                            .Where(row => row["Str_nbr"].ToString()==store )
+                            .Where(row => decimal.Parse(row["Item_qty"].ToString()) > 0)
+                            .Sum(row => row.Field<decimal>("Item_qty"))
+                            .ToString("#");
+                        var numberReturns = CostcoSales.AsEnumerable()
+                            .Where(row => row["Str_nbr"].ToString()==store )
+                            .Where(row => decimal.Parse(row["Item_qty"].ToString()) < 0)
+                            .Sum(row => row.Field<decimal>("Item_qty"))
+                            .ToString("#");
+                        var total = CostcoSales.AsEnumerable()
+                            .Where(row => row["Str_nbr"].ToString() == store)
+                            .Sum(row => row.Field<decimal>("Item_amt"))
+                            .ToString("#.##");
+                        dtTable.Rows.Add(store.ToString(), totalSales, totalReturns, numberSold, numberReturns, total);
+                }
+                catch (Exception)
+                {
+                     dtTable.Rows.Add(store.ToString(), "","","","");
+                
+                }
+
+            }
+
+            try
+            {
+                dtTable.Rows.Add("Total",
+              CostcoSales.AsEnumerable()
+                          .Where(row => decimal.Parse(row["Item_qty"].ToString()) > 0)
+                          .Sum(row => row.Field<decimal>("Item_amt"))
+                          .ToString("#.##"),
+              CostcoSales.AsEnumerable()
+                          .Where(row => decimal.Parse(row["Item_qty"].ToString()) < 0)
+                          .Sum(row => row.Field<decimal>("Item_amt"))
+                          .ToString("#.##"),
+              CostcoSales.AsEnumerable()
+                          .Where(row => decimal.Parse(row["Item_qty"].ToString()) > 0)
+                          .Sum(row => row.Field<decimal>("Item_qty"))
+                          .ToString("#"),
+              CostcoSales.AsEnumerable()
+                          .Where(row => decimal.Parse(row["Item_qty"].ToString()) < 0)
+                          .Sum(row => row.Field<decimal>("Item_qty"))
+                          .ToString("#"),
+              CostcoSales.AsEnumerable()
+                          .Sum(row => row.Field<decimal>("Item_amt"))
+                          .ToString("#.##")
+                          );
+            }
+            catch (Exception)
+            {
+                
+            }
+          
+            return dtTable;
+        }
     }
 }
