@@ -6,3 +6,11 @@ D:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBConstants\bin\Debug\NLog.xml
 D:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBConstants\obj\Debug\GBConstants.dll
 D:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBConstants\obj\Debug\GBConstants.pdb
 D:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBConstants\obj\Debug\GBConstants.csprojResolveAssemblyReference.cache
+G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBConstants\bin\Debug\NLog.config
+G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBConstants\bin\Debug\GBConstants.dll
+G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBConstants\bin\Debug\GBConstants.pdb
+G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBConstants\bin\Debug\NLog.dll
+G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBConstants\bin\Debug\NLog.xml
+G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBConstants\obj\Debug\GBConstants.dll
+G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBConstants\obj\Debug\GBConstants.pdb
+G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBConstants\obj\Debug\GBConstants.csprojResolveAssemblyReference.cache

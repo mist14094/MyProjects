@@ -60,6 +60,10 @@
             <SortedDescendingCellStyle BackColor="#CAC9C9" />
             <SortedDescendingHeaderStyle BackColor="#383838" />
         </asp:GridView>
+        <br />
+        <br />
+        <asp:LinkButton ID="LinkButton1" runat="server" 
+            PostBackUrl="~/TShirt299_Rep.aspx">Repl. Number</asp:LinkButton>
     </div>
     </form>
 </body>

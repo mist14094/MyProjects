@@ -17,7 +17,7 @@ namespace GasBlenderWeb
         ReportDocument rdoc = new ReportDocument();
         private GBBusiness.BusinessAccess _businessAccess = new BusinessAccess();
 
-        protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Init(object sender, EventArgs e)
         {
             try
             {
@@ -54,6 +54,45 @@ namespace GasBlenderWeb
             {
 
             }
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+  //          try
+  //          {
+
+  //              if (Request.QueryString["Start"] != null && Request.QueryString["End"] != null)
+  //              {
+  //                  string StartDate = Request.QueryString["Start"].ToString();
+  //                  string EndDate = Request.QueryString["End"].ToString();
+
+  //                  DateTime startDateTime = Convert.ToDateTime(StartDate);
+  //                  DateTime endDateTime = Convert.ToDateTime(EndDate);
+
+
+  //                  rdoc.Load(Server.MapPath("rptLogTransaction.rpt"));
+  //                  DataSet DS = new DataSet();
+  //                  DS = _businessAccess.BOLLog(startDateTime, endDateTime);
+  //                  rdoc.SetDataSource(DS.Tables[0]);
+  //                  TransactionLogReport.HasPrintButton = true;
+  //                  TransactionLogReport.PDFOneClickPrinting = true;
+  //                  TransactionLogReport.PrintMode = PrintMode.ActiveX;
+  //                  rdoc.SetParameterValue("varStart", StartDate);
+  //                  rdoc.SetParameterValue("varEnd", EndDate);
+  //                  TransactionLogReport.HasToggleGroupTreeButton = false;
+  //                  TransactionLogReport.ToolPanelView = CrystalDecisions.Web.ToolPanelViewType.None;
+
+  //                  TransactionLogReport.ReportSource = rdoc;
+  //                  TransactionLogReport.DataBind();
+  //                  _businessAccess.InsertLog(Session["ID"].ToString(),
+  //System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
+
+  //              }
+  //          }
+  //          catch (Exception ex)
+  //          {
+
+  //          }
         }
 
         protected void PrntButton_Click(object sender, EventArgs e)

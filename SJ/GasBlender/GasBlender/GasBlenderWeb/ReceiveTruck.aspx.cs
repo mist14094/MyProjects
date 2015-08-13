@@ -501,7 +501,8 @@ namespace GasBlenderWeb
                 //lblTotalLoad1.Text = ((int)(float.Parse(txtOnBoard1.Text) + float.Parse(txtEthanol1.Text))).ToString();
                 txtReg1.Text = "0";
                 txtSuper1.Text = "0";
-                txtEthanol1.Text = ((int)((float.Parse(txtOnBoard1.Text) / 100) * 0.5)).ToString();
+                 txtEthanol1.Text = ((int)((float.Parse(txtOnBoard1.Text) / 100) * 0.5)).ToString();
+                //txtEthanol1.Text = ((int)(((float.Parse(txtOnBoard1.Text) + float.Parse(txtSuper1.Text)) / 100) * 0.5)).ToString();
 
             }
 
@@ -514,6 +515,7 @@ namespace GasBlenderWeb
                 txtReg2.Text = "0";
                 txtSuper2.Text = "0";
                 txtEthanol2.Text = ((int)((float.Parse(txtOnBoard2.Text) / 100) * 0.5)).ToString();
+
             }
             if (ddlGasType3.SelectedValue == "4" && compartmentID == 3)
             {
@@ -591,6 +593,9 @@ namespace GasBlenderWeb
 
         public void CalculateTotals()
         {
+
+
+
             lblTotalRight1.Text = ((int)(float.Parse(txtReg1.Text) + float.Parse(txtReg2.Text) + float.Parse(txtReg3.Text) +
                                   float.Parse(txtReg4.Text) + float.Parse(txtReg5.Text))).ToString();
             lblTotalRight2.Text = ((int)(float.Parse(txtSuper1.Text) + float.Parse(txtSuper2.Text) + float.Parse(txtSuper3.Text) +
@@ -727,26 +732,53 @@ namespace GasBlenderWeb
 
         protected void txtSuper1_TextChanged(object sender, EventArgs e)
         {
+            if (ddlGasType1.SelectedValue == "4")
+            {
+                txtEthanol1.Text =
+                    ((int)(((float.Parse(txtOnBoard1.Text) + float.Parse(txtSuper1.Text)) / 100) * 0.5)).ToString();
+            }
             CalculateTotals();
         }
 
         protected void txtSuper2_TextChanged(object sender, EventArgs e)
         {
+            if (ddlGasType2.SelectedValue == "4")
+            {
+                txtEthanol2.Text =
+                    ((int)(((float.Parse(txtOnBoard2.Text) + float.Parse(txtSuper2.Text)) / 100) * 0.5)).ToString();
+            }
             CalculateTotals();
         }
 
         protected void txtSuper3_TextChanged(object sender, EventArgs e)
         {
+            if (ddlGasType3.SelectedValue == "4")
+            {
+                txtEthanol3.Text =
+                    ((int)(((float.Parse(txtOnBoard3.Text) + float.Parse(txtSuper3.Text)) / 100) * 0.5)).ToString();
+            }
             CalculateTotals();
         }
 
         protected void txtSuper4_TextChanged(object sender, EventArgs e)
         {
+            if (ddlGasType4.SelectedValue == "4")
+            {
+                txtEthanol4.Text =
+                    ((int)(((float.Parse(txtOnBoard4.Text) + float.Parse(txtSuper4.Text)) / 100) * 0.5)).ToString();
+            }
+  
             CalculateTotals();
         }
 
         protected void txtSuper5_TextChanged(object sender, EventArgs e)
         {
+            if (ddlGasType5.SelectedValue == "4")
+            {
+                txtEthanol5.Text =
+                    ((int)(((float.Parse(txtOnBoard5.Text) + float.Parse(txtSuper5.Text)) / 100) * 0.5)).ToString();
+            }
+
             CalculateTotals();
         }
 
@@ -757,6 +789,7 @@ namespace GasBlenderWeb
 
         protected void txtEthanol2_TextChanged(object sender, EventArgs e)
         {
+           
             CalculateTotals();
         }
 
@@ -767,11 +800,13 @@ namespace GasBlenderWeb
 
         protected void txtEthanol4_TextChanged(object sender, EventArgs e)
         {
+                 
             CalculateTotals();
         }
 
         protected void txtEthanol5_TextChanged(object sender, EventArgs e)
         {
+
             CalculateTotals();
         }
 

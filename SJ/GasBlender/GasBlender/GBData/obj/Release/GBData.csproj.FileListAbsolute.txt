@@ -8,3 +8,13 @@ D:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBData\bin\Release\NLog.xml
 D:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBData\obj\Release\GBData.csprojResolveAssemblyReference.cache
 D:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBData\obj\Release\GBData.dll
 D:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBData\obj\Release\GBData.pdb
+G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBData\bin\Release\NLog.config
+G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBData\bin\Release\GBData.dll
+G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBData\bin\Release\GBData.pdb
+G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBData\bin\Release\GBConstants.dll
+G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBData\bin\Release\NLog.dll
+G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBData\bin\Release\GBConstants.pdb
+G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBData\bin\Release\NLog.xml
+G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBData\obj\Release\GBData.csprojResolveAssemblyReference.cache
+G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBData\obj\Release\GBData.dll
+G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBData\obj\Release\GBData.pdb
