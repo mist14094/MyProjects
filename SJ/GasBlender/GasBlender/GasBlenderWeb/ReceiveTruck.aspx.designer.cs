@@ -490,6 +490,15 @@ namespace GasBlenderWeb {
         protected global::System.Web.UI.WebControls.Label lblTotalRight1;
         
         /// <summary>
+        /// lblTotalRight1Info control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotalRight1Info;
+        
+        /// <summary>
         /// txtSuper1 control.
         /// </summary>
         /// <remarks>
@@ -544,6 +553,15 @@ namespace GasBlenderWeb {
         protected global::System.Web.UI.WebControls.Label lblTotalRight2;
         
         /// <summary>
+        /// lblTotalRight2Info control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotalRight2Info;
+        
+        /// <summary>
         /// txtEthanol1 control.
         /// </summary>
         /// <remarks>
@@ -596,6 +614,15 @@ namespace GasBlenderWeb {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTotalRight3;
+        
+        /// <summary>
+        /// lblTotalRight3Info control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotalRight3Info;
         
         /// <summary>
         /// lblTotalLoad1 control.

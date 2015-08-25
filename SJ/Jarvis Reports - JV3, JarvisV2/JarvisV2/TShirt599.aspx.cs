@@ -14,6 +14,10 @@ public partial class _Default : System.Web.UI.Page
 {
     public static string _RFIDSystem = ConfigurationManager.ConnectionStrings["RFIDString"].ConnectionString;
     public static DataTable dtNew;
+    public static int _TShirt599RedMin = int.Parse(ConfigurationManager.AppSettings["TShirt599RedMin"].ToString());
+    public static int _TShirt599RedMax = int.Parse(ConfigurationManager.AppSettings["TShirt599RedMax"].ToString());
+    public static int _TShirt599OrgMin = int.Parse(ConfigurationManager.AppSettings["TShirt599OrgMin"].ToString());
+    public static int _TShirt599OrgMax = int.Parse(ConfigurationManager.AppSettings["TShirt599OrgMax"].ToString());
     protected void Page_Load(object sender, EventArgs e)
     {
         lblDate.Text = DateTime.Now.ToString("F");
@@ -54,11 +58,11 @@ public partial class _Default : System.Web.UI.Page
 
             if (i == 1)
             {
-                if (int.Parse(previousRow.Cells[4].Text) < 15)
+                if (int.Parse(previousRow.Cells[4].Text) < _TShirt599RedMax)
                 {
                     previousRow.Cells[4].BackColor = Color.Red;
                 }
-                if (int.Parse(previousRow.Cells[4].Text) > 15 && int.Parse(previousRow.Cells[4].Text) < 30)
+                if (int.Parse(previousRow.Cells[4].Text) > _TShirt599OrgMin && int.Parse(previousRow.Cells[4].Text) < _TShirt599OrgMax)
                 {
                     previousRow.Cells[4].BackColor = Color.Orange;
                 }
@@ -66,14 +70,14 @@ public partial class _Default : System.Web.UI.Page
             for (int j = 0; j < 1; j++)
             {
 
-                    if (int.Parse(row.Cells[4].Text) < 10)
-                    {
-                        row.Cells[4].BackColor = Color.Red;
-                    }
-                    if (int.Parse(row.Cells[4].Text) > 10 && int.Parse(row.Cells[4].Text) < 30)
-                    {
-                        row.Cells[4].BackColor = Color.Orange;
-                    }
+                if (int.Parse(row.Cells[4].Text) < _TShirt599RedMax)
+                {
+                    row.Cells[4].BackColor = Color.Red;
+                }
+                if (int.Parse(row.Cells[4].Text) > _TShirt599OrgMin && int.Parse(row.Cells[4].Text) < _TShirt599OrgMax)
+                {
+                    row.Cells[4].BackColor = Color.Orange;
+                }
 
 
                 if ( ((Image) row.Cells[j].Controls[0]).ImageUrl == ((Image)previousRow.Cells[j].Controls[0]).ImageUrl)

@@ -76,7 +76,6 @@ G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GasBlenderWeb\bin\AjaxControlToo
 G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GasBlenderWeb\bin\GBBusiness.dll
 G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GasBlenderWeb\bin\NLog.dll
 G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GasBlenderWeb\bin\GBData.dll
-G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GasBlenderWeb\bin\AjaxMin.dll
 G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GasBlenderWeb\bin\GBConstants.dll
 G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GasBlenderWeb\bin\GBBusiness.pdb
 G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GasBlenderWeb\bin\NLog.xml

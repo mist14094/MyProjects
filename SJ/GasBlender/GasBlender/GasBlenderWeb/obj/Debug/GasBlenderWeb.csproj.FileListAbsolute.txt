@@ -84,4 +84,3 @@ G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GasBlenderWeb\bin\NLog.xml
 G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GasBlenderWeb\bin\GBData.pdb
 G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GasBlenderWeb\bin\GBConstants.pdb
 G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GasBlenderWeb\bin\AjaxControlToolkit.dll
-G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GasBlenderWeb\bin\AjaxMin.dll

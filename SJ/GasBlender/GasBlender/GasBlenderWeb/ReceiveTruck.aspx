@@ -111,7 +111,7 @@ padding-top:20%;
             <td>&nbsp; &nbsp;</td>
             <td>Loadtype</td>
             <td>
-                <asp:DropDownList ID="ddlLoadType" runat="server" Width="200px" >
+                <asp:DropDownList ID="ddlLoadType" runat="server" Width="200px" AutoPostBack="True" OnSelectedIndexChanged="ddlLoadType_SelectedIndexChanged" >
                 </asp:DropDownList>
             </td>
             <td>&nbsp;</td>
@@ -320,7 +320,7 @@ padding-top:20%;
                 <asp:TextBox ID="txtReg5" runat="server" Width="50px" AutoPostBack="True" OnTextChanged="txtReg5_TextChanged"></asp:TextBox>
             </td>
             <td>&nbsp;</td>
-            <td>= <asp:Label runat="server" ID ="lblTotalRight1"/> From Regualr Stock</td>
+            <td>= <asp:Label runat="server" ID ="lblTotalRight1"/> <asp:Label runat="server" ID ="lblTotalRight1Info"/> </td>
             <td>&nbsp;</td>
         </tr>
         <tr>
@@ -343,7 +343,7 @@ padding-top:20%;
                 <asp:TextBox ID="txtSuper5" runat="server" Width="50px" AutoPostBack="True" OnTextChanged="txtSuper5_TextChanged"></asp:TextBox>
             </td>
             <td>&nbsp;</td>
-            <td>= <asp:Label runat="server" ID ="lblTotalRight2"/> From Super Stock</td>
+            <td>= <asp:Label runat="server" ID ="lblTotalRight2"/> <asp:Label runat="server" ID ="lblTotalRight2Info"/> </td>
             <td>&nbsp;</td>
         </tr>
         <tr>
@@ -366,7 +366,7 @@ padding-top:20%;
                 <asp:TextBox ID="txtEthanol5" runat="server" Width="50px" AutoPostBack="True" OnTextChanged="txtEthanol5_TextChanged"></asp:TextBox>
             </td>
             <td>&nbsp;</td>
-            <td>= <asp:Label runat="server" ID ="lblTotalRight3"/> from Ethanol Stock</td>
+            <td>= <asp:Label runat="server" ID ="lblTotalRight3"/> <asp:Label runat="server" ID ="lblTotalRight3Info"/> </td>
             <td>&nbsp;</td>
         </tr>
         <tr>
