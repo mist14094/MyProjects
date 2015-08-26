@@ -1197,6 +1197,16 @@
     <Content Include="aspnet_client\system_web\4_0_30319\crystalreportviewers13\prompting\js\promptengine_strings_zh_TW.js" />
     <Content Include="aspnet_client\system_web\4_0_30319\crystalreportviewers13\urlreporting\activexviewer.js" />
     <Content Include="aspnet_client\system_web\4_0_30319\crystalreportviewers13\urlreporting\appletviewer.js" />
+    <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="bin\GasBlenderWeb.dll" />
+    <Content Include="bin\GasBlenderWeb.pdb" />
+    <Content Include="bin\GBBusiness.dll" />
+    <Content Include="bin\GBBusiness.pdb" />
+    <Content Include="bin\GBConstants.dll" />
+    <Content Include="bin\GBConstants.pdb" />
+    <Content Include="bin\GBData.dll" />
+    <Content Include="bin\GBData.pdb" />
+    <Content Include="bin\NLog.dll" />
     <Content Include="ReceiveTruck.aspx" />
     <Content Include="ReceiveTruckOLDSunday.aspx" />
     <Content Include="Images\calendar.png" />
@@ -2632,6 +2642,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Main.Master" />
+    <None Include="bin\GasBlenderWeb.dll.config" />
+    <Content Include="bin\NLog.config" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -2686,7 +2698,26 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="bin\" />
+    <Folder Include="bin\ar\" />
+    <Folder Include="bin\cs\" />
+    <Folder Include="bin\de\" />
+    <Folder Include="bin\es\" />
+    <Folder Include="bin\fr\" />
+    <Folder Include="bin\he\" />
+    <Folder Include="bin\hi\" />
+    <Folder Include="bin\it\" />
+    <Folder Include="bin\ja\" />
+    <Folder Include="bin\ko\" />
+    <Folder Include="bin\nl\" />
+    <Folder Include="bin\pl\" />
+    <Folder Include="bin\pt\" />
+    <Folder Include="bin\ru\" />
+    <Folder Include="bin\tr-TR\" />
+    <Folder Include="bin\zh-CHS\" />
+    <Folder Include="bin\zh-CHT\" />
+    <Folder Include="bin\zh-Hans\" />
+    <Folder Include="bin\zh-Hant\" />
+    <Folder Include="obj\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

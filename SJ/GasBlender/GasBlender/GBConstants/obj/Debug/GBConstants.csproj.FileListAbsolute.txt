@@ -13,3 +13,4 @@ G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBConstants\bin\Debug\NLog.dll
 G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBConstants\bin\Debug\NLog.xml
 G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBConstants\obj\Debug\GBConstants.dll
 G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBConstants\obj\Debug\GBConstants.pdb
+G:\Projects\MyProjects\SJ\GasBlender\GasBlender\GBConstants\obj\Debug\GBConstants.csprojResolveAssemblyReference.cache

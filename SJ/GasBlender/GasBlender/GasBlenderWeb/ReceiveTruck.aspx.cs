@@ -211,6 +211,7 @@ namespace GasBlenderWeb
 
         protected void ddlTrailerNumber_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ReloadFix();
             DataTable dt = _businessAccess.GetCastedTruck().AsEnumerable()
                 .Where(row => row["trailerID"].ToString() == ddlTrailerNumber.SelectedValue).CopyToDataTable();
             //   .OrderBy(row => row["trailerName"]).CopyToDataTable();
@@ -229,127 +230,7 @@ namespace GasBlenderWeb
                     CalculateSize(4);
                     CalculateSize(5);
 
-                    if (txtSize1.Text == "0")
-                    {
-
-                        ddlGasType1.Enabled = false;
-                        txtSize1.Enabled = false;
-                        txtOnBoard1.Enabled = false;
-                        txt90P1.Enabled = false;
-                        txtReg1.Enabled = false;
-                        txtSuper1.Enabled = false;
-                        txtEthanol1.Enabled = false;
-                        ddlDeliver1.Enabled = false;
-                    }
-                    else
-                    {
-                        ddlGasType1.Enabled = true;
-                        txtSize1.Enabled = true;
-                        txtOnBoard1.Enabled = true;
-                        txt90P1.Enabled = true;
-                        txtReg1.Enabled = true;
-                        txtSuper1.Enabled = true;
-                        txtEthanol1.Enabled = true;
-                        ddlDeliver1.Enabled = true;
-                    }
-
-
-
-                    if (txtSize2.Text == "0")
-                    {
-
-                        ddlGasType2.Enabled = false;
-                        txtSize2.Enabled = false;
-                        txtOnBoard2.Enabled = false;
-                        txt90P2.Enabled = false;
-                        txtReg2.Enabled = false;
-                        txtSuper2.Enabled = false;
-                        txtEthanol2.Enabled = false;
-                        ddlDeliver2.Enabled = false;
-                    }
-                    else
-                    {
-
-                        ddlGasType2.Enabled = true;
-                        txtSize2.Enabled = true;
-                        txtOnBoard2.Enabled = true;
-                        txt90P2.Enabled = true;
-                        txtReg2.Enabled = true;
-                        txtSuper2.Enabled = true;
-                        txtEthanol2.Enabled = true;
-                        ddlDeliver2.Enabled = true;
-                    }
-                    if (txtSize3.Text == "0")
-                    {
-
-                        ddlGasType3.Enabled = false;
-                        txtSize3.Enabled = false;
-                        txtOnBoard3.Enabled = false;
-                        txt90P3.Enabled = false;
-                        txtReg3.Enabled = false;
-                        txtSuper3.Enabled = false;
-                        txtEthanol3.Enabled = false;
-                        ddlDeliver3.Enabled = false;
-                    }
-                    else
-                    {
-                        ddlGasType3.Enabled = true;
-                        txtSize3.Enabled = true;
-                        txtOnBoard3.Enabled = true;
-                        txt90P3.Enabled = true;
-                        txtReg3.Enabled = true;
-                        txtSuper3.Enabled = true;
-                        txtEthanol3.Enabled = true;
-                        ddlDeliver3.Enabled = true;
-                    }
-                    if (txtSize4.Text == "0")
-                    {
-
-                        ddlGasType4.Enabled = false;
-                        txtSize4.Enabled = false;
-                        txtOnBoard4.Enabled = false;
-                        txt90P4.Enabled = false;
-                        txtReg4.Enabled = false;
-                        txtSuper4.Enabled = false;
-                        txtEthanol4.Enabled = false;
-                        ddlDeliver4.Enabled = false;
-                    }
-                    else
-                    {
-                        ddlGasType4.Enabled = true;
-                        txtSize4.Enabled = true;
-                        txtOnBoard4.Enabled = true;
-                        txt90P4.Enabled = true;
-                        txtReg4.Enabled = true;
-                        txtSuper4.Enabled = true;
-                        txtEthanol4.Enabled = true;
-                        ddlDeliver4.Enabled = true;
-                    }
-                    if (txtSize5.Text == "0")
-                    {
-
-                        ddlGasType5.Enabled = false;
-                        txtSize5.Enabled = false;
-                        txtOnBoard5.Enabled = false;
-                        txt90P5.Enabled = false;
-                        txtReg5.Enabled = false;
-                        txtSuper5.Enabled = false;
-                        txtEthanol5.Enabled = false;
-                        ddlDeliver5.Enabled = false;
-                    }
-                    else
-                    {
-
-                        ddlGasType5.Enabled = true;
-                        txtSize5.Enabled = true;
-                        txtOnBoard5.Enabled = true;
-                        txt90P5.Enabled = true;
-                        txtReg5.Enabled = true;
-                        txtSuper5.Enabled = true;
-                        txtEthanol5.Enabled = true;
-                        ddlDeliver5.Enabled = true;
-
-                    }
+                    BlockEmptyContainers();
 
                     if (ddlLoadType.SelectedValue == "4")
                     {
@@ -368,10 +249,191 @@ namespace GasBlenderWeb
                         txtOnBoard5.Enabled = true;
                     }
 
+                    LoadType(); OnlyBlockEmptyContainers();
+
                 }
+            }
+            
+
+
+        }
+
+        private void BlockEmptyContainers()
+        {
+            if (txtSize1.Text == "0")
+            {
+                ddlGasType1.Enabled = false;
+                txtSize1.Enabled = false;
+                txtOnBoard1.Enabled = false;
+                txt90P1.Enabled = false;
+                txtReg1.Enabled = false;
+                txtSuper1.Enabled = false;
+                txtEthanol1.Enabled = false;
+                ddlDeliver1.Enabled = false;
+            }
+            else
+            {
+                ddlGasType1.Enabled = true;
+                txtSize1.Enabled = true;
+                txtOnBoard1.Enabled = true;
+                txt90P1.Enabled = true;
+                txtReg1.Enabled = true;
+                txtSuper1.Enabled = true;
+                txtEthanol1.Enabled = true;
+                ddlDeliver1.Enabled = true;
             }
 
 
+            if (txtSize2.Text == "0")
+            {
+                ddlGasType2.Enabled = false;
+                txtSize2.Enabled = false;
+                txtOnBoard2.Enabled = false;
+                txt90P2.Enabled = false;
+                txtReg2.Enabled = false;
+                txtSuper2.Enabled = false;
+                txtEthanol2.Enabled = false;
+                ddlDeliver2.Enabled = false;
+            }
+            else
+            {
+                ddlGasType2.Enabled = true;
+                txtSize2.Enabled = true;
+                txtOnBoard2.Enabled = true;
+                txt90P2.Enabled = true;
+                txtReg2.Enabled = true;
+                txtSuper2.Enabled = true;
+                txtEthanol2.Enabled = true;
+                ddlDeliver2.Enabled = true;
+            }
+            if (txtSize3.Text == "0")
+            {
+                ddlGasType3.Enabled = false;
+                txtSize3.Enabled = false;
+                txtOnBoard3.Enabled = false;
+                txt90P3.Enabled = false;
+                txtReg3.Enabled = false;
+                txtSuper3.Enabled = false;
+                txtEthanol3.Enabled = false;
+                ddlDeliver3.Enabled = false;
+            }
+            else
+            {
+                ddlGasType3.Enabled = true;
+                txtSize3.Enabled = true;
+                txtOnBoard3.Enabled = true;
+                txt90P3.Enabled = true;
+                txtReg3.Enabled = true;
+                txtSuper3.Enabled = true;
+                txtEthanol3.Enabled = true;
+                ddlDeliver3.Enabled = true;
+            }
+            if (txtSize4.Text == "0")
+            {
+                ddlGasType4.Enabled = false;
+                txtSize4.Enabled = false;
+                txtOnBoard4.Enabled = false;
+                txt90P4.Enabled = false;
+                txtReg4.Enabled = false;
+                txtSuper4.Enabled = false;
+                txtEthanol4.Enabled = false;
+                ddlDeliver4.Enabled = false;
+            }
+            else
+            {
+                ddlGasType4.Enabled = true;
+                txtSize4.Enabled = true;
+                txtOnBoard4.Enabled = true;
+                txt90P4.Enabled = true;
+                txtReg4.Enabled = true;
+                txtSuper4.Enabled = true;
+                txtEthanol4.Enabled = true;
+                ddlDeliver4.Enabled = true;
+            }
+            if (txtSize5.Text == "0")
+            {
+                ddlGasType5.Enabled = false;
+                txtSize5.Enabled = false;
+                txtOnBoard5.Enabled = false;
+                txt90P5.Enabled = false;
+                txtReg5.Enabled = false;
+                txtSuper5.Enabled = false;
+                txtEthanol5.Enabled = false;
+                ddlDeliver5.Enabled = false;
+            }
+            else
+            {
+                ddlGasType5.Enabled = true;
+                txtSize5.Enabled = true;
+                txtOnBoard5.Enabled = true;
+                txt90P5.Enabled = true;
+                txtReg5.Enabled = true;
+                txtSuper5.Enabled = true;
+                txtEthanol5.Enabled = true;
+                ddlDeliver5.Enabled = true;
+            }
+        }
+
+        private void OnlyBlockEmptyContainers()
+        {
+            if (txtSize1.Text == "0")
+            {
+                ddlGasType1.Enabled = false;
+                txtSize1.Enabled = false;
+                txtOnBoard1.Enabled = false;
+                txt90P1.Enabled = false;
+                txtReg1.Enabled = false;
+                txtSuper1.Enabled = false;
+                txtEthanol1.Enabled = false;
+                ddlDeliver1.Enabled = false;
+            }
+            
+            if (txtSize2.Text == "0")
+            {
+                ddlGasType2.Enabled = false;
+                txtSize2.Enabled = false;
+                txtOnBoard2.Enabled = false;
+                txt90P2.Enabled = false;
+                txtReg2.Enabled = false;
+                txtSuper2.Enabled = false;
+                txtEthanol2.Enabled = false;
+                ddlDeliver2.Enabled = false;
+            }
+            if (txtSize3.Text == "0")
+            {
+                ddlGasType3.Enabled = false;
+                txtSize3.Enabled = false;
+                txtOnBoard3.Enabled = false;
+                txt90P3.Enabled = false;
+                txtReg3.Enabled = false;
+                txtSuper3.Enabled = false;
+                txtEthanol3.Enabled = false;
+                ddlDeliver3.Enabled = false;
+            }
+            
+            if (txtSize4.Text == "0")
+            {
+                ddlGasType4.Enabled = false;
+                txtSize4.Enabled = false;
+                txtOnBoard4.Enabled = false;
+                txt90P4.Enabled = false;
+                txtReg4.Enabled = false;
+                txtSuper4.Enabled = false;
+                txtEthanol4.Enabled = false;
+                ddlDeliver4.Enabled = false;
+            }
+            if (txtSize5.Text == "0")
+            {
+                ddlGasType5.Enabled = false;
+                txtSize5.Enabled = false;
+                txtOnBoard5.Enabled = false;
+                txt90P5.Enabled = false;
+                txtReg5.Enabled = false;
+                txtSuper5.Enabled = false;
+                txtEthanol5.Enabled = false;
+                ddlDeliver5.Enabled = false;
+            }
+            
         }
 
         public void CalculateSize(int compartmentID)
@@ -1153,7 +1215,9 @@ namespace GasBlenderWeb
                 txtOnBoard4.Enabled = true;
                 txtOnBoard5.Enabled = true;
             }
-            ReloadFix();
+
+                ReloadFix();
+            
         }
 
 
@@ -1170,115 +1234,120 @@ namespace GasBlenderWeb
                     txtSuper3.Enabled = true;
                     txtSuper4.Enabled = true;
                     txtSuper5.Enabled = true;
+                    
 
-                    if (ddlLoadType.SelectedValue == "4" && ddlGasType1.SelectedValue == "1")
-                    {
-                        txtReg1.Enabled = true;
-                        txtSuper1.Enabled = false;
-                    }
-                    if (ddlLoadType.SelectedValue == "4" && ddlGasType1.SelectedValue == "2")
-                    {
-                        txtReg1.Enabled = false;
-                        txtSuper1.Enabled = true;
-                    }
-                    if (ddlLoadType.SelectedValue == "4" && ddlGasType1.SelectedValue == "4")
-                    {
-                        txtReg1.Enabled = false;
-                        txtSuper1.Enabled = true;
-                    }
-                    if (ddlLoadType.SelectedValue == "4" && ddlGasType1.SelectedValue == "5")
-                    {
-                        txtReg1.Enabled = true;
-                        txtSuper1.Enabled = false;
-                    }
-    
-                    if (ddlLoadType.SelectedValue == "4" && ddlGasType2.SelectedValue == "1")
-                    {
-                        txtReg2.Enabled = true;
-                        txtSuper2.Enabled = false;
-                    }
-                    if (ddlLoadType.SelectedValue == "4" && ddlGasType2.SelectedValue == "2")
-                    {
-                        txtReg2.Enabled = false;
-                        txtSuper2.Enabled = true;
-                    }
-                    if (ddlLoadType.SelectedValue == "4" && ddlGasType2.SelectedValue == "4")
-                    {
-                        txtReg2.Enabled = false;
-                        txtSuper2.Enabled = true;
-                    }
-                    if (ddlLoadType.SelectedValue == "4" && ddlGasType2.SelectedValue == "5")
-                    {
-                        txtReg2.Enabled = true;
-                        txtSuper2.Enabled = false;
-                    }
-
-                    if (ddlLoadType.SelectedValue == "4" && ddlGasType3.SelectedValue == "1")
-                    {
-                        txtReg3.Enabled = true;
-                        txtSuper3.Enabled = false;
-                    }
-                    if (ddlLoadType.SelectedValue == "4" && ddlGasType3.SelectedValue == "2")
-                    {
-                        txtReg3.Enabled = false;
-                        txtSuper3.Enabled = true;
-                    }
-                    if (ddlLoadType.SelectedValue == "4" && ddlGasType3.SelectedValue == "4")
-                    {
-                        txtReg3.Enabled = false;
-                        txtSuper3.Enabled = true;
-                    }
-                    if (ddlLoadType.SelectedValue == "4" && ddlGasType3.SelectedValue == "5")
-                    {
-                        txtReg3.Enabled = true;
-                        txtSuper3.Enabled = false;
-                    }
-                  
-                    if (ddlLoadType.SelectedValue == "4" && ddlGasType4.SelectedValue == "1")
-                    {
-                        txtReg4.Enabled = true;
-                        txtSuper4.Enabled = false;
-                    }
-                    if (ddlLoadType.SelectedValue == "4" && ddlGasType4.SelectedValue == "2")
-                    {
-                        txtReg4.Enabled = false;
-                        txtSuper4.Enabled = true;
-                    }
-                    if (ddlLoadType.SelectedValue == "4" && ddlGasType4.SelectedValue == "4")
-                    {
-                        txtReg4.Enabled = false;
-                        txtSuper4.Enabled = true;
-                    }
-                    if (ddlLoadType.SelectedValue == "4" && ddlGasType4.SelectedValue == "5")
-                    {
-                        txtReg4.Enabled = true;
-                        txtSuper4.Enabled = false;
-                    }
-
-                    if (ddlLoadType.SelectedValue == "4" && ddlGasType5.SelectedValue == "1")
-                    {
-                        txtReg5.Enabled = true;
-                        txtSuper5.Enabled = false;
-                    }
-                    if (ddlLoadType.SelectedValue == "4" && ddlGasType5.SelectedValue == "2")
-                    {
-                        txtReg5.Enabled = false;
-                        txtSuper5.Enabled = true;
-                    }
-                    if (ddlLoadType.SelectedValue == "4" && ddlGasType5.SelectedValue == "4")
-                    {
-                        txtReg5.Enabled = false;
-                        txtSuper5.Enabled = true;
-                    }
-                    if (ddlLoadType.SelectedValue == "4" && ddlGasType5.SelectedValue == "5")
-                    {
-                        txtReg5.Enabled = true;
-                        txtSuper5.Enabled = false;
-                    }
+                    LoadType();
+            OnlyBlockEmptyContainers();
 
             }
 
+        private void LoadType()
+        {
+            if ((ddlLoadType.SelectedValue == "4" || ddlLoadType.SelectedValue == "1") && ddlGasType1.SelectedValue == "1")
+            {
+                txtReg1.Enabled = true;
+                txtSuper1.Enabled = false;
+            }
+            if ((ddlLoadType.SelectedValue == "4" || ddlLoadType.SelectedValue == "1") && ddlGasType1.SelectedValue == "2")
+            {
+                txtReg1.Enabled = false;
+                txtSuper1.Enabled = true;
+            }
+            if ((ddlLoadType.SelectedValue == "4" || ddlLoadType.SelectedValue == "1") && ddlGasType1.SelectedValue == "4")
+            {
+                txtReg1.Enabled = false;
+                txtSuper1.Enabled = true;
+            }
+            if ((ddlLoadType.SelectedValue == "4" || ddlLoadType.SelectedValue == "1") && ddlGasType1.SelectedValue == "5")
+            {
+                txtReg1.Enabled = true;
+                txtSuper1.Enabled = false;
+            }
 
+            if ((ddlLoadType.SelectedValue == "4" || ddlLoadType.SelectedValue == "1") && ddlGasType2.SelectedValue == "1")
+            {
+                txtReg2.Enabled = true;
+                txtSuper2.Enabled = false;
+            }
+            if ((ddlLoadType.SelectedValue == "4" || ddlLoadType.SelectedValue == "1") && ddlGasType2.SelectedValue == "2")
+            {
+                txtReg2.Enabled = false;
+                txtSuper2.Enabled = true;
+            }
+            if ((ddlLoadType.SelectedValue == "4" || ddlLoadType.SelectedValue == "1") && ddlGasType2.SelectedValue == "4")
+            {
+                txtReg2.Enabled = false;
+                txtSuper2.Enabled = true;
+            }
+            if ((ddlLoadType.SelectedValue == "4" || ddlLoadType.SelectedValue == "1") && ddlGasType2.SelectedValue == "5")
+            {
+                txtReg2.Enabled = true;
+                txtSuper2.Enabled = false;
+            }
+
+            if ((ddlLoadType.SelectedValue == "4" || ddlLoadType.SelectedValue == "1") && ddlGasType3.SelectedValue == "1")
+            {
+                txtReg3.Enabled = true;
+                txtSuper3.Enabled = false;
+            }
+            if ((ddlLoadType.SelectedValue == "4" || ddlLoadType.SelectedValue == "1") && ddlGasType3.SelectedValue == "2")
+            {
+                txtReg3.Enabled = false;
+                txtSuper3.Enabled = true;
+            }
+            if ((ddlLoadType.SelectedValue == "4" || ddlLoadType.SelectedValue == "1") && ddlGasType3.SelectedValue == "4")
+            {
+                txtReg3.Enabled = false;
+                txtSuper3.Enabled = true;
+            }
+            if ((ddlLoadType.SelectedValue == "4" || ddlLoadType.SelectedValue == "1") && ddlGasType3.SelectedValue == "5")
+            {
+                txtReg3.Enabled = true;
+                txtSuper3.Enabled = false;
+            }
+
+            if ((ddlLoadType.SelectedValue == "4" || ddlLoadType.SelectedValue == "1") && ddlGasType4.SelectedValue == "1")
+            {
+                txtReg4.Enabled = true;
+                txtSuper4.Enabled = false;
+            }
+            if ((ddlLoadType.SelectedValue == "4" || ddlLoadType.SelectedValue == "1") && ddlGasType4.SelectedValue == "2")
+            {
+                txtReg4.Enabled = false;
+                txtSuper4.Enabled = true;
+            }
+            if ((ddlLoadType.SelectedValue == "4" || ddlLoadType.SelectedValue == "1") && ddlGasType4.SelectedValue == "4")
+            {
+                txtReg4.Enabled = false;
+                txtSuper4.Enabled = true;
+            }
+            if ((ddlLoadType.SelectedValue == "4" || ddlLoadType.SelectedValue == "1") && ddlGasType4.SelectedValue == "5")
+            {
+                txtReg4.Enabled = true;
+                txtSuper4.Enabled = false;
+            }
+
+            if ((ddlLoadType.SelectedValue == "4" || ddlLoadType.SelectedValue == "1") && ddlGasType5.SelectedValue == "1")
+            {
+                txtReg5.Enabled = true;
+                txtSuper5.Enabled = false;
+            }
+            if ((ddlLoadType.SelectedValue == "4" || ddlLoadType.SelectedValue == "1") && ddlGasType5.SelectedValue == "2")
+            {
+                txtReg5.Enabled = false;
+                txtSuper5.Enabled = true;
+            }
+            if ((ddlLoadType.SelectedValue == "4" || ddlLoadType.SelectedValue == "1") && ddlGasType5.SelectedValue == "4")
+            {
+                txtReg5.Enabled = false;
+                txtSuper5.Enabled = true;
+            }
+            if ((ddlLoadType.SelectedValue == "4" || ddlLoadType.SelectedValue == "1") && ddlGasType5.SelectedValue == "5")
+            {
+                txtReg5.Enabled = true;
+                txtSuper5.Enabled = false;
+            }
         }
+    }
 
     }
