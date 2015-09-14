@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,7 +10,7 @@ using System.Data.SqlClient;
 
 public partial class _Default : System.Web.UI.Page
 {
-    public static string _RFIDSystem = "Data Source=SYSPRO;Initial Catalog=SysproCompanyH;User ID=administrator;Password=K*gXhFs3+;";
+    public static string _RFIDSystem =  ConfigurationManager.ConnectionStrings["SysproHString"].ConnectionString;
     protected void Page_Load(object sender, EventArgs e)
     {
         

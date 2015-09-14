@@ -13,7 +13,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/31/2015 14:18:02</publishTime>
     </File>
     <File Include="bin/AUBusinessAccess.dll">
-      <publishTime>07/08/2015 13:33:21</publishTime>
+      <publishTime>09/10/2015 13:23:37</publishTime>
     </File>
     <File Include="bin/AUConstants.dll">
       <publishTime>07/08/2015 13:33:20</publishTime>
@@ -22,7 +22,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/08/2015 13:33:20</publishTime>
     </File>
     <File Include="bin/AutomatedEmail.dll">
-      <publishTime>07/08/2015 13:33:22</publishTime>
+      <publishTime>09/10/2015 13:23:38</publishTime>
     </File>
     <File Include="bin/NLog.config">
       <publishTime>06/06/2015 15:47:58</publishTime>
@@ -37,7 +37,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/06/2015 15:47:58</publishTime>
     </File>
     <File Include="EmailTshirtReplenishment.html">
-      <publishTime>06/06/2015 15:47:58</publishTime>
+      <publishTime>09/10/2015 13:09:31</publishTime>
     </File>
     <File Include="HtmlPage.html">
       <publishTime>06/06/2015 15:47:58</publishTime>

@@ -92,6 +92,10 @@
     <td><a href="CatalogItems.aspx">Item Catalog</a></td>
   </tr>
  
+  <tr class="alt">
+    <td><a href="PODetails.aspx">Syspro/Web PO Search</a></td>
+  </tr>
+ 
 </table>
         </div>
     </div>

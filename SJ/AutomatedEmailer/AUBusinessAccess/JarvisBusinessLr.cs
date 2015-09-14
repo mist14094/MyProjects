@@ -192,7 +192,7 @@ namespace AUBusinessAccess
 
             DataTable v1 = TshirtSalesandQOH(FromDate, ToDate);
             string str6Sales, strRodewaySales, strQualitySales, strIncSales;
-            DataTable dtstr6Sales, dtstr10Sales, dtstr21Sales, dtstr22Sales;
+            DataTable dtstr6Sales, dtstr10Sales, dtstr21Sales, dtstr22Sales,dtstr402Sales;
             try
             {
                 dtstr6Sales =
@@ -257,6 +257,22 @@ namespace AUBusinessAccess
             catch (Exception ex)
             {
                 strreadFile = strreadFile.Replace("Store22Sales", "No Sales");
+            }
+
+            try
+            {
+                dtstr402Sales =
+                    v1.AsEnumerable()
+                        .Where(row => Convert.ToInt16(row["SalesAdventurePark"].ToString()) > 0)
+                        .CopyToDataTable();
+                dtstr402Sales = deleteColumn(dtstr402Sales, "SalesAdventurePark");
+                strreadFile = strreadFile.Replace("SalesAdventurePark", email.TableCreator(dtstr402Sales));
+                strreadFile = strreadFile.Replace("upc", "UPC");
+                strreadFile = strreadFile.Replace("SalesAdventurePark", "Sales");
+            }
+            catch (Exception ex)
+            {
+                strreadFile = strreadFile.Replace("SalesAdventurePark", "No Sales");
             }
 
 
