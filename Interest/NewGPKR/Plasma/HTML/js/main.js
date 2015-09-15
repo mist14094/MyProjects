@@ -397,11 +397,11 @@ $(document).ready(function($) {
 	/*===========================================================*/	
 	$('#contact-form').validate({
 	rules: {
-		username: {
+	    txtUsername: {
 			minlength: 6,
 			required: true
 		},
-		email: {
+	    txtEmail: {
 			required: true,
 			email: true
 		},
@@ -409,7 +409,7 @@ $(document).ready(function($) {
 			minlength: 12,
 			required: true
 		},
-		message: {
+		txtSubject: {
 			minlength: 10,
 			required: true
 			}

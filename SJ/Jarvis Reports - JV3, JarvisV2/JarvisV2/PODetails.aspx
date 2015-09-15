@@ -9,17 +9,9 @@
 <body>
     <form id="form1" runat="server">
     <div style="text-align: center;font-family:Segoe WP" >
-        Search PO by Purchase Order Number, Supplier Name, Web PO Order Number or by Customer<br />
-        <br />
-        <asp:TextBox ID="TextBox1" runat="server" Height="128px" 
-            TextMode="MultiLine" Width="795px" ></asp:TextBox>
-            <br />
-        <br />
-            <asp:Button ID="Button1" runat="server"
-                Text="Search Information" onclick="Button1_Click" />
+        PO Details -
+        <asp:Label ID="lblPo" runat="server" Text="Label"></asp:Label>
         &nbsp;&nbsp;
-        <asp:Button ID="Button2" runat="server"
-                Text="Top 30 PO" onclick="Button2_Click" />
         <br />
         <br />
     </div>

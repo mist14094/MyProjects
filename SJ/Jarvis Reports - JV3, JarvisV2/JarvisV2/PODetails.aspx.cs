@@ -13,58 +13,55 @@ public partial class _PODetails : System.Web.UI.Page
     public static string _RFIDSystem = ConfigurationManager.ConnectionStrings["SysproDString"].ConnectionString;
     protected void Page_Load(object sender, EventArgs e)
     {
-        
-    }
-
-    protected void Button1_Click(object sender, EventArgs e)
-    { DataTable table = new DataTable();
-        try
+        if (!IsPostBack)
         {
-           
-            table.Columns.Add("Sno#", typeof(int));
-            table.Columns.Add("Syspro PO#", typeof(string));
-            table.Columns.Add("Supplier", typeof(string));
-            table.Columns.Add("Entry Date", typeof(string));
-            table.Columns.Add("Due Date", typeof(string));
-            table.Columns.Add("Customer", typeof(string));
-            table.Columns.Add("Customer P0#", typeof(string));
-            table.Columns.Add("Supplier Name", typeof(string));
-            string query = "SELECT a.PurchaseOrder, a.Supplier, a.OrderEntryDate, a.OrderDueDate,  a.Customer, a.CustomerPoNumber, b.SupplierName FROM PorMasterHdr a WITH (NOLOCK) LEFT JOIN ApSupplier b WITH (NOLOCK) ON (a.Supplier = b.Supplier) WHERE a.OrderStatus IN( '0', '1', '4' ) AND ( ( a.PurchaseOrder LIKE samplequery12345 ) OR ( a.Supplier LIKE samplequery12345 ) OR ( b.SupplierName LIKE samplequery12345 ) OR ( a.CustomerPoNumber LIKE samplequery12345 ) OR ( a.Customer LIKE samplequery12345 ) ) ORDER BY a.PurchaseOrder desc";
-            string str = TextBox1.Text.ToUpper();
-            str = str.Replace("\r\n", ",");
-            string[] words = str.Split(',');
-            for (int i = 0; i < words.Count(); i++)
+            string ponumber = Request.QueryString["PONumber"];
+            lblPo.Text = ponumber;
+            if (ponumber != null)
             {
+                DataTable table = new DataTable();
                 try
                 {
-                    string newquery = query.Replace("samplequery12345", "'%[" + words[i].ToString().Substring(0, 1) + "]" + words[i].ToString().Substring(1, words[i].ToString().Length - 1) + "%'");
-                    DataTable dt = GetCouponSalesDetail(newquery);
-                    if (dt.Rows.Count > 0)
-                    {
-                        for (int j = 0; j < dt.Rows.Count; j++)
-                        {
-                            table.Rows.Add(i, dt.Rows[j]["PurchaseOrder"], dt.Rows[j]["Supplier"], dt.Rows[j]["OrderEntryDate"], dt.Rows[j]["OrderDueDate"], dt.Rows[j]["Customer"], dt.Rows[j]["CustomerPoNumber"], dt.Rows[j]["SupplierName"]);
-                        }
-                    }
-                    else
-                    {
-                        table.Rows.Add(i, "", "", "", words[i], "", "","");
-                    }
-                }
 
+                    table.Columns.Add("PO#", typeof(string));
+                    table.Columns.Add("Line#", typeof(string));
+                    table.Columns.Add("StockCode", typeof(string));
+                    table.Columns.Add("UPC", typeof(string));
+                    table.Columns.Add("Description", typeof(string));
+                    table.Columns.Add("OrderQty", typeof(string));
+                    table.Columns.Add("ReceivedQty", typeof(string));
+                    table.Columns.Add("Price", typeof(string));
+                    string query = "SELECT PO.PurchaseOrder as PO#, PO.Line AS Line#,PO.MStockCode as StockCode,invm.AlternateKey1 AS [UPC] ,PO.MStockDes AS [Description],PO.MOrderQty as [OrderQty],PO.MReceivedQty AS [ReceivedQty],PO.MPrice as [Price] from (SELECT PurchaseOrder,Line,LineType,MStockCode,MStockDes,MWarehouse,MOrderUom,MStockingUom,MOrderQty,MReceivedQty,MLatestDueDate,MLastReceiptDat,MSupCatalogue,MDiscPct1,MDiscPct2,MDiscPct3,MDiscValFlag,MDiscValue,MPrice,MForeignPrice,MDecimalsToPrt,MConvFactPrcUm,MMulDivPrc,MPriceUom,MTaxCode,MConvFactOrdUm,MMulDivAlloc,MProductClass,MCompleteFlag,MJob,MGlCode,MUserAuthReqn,MRequisition,MRequisitionLine,MSalesOrder,MSalesOrderLine,MOrigDueDate,MReschedDueDate,MLctConfirmed,MOriginalLine,MSubcontractOp,MEdiExtractFlag,MEdiActionFlag,MInspectionReqd,MNonsUnitMass,MNonsUnitVol,MVersion,MRelease,NComment,NCommentFromLin,NMscChargeValue,NMscChargePrint,NComPrintType,NMscChargeTax,NCommentFlag,NMscChargeFor,NMscChargeFLoc,NEdiExtract,MEccFlag,MBlanketDate,MBlanketContLine,AssetFlag,CapexCode,CapexLine,SelectionCode,SelectionType,User1,TimeStamp FROM               SysproCompanyD..PorMasterDetail    WITH (NOLOCK) WHERE (PurchaseOrder = 'poxxxx' AND Line >=    0)) AS PO LEFT outer join   SysproCompanyH..InvMaster invm on invm.StockCode = PO.MStockCode ORDER BY PO.Line";
+                    
+                     string newquery = query.Replace("poxxxx", ponumber);
+                            DataTable dt = GetCouponSalesDetail(newquery);
+                            if (dt.Rows.Count > 0)
+                            {
+                                for (int j = 0; j < dt.Rows.Count; j++)
+                                {
+                                    table.Rows.Add( dt.Rows[j]["PO#"], dt.Rows[j]["Line#"], dt.Rows[j]["StockCode"], dt.Rows[j]["UPC"], dt.Rows[j]["Description"], dt.Rows[j]["OrderQty"], dt.Rows[j]["ReceivedQty"], dt.Rows[j]["Price"]);
+                                }
+                            }
+                    
+                   
+                }
                 catch (Exception ex)
                 {
                 }
+
+
+                GridView1.DataSource = table;
+                GridView1.DataBind();
+
+
             }
+      
+      
         }
-        catch(Exception ex)
-        {
-        }
+    }
 
-
-        GridView1.DataSource = table;
-        GridView1.DataBind();
-
+    protected void Button1_Click(object sender, EventArgs e)
+    {
        
     }
 
@@ -89,55 +86,5 @@ public partial class _PODetails : System.Web.UI.Page
         }
         return allData;
     }
-    protected void Button2_Click(object sender, EventArgs e)
-    {
- DataTable table = new DataTable();
-        try
-        {
-           
-            table.Columns.Add("Sno#", typeof(int));
-            table.Columns.Add("Syspro PO#", typeof(string));
-            table.Columns.Add("Supplier", typeof(string));
-            table.Columns.Add("Entry Date", typeof(string));
-            table.Columns.Add("Due Date", typeof(string));
-            table.Columns.Add("Customer", typeof(string));
-            table.Columns.Add("Customer P0#", typeof(string));
-            table.Columns.Add("Supplier Name", typeof(string));
-            string query = "SELECT TOP 30 a.PurchaseOrder, a.Supplier, a.OrderStatus, a.OrderEntryDate, a.OrderDueDate, a.MemoDate, a.MemoCode, a.OrderType, a.Customer, a.CustomerPoNumber, a.Currency, b.SupplierName, b.Branch FROM PorMasterHdr a WITH (NOLOCK) LEFT JOIN ApSupplier b WITH (NOLOCK) ON (a.Supplier = b.Supplier) WHERE a.OrderStatus IN( '0', '1', '4' )ORder BY PurchaseOrder desc";
-            string str = TextBox1.Text.ToUpper();
-            str = str.Replace("\r\n", ",");
-            string[] words = str.Split(',');
-            for (int i = 0; i < words.Count(); i++)
-            {
-                try
-                {
-                    DataTable dt = GetCouponSalesDetail(query);
-                    if (dt.Rows.Count > 0)
-                    {
-                        for (int j = 0; j < dt.Rows.Count; j++)
-                        {
-                            table.Rows.Add(i, dt.Rows[j]["PurchaseOrder"], dt.Rows[j]["Supplier"], dt.Rows[j]["OrderEntryDate"], dt.Rows[j]["OrderDueDate"], dt.Rows[j]["Customer"], dt.Rows[j]["CustomerPoNumber"], dt.Rows[j]["SupplierName"]);
-                        }
-                    }
-                    else
-                    {
-                        table.Rows.Add(i, "", "", "", words[i], "", "","");
-                    }
-                }
-
-                catch (Exception ex)
-                {
-                }
-            }
-        }
-        catch(Exception ex)
-        {
-        }
-
-
-        GridView1.DataSource = table;
-        GridView1.DataBind();
-
-       
-    }
+    
 }

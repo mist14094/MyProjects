@@ -93,7 +93,7 @@
   </tr>
  
   <tr class="alt">
-    <td><a href="PODetails.aspx">Syspro/Web PO Search</a></td>
+    <td><a href="POMaster.aspx">Syspro/Web PO Search</a></td>
   </tr>
  
 </table>
