@@ -1,0 +1,67 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteMaster.master.cs" Inherits="SimplifiedPOWeb.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+ 
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Simplified Purchase Order System">
+    <title>Simplified PO</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <link rel="stylesheet" href="css/layouts/side-menu.css">
+    <link href="css/pure-min.css" rel="stylesheet" />
+      <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div>
+            <div id="layout">
+
+                <a href="#menu" id="menuLink" class="menu-link">
+
+                    <span></span>
+                </a>
+                <div id="menu">
+                    <div class="pure-menu">
+                        <br />
+                        <img class="pure-img-responsive" width="151" src="Logo.png" alt="Smokin Joe's Purchase Order System">
+
+                        <ul class="pure-menu-list">
+                         <%--   <li class="menu-item-divided pure-menu-selected"><a href="#" class="pure-menu-link">Home</a></li>--%>
+                            <li class="pure-menu-item"><a href="Home.aspx" class="pure-menu-link">Home</a></li>
+                            <li class="pure-menu-item"><a href="NewPO.aspx" class="pure-menu-link">Create New PO</a></li>
+                            <li class="pure-menu-item"><a href="ViewSavedPO.aspx" class="pure-menu-link">Unsubmitted PO</a></li>
+                            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Approved PO</a></li>
+                            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Rejected PO</a></li>
+                            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Settings</a></li>
+
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="main">
+                    <div class="header">
+                        <h3>Welcome <asp:Label ID="lblFirstName" runat="server" Text=""></asp:Label> <asp:Label ID="lblLasttName" runat="server" Text=""></asp:Label> !</h3>
+                        <%--     <h2>A subtitle for your page goes here</h2>--%>
+                    </div>
+
+                    <div class="content">
+                        <div>
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</body>
+</html>

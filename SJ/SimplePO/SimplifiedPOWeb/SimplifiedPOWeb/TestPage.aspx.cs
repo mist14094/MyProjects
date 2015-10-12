@@ -38,6 +38,11 @@ namespace SimplifiedPOWeb
 
                 var po = _poBusiness.ConvertDataTableToPoClass(dt);
             }
+            else
+            {
+                   DataTable dt = Import_To_Grid(@"G:\Projects\MyProjects\SJ\SimplePO\SimplifiedPOWeb\SimplifiedPOWeb\Files\USAPNKANDRED.xlsx", ".xlsx", rbHDR.SelectedItem.Text);
+             var po =   _poBusiness.ConvertDataTableToPoClass(dt);
+            }
         }
 
         private DataTable Import_To_Grid(string FilePath, string Extension, string isHDR)

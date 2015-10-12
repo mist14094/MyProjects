@@ -35,6 +35,7 @@ namespace SimplifiedPOConstants
         public string Model { get; set; }
         public string Color { get; set; }
         public string Size { get; set; }
+        public string Style { get; set; }
         public string Gender { get; set; }
         public string UnitOfMeasure { get; set; }
         public string Quantity { get; set; }

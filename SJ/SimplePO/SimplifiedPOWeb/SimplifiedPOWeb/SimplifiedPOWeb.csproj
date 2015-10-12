@@ -58,15 +58,40 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Telerik.Web.UI, Version=2015.2.826.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for ASP.NET AJAX Q2 2015\Bin45\Telerik.Web.UI.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\layouts\side-menu-old-ie.css" />
+    <Content Include="css\layouts\side-menu.css" />
+    <Content Include="css\pure-min.css" />
+    <Content Include="css\style.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Home.aspx" />
+    <Content Include="js\ui.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="Logo.png" />
+    <Content Include="logonew.png" />
+    <Content Include="NewPO.aspx" />
+    <Content Include="obj\Debug\SimplifiedPOWeb.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\SimplifiedPOWeb.dll" />
+    <Content Include="obj\Debug\SimplifiedPOWeb.pdb" />
     <Content Include="packages.config" />
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="LICENSE.md" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\SimplifiedPOWeb.csprojResolveAssemblyReference.cache" />
+    <Content Include="POItems.aspx" />
+    <Content Include="POLineItems.aspx" />
+    <Content Include="SiteMaster.Master" />
+    <None Include="Properties\PublishProfiles\SimplifiedPO.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -75,18 +100,56 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Test.aspx" />
     <Content Include="TestPage.aspx" />
+    <Content Include="ViewSavedPO.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Test.aspx.cs">
-      <DependentUpon>Test.aspx</DependentUpon>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Test.aspx.designer.cs">
-      <DependentUpon>Test.aspx</DependentUpon>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewPO.aspx.cs">
+      <DependentUpon>NewPO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewPO.aspx.designer.cs">
+      <DependentUpon>NewPO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="POItems.aspx.cs">
+      <DependentUpon>POItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="POItems.aspx.designer.cs">
+      <DependentUpon>POItems.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="POLineItems.aspx.cs">
+      <DependentUpon>POLineItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="POLineItems.aspx.designer.cs">
+      <DependentUpon>POLineItems.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SiteMaster.Master.cs">
+      <DependentUpon>SiteMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteMaster.Master.designer.cs">
+      <DependentUpon>SiteMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="TestPage.aspx.cs">
       <DependentUpon>TestPage.aspx</DependentUpon>
@@ -94,6 +157,13 @@
     </Compile>
     <Compile Include="TestPage.aspx.designer.cs">
       <DependentUpon>TestPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSavedPO.aspx.cs">
+      <DependentUpon>ViewSavedPO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSavedPO.aspx.designer.cs">
+      <DependentUpon>ViewSavedPO.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -105,6 +175,12 @@
       <Project>{9D94591E-46FF-42CB-971B-2F343D6B410E}</Project>
       <Name>SimplifiedPOConstants</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
