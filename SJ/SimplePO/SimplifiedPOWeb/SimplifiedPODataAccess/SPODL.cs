@@ -408,5 +408,164 @@ namespace SimplifiedPODataAccess
                     System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
             }
         }
-    }
+
+
+        public DataTable GetTempPoDetails(string sno)
+        {
+            Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            var dataTable = new DataTable();
+            var selectCommand = new SqlCommand
+            {
+                CommandText = string.Format(_constants.GetTempPoDetails, sno)
+                ,
+                CommandTimeout = 180,
+                CommandType = CommandType.Text
+            };
+
+
+            var adapter = new SqlDataAdapter(selectCommand);
+            var connection = new SqlConnection(_constants.RFIDConnectionString);
+            selectCommand.Connection = connection;
+            try
+            {
+                connection.Open();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                Nlog.Trace(
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Error", ex);
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+                connection.Dispose();
+                Nlog.Trace(message:
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
+            }
+        }
+
+        public DataTable GetCouponSalesDetail(string query)
+        {
+            DataTable allData = new DataTable();
+            SqlConnection connection = new SqlConnection(_connectionString);
+            try
+            {
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.CommandType = CommandType.Text;
+                //cmd.Parameters.Add(new SqlParameter("@numberofdays", NoOfDays));
+                connection.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(allData);
+
+                connection.Close();
+            }
+            catch
+            {
+                connection.Close();
+            }
+            return allData;
+        }
+
+
+
+
+        public DataTable SearchProducts(string searchString, string companyAlphabet)
+        {
+            DataTable table = new DataTable();
+            try
+            {
+
+                table.Columns.Add("Sno#", typeof(int));
+                table.Columns.Add("Stockcode", typeof(string));
+                table.Columns.Add("Description", typeof(string));
+                table.Columns.Add("Long Description", typeof(string));
+                table.Columns.Add("UPC", typeof(string));
+                table.Columns.Add("Unit Cost", typeof(string));
+                table.Columns.Add("Selling Price", typeof(string));
+                table.Columns.Add("Supplier", typeof(string));
+                string query = string.Format("SELECT a.StockCode, a.Description, a.LongDesc, a.AlternateKey1, a.AlternateKey2, a.StockUom, a.AlternateUom, a.OtherUom, a.Mass, a.Volume, a.Supplier, a.ProductClass, a.KitType, a.Buyer, a.Planner, a.LeadTime, a.PartCategory, a.WarehouseToUse, a.BuyingRule, a.Decimals, a.Ebq, a.PanSize, a.UserField1, a.UserField2, a.UserField3, a.UserField4, a.UserField5, a.DrawOfficeNum, b.QtyOnHand, b.QtyAllocated, b.QtyOnOrder, b.QtyOnBackOrder, b.QtyInTransit, b.QtyAllocatedWip, b.QtyInInspection, b.MinimumQty, b.MaximumQty, b.UnitCost, b.DefaultBin, b.UserField1, b.UserField2, b.UserField3, c.SellingPrice, c.PriceBasis, a.EccFlag, a.Version, a.Release, a.EccUser, a.ClearingFlag FROM syspro.SysproCompany{0}.dbo.InvMaster a WITH (NOLOCK) LEFT JOIN syspro.SysproCompany{0}.dbo.InvWarehouse b WITH (NOLOCK) ON (a.StockCode = b.StockCode AND a.WarehouseToUse = b.Warehouse) LEFT JOIN syspro.SysproCompany{0}.dbo.InvPrice c WITH (NOLOCK) ON (a.StockCode = c.StockCode AND a.ListPriceCode = c.PriceCode) WHERE  ( a.StockCode LIKE samplequery12345 ) OR ( a.Description LIKE samplequery12345 ) OR ( a.LongDesc LIKE samplequery12345 ) OR ( a.AlternateKey1 LIKE samplequery12345 ) OR ( a.AlternateKey2 LIKE samplequery12345 ) OR ( a.Supplier LIKE samplequery12345 ) ",companyAlphabet);
+                string str = searchString;
+                str = str.Replace("\r\n", ",");
+                string[] words = str.Split(',');
+                for (int i = 0; i < words.Count(); i++)
+                {
+                    try
+                    {
+                        string newquery = query.Replace("samplequery12345", "'%[" + words[i].ToString().Substring(0, 1) + "]" + words[i].ToString().Substring(1, words[i].ToString().Length - 1) + "%'");
+                        DataTable dt = GetCouponSalesDetail(newquery);
+                        return dt;
+                        //if (dt.Rows.Count > 0)
+                        //{
+                        //    for (int j = 0; j < dt.Rows.Count; j++)
+                        //    {
+                        //        table.Rows.Add(i, dt.Rows[j]["StockCode"], dt.Rows[j]["Description"], dt.Rows[j]["LongDesc"], dt.Rows[j]["AlternateKey1"], dt.Rows[j]["UnitCost"], dt.Rows[j]["SellingPrice"], dt.Rows[j]["Supplier"]);
+                        //    }
+                        //}
+                        //else
+                        //{
+                        //    table.Rows.Add(i, "", "", "", words[i], "", "", "");
+                        //}
+                    }
+
+                    catch (Exception ex)
+                    {
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+        return null;
+        }
+
+        public string AddItemsTempPo(string StockCode, string POMasterNo, string TotalQuantity)
+        {
+            Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            var dataTable = new DataTable();
+            var selectCommand = new SqlCommand
+            {
+                CommandText = string.Format(_constants.AddItemsTempPo),
+                CommandTimeout = 180,
+                CommandType = CommandType.StoredProcedure
+            };
+            selectCommand.Parameters.AddWithValue("@StockCode", StockCode);
+            selectCommand.Parameters.AddWithValue("@POMasterNo", POMasterNo);
+            selectCommand.Parameters.AddWithValue("@TotalQuantity", TotalQuantity);
+
+            var adapter = new SqlDataAdapter(selectCommand);
+            var connection = new SqlConnection(_constants.SJPurchaseOrderConnectionString);
+            selectCommand.Connection = connection;
+            try
+            {
+                connection.Open();
+                var ID = selectCommand.ExecuteReader();
+                return ID.ToString();
+            }
+            catch (Exception ex)
+            {
+                Nlog.Trace(
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Error", ex);
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+                connection.Dispose();
+                Nlog.Trace(message:
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
+            }
+            return "";
+        }
+
+
+    } 
+    
+    
 }

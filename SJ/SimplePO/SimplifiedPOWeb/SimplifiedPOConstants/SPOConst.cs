@@ -65,5 +65,9 @@ namespace SimplifiedPOConstants
 
         public string DeleteTempPo =
             "delete FROM [SJPurchaseOrder].[dbo].[POMasterTemp] WHERE Sno={0}";
+
+        public string GetTempPoDetails = "Select * from  [SJPurchaseOrder].[dbo].[POMasterTemp]";
+
+        public string AddItemsTempPo = "[AddItemsTempPO]";
     }
 }

@@ -158,5 +158,38 @@ namespace SimplifiedPOBusiness
                 System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
             return _access.GetUnSubmittedPo(userId);
         }
+
+        public DataTable DeleteTempPo(string sno)
+        {
+            _nlog.Trace(message:
+                this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            return _access.DeleteTempPo(sno);
+        }
+
+        public DataTable SearchProducts(string searchString, string companyAlphabet)
+        {
+            _nlog.Trace(message:
+               this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+               System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            return _access.SearchProducts(searchString.ToUpper(), companyAlphabet);
+        }
+
+        public DataTable GetTempPoDetails(string sno)
+        {
+            _nlog.Trace(message:
+                this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            return _access.GetTempPoDetails(sno);
+        }
+
+        public string AddItemsTempPo(string StockCode, string POMasterNo, string TotalQuantity)
+        {
+            _nlog.Trace(message:
+                this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            return _access.AddItemsTempPo(StockCode,  POMasterNo,  TotalQuantity);
+        }
+
     }
 }

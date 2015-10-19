@@ -3,20 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using Telerik.Web.UI;
 
 namespace SimplifiedPOWeb
 {
-    public partial class POLineItems : System.Web.UI.Page
+    public partial class PoLineItems1 : System.Web.UI.Page
     {
         public static string StrSno;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-            //    HtmlControl body = (HtmlControl)Master.FindControl("Body"); body.Attributes.Add("onload", "AddRequestHandler"); 
                 if (Request.QueryString["Sno"] == null)
                 {
                   
@@ -30,8 +28,6 @@ namespace SimplifiedPOWeb
                     hpLink.NavigateUrl = "SearchItems.aspx?Sno=" + StrSno;
                 }
             }
-
-
         }
         protected void RadGrid1_ItemUpdated(object source, Telerik.Web.UI.GridUpdatedEventArgs e)
         {
@@ -40,11 +36,11 @@ namespace SimplifiedPOWeb
 
                 e.KeepInEditMode = true;
                 e.ExceptionHandled = true;
-                DisplayMessage(true, "Product " + e.Item.OwnerTableView.DataKeyValues[e.Item.ItemIndex]["Stock Code"] + " cannot be updated. Reason: " + e.Exception.Message);
+                DisplayMessage(true, "Stock Code " + e.Item.OwnerTableView.DataKeyValues[e.Item.ItemIndex]["sno"] + " cannot be updated. Reason: " + e.Exception.Message);
             }
             else
             {
-                DisplayMessage(false, "Product " + e.Item.OwnerTableView.DataKeyValues[e.Item.ItemIndex]["Stock Code"] + " updated");
+                DisplayMessage(false, "Stock Code " + e.Item.OwnerTableView.DataKeyValues[e.Item.ItemIndex]["sno"] + " updated");
             }
         }
 
@@ -54,11 +50,11 @@ namespace SimplifiedPOWeb
             {
                 e.ExceptionHandled = true;
                 e.KeepInInsertMode = false;
-                DisplayMessage(true, "Product cannot be inserted. Reason: " + e.Exception.Message);
+                DisplayMessage(true, "Stock Code cannot be inserted. Reason: " + e.Exception.Message);
             }
             else
             {
-                DisplayMessage(false, "Product inserted");
+                DisplayMessage(false, "Stock Code inserted");
             }
         }
 
@@ -67,11 +63,11 @@ namespace SimplifiedPOWeb
             if (e.Exception != null)
             {
                 e.ExceptionHandled = true;
-                DisplayMessage(true, "Product " + e.Item.OwnerTableView.DataKeyValues[e.Item.ItemIndex]["Stock Code"] + " cannot be deleted. Reason: " + e.Exception.Message);
+                DisplayMessage(true, "Stock Code " + e.Item.OwnerTableView.DataKeyValues[e.Item.ItemIndex]["sno"] + " cannot be deleted. Reason: " + e.Exception.Message);
             }
             else
             {
-                DisplayMessage(false, "Product " + e.Item.OwnerTableView.DataKeyValues[e.Item.ItemIndex]["Stock Code"] + " deleted");
+                DisplayMessage(false, "Stock Code " + e.Item.OwnerTableView.DataKeyValues[e.Item.ItemIndex]["sno"] + " deleted");
             }
         }
 
@@ -107,66 +103,8 @@ namespace SimplifiedPOWeb
                 RadGrid1.Rebind();
             }
         }
-     
 
         protected void Button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void RadGrid1_ItemDataBound(object sender, GridItemEventArgs e)
-        {
-            if (e.Item is GridFooterItem)
-            {
-               GridFooterItem item = e.Item as GridFooterItem;
-               if (item["TotalPrice"].Text != "&nbsp;")
-               
-               { 
-               txtSubTotal.Text = item["TotalPrice"].Text;
-                RadAjaxPanel1.RaisePostBackEvent(null);
-                CalculateValues();
-               }
-               else
-               {
-                   txtSubTotal.Text = "0";
-                   RadAjaxPanel1.RaisePostBackEvent(null);
-                   CalculateValues();
-               }
-                //  double value = Double.Parse(item["TotalPrice"].Text.Split(':')[1].Trim());
-            }  
-        }
-
-        protected void txtShiping_TextChanged(object sender, EventArgs e)
-        {
-            CalculateValues();
-        }
-
-        private void CalculateValues()
-        {
-            float flSubTotal, flShipping, flDiscount;
-            float.TryParse(txtSubTotal.Text, out flSubTotal);
-            float.TryParse(txtShiping.Text, out flShipping);
-            float.TryParse(txtDiscount.Text, out flDiscount);
-            txtTotal.Text = (flSubTotal + flShipping - flDiscount).ToString();
-        }
-
-        protected void txtDiscount_TextChanged(object sender, EventArgs e)
-        {
-            CalculateValues();
-        }
-
-        protected void txtSubTotal_TextChanged(object sender, EventArgs e)
-        {
-            CalculateValues();
-            RadAjaxPanel1.FocusControl(txtShiping);
-        }
-
-        protected void txtTotal_TextChanged(object sender, EventArgs e)
-        {
-            CalculateValues();
-        }
-
-        protected void btnNext_Click(object sender, EventArgs e)
         {
 
         }

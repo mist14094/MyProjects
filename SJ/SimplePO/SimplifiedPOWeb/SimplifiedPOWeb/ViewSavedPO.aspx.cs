@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -31,9 +32,8 @@ namespace SimplifiedPOWeb
 
         protected void RadGrid1_DeleteCommand(object sender, GridCommandEventArgs e)
         {
-            GridDataItem item = e.Item as GridDataItem;
-            // using columnuniquename
-            string str1 = item["sno"].Text;
+            string ID = e.Item.OwnerTableView.DataKeyValues[e.Item.ItemIndex]["Sno"].ToString();
+            _spobl.DeleteTempPo(sno: ID);
             GetValue();
             // using DataKey
             // string str2 = item.GetDataKeyValue("ID").ToString();

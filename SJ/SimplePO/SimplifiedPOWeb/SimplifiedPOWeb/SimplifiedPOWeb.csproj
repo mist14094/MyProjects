@@ -70,6 +70,7 @@
     <Content Include="css\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="Home.aspx" />
+    <Content Include="js\Script.js" />
     <Content Include="js\ui.js" />
     <Content Include="Login.aspx" />
     <Content Include="Logo.png" />
@@ -89,7 +90,9 @@
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="obj\Debug\SimplifiedPOWeb.csprojResolveAssemblyReference.cache" />
     <Content Include="POItems.aspx" />
+    <Content Include="POLineItems1.aspx" />
     <Content Include="POLineItems.aspx" />
+    <Content Include="SearchItems.aspx" />
     <Content Include="SiteMaster.Master" />
     <None Include="Properties\PublishProfiles\SimplifiedPO.pubxml" />
     <None Include="Web.Debug.config">
@@ -136,6 +139,13 @@
     <Compile Include="POItems.aspx.designer.cs">
       <DependentUpon>POItems.aspx</DependentUpon>
     </Compile>
+    <Compile Include="POLineItems1.aspx.cs">
+      <DependentUpon>POLineItems1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="POLineItems1.aspx.designer.cs">
+      <DependentUpon>POLineItems1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="POLineItems.aspx.cs">
       <DependentUpon>POLineItems.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -144,6 +154,13 @@
       <DependentUpon>POLineItems.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchItems.aspx.cs">
+      <DependentUpon>SearchItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchItems.aspx.designer.cs">
+      <DependentUpon>SearchItems.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SiteMaster.Master.cs">
       <DependentUpon>SiteMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
