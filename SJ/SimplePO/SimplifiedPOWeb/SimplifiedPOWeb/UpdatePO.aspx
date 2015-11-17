@@ -1,12 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteMaster.Master" AutoEventWireup="true" CodeBehind="NewPO.aspx.cs" Inherits="SimplifiedPOWeb.NewPO" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteMaster.Master" AutoEventWireup="true" CodeBehind="UpdatePO.aspx.cs" Inherits="SimplifiedPOWeb.UpdatePO" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div style=" min-width:950px; ">
+    <div style=" min-width:950px;">
     
- <center>  <h2>Create New Purchase Order</h2></center> 
-    <table class="pure-table pure-table-Noline" style="width: 100%;">
+   <center> <h2>Update New Purchase Order</h2></center>
+    <table class="pure-table pure-table-Noline"  style="width: 100%">
         <thead>
             <td colspan="2"><h3>Buyer Information</h3></td>
             <td class="auto-style3">&nbsp;</td>

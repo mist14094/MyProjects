@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data;
+using System.Linq;
 using SimplifiedPOBusiness;
 using SimplifiedPOConstants;
 
@@ -13,7 +15,7 @@ namespace SimplifiedPOWeb
         {
             if (!IsPostBack)
             {
-                Session["Login"] = null;
+                Session["Login"] = null; 
                 lblPassword.Text = "";
             }
 
@@ -21,6 +23,7 @@ namespace SimplifiedPOWeb
 
         protected void BtnLogin_Click(object sender, EventArgs e)
         {
+
             User user = new User();
             user = _spobl.Login(txtUserID.Text, txtPassword.Text);
             if (user!=null)

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using SimplifiedPOBusiness;
 using Telerik.Web.UI;
 
 namespace SimplifiedPOWeb
@@ -12,6 +13,7 @@ namespace SimplifiedPOWeb
     public partial class POLineItems : System.Web.UI.Page
     {
         public static string StrSno;
+        SPOBL _spobl = new SPOBL();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -168,7 +170,11 @@ namespace SimplifiedPOWeb
 
         protected void btnNext_Click(object sender, EventArgs e)
         {
-
+            var result = _spobl.UpdateAttributesPo(Request.QueryString["Sno"].ToString(), float.Parse(txtTotal.Text),
+                float.Parse(txtSubTotal.Text), float.Parse(txtShiping.Text),
+                float.Parse(txtDiscount.Text), float.Parse(txtTotal.Text), chkCheckRequired.Checked, chkRFIDTags.Checked,
+                rdblPurchaseype.SelectedValue, txtPReason.Text);
+            Response.Redirect("PreviewPOForSubmission.aspx?sno="+Request.QueryString["Sno"].ToString());
         }
     }
 }

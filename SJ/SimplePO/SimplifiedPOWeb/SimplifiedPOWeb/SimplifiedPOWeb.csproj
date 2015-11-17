@@ -75,6 +75,10 @@
     <Content Include="Login.aspx" />
     <Content Include="Logo.png" />
     <Content Include="logonew.png" />
+    <Content Include="MailPurchaseOrder.aspx" />
+    <Content Include="PostPoProcess.aspx" />
+    <Content Include="PreviewPurchaseOrder.aspx" />
+    <Content Include="UpdatePO.aspx" />
     <Content Include="NewPO.aspx" />
     <Content Include="obj\Debug\SimplifiedPOWeb.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\SimplifiedPOWeb.dll" />
@@ -104,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="TestPage.aspx" />
+    <Content Include="PreviewPOForSubmission.aspx" />
     <Content Include="ViewSavedPO.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -121,6 +126,34 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MailPurchaseOrder.aspx.cs">
+      <DependentUpon>MailPurchaseOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MailPurchaseOrder.aspx.designer.cs">
+      <DependentUpon>MailPurchaseOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PostPoProcess.aspx.cs">
+      <DependentUpon>PostPoProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PostPoProcess.aspx.designer.cs">
+      <DependentUpon>PostPoProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PreviewPurchaseOrder.aspx.cs">
+      <DependentUpon>PreviewPurchaseOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PreviewPurchaseOrder.aspx.designer.cs">
+      <DependentUpon>PreviewPurchaseOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdatePO.aspx.cs">
+      <DependentUpon>UpdatePO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdatePO.aspx.designer.cs">
+      <DependentUpon>UpdatePO.aspx</DependentUpon>
     </Compile>
     <Compile Include="NewPO.aspx.cs">
       <DependentUpon>NewPO.aspx</DependentUpon>
@@ -174,6 +207,13 @@
     </Compile>
     <Compile Include="TestPage.aspx.designer.cs">
       <DependentUpon>TestPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PreviewPOForSubmission.aspx.cs">
+      <DependentUpon>PreviewPOForSubmission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PreviewPOForSubmission.aspx.designer.cs">
+      <DependentUpon>PreviewPOForSubmission.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSavedPO.aspx.cs">
       <DependentUpon>ViewSavedPO.aspx</DependentUpon>

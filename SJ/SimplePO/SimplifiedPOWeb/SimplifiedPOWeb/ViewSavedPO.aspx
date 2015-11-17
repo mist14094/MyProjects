@@ -13,7 +13,7 @@
                         Resizable="false" ConfirmText="Delete record?">
                     </telerik:GridButtonColumn>
                     <telerik:GridHyperLinkColumn DataTextFormatString="View" DataNavigateUrlFields="sno"
-  UniqueName="sno" DataNavigateUrlFormatString="POLineItems.aspx?sno={0}" HeaderText="Link"
+  UniqueName="sno" DataNavigateUrlFormatString="UpdatePO.aspx?sno={0}" HeaderText="Link"
   DataTextField="sno">
 </telerik:GridHyperLinkColumn>
                     </Columns></MasterTableView>

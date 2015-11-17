@@ -10,16 +10,25 @@
 namespace SimplifiedPOWeb {
     
     
-    public partial class POLineItems {
+    public partial class MailPurchaseOrder {
         
         /// <summary>
-        /// RadCodeBlock1 control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadCodeBlock RadCodeBlock1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
+        /// <summary>
+        /// Content control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Content;
         
         /// <summary>
         /// RadScriptManager1 control.
@@ -31,183 +40,183 @@ namespace SimplifiedPOWeb {
         protected global::Telerik.Web.UI.RadScriptManager RadScriptManager1;
         
         /// <summary>
-        /// divMsgs control.
+        /// PONumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divMsgs;
+        protected global::System.Web.UI.WebControls.Label PONumber;
         
         /// <summary>
-        /// Label1 control.
+        /// Date control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label Date;
         
         /// <summary>
-        /// Label2 control.
+        /// lblUserName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label lblUserName;
         
         /// <summary>
-        /// RadAjaxManager1 control.
+        /// lblBuyerPostFor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadAjaxManager RadAjaxManager1;
+        protected global::System.Web.UI.WebControls.Label lblBuyerPostFor;
         
         /// <summary>
-        /// RadAjaxLoadingPanel1 control.
+        /// lblBuyerName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadAjaxLoadingPanel RadAjaxLoadingPanel1;
+        protected global::System.Web.UI.WebControls.Label lblBuyerName;
         
         /// <summary>
-        /// RadFormDecorator1 control.
+        /// lblBuyerAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadFormDecorator RadFormDecorator1;
+        protected global::System.Web.UI.WebControls.Label lblBuyerAddress;
         
         /// <summary>
-        /// RadGrid1 control.
+        /// lblBuyerContact control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadGrid RadGrid1;
+        protected global::System.Web.UI.WebControls.Label lblBuyerContact;
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// lblPriority control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.Label lblPriority;
         
         /// <summary>
-        /// hpLink control.
+        /// lblEntity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hpLink;
+        protected global::System.Web.UI.WebControls.Label lblEntity;
         
         /// <summary>
-        /// RadAjaxLoadingPanel2 control.
+        /// lblSupplier control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadAjaxLoadingPanel RadAjaxLoadingPanel2;
+        protected global::System.Web.UI.WebControls.Label lblSupplier;
         
         /// <summary>
-        /// RadAjaxPanel1 control.
+        /// lblSupplierName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadAjaxPanel RadAjaxPanel1;
+        protected global::System.Web.UI.WebControls.Label lblSupplierName;
         
         /// <summary>
-        /// txtSubTotal control.
+        /// lblSupplierAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadNumericTextBox txtSubTotal;
+        protected global::System.Web.UI.WebControls.Label lblSupplierAddress;
         
         /// <summary>
-        /// txtShiping control.
+        /// lblSupplierContact control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadNumericTextBox txtShiping;
+        protected global::System.Web.UI.WebControls.Label lblSupplierContact;
         
         /// <summary>
-        /// txtDiscount control.
+        /// lblNotes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadNumericTextBox txtDiscount;
+        protected global::System.Web.UI.WebControls.Label lblNotes;
         
         /// <summary>
-        /// txtTotal control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadNumericTextBox txtTotal;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// chkCheckRequired control.
+        /// RadGrid2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkCheckRequired;
+        protected global::System.Web.UI.WebControls.GridView RadGrid2;
         
         /// <summary>
-        /// chkRFIDTags control.
+        /// lblPurchaseReason control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkRFIDTags;
+        protected global::System.Web.UI.WebControls.Label lblPurchaseReason;
         
         /// <summary>
-        /// rdblPurchaseype control.
+        /// submissionDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rdblPurchaseype;
+        protected global::System.Web.UI.WebControls.Label submissionDate;
         
         /// <summary>
-        /// txtPReason control.
+        /// hplMailPreview control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadTextBox txtPReason;
+        protected global::System.Web.UI.WebControls.HyperLink hplMailPreview;
         
         /// <summary>
-        /// btnNext control.
+        /// NotVisible control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNext;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl NotVisible;
     }
 }
