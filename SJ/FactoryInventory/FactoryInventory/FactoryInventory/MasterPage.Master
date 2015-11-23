@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="FactoryInventory.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="../css/themes/default/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="../_assets/css/jqm-demos.css">
+    <script src="../js/jquery.js"></script>
+    <script src="../_assets/js/index.js"></script>
+    <script src="../js/jquery.mobile-1.4.5.min.js"></script>
+    <title>Login</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div data-role="page" data-theme="a">
+            <div data-role="header" data-position="inline">
+                <h1>Login Page</h1>
+            </div>
+            <div role="main" class="ui-content jqm-content jqm-fullwidth">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                 <h1><asp:Label ID="lblFooter" runat="server" Text="Label"></asp:Label></h1>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
