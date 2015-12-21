@@ -13,5 +13,22 @@ namespace FactoryInventory
         {
 
         }
+
+
+
+        protected void btnCheckIn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CheckIn.aspx");
+        }
+
+        protected void btnCheckOut_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CheckOut.aspx");
+        }
+
+        protected void ChangePass_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
