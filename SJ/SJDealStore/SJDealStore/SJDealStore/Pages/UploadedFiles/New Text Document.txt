@@ -1,0 +1,50 @@
+SELECT FormType,SequenceNumber,FieldName,FieldDescription,FieldType,FieldLength,FieldDecimals,DefaultValue,AllowNull,TableName,FormNumber,TimeStamp FROM               SysproCompanyH..AdmFormControl     WITH (NOLOCK) WHERE (FormType = 'STK    ' AND SequenceNumber >=   0) OR (FormType >  'STK    ') ORDER BY FormType      , SequenceNumber
+
+SELECT NonStockCode,Description,StructureSetup,PurchPriceSetup,Uom,Mass,Volume,MaxDecimals,Supplier,ProductClass,TaxCode,OtherTaxCode,TraceableType,Buyer,Planner,LeadTime,PartCategory,SpecificGravity,DockToStock,WipCtlGlCode,ResourceCode,GstTaxCode,GstIncluded,TariffCode,SupplementaryUnit,UnitCost,RouteReqd1,RouteReqd2,RouteReqd3,RouteReqd4,RouteReqd5,RouteReqd6,RouteDesc1,RouteDesc2,RouteDesc3,RouteDesc4,RouteDesc5,RouteDesc6,AutoCodeFlag,SalesOrder,SalesOrderLine,CostingMethod,JobClassification,TimeStamp FROM               SysproCompanyD..QotNonStock          WITH (NOLOCK) WHERE NonStockCode = '1000216                         '
+
+SELECT StockCode,Description,LongDesc,AlternateKey1,AlternateKey2,EccUser,StockUom,AlternateUom,OtherUom,ConvFactAltUom,ConvMulDiv,ConvFactOthUom,MulDiv,Mass,Volume,Decimals,PriceCategory,PriceMethod,Supplier,CycleCount,ProductClass,TaxCode,OtherTaxCode,ListPriceCode,SerialMethod,InterfaceFlag,KitType,LowLevelCode,Buyer,Planner,TraceableType,MpsFlag,BulkIssueFlag,AbcClass,LeadTime,StockMovementReq,ClearingFlag,SupercessionDate,AbcAnalysisReq,AbcCostingReq,CostUom,MinPricePct,LabourCost,MaterialCost,FixOverhead,VariableOverhead,PartCategory,DrawOfficeNum,WarehouseToUse,BuyingRule,SpecificGravity,ImplosionNum,Ebq,ComponentCount,FixTimePeriod,PanSize,DockToStock,OutputMassFlag,ShelfLife,Version,Release,DemandTimeFence,MakeToOrderFlag,ManufLeadTime,GrossReqRule,PercentageYield,AbcPreProd,AbcManufacturing,AbcSales,AbcCumPreProd,AbcCumManuf,WipCtlGlCode,ResourceCode,GstTaxCode,PrcInclGst,SerEntryAtSale,StpSelection,UserField1,UserField2,UserField3,UserField4,UserField5,TariffCode,SupplementaryUnit,EbqPan,StdLandedCost,LctRequired,StdLctRoute,IssMultLotsFlag,InclInStrValid,StdLabCostsBill,EchRequired,CountryOfOrigin,StockOnHold,StockOnHoldReason,EccFlag,StockAndAltUm,AltUnitChar,JobsOnHold,JobHoldAllocs,PurchOnHold,SalesOnHold,BatchBill,BlanketPoExists,CallOffBpoExists,DistWarehouseToUse,JobClassification,SubContractCost,DateStkAdded,InspectionFlag,SerialPrefix,SerialSuffix,ReturnableItem,ProductGroup,PriceType,Basis,ManualCostFlag,ManufactureUom,ConvFactMuM,ManMulDiv,LookAheadWin,LoadingFactor,SupplUnitCode,TimeStamp FROM               SysproCompanyH..InvMaster            WITH (NOLOCK) WHERE StockCode = '1000216                         '
+
+SELECT ProductClass,Description,TimeStamp FROM               SysproCompanyD..SalProductClassDes   WITH (NOLOCK) WHERE ProductClass = 'GK00 '
+--1
+SELECT StockCode,Description,LongDesc,AlternateKey1,AlternateKey2,EccUser,StockUom,AlternateUom,OtherUom,ConvFactAltUom,ConvMulDiv,ConvFactOthUom,MulDiv,Mass,Volume,Decimals,PriceCategory,PriceMethod,Supplier,CycleCount,ProductClass,TaxCode,OtherTaxCode,ListPriceCode,SerialMethod,InterfaceFlag,KitType,LowLevelCode,Buyer,Planner,TraceableType,MpsFlag,BulkIssueFlag,AbcClass,LeadTime,StockMovementReq,ClearingFlag,SupercessionDate,AbcAnalysisReq,AbcCostingReq,CostUom,MinPricePct,LabourCost,MaterialCost,FixOverhead,VariableOverhead,PartCategory,DrawOfficeNum,WarehouseToUse,BuyingRule,SpecificGravity,ImplosionNum,Ebq,ComponentCount,FixTimePeriod,PanSize,DockToStock,OutputMassFlag,ShelfLife,Version,Release,DemandTimeFence,MakeToOrderFlag,ManufLeadTime,GrossReqRule,PercentageYield,AbcPreProd,AbcManufacturing,AbcSales,AbcCumPreProd,AbcCumManuf,WipCtlGlCode,ResourceCode,GstTaxCode,PrcInclGst,SerEntryAtSale,StpSelection,UserField1,UserField2,UserField3,UserField4,UserField5,TariffCode,SupplementaryUnit,EbqPan,StdLandedCost,LctRequired,StdLctRoute,IssMultLotsFlag,InclInStrValid,StdLabCostsBill,EchRequired,CountryOfOrigin,StockOnHold,StockOnHoldReason,EccFlag,StockAndAltUm,AltUnitChar,JobsOnHold,JobHoldAllocs,PurchOnHold,SalesOnHold,BatchBill,BlanketPoExists,CallOffBpoExists,DistWarehouseToUse,JobClassification,SubContractCost,DateStkAdded,InspectionFlag,SerialPrefix,SerialSuffix,ReturnableItem,ProductGroup,PriceType,Basis,ManualCostFlag,ManufactureUom,ConvFactMuM,ManMulDiv,LookAheadWin,LoadingFactor,SupplUnitCode,TimeStamp FROM               SysproCompanyH..InvMaster            WITH (NOLOCK) WHERE StockCode = '1000216                         '
+
+SELECT StockCode,TextType,Line,Text,TimeStamp FROM               SysproCompanyH..InvNarration       WITH (NOLOCK) WHERE (StockCode = '1000216                         ' AND TextType = '  ' AND Line >=   0) OR (StockCode = '1000216                         ' AND TextType >  '  ') OR (StockCode >  '1000216                         ') ORDER BY StockCode      , TextType      , Line
+
+SELECT Warehouse,Description,MtdTrnsVar,NextTicketNo,StockTakeFlag,WhLdgCtlAcc,WhVarLdg,TrnMonth,TrnYear,GrnLdgAcc,DeliveryAddr1,DeliveryAddr2,DeliveryAddr3,DeliveryAddr4,DeliveryAddr5,PostalCode,NegStockAllow,GtrCtlAccl,GtrPrefix,GtrNextNo,Branch,Area,FaxContact,Fax,FaxDocIwsFlag,GitAdjAcc,WhForComp,Route,InclPlanning,UseMultipleBins,CostingMethod,UseFifoBuckets,PoPrefix,PoNextNumber,GrnPrefix,GrnNextNumber,WipInspectGlCode,Nationality,SoDefaultDoc,RouteCode,RouteDistance,WipControlGlCode,WipVarCtlGlCode,WipAutoVarGlCode,SiteId,RollParentGl,TimeStamp FROM               SysproCompanyH..InvWhControl         WITH (NOLOCK) WHERE Warehouse = '6  '
+
+SELECT FormType,SequenceNumber,FieldName,FieldDescription,FieldType,FieldLength,FieldDecimals,DefaultValue,AllowNull,TableName,FormNumber,TimeStamp FROM               SysproCompanyH..AdmFormControl     WITH (NOLOCK) WHERE (FormType = 'STK    ' AND SequenceNumber >=   0) OR (FormType >  'STK    ') ORDER BY FormType      , SequenceNumber
+
+SELECT FormType,KeyField,FieldName,AlphaValue,NumericValue,DateValue,TimeStamp FROM               SysproCompanyH..AdmFormData          WITH (NOLOCK) WHERE FormType = 'STK    ' AND KeyField = '1000216                                                                           ' AND FieldName = 'TOB_SC '
+SELECT FormType,SequenceNumber,FieldName,FieldDescription,FieldType,FieldLength,FieldDecimals,DefaultValue,AllowNull,TableName,FormNumber,TimeStamp FROM               SysproCompanyH..AdmFormControl     WITH (NOLOCK) WHERE (FormType = 'STK    ' AND SequenceNumber >=   0) OR (FormType >  'STK    ') ORDER BY FormType      , SequenceNumber
+
+
+
+
+
+exec sp_sproc_columns N'getUnclaimedHighLevelWOs',N'dbo'
+go
+declare @p1 int
+set @p1=1
+exec sp_prepexec @p1 output,N'@LocationID bigint',N'EXEC dbo.getUnclaimedHighLevelWOs @LocationID',@LocationID=1
+select @p1
+go
+exec sp_sproc_columns N'getUnclaimedHighLevelWOs',N'dbo'
+go
+declare @p1 int
+set @p1=2
+exec sp_prepexec @p1 output,N'@LocationID bigint',N'EXEC dbo.getUnclaimedHighLevelWOs @LocationID',@LocationID=2
+select @p1
+go
+exec sp_unprepare 1
+go
+exec sp_unprepare 2
+go
+EXEC dbo.PO_SubmitDraftForApproval '7595', 'L', '', '', 'Test', 'SMOKIN JOES
+2293 SAUNDERS SETTLEMENT RD
+SANBORN NY 14132
+ATTN: Vivekanandan Ramalingam', '126', 'vramalingam', '0.00', '0.00', '246.00', '', '', 'test reason', '0', '0', '1'
+go
+EXEC PO_AddItems '123', '123', '123.0', 'BX', '2.00', '246.00', 'L', 'No Comments / Purchase Reason', '7595'
+go
+EXEC dbo.PO_SelectUsersPOsFiltered '126', '09/16/2015', '10/16/2015', '3'
+go

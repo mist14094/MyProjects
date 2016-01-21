@@ -213,5 +213,434 @@ namespace SJDealStore
                     System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
             }
         }
+
+
+
+        public string InsertMasterFile(string FileName)
+        {
+            Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            var dataTable = new DataTable();
+            var selectCommand = new SqlCommand
+            {
+                CommandText = string.Format(_constants.InsertMasterFile),
+                CommandTimeout = 180,
+                CommandType = CommandType.StoredProcedure
+            };
+            selectCommand.Parameters.AddWithValue("@FileName ", FileName);
+            var adapter = new SqlDataAdapter(selectCommand);
+            var connection = new SqlConnection(_constants.RFIDString);
+            selectCommand.Connection = connection;
+            try
+            {
+                connection.Open();
+                var ID = selectCommand.ExecuteScalar();
+                return ID.ToString();
+
+            }
+            catch (Exception ex)
+            {
+                Nlog.Trace(
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Error", ex);
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+                connection.Dispose();
+                Nlog.Trace(message:
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
+            }
+        }
+
+
+        private string InsertMasterFileDetails(int MasterID, string CL1,
+        string CL2,string CL3,string CL4,string CL5,string CL6,string CL7,string CL8,string CL9,string CL10,string CL11,string CL12,string CL13,
+        string CL14,string CL15,string CL16,string CL17,string CL18,string CL19,string CL20,string CL21,string CL22,string CL23,string CL24,string CL25,
+        string CL26,string CL27,string CL28,string CL29,string CL30)
+        {
+            Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            var dataTable = new DataTable();
+            var selectCommand = new SqlCommand
+            {
+                CommandText = string.Format(_constants.InsertMasterFileDetails),
+                CommandTimeout = 180,
+                CommandType = CommandType.StoredProcedure
+            };
+
+            selectCommand.Parameters.AddWithValue("@MasterID ", MasterID);
+            selectCommand.Parameters.AddWithValue("@CL1", CL1);
+            selectCommand.Parameters.AddWithValue("@CL2", CL2);
+            selectCommand.Parameters.AddWithValue("@CL3", CL3);
+            selectCommand.Parameters.AddWithValue("@CL4", CL4);
+            selectCommand.Parameters.AddWithValue("@CL5", CL5);
+            selectCommand.Parameters.AddWithValue("@CL6", CL6);
+            selectCommand.Parameters.AddWithValue("@CL7", CL7);
+            selectCommand.Parameters.AddWithValue("@CL8", CL8);
+            selectCommand.Parameters.AddWithValue("@CL9", CL9);
+            selectCommand.Parameters.AddWithValue("@CL10", CL10);
+            selectCommand.Parameters.AddWithValue("@CL11", CL11);
+            selectCommand.Parameters.AddWithValue("@CL12", CL12);
+            selectCommand.Parameters.AddWithValue("@CL13", CL13);
+            selectCommand.Parameters.AddWithValue("@CL14", CL14);
+            selectCommand.Parameters.AddWithValue("@CL15", CL15);
+            selectCommand.Parameters.AddWithValue("@CL16", CL16);
+            selectCommand.Parameters.AddWithValue("@CL17", CL17);
+            selectCommand.Parameters.AddWithValue("@CL18", CL18);
+            selectCommand.Parameters.AddWithValue("@CL19", CL19);
+            selectCommand.Parameters.AddWithValue("@CL20", CL20);
+            selectCommand.Parameters.AddWithValue("@CL21", CL21);
+            selectCommand.Parameters.AddWithValue("@CL22", CL22);
+            selectCommand.Parameters.AddWithValue("@CL23", CL23);
+            selectCommand.Parameters.AddWithValue("@CL24", CL24);
+            selectCommand.Parameters.AddWithValue("@CL25", CL25);
+            selectCommand.Parameters.AddWithValue("@CL26", CL26);
+            selectCommand.Parameters.AddWithValue("@CL27", CL27);
+            selectCommand.Parameters.AddWithValue("@CL28", CL28);
+            selectCommand.Parameters.AddWithValue("@CL29", CL29);
+            selectCommand.Parameters.AddWithValue("@CL30", CL30);
+            var adapter = new SqlDataAdapter(selectCommand);
+            var connection = new SqlConnection(_constants.RFIDString);
+            selectCommand.Connection = connection;
+            try
+            {
+                connection.Open();
+                var ID = selectCommand.ExecuteScalar();
+                return ID.ToString();
+
+            }
+            catch (Exception ex)
+            {
+                Nlog.Trace(
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Error", ex);
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+                connection.Dispose();
+                Nlog.Trace(message:
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
+            }
+        }
+
+
+        public string InsertMasterFileDetails(DataTable dt, int MasterID)
+        {
+            try
+            {
+                if (dt != null)
+                {
+                    foreach (DataRow drDataRow in dt.Rows)
+                    {
+                        
+                        string CL1 = "";
+                        string CL2 = "";
+                        string CL3 = "";
+                        string CL4 = "";
+                        string CL5 = "";
+                        string CL6 = "";
+                        string CL7 = "";
+                        string CL8 = "";
+                        string CL9 = "";
+                        string CL10 = "";
+                        string CL11 = "";
+                        string CL12 = "";
+                        string CL13 = "";
+                        string CL14 = "";
+                        string CL15 = "";
+                        string CL16 = "";
+                        string CL17 = "";
+                        string CL18 = "";
+                        string CL19 = "";
+                        string CL20 = "";
+                        string CL21 = "";
+                        string CL22 = "";
+                        string CL23 = "";
+                        string CL24 = "";
+                        string CL25 = "";
+                        string CL26 = "";
+                        string CL27 = "";
+                        string CL28 = "";
+                        string CL29 = "";
+                        string CL30 = "";
+                        int flag = 1;
+                        foreach (object item in drDataRow.ItemArray)
+                        {
+                            switch (flag)
+                            {
+                                case 1:
+                                    CL1 = item.ToString();
+                                    break;
+                                case 2:
+                                    CL2 = item.ToString();
+                                    break;
+                                case 3:
+                                    CL3 = item.ToString();
+                                    break;
+                                case 4:
+                                    CL4 = item.ToString();
+                                    break;
+                                case 5:
+                                    CL5 = item.ToString();
+                                    break;
+                                case 6:
+                                    CL6 = item.ToString();
+                                    break;
+                                case 7:
+                                    CL7 = item.ToString();
+                                    break;
+                                case 8:
+                                    CL8 = item.ToString();
+                                    break;
+                                case 9:
+                                    CL9 = item.ToString();
+                                    break;
+                                case 10:
+                                    CL10 = item.ToString();
+                                    break;
+                                case 11:
+                                    CL11 = item.ToString();
+                                    break;
+                                case 12:
+                                    CL12 = item.ToString();
+                                    break;
+                                case 13:
+                                    CL13 = item.ToString();
+                                    break;
+                                case 14:
+                                    CL14 = item.ToString();
+                                    break;
+                                case 15:
+                                    CL15 = item.ToString();
+                                    break;
+                                case 16:
+                                    CL16 = item.ToString();
+                                    break;
+                                case 17:
+                                    CL17 = item.ToString();
+                                    break;
+                                case 18:
+                                    CL18 = item.ToString();
+                                    break;
+                                case 19:
+                                    CL19 = item.ToString();
+                                    break;
+                                case 20:
+                                    CL20 = item.ToString();
+                                    break;
+                                case 21:
+                                    CL21 = item.ToString();
+                                    break;
+                                case 22:
+                                    CL22 = item.ToString();
+                                    break;
+                                case 23:
+                                    CL23 = item.ToString();
+                                    break;
+                                case 24:
+                                    CL24 = item.ToString();
+                                    break;
+                                case 25:
+                                    CL25 = item.ToString();
+                                    break;
+                                case 26:
+                                    CL26 = item.ToString();
+                                    break;
+                                case 27:
+                                    CL27 = item.ToString();
+                                    break;
+                                case 28:
+                                    CL28 = item.ToString();
+                                    break;
+                                case 29:
+                                    CL29 = item.ToString();
+                                    break;
+                                case 30:
+                                    CL30 = item.ToString();
+                                    break;
+
+                            }
+                            flag++;
+                         
+                        }
+                        var result = InsertMasterFileDetails(MasterID, CL1, CL2, CL3, CL4, CL5, CL6, CL7, CL8, CL9, CL10, CL11, CL12,
+                        CL13, CL14, CL15, CL16, CL17, CL18, CL19, CL20, CL21, CL22, CL23, CL24, CL25,
+                        CL26, CL27, CL28, CL29, CL30);
+
+                    
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return "";
+        }
+
+
+        public DataTable SelectImportMaster()
+        {
+            Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            var dataTable = new DataTable();
+            var selectCommand = new SqlCommand
+            {
+                CommandText = string.Format(_constants.SelectImportMaster)
+                ,
+                CommandTimeout = 180,
+                CommandType = CommandType.Text
+            };
+
+
+            var adapter = new SqlDataAdapter(selectCommand);
+            var connection = new SqlConnection(_constants.RFIDString);
+            selectCommand.Connection = connection;
+            try
+            {
+                connection.Open();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                Nlog.Trace(
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Error", ex);
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+                connection.Dispose();
+                Nlog.Trace(message:
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
+            }
+        }
+
+
+        public DataTable SearchString(string SearchString, int MasterID)
+        {
+            Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            var dataTable = new DataTable();
+            var selectCommand = new SqlCommand
+            {
+                CommandText = string.Format(_constants.SearchString)
+                ,
+                CommandTimeout = 180,
+                CommandType = CommandType.StoredProcedure
+            };
+
+            selectCommand.Parameters.AddWithValue("@string", SearchString);
+            selectCommand.Parameters.AddWithValue("@MasterID", MasterID);
+            var adapter = new SqlDataAdapter(selectCommand);
+            var connection = new SqlConnection(_constants.RFIDString);
+            selectCommand.Connection = connection;
+            try
+            {
+                connection.Open();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                Nlog.Trace(
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Error", ex);
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+                connection.Dispose();
+                Nlog.Trace(message:
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
+            }
+        }
+
+
+        public DataTable IncrementReceived(string sno)
+        {
+            Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            var dataTable = new DataTable();
+            var selectCommand = new SqlCommand
+            {
+                CommandText = string.Format(_constants.IncrementReceived,sno)
+                ,
+                CommandTimeout = 180,
+                CommandType = CommandType.Text
+            };
+
+
+            var adapter = new SqlDataAdapter(selectCommand);
+            var connection = new SqlConnection(_constants.RFIDString);
+            selectCommand.Connection = connection;
+            try
+            {
+                connection.Open();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                Nlog.Trace(
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Error", ex);
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+                connection.Dispose();
+                Nlog.Trace(message:
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
+            }
+        }
+
+        public DataTable IncrementDamaged(string sno)
+        {
+            Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            var dataTable = new DataTable();
+            var selectCommand = new SqlCommand
+            {
+                CommandText = string.Format(_constants.IncrementDamaged, sno)
+                ,
+                CommandTimeout = 180,
+                CommandType = CommandType.Text
+            };
+
+
+            var adapter = new SqlDataAdapter(selectCommand);
+            var connection = new SqlConnection(_constants.RFIDString);
+            selectCommand.Connection = connection;
+            try
+            {
+                connection.Open();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                Nlog.Trace(
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Error", ex);
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+                connection.Dispose();
+                Nlog.Trace(message:
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
+            }
+        }
+
     }
 }

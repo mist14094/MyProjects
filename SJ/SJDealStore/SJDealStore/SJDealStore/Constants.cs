@@ -16,5 +16,16 @@ namespace SJDealStore
         public string pr_InsertProducts_OnSingleAssociation = "pr_InsertProducts_OnSingleAssociation";
         public string SalesIsDamaged = ConfigurationManager.AppSettings["SalesIsDamaged"].ToString();
         public string DeviceID = ConfigurationManager.AppSettings["DeviceID"].ToString();
+        public string InsertMasterFile = "[Jarvis].[dbo].[SJDeals_InsertMasterFile]";
+        public string InsertMasterFileDetails = "[Jarvis].[dbo].[SJDeals_InsertFileDetails]";
+        public string SelectImportMaster = "SELECT [Sno],[FileName],[DateCreated],[Notes]  FROM [Jarvis].[dbo].[SJDeals_FileImportMaster]";
+        public string SearchString = "[Jarvis].[dbo].[SJDeals_SearchString]";
+
+        public string IncrementReceived =
+            " UPDATE  [Jarvis].[dbo].[SJDeals_FileImportDetails] SET received = received+1 WHERE Sno={0}";
+
+        public string IncrementDamaged = 
+            " UPDATE  [Jarvis].[dbo].[SJDeals_FileImportDetails] SET damaged = damaged+1 WHERE Sno={0}";
+
     }
 }
