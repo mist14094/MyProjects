@@ -27,5 +27,18 @@ namespace SJDealStore
         public string IncrementDamaged = 
             " UPDATE  [Jarvis].[dbo].[SJDeals_FileImportDetails] SET damaged = damaged+1 WHERE Sno={0}";
 
+        public string SjDealsSaveSettings = "[Jarvis].[dbo].[SJDeals_SaveSettings]";
+
+        public string GetSettings = "SELECT * FROM [Jarvis].[dbo].[SJDeals_Settings] where [SJDealMasterSno] = {0}";
+
+        public string TagLogger = "[Jarvis].[dbo].[SJDeals_TagLogger]";
+
+
+        public string DecrementReceived =
+          " UPDATE  [Jarvis].[dbo].[SJDeals_FileImportDetails] SET received = received-1 WHERE Sno={0}";
+
+        public string DecrementDamaged =
+            " UPDATE  [Jarvis].[dbo].[SJDeals_FileImportDetails] SET damaged = damaged-1 WHERE Sno={0}";
+
     }
 }

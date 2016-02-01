@@ -38,6 +38,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Interop.Dymo">
+      <HintPath>..\..\..\LotControlFactory\LotControlFactory\LotControlWeb\bin\Interop.Dymo.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="NLog">
       <HintPath>..\packages\NLog.4.2.2\lib\net45\NLog.dll</HintPath>
@@ -70,6 +74,12 @@
     <Content Include="Pages\dist\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Pages\dist\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Pages\Items\Import.aspx" />
+    <Content Include="Pages\Items\OverStock_1.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Pages\Items\PrintLabel.js" />
+    <Content Include="Pages\Items\SearchStringPrintJS.aspx" />
+    <Content Include="Pages\Items\SearchStringPrint.aspx" />
     <Content Include="Pages\Items\SearchString.aspx" />
     <Content Include="Pages\_data\browser-bugs.yml" />
     <Content Include="Pages\_data\core-team.yml" />
@@ -77,6 +87,7 @@
     <Content Include="Pages\_data\sass-team.yml" />
     <Content Include="Pages\_data\showcase.yml" />
     <Content Include="Pages\_data\translations.yml" />
+    <Content Include="Pages\_includes\js\DYMO.Label.Framework.latest.js" />
     <Content Include="Pages\_jade\customizer-nav.jade" />
     <Content Include="Pages\_jade\customizer-variables.jade" />
     <Content Include="Pages\_plugins\bridge.rb" />
@@ -88,6 +99,8 @@
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Pages\Items\OverStock_1.label" />
+    <Content Include="OverStock_1.label" />
     <None Include="Properties\PublishProfiles\SJDealStore.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -252,6 +265,20 @@
     <Compile Include="Pages\Items\Sales.aspx.designer.cs">
       <DependentUpon>Sales.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Items\SearchStringPrintJS.aspx.cs">
+      <DependentUpon>SearchStringPrintJS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Items\SearchStringPrintJS.aspx.designer.cs">
+      <DependentUpon>SearchStringPrintJS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Items\SearchStringPrint.aspx.cs">
+      <DependentUpon>SearchStringPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Items\SearchStringPrint.aspx.designer.cs">
+      <DependentUpon>SearchStringPrint.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Items\SearchString.aspx.cs">
       <DependentUpon>SearchString.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -274,6 +301,24 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />

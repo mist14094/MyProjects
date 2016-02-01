@@ -86,7 +86,8 @@
                
                <asp:Button ID="Button1" runat="server" Text="Make Sale" type="button" class="btn btn-lg btn-success" style="width: 90%;" OnClick="Button1_Click" />  <br/>  <br/>
          <asp:Button ID="Button2" runat="server" Text="Returns" type="button" class="btn btn-lg btn-success" style="width: 90%;" OnClick="Button2_Click" /> <br/>  <br/>
-                <asp:Button ID="Button3" runat="server" Text="Search Manifest" type="button" class="btn btn-lg btn-success" style="width: 90%;" OnClick="Button3_Click" />
+                <asp:Button ID="Button3" runat="server" Text="Search Manifest" type="button" class="btn btn-lg btn-success" style="width: 90%;" OnClick="Button3_Click" /> <br/>  <br/>
+               <asp:Button ID="Button4" runat="server" Text="Print Tags" type="button" class="btn btn-lg btn-success" style="width: 90%;" OnClick="Button4_Click" />
 
           <br/></center>
         </p>

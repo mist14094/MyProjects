@@ -642,5 +642,225 @@ namespace SJDealStore
             }
         }
 
+
+        public DataTable DecrementReceived(string sno)
+        {
+            Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            var dataTable = new DataTable();
+            var selectCommand = new SqlCommand
+            {
+                CommandText = string.Format(_constants.DecrementReceived, sno)
+                ,
+                CommandTimeout = 180,
+                CommandType = CommandType.Text
+            };
+
+
+            var adapter = new SqlDataAdapter(selectCommand);
+            var connection = new SqlConnection(_constants.RFIDString);
+            selectCommand.Connection = connection;
+            try
+            {
+                connection.Open();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                Nlog.Trace(
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Error", ex);
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+                connection.Dispose();
+                Nlog.Trace(message:
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
+            }
+        }
+
+        public DataTable DecrementDamaged(string sno)
+        {
+            Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            var dataTable = new DataTable();
+            var selectCommand = new SqlCommand
+            {
+                CommandText = string.Format(_constants.DecrementDamaged, sno)
+                ,
+                CommandTimeout = 180,
+                CommandType = CommandType.Text
+            };
+
+
+            var adapter = new SqlDataAdapter(selectCommand);
+            var connection = new SqlConnection(_constants.RFIDString);
+            selectCommand.Connection = connection;
+            try
+            {
+                connection.Open();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                Nlog.Trace(
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Error", ex);
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+                connection.Dispose();
+                Nlog.Trace(message:
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
+            }
+        }
+
+
+        public DataTable SjDealsSaveSettings(int SJDealMasterSno, bool TestTags, string PrefixPrice, string PrefixOriginalPrice,
+            string Barcode, string OriginalSKUNumber, string DESC, string Price, string OrgPrice, string LotNumber)
+        {
+            Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            var dataTable = new DataTable();
+            var selectCommand = new SqlCommand
+            {
+                CommandText = string.Format(_constants.SjDealsSaveSettings)
+                ,
+                CommandTimeout = 180,
+                CommandType = CommandType.StoredProcedure
+            };
+
+            selectCommand.Parameters.Add("@SJDealMasterSno", SJDealMasterSno);
+            selectCommand.Parameters.Add("@TestTags", TestTags);
+            selectCommand.Parameters.Add("@PrefixPrice", PrefixPrice);
+            selectCommand.Parameters.Add("@PrefixOriginalPrice", PrefixOriginalPrice);
+            selectCommand.Parameters.Add("@Barcode", Barcode);
+            selectCommand.Parameters.Add("@OriginalSKUNumber", OriginalSKUNumber);
+            selectCommand.Parameters.Add("@DESC", DESC);
+            selectCommand.Parameters.Add("@Price", Price);
+            selectCommand.Parameters.Add("@OrgPrice", OrgPrice);
+            selectCommand.Parameters.Add("@LotNumber", LotNumber);
+
+            var adapter = new SqlDataAdapter(selectCommand);
+            var connection = new SqlConnection(_constants.RFIDString);
+            selectCommand.Connection = connection;
+            try
+            {
+                connection.Open();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                Nlog.Trace(
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Error", ex);
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+                connection.Dispose();
+                Nlog.Trace(message:
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
+            }
+        }
+
+        public DataTable GetSettings(string SJDealMasterSno)
+        {
+            Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            var dataTable = new DataTable();
+            var selectCommand = new SqlCommand
+            {
+                CommandText = string.Format(_constants.GetSettings, SJDealMasterSno)
+                ,
+                CommandTimeout = 180,
+                CommandType = CommandType.Text
+            };
+
+
+            var adapter = new SqlDataAdapter(selectCommand);
+            var connection = new SqlConnection(_constants.RFIDString);
+            selectCommand.Connection = connection;
+            try
+            {
+                connection.Open();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                Nlog.Trace(
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Error", ex);
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+                connection.Dispose();
+                Nlog.Trace(message:
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
+            }
+        }
+
+        public DataTable TagLogger(string UPCNumber, string Descr, string MSRP, string Price,
+            string MasterID, string LotNumber,string MSRPrice, string sjPrice, string stickerType)
+        {
+            Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            var dataTable = new DataTable();
+            var selectCommand = new SqlCommand
+            {
+                CommandText = string.Format(_constants.TagLogger)
+                ,
+                CommandTimeout = 180,
+                CommandType = CommandType.StoredProcedure
+            };
+
+            selectCommand.Parameters.Add("@UPCNumber", UPCNumber);
+            selectCommand.Parameters.Add("@Descr", Descr);
+            selectCommand.Parameters.Add("@MSRP", MSRP);
+            selectCommand.Parameters.Add("@Price", Price);
+            selectCommand.Parameters.Add("@MasterID", MasterID);
+            selectCommand.Parameters.Add("@LotNumber", LotNumber);
+            selectCommand.Parameters.Add("@MSRPPrice", MSRPrice);
+            selectCommand.Parameters.Add("@SJPrice", sjPrice);
+            selectCommand.Parameters.Add("@StickerType", stickerType);
+
+          
+            var adapter = new SqlDataAdapter(selectCommand);
+            var connection = new SqlConnection(_constants.RFIDString);
+            selectCommand.Connection = connection;
+            try
+            {
+                connection.Open();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                Nlog.Trace(
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Error", ex);
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+                connection.Dispose();
+                Nlog.Trace(message:
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
+            }
+        }
+
+
     }
 }
