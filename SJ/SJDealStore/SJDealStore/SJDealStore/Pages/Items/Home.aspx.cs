@@ -34,5 +34,10 @@ namespace SJDealStore.Pages.Items
         {
             Response.Redirect("SearchStringPrintJS.aspx");
         }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ReceivedReport.aspx");
+        }
     }
 }

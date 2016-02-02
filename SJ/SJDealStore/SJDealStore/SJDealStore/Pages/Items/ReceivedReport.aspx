@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SearchStringPrint.aspx.cs" Inherits="SJDealStore.Pages.Items.SearchStringPrint" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ReceivedReport.aspx.cs" Inherits="SJDealStore.Pages.Items.ReceivedReport" %>
 
 <!DOCTYPE html>
 
@@ -22,10 +22,9 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png" />
       <script src="http://labelwriter.com/software/dls/sdk/js/DYMO.Label.Framework.latest.js" type="text/javascript" charset="UTF-8"></script>
   
-    <title>Print</title>
+    <title>Reports</title>
 
     <!-- Bootstrap core CSS -->
-
     <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
@@ -43,20 +42,24 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+  
     <script type="text/javascript">
+       
+
         window.onload = function () {
             var div = document.getElementById("dvScroll");
             var div_position = document.getElementById("div_position");
             var position = parseInt('<%=Request.Form["div_position"] %>');
-    if (isNaN(position)) {
-        position = 0;
-    }
-    div.scrollTop = position;
-    div.onscroll = function () {
-        div_position.value = div.scrollTop;
-    };
-};
-</script>
+            if (isNaN(position)) {
+                position = 0;
+            }
+            div.scrollTop = position;
+            div.onscroll = function () {
+                div_position.value = div.scrollTop;
+            };
+        };
+    </script>
+     
 </head>
 <body>
     <form id="form1" runat="server">
@@ -101,80 +104,45 @@
             <div>
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Operations - Returns</h3>
+                        <h3 class="panel-title">Operations - Reports</h3>
                     </div>
                     <div class="panel-body">
-                        Search Item
-        <br />
-                        <asp:DropDownList ID="ddlFileSelect" runat="server" Width="20%" AutoPostBack="True" OnSelectedIndexChanged="ddlFileSelect_SelectedIndexChanged">
+                  
+                        &nbsp;<asp:DropDownList ID="ddlFileSelect" runat="server" Width="50%" AutoPostBack="True" OnSelectedIndexChanged="ddlFileSelect_SelectedIndexChanged">
                         </asp:DropDownList>
-                        &nbsp;
-        <asp:TextBox ID="txtString" runat="server" OnTextChanged="TextBox1_TextChanged" Width="70%"></asp:TextBox>
-                        &nbsp;<asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click"/>
-
-                        <asp:RadioButtonList ID="rblSelect" runat="server" RepeatDirection="Horizontal" >
-                            <asp:ListItem Selected="True" Value="0">Padded Text </asp:ListItem>
-                            <asp:ListItem Value="1">Full String</asp:ListItem>
+                        <asp:RadioButtonList ID="RadioButtonList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged" RepeatDirection="Horizontal">
+                            <asp:ListItem Selected="True">Received</asp:ListItem>
+                            <asp:ListItem>Damaged</asp:ListItem>
                         </asp:RadioButtonList>
-                        <table class="nav-justified">
-                            <tr>
-                                <td>
-                                    <br />
-                                    <asp:CheckBox ID="chkPrintTest" runat="server" Checked="True" Text="Test Tags"/>
-                                </td>
-                                <td>Prefix Price<br />
-                                    <asp:TextBox ID="txtPrefixPrice" runat="server" Text="OUR PRICE : $ " Width="90%"></asp:TextBox>
-                                </td>
-                                <td>Prefix Original Price<br />
-                                    <asp:TextBox ID="txtPrefixOrgnlPrice" runat="server" Text="BJ's Price : " Width="90%"></asp:TextBox>
-                                </td>
-                                <td>
-                                    <br />
-                                    <asp:Button ID="btnSave" runat="server" Text="Save" Width="100%" OnClick="btnSave_Click" />
-                                </td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td>Barcode [SJ SKU Number] :
-                                    <br />
-                                    <asp:DropDownList ID="ddlBarcode" runat="server" Width="90%">
-                                    </asp:DropDownList>
-                                </td>
-                                <td>Original SKU Number<br />
-                                    <asp:DropDownList ID="ddlOrginal" runat="server" Width="90%">
-                                    </asp:DropDownList>
-                                </td>
-                                <td>Desc
-                                    <br />
-                                    <asp:DropDownList ID="ddlDesc" runat="server" Width="90%">
-                                    </asp:DropDownList>
-                                </td>
-                                <td>Price
-                                    <br />
-                                    <asp:DropDownList ID="ddlPrice" runat="server" Width="90%">
-                                    </asp:DropDownList>
-                                </td>
-                                <td>Org Price<br />
-                                    <asp:DropDownList ID="OrgPrice" runat="server"  Width="90%">
-                                    </asp:DropDownList>
-                                </td>
-                                <td>Lot#
-                                    <br />
-                                    <asp:TextBox ID="txtCode" runat="server" Text=""></asp:TextBox>
-                                </td>
-                            </tr>
-                        </table>
+                        <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click"/>
+
+                        &nbsp;
+                        <asp:Button ID="btnExportToExcel" runat="server" Text="Export to Excel" OnClick="btnExportToExcel_Click" />
+                        &nbsp;
+                        
+                        <asp:Button ID="Button1" runat="server" Text="Print" OnClick="Button1_Click" />
                         <br />
+
+                        <asp:Label ID="lblreport" runat="server" Text=""></asp:Label>
+
                         <br />
                         <asp:Label ID="lblWarning" runat="server" Text=""></asp:Label>
                         <br />
-                        <div style="overflow: auto;" class="container-fluid">
-                        <asp:GridView ID="grdResult" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="5" OnRowCommand="grdResult_RowCommand" >
+                        <div  style="overflow: auto;" class="container-fluid">
+                       <div id="printablediv"  >
+                             <asp:GridView ID="grdResult" runat="server" BackColor="White" BorderColor="#CCCCCC"  BorderStyle="None" BorderWidth="1px" CellPadding="3" OnRowCommand="grdResult_RowCommand" AutoGenerateColumns="False" Width="100%" >
+                           
                             <Columns>
-                                <asp:ButtonField Text="Received" CommandName="Received"   runat="server"/>
-                                <asp:ButtonField Text="Damaged" CommandName="Damaged" runat="server"/>
+                                   <asp:BoundField DataField="MasterID" HeaderText="SJ UPC" HtmlEncode="False"  />
+                                    <asp:BoundField DataField="Descr" HeaderText="Description"  HtmlEncode="False"  />
+                                <asp:BoundField   DataField="UPCNumber" HeaderText="UPC Number" HtmlEncode="False"  />
+                            
+                             
+                                <asp:BoundField DataField="MSRPrice" HeaderText="MSRP" HtmlEncode="False" />
+                                <asp:BoundField DataField="SJPrice" HeaderText="SJ Price" HtmlEncode="False" />
+                                <asp:BoundField DataField="Quantity" HeaderText="Quantity" HtmlEncode="False" />
                             </Columns>
+                           
                             <FooterStyle BackColor="White" ForeColor="#000066" />
                             <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
                             <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
@@ -185,7 +153,7 @@
                             <SortedDescendingCellStyle BackColor="#CAC9C9" />
                             <SortedDescendingHeaderStyle BackColor="#00547E" />
                         </asp:GridView>
-                            
+                          </div>  
                             <br/>
                         </div>
                     </div>

@@ -39,6 +39,10 @@ namespace SJDealStore
 
         public string DecrementDamaged =
             " UPDATE  [Jarvis].[dbo].[SJDeals_FileImportDetails] SET damaged = damaged-1 WHERE Sno={0}";
+       
 
+        public string SJDeals_GetDamagedReport = "[Jarvis].[dbo].[SJDeals_GetDamagedReport]";
+
+        public string SJDeals_GetReceivedReport = "[Jarvis].[dbo].[SJDeals_GetReceivedReport]";
     }
 }

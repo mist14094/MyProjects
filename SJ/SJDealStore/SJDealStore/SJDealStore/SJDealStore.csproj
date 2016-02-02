@@ -78,6 +78,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Pages\Items\PrintLabel.js" />
+    <Content Include="Pages\Items\ReceivedReport.aspx" />
     <Content Include="Pages\Items\SearchStringPrintJS.aspx" />
     <Content Include="Pages\Items\SearchStringPrint.aspx" />
     <Content Include="Pages\Items\SearchString.aspx" />
@@ -264,6 +265,13 @@
     </Compile>
     <Compile Include="Pages\Items\Sales.aspx.designer.cs">
       <DependentUpon>Sales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Items\ReceivedReport.aspx.cs">
+      <DependentUpon>ReceivedReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Items\ReceivedReport.aspx.designer.cs">
+      <DependentUpon>ReceivedReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Items\SearchStringPrintJS.aspx.cs">
       <DependentUpon>SearchStringPrintJS.aspx</DependentUpon>
