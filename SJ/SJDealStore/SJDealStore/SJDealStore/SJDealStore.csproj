@@ -46,6 +46,9 @@
     <Reference Include="NLog">
       <HintPath>..\packages\NLog.4.2.2\lib\net45\NLog.dll</HintPath>
     </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -73,15 +76,20 @@
     <Content Include="Pages\dist\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Pages\dist\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Pages\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Pages\Items\ManageManifest.aspx" />
     <Content Include="Pages\Items\Import.aspx" />
     <Content Include="Pages\Items\OverStock_1.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Pages\Items\PrintLabel.js" />
+    <Content Include="Pages\Items\CreateManifest.aspx" />
+    <Content Include="Pages\Items\AddNewItem.aspx" />
+    <Content Include="Pages\Items\SquareImport.aspx" />
     <Content Include="Pages\Items\ReceivedReport.aspx" />
     <Content Include="Pages\Items\SearchStringPrintJS.aspx" />
     <Content Include="Pages\Items\SearchStringPrint.aspx" />
     <Content Include="Pages\Items\SearchString.aspx" />
+    <Content Include="Pages\Items\SquareAutoInsert.aspx" />
     <Content Include="Pages\_data\browser-bugs.yml" />
     <Content Include="Pages\_data\core-team.yml" />
     <Content Include="Pages\_data\glyphicons.yml" />
@@ -245,6 +253,13 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="DALayer.cs" />
+    <Compile Include="Pages\Items\ManageManifest.aspx.cs">
+      <DependentUpon>ManageManifest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Items\ManageManifest.aspx.designer.cs">
+      <DependentUpon>ManageManifest.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Items\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -258,6 +273,27 @@
     </Compile>
     <Compile Include="Pages\Items\Import.aspx.designer.cs">
       <DependentUpon>Import.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Items\CreateManifest.aspx.cs">
+      <DependentUpon>CreateManifest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Items\CreateManifest.aspx.designer.cs">
+      <DependentUpon>CreateManifest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Items\AddNewItem.aspx.cs">
+      <DependentUpon>AddNewItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Items\AddNewItem.aspx.designer.cs">
+      <DependentUpon>AddNewItem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Items\SquareImport.aspx.cs">
+      <DependentUpon>SquareImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Items\SquareImport.aspx.designer.cs">
+      <DependentUpon>SquareImport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Items\Sales.aspx.cs">
       <DependentUpon>Sales.aspx</DependentUpon>
@@ -294,6 +330,13 @@
     <Compile Include="Pages\Items\SearchString.aspx.designer.cs">
       <DependentUpon>SearchString.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Items\SquareAutoInsert.aspx.cs">
+      <DependentUpon>SquareAutoInsert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Items\SquareAutoInsert.aspx.designer.cs">
+      <DependentUpon>SquareAutoInsert.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pages\Items\Returns.aspx.cs">
       <DependentUpon>Returns.aspx</DependentUpon>
@@ -302,6 +345,7 @@
     <Compile Include="Pages\Items\Returns.aspx.designer.cs">
       <DependentUpon>Returns.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SquareSjApi.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\UploadedFiles\" />

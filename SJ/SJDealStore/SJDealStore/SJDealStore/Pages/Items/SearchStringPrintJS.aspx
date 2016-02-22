@@ -170,7 +170,7 @@
                                         <asp:CheckBox ID="chkPrintTest" runat="server" Checked="True" Text="Test Tags" />
                                     </td>
                                     <td>Prefix Price<br />
-                                        <asp:TextBox ID="txtPrefixPrice" runat="server" Text="OUR PRICE : $ " Width="90%"></asp:TextBox>
+                                        <asp:TextBox ID="txtPrefixPrice" runat="server" Text="OUR PRICE : $ " Width="90%" ></asp:TextBox>
                                     </td>
                                     <td>Prefix Original Price<br />
                                         <asp:TextBox ID="txtPrefixOrgnlPrice" runat="server" Text="BJ's Price : " Width="90%"></asp:TextBox>

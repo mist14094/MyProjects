@@ -44,5 +44,25 @@ namespace SJDealStore
         public string SJDeals_GetDamagedReport = "[Jarvis].[dbo].[SJDeals_GetDamagedReport]";
 
         public string SJDeals_GetReceivedReport = "[Jarvis].[dbo].[SJDeals_GetReceivedReport]";
+
+        public string SJDeals_SquareLogger = "[Jarvis].[dbo].[SJDeals_SquareLogger]";
+
+        public string SJDeals_CreateManifest = "[Jarvis].[dbo].[SJDeals_CreateManifest]";
+        public string GetAllManifest = "select * from [Jarvis].[dbo].[SJDeals_ManifestMaster]";
+        public string GetManifestMaster = "select * from [Jarvis].[dbo].[SJDeals_ManifestMaster] where sno={0}";
+
+        public string GetManifestDetails = "select * from [Jarvis].[dbo].[SJDeals_ManifestDetail] where MasterID={0}";
+
+        public string InsertItemInManifest = "[Jarvis].[dbo].[SJDeals_InsertItemInManifest]";
+
+        public string IncManifestQty =
+            "UPDATE [Jarvis].[dbo].[SJDeals_ManifestDetail] SET quantity =quantity +1  WHERE sno={0}";
+        public string DecManifestQty =
+            "UPDATE [Jarvis].[dbo].[SJDeals_ManifestDetail] SET quantity =quantity -1  WHERE sno={0}";
+
+        public string DeleteManifestItem = "DELETE FROM [Jarvis].[dbo].[SJDeals_ManifestDetail]   WHERE sno={0}";
+
+        public string AddNewItems = "[Jarvis].[dbo].[SJDeals_AddItems]";
+
     }
 }

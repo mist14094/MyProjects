@@ -39,6 +39,34 @@ namespace SJDealStore.Pages.Items
                 
              
             }
+
+            bool count = Request.QueryString.Count > 0;
+
+            if (!count)
+            {
+                txtPrefixPrice.Enabled = false;
+                txtPrefixOrgnlPrice.Enabled = false;
+                btnSave.Enabled = false;
+                ddlBarcode.Enabled = false;
+                ddlOrginal.Enabled = false;
+                ddlDesc.Enabled = false;
+                ddlPrice.Enabled = false;
+                OrgPrice.Enabled = false;
+                txtCode.Enabled = false;
+            }
+            else
+            {
+
+                txtPrefixPrice.Enabled = true;
+                txtPrefixOrgnlPrice.Enabled = true;
+                btnSave.Enabled = true;
+                ddlBarcode.Enabled = true;
+                ddlOrginal.Enabled = true;
+                ddlDesc.Enabled = true;
+                ddlPrice.Enabled = true;
+                OrgPrice.Enabled = true;
+                txtCode.Enabled = true;
+            }
         }
 
         private void IntitilaizeValues()

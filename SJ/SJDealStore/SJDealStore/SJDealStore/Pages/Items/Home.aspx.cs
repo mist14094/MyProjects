@@ -39,5 +39,15 @@ namespace SJDealStore.Pages.Items
         {
             Response.Redirect("ReceivedReport.aspx");
         }
+
+        protected void Button6_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CreateManifest.aspx");
+        }
+
+        protected void Button7_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ManageManifest.aspx");
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="SJDealStore.Pages.Items.Home" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateManifest.aspx.cs" Inherits="SJDealStore.Pages.Items.CreateManifest" %>
 
 <!DOCTYPE html>
 
@@ -10,18 +10,18 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<link rel="apple-touch-icon" href="apple-touch-icon.png" />
-<link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon-57x57.png" />
-<link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png" />
-<link rel="apple-touch-icon" sizes="76x76" href="apple-touch-icon-76x76.png" />
-<link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png" />
-<link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png" />
-<link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png" />
-<link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png" />
 
-    <title>Deal Store</title>
+    <title>Sales</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -81,21 +81,37 @@
       <div class="page-header">
        
       </div>
-      <p>
-           <center> 
-               
-               <asp:Button ID="Button1" runat="server" Text="Make Sale" type="button" class="btn btn-lg btn-success" style="width: 90%;" OnClick="Button1_Click" />  <br/>  <br/>
-         <asp:Button ID="Button2" runat="server" Text="Returns" type="button" class="btn btn-lg btn-success" style="width: 90%;" OnClick="Button2_Click" /> <br/>  <br/>
-                <asp:Button ID="Button3" runat="server" Text="Search Manifest" type="button" class="btn btn-lg btn-success" style="width: 90%;" OnClick="Button3_Click" /> <br/>  <br/>
-                <asp:Button ID="Button5" runat="server" Text="Reports" type="button" class="btn btn-lg btn-success" style="width: 90%;" OnClick="Button5_Click"  /> <br/>  <br/>
-               <asp:Button ID="Button4" runat="server" Text="Print Tags" type="button" class="btn btn-lg btn-success" style="width: 90%;" OnClick="Button4_Click" /> <br/>  <br/>
-               <asp:Button ID="Button6" runat="server" Text="Create Manifest" type="button" class="btn btn-lg btn-success" style="width: 90%;" OnClick="Button6_Click"  />
-               
-               <br/>  <br/>
-               <asp:Button ID="Button7" runat="server" Text="Manage Manifest" type="button" class="btn btn-lg btn-success" style="width: 90%;" OnClick="Button7_Click"/>
-
-          <br/></center>
-        </p>
+      
+        
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Operations - Create Manifest</h3>
+            </div>
+            <div class="panel-body">
+                Manifest Name : 
+                
+                        
+        <br/><br/>
+        <asp:TextBox ID="txtName" runat="server" type="text" class="form-control" placeholder="Type the Name of Manifest"  autofocus  ></asp:TextBox>
+                 <br />
+                 Manifest Description : 
+                
+                        
+        <br/><br/>
+        <asp:TextBox ID="txtDesc" runat="server" type="text" class="form-control" placeholder="Type the Description of Manifest" TextMode="MultiLine" Height="100px" ></asp:TextBox>
+          
+                <br/>
+                <br/>
+                
+                <br/>
+              <center><asp:Button ID="btnCreateManifest" runat="server" Text="Create Manifest" type="button" class="btn btn-lg btn-success" Width="40%" OnClick="btnCreateManifest_Click"  />
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                
+           </center>     <br/>
+                <asp:Label ID="lblWarning" runat="server" Text=""></asp:Label>
+              
+            </div>
+          </div>
     </div>
 
     <footer class="footer">
