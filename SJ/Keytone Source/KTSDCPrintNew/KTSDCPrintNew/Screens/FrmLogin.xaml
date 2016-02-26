@@ -1,0 +1,34 @@
+﻿<Window x:Class="KTone.Win.KTSDCPrint.FrmLogin"
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" mc:Ignorable="d" 
+    Title="Login" Width="450" Height="240" BorderThickness="2,2,2,2" WindowStartupLocation="CenterScreen"  SizeToContent="WidthAndHeight" 
+    ShowInTaskbar="True" ResizeMode="NoResize" Style="{DynamicResource ToolStyleWindow}" Icon="..\People.ico">
+    <Grid x:Name="LayoutRoot">
+        <DockPanel Margin="0,0,0,0" LastChildFill="False" d:LayoutOverrides="Width" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid Width="Auto" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,0" DockPanel.Dock="Top">
+                <!--<Label HorizontalAlignment="Right" d:LayoutOverrides="Height" Margin="0,0,0,0">
+                    <Hyperlink Click="lnkRemoteSettings_Click" x:Name="lnkRemoteSettings" Foreground="#FF0013FF" FontSize="13" >Remote Settings</Hyperlink>
+                </Label>-->
+            </Grid>
+            
+            <Grid Width="Auto" Height="30" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,10,5,0" DockPanel.Dock="Top">
+                <Label HorizontalAlignment="Left" Width="Auto" Height="Auto" Content="User ID" FontSize="14" FontWeight="Bold" d:LayoutOverrides="Height" Margin="30,0,0,0" VerticalAlignment="Center"/>
+                <TextBox Margin="150,0,45,0" x:Name="txtUserID" FontSize="14" Height="26" FontWeight="Bold" Text="" TextWrapping="NoWrap" VerticalAlignment="Center" d:LayoutOverrides="Height" MaxLines="1" ForceCursor="False"/>
+            </Grid>
+            <Grid Height="30" Width="Auto" DockPanel.Dock="Top" Margin="5,15,5,0">
+                <Label HorizontalAlignment="Left" Width="Auto" Height="Auto" Content="Password" FontSize="14" VerticalAlignment="Center" FontWeight="Bold" d:LayoutOverrides="Height" Margin="30,0,0,0"/>
+                <PasswordBox d:LayoutOverrides="Height" FontSize="14" FontWeight="Bold" Height="26" x:Name="txtPassword" VerticalAlignment="Center"  Margin="150,0,45,0"/>
+            </Grid>
+            <Grid Width="450" Height="51" HorizontalAlignment="Center" DockPanel.Dock="Top" Margin="5,15,5,5" VerticalAlignment="Center" Background="Transparent" ClipToBounds="False">
+                <Button HorizontalAlignment="Left" Margin="103.973,11,0,8" Width="108" Content="Login" x:Name="btnLogin" d:LayoutOverrides="HorizontalAlignment" Background="Transparent" FontFamily="Verdana" Click="btnLogin_Click" />
+                <Button HorizontalAlignment="Right" Width="114" Content="Cancel" Margin="0,11,106.027,8" x:Name="btnCancel" d:LayoutOverrides="HorizontalAlignment" Background="Transparent">
+                    <Button.BindingGroup>
+                        <BindingGroup Name="{x:Null}" NotifyOnValidationError="False" />
+                    </Button.BindingGroup>
+                </Button>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Window>

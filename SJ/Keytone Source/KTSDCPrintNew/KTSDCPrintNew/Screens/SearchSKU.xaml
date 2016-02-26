@@ -1,0 +1,115 @@
+﻿<Window x:Class="KTone.Win.KTSDCPrint.SearchSKU" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Background="{DynamicResource BackGround}" Style="{DynamicResource ToolStyleWindow}" Icon="..\People.ico"
+    ShowInTaskbar="False" WindowState="Normal" BorderBrush="Black" BorderThickness="2" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"        
+    Title="Search SKU" Height="Auto" Width="Auto" Loaded="Window_Loaded" Closing="Window_Closing" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+    <Window.Resources>
+        <Style x:Key="hcs" TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="HorizontalContentAlignment" Value="Left"></Setter>
+        </Style>
+    </Window.Resources>
+
+        <Grid>
+        
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <DockPanel x:Name="LayoutRoot">
+            <DockPanel DockPanel.Dock="Top" Visibility="Visible" HorizontalAlignment="Stretch">
+                <GroupBox Header="SKU Details" x:Name="gbxskuDetails" FontSize="13" DockPanel.Dock="Top" Margin="5,0,5,0" Foreground="Blue">
+                    <StackPanel VerticalAlignment="Top" Width="Auto" Height="Auto" DockPanel.Dock="Top" Orientation="Vertical">
+                        <Border Height="Auto" BorderThickness="0,0,0,0" DockPanel.Dock="Top" >
+                            <Label Name="lblError" Height="Auto" Width="Auto" Visibility="Collapsed"></Label>
+                        </Border>
+                        <StackPanel Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center">
+                            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Label x:Name="lblCompany" Width="118" Content="Search Criteria" FontWeight="Bold" FontSize="11" Foreground="#FF000000" Visibility="Visible"  Margin="0,10,0,0"></Label>
+                                <ComboBox x:Name="cmbSearchCriteria" TabIndex="1" SelectionChanged="cmbSearchCriteria_SelectionChanged" IsSynchronizedWithCurrentItem="True" IsEditable="False" IsReadOnly="True" Focusable="False" IsHitTestVisible="True"  Height="25" Width="250" Margin="0,10,0,0">
+                                    <ComboBoxItem Content="SKU Name"/>
+                                    <ComboBoxItem Content="Product Name"/>                                    
+                                    <ComboBoxItem Content="Company Name"/>                                    
+                                </ComboBox>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Name="stkPnlSKUName">
+                                <Label x:Name="lblSKUName" Width="118" Content="SKU Name" FontWeight="Bold" FontSize="11" Foreground="#FF000000" Visibility="Visible"  Margin="0,10,0,0"></Label>
+                                <!--<ComboBox x:Name="cmbSKU" Width="304" TabIndex="1" IsSynchronizedWithCurrentItem="True" IsEditable="False" IsReadOnly="True" Focusable="False" IsHitTestVisible="True" Visibility="Visible" DisplayMemberPath ="ProductSKU" SelectedValuePath ="SKU_ID" Margin="0,10,0,0"/>-->
+                                <TextBox Text="" BorderBrush="#FF000000" TextWrapping="Wrap" x:Name="txtSKUName" TabIndex="4" Visibility="Visible" Height="25" Width="250" Margin="0,10,0,0" />
+
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Name="stkPnlProductName" Visibility="Collapsed">
+                                <Label Width="118" Height="24" Content="Product Name"  FontWeight="Bold" FontSize="11" Foreground="#FF000000" x:Name="Product" Margin="0,10,0,0"/>
+                                <!--<ComboBox x:Name="cmbProduct" Width="304" TabIndex="1" IsSynchronizedWithCurrentItem="True" IsEditable="False" IsReadOnly="True" Focusable="False" IsHitTestVisible="True" Visibility="Visible" DisplayMemberPath ="ProductName" SelectedValuePath ="ProductID" Margin="0,10,0,0"/>-->
+                                <TextBox Text="" BorderBrush="#FF000000" TextWrapping="Wrap" x:Name="txtProductName" TabIndex="4" Visibility="Visible" Height="25" Width="250" Margin="0,10,0,0" />
+
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Name="stkPnlProductPrefix" Visibility="Collapsed">
+                                <Label Width="118" Height="24" Content="ProductPrefix" FontWeight="Bold" FontSize="11" Foreground="#FF000000" Visibility="Visible" x:Name="ProductPrefix" Margin="0,10,0,0"/>
+                                <TextBox Width="250" BorderBrush="#FF000000" Text="" TextWrapping="Wrap" x:Name="txtProductPrefix" TabIndex="4" Visibility="Visible" Height="25" Margin="0,10,0,0" />
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Name="stkPnlCompany" Visibility="Collapsed">
+                                <Label Width="118" Height="25" Content="Company Name" FontWeight="Bold" FontSize="11" Foreground="#FF000000" Visibility="Visible" x:Name="Company" Margin="0,10,0,0"/>
+                                <!--<ComboBox x:Name="cmbCompany" Width="304" TabIndex="1" IsSynchronizedWithCurrentItem="True" IsEditable="False" IsReadOnly="True" Focusable="False" IsHitTestVisible="True" Visibility="Visible" DisplayMemberPath ="CompanyName" SelectedValuePath ="CompanyId" Margin="0,10,0,0"/>-->
+                                <TextBox Width="250" BorderBrush="#FF000000" Text="" TextWrapping="Wrap" x:Name="txtCompany" TabIndex="4" Visibility="Visible" Height="25" Margin="0,10,0,0" />
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Name="stkPnlCompanyPrefix" Visibility="Collapsed">
+                                <Label Width="118" Height="24" Content="CompanyPrefix" FontWeight="Bold" FontSize="11" Foreground="#FF000000" Visibility="Visible" x:Name="CompanyPrefix" Margin="0,10,0,0"/>
+                                <TextBox Width="250" BorderBrush="#FF000000" Text="" TextWrapping="Wrap" x:Name="txtCompanyPrefix" TabIndex="4" Visibility="Visible" Height="25" Margin="0,10,0,0" />
+                            </StackPanel>
+
+                            <Grid>
+                                <DockPanel Width="Auto" Height=" Auto"  DockPanel.Dock="Bottom" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                                    <Button x:Name="btnSearch" Width="120" Content="Search SKU" Height="30" Visibility="Visible" Margin="0,5,0,0" Click="btnSearch_Click" />
+                                </DockPanel>
+                            </Grid>
+                        </StackPanel>
+                    </StackPanel>
+                </GroupBox>
+            </DockPanel>
+            <DockPanel HorizontalAlignment="Stretch" Grid.Column="1" Grid.Row="1" DockPanel.Dock="Top" VerticalAlignment="Stretch" Margin="0,0,0,0">                
+                <GroupBox Header="Product Information "  x:Name="gbxProductInfo" FontSize="13" DockPanel.Dock="Bottom" Foreground="Blue" Width="Auto" Height="Auto" Margin="5,0,5,0" >
+                    <ListView IsSynchronizedWithCurrentItem="True"  Margin="5,5,5,5" x:Name="lvProductDetails" TabIndex="0"
+            			FontSize="14" Focusable="False"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="100" SelectionChanged="lvProductDetails_SelectionChanged" >
+                        <ListView.View>
+                            <GridView  >
+                                <GridViewColumn Header="Product Name" DisplayMemberBinding ="{Binding Path=ProductName}" Width="210"/>                                    
+                                <GridViewColumn Header="Prefix" DisplayMemberBinding ="{Binding Path=ProductPrefix}" Width="210" />
+                                <GridViewColumn Header="Company Name" DisplayMemberBinding ="{Binding Path=CompanyName}" Width="210"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </GroupBox>
+            </DockPanel>
+            <Border BorderThickness="1,1,1,1" CornerRadius="4,4,4,4" Style="{DynamicResource MainBorder}" Height="Auto" Width="Auto" DockPanel.Dock="Bottom" VerticalAlignment="Stretch" BorderBrush="#FFD0D0BF" Margin="0,2,0,2" HorizontalAlignment="Stretch">
+                <DockPanel DockPanel.Dock="Bottom" HorizontalAlignment="Stretch" LastChildFill="False" >
+                    <WrapPanel Width="Auto" Height="Auto" DockPanel.Dock="Bottom" HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="0,0,0,0">
+                        <Button x:Name="btnOk" Content="Ok" Click="btnOk_Click"  FontSize="15"  Height="30" Visibility="Visible" HorizontalAlignment="Center" Margin="0,0,20,0" VerticalAlignment="Stretch" DockPanel.Dock="Left" Width="100" IsEnabled="False"/>
+                        <Button FontSize="15" Height="30" x:Name="btnCancel"  Visibility="Visible" Width="100" Content="Cancel" HorizontalAlignment="Center" DockPanel.Dock="Left"  Click="btnCancel_Click" />
+                    </WrapPanel>
+                </DockPanel>
+            </Border>
+            <GroupBox Header="SKU Information " Height="Auto" Width="Auto" x:Name="gbxSKUInfo" FontSize="13"  Foreground="Blue" DockPanel.Dock="Bottom" Margin="5,0,5,0" >
+                <ListView IsSynchronizedWithCurrentItem="True"  Margin="5,5,5,5" x:Name="lvSKUDetails" SelectionChanged="lvSKUDetails_SelectionChanged"  TabIndex="0"
+            			MinHeight="100" MaxHeight="150" Width="Auto" FontSize="14" Focusable="False" ItemContainerStyle="{DynamicResource ListViewItemStyle}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Visible">
+                    <ListView.View>
+                        <GridView  >                            
+                            <GridViewColumn Header="SKU Name" DisplayMemberBinding ="{Binding Path=ProductSKU}" Width="190"/>
+                            <GridViewColumn Header="Description" DisplayMemberBinding ="{Binding Path=SKUDescription}" Width="190" />
+                            <GridViewColumn Header="Product Name" DisplayMemberBinding ="{Binding Path=ProductName}" Width="190" />
+                            <GridViewColumn Header="Company Name" DisplayMemberBinding ="{Binding Path=CompanyName}" Width="190" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </GroupBox>
+        </DockPanel>       
+
+    </Grid>
+   
+
+</Window>

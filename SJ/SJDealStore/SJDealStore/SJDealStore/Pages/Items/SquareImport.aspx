@@ -114,7 +114,8 @@
                             <asp:ListItem Selected="True">Received</asp:ListItem>
                             <asp:ListItem>Damaged</asp:ListItem>
                         </asp:RadioButtonList>
-                        <asp:TextBox ID="txtCategoryName" runat="server" Text="Walmart Appliances 222016"></asp:TextBox>
+                        <asp:TextBox ID="txtCategoryName" runat="server" Text=""></asp:TextBox>
+                          <asp:RequiredFieldValidator Display="Dynamic" ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtCategoryName" ErrorMessage="Catagory Name Required"></asp:RequiredFieldValidator>
                         <br />
                         <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click"/>
 

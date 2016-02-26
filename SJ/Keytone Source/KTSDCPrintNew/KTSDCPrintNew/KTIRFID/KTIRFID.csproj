@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F676B2F6-A2E6-4275-A02F-3F58EE6AD9B5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KTone.Core.KTIRFID</RootNamespace>
+    <AssemblyName>KTIRFID</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <PublishUrl>http://localhost/KTIRFID/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Build.Framework\Application\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\Build.Framework\Application\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\CommonAssemblyInfo.cs">
+      <Link>CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="IKTDisAssociationAgent.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="EventArgs.cs" />
+    <Compile Include="EventWrapper.cs" />
+    <Compile Include="Exceptions.cs" />
+    <Compile Include="IKTAssetCache.cs" />
+    <Compile Include="IKTComponent.cs" />
+    <Compile Include="IKTComponentFactory.cs" />
+    <Compile Include="IKTComponentMonitor.cs" />
+    <Compile Include="IKTCustomComponent .cs" />
+    <Compile Include="IKTCustomHost.cs" />
+    <Compile Include="IKTDirectionalFilter.cs" />
+    <Compile Include="IKTElement.cs" />
+    <Compile Include="IKTFactoryManager.cs" />
+    <Compile Include="IKTImageProcessor.cs" />
+    <Compile Include="IKTImportDataManager.cs" />
+    <Compile Include="IKTLocationAgent.cs" />
+    <Compile Include="IKTMail.cs" />
+    <Compile Include="IKTPrinter.cs" />
+    <Compile Include="IKTAssetInventoryAgent.cs" />
+    <Compile Include="IKTReceivingAgent.cs" />
+    <Compile Include="IKTRFIDFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IKTRPGInventoryFilter.cs" />
+    <Compile Include="IKTSDCCache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IKTStatusMonitor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IKTSystemMonitorManager.cs" />
+    <Compile Include="IKTTemplateMonitor.cs" />
+    <Compile Include="IKTPurgeMonitor.cs" />
+    <Compile Include="KTSDCContract\IKTAssociationPhilips.cs" />
+    <Compile Include="KTSDCContract\IKTAuthenticate.cs" />
+    <Compile Include="KTSDCContract\IKTCompProdSKU.cs" />
+    <Compile Include="KTSDCContract\IKTHandheld.cs" />
+    <Compile Include="KTSDCContract\IKTHandHeldPhilips.cs" />
+    <Compile Include="KTSDCContract\IKTItem.cs" />
+    <Compile Include="KTSDCContract\IKTLocation.cs" />
+    <Compile Include="KTSDCContract\IKPrinter.cs" />
+    <Compile Include="KTSDCContract\IKTLocationMonitor.cs" />
+    <Compile Include="KTSDCContract\IKTOrders.cs">
+    </Compile>
+    <Compile Include="KTSDCContract\IKTSmokinJoes.cs" />
+    <Compile Include="KTSDCStructures\KTAuditInstance.cs" />
+    <Compile Include="KTSDCStructures\KTAuditInstanceDetails.cs" />
+    <Compile Include="KTSDCStructures\KTLocationMonitor.cs" />
+    <Compile Include="KTSDCStructures\KTSDSeviceException.cs" />
+    <Compile Include="KTSDCStructures\SDCOrderStructures.cs">
+    </Compile>
+    <Compile Include="KTSDCStructures\SDCPhilipsStructures.cs" />
+    <Compile Include="KTSDCStructures\SDCSmokinJoesStructures.cs" />
+    <Compile Include="KTSDCStructures\SDCStructure.cs" />
+    <Compile Include="KTSDCStructures\UserData.cs" />
+    <Compile Include="KTTripPlan\IKTTripManagementAgent.cs" />
+    <Compile Include="KTTripPlan\IKTTripManager.cs" />
+    <Compile Include="IRFIDReader.cs" />
+    <Compile Include="IRFIDTag.cs" />
+    <Compile Include="IRFIDTagMonitor.cs" />
+    <Compile Include="IScreenCommand.cs" />
+    <Compile Include="KTActiveWave\ActiveWaveTag.cs" />
+    <Compile Include="KTActiveWave\AWTagMovedEventArgs.cs" />
+    <Compile Include="KTActiveWave\IAWTagMonitor.cs" />
+    <Compile Include="KTActiveWave\IKTAWFilter.cs" />
+    <Compile Include="KTActiveWave\IKTAWReader.cs" />
+    <Compile Include="KTActiveWave\IRFIDKTAgentAW.cs" />
+    <Compile Include="KTActiveWave\TamperWrapper.cs" />
+    <Compile Include="KTAlien\IKTAlienReader.cs" />
+    <Compile Include="KTConvergence\CSTag.cs" />
+    <Compile Include="KTConvergence\IKTCSReader.cs" />
+    <Compile Include="KTIntelleflex\AntennaConfig.cs" />
+    <Compile Include="KTIntelleflex\IFXCommandOpCode.cs" />
+    <Compile Include="KTIntelleflex\IFXConstants.cs" />
+    <Compile Include="KTIntelleflex\IFXReaderEventArgs.cs" />
+    <Compile Include="KTIntelleflex\IFXReaderExceptions.cs" />
+    <Compile Include="KTIntelleflex\IIFXReader.cs" />
+    <Compile Include="KTIntelleflex\IRFIDIFXTag.cs" />
+    <Compile Include="KTIntelleflex\RFIDIFXTag.cs" />
+    <Compile Include="KTSymbol\IKTSymRD5000Reader.cs" />
+    <Compile Include="KTSymbol\ProximityEventArgs.cs" />
+    <Compile Include="KTTripPlan\TripPlan.cs" />
+    <Compile Include="KTTripPlan\TripPlanEventArgs.cs" />
+    <Compile Include="KTWavetrend\IKTWTFilter.cs" />
+    <Compile Include="KTWavetrend\IWTGPIO.cs" />
+    <Compile Include="KTWavetrend\IWTGPRSListener.cs" />
+    <Compile Include="KTWavetrend\IWTReaderEthernet.cs" />
+    <Compile Include="KTWavetrend\IWTReaderRX201GPRS.cs" />
+    <Compile Include="KTWavetrend\IWTRFReader.cs" />
+    <Compile Include="KTWavetrend\IWTRFReaderSettings.cs" />
+    <Compile Include="KTWavetrend\IWTRX201.cs" />
+    <Compile Include="KTWavetrend\IWTSerialNetwork.cs" />
+    <Compile Include="KTWavetrend\IWTTagMonitor.cs" />
+    <Compile Include="KTWavetrend\WTReaderEventArgs.cs" />
+    <Compile Include="KTWavetrend\WTTag.cs" />
+    <Compile Include="KTWavetrend\WTTagEventArgs.cs" />
+    <Compile Include="LicenseData.cs" />
+    <Compile Include="Orizin\IKTOrizinReader.cs" />
+    <Compile Include="Orizin\OrizinTag.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReaderProfile.cs" />
+    <Compile Include="RFIDTag.cs" />
+    <Compile Include="Structs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DeployScript.ps1" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\KTone.RFIDGlobal\RFIDGlobal\RFIDGlobal.csproj">
+      <Project>{F17BBF0E-FA42-4762-9EC6-64DEF7B5DFAF}</Project>
+      <Name>RFIDGlobal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>powershell -command .'$(projectdir)DeployScript.ps1' -solutionfilename:'$(SolutionFileName)' -projectdir:'$(ProjectDir)' -outdir:'$(OutDir)' -targetdir:'$(TargetDir)' -targetfilename:'$(TargetFileName)' -solutiondir:'$(SolutionDir)' -configName:'$(ConfigurationName)'</PostBuildEvent>
+  </PropertyGroup>
+</Project>

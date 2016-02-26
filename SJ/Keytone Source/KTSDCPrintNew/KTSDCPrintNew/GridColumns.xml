@@ -1,0 +1,7 @@
+﻿<xml>
+	<items>
+		<item name="Letter" width="8.5" height="11" value1="something" valuen="x" />
+		<item name="Legal" width="8.5" height="14" value1="something" valuen="y" />
+		<item name="Tabloid" width="11" height="17" value1="something" valuen="z" />
+	</items>
+</xml>

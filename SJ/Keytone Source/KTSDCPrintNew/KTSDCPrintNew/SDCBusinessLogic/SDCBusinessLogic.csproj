@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4F3619A0-2104-4DF4-97F7-5B7F1514EFC0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KTone.Core.SDCBusinessLogic</RootNamespace>
+    <AssemblyName>SDCBusinessLogic</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NLog, Version=1.0.0.505, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\3rd_Party\NLog\bin\net-2.0\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseAppSettings.cs" />
+    <Compile Include="ComponentProvider.cs" />
+    <Compile Include="CompProdSKUClass.cs" />
+    <Compile Include="HandheldClass.cs" />
+    <Compile Include="ItemAssociationClass.cs" />
+    <Compile Include="ItemClass.cs" />
+    <Compile Include="LocationClass.cs" />
+    <Compile Include="LocationMonitorClass.cs" />
+    <Compile Include="OrderClass.cs" />
+    <Compile Include="PrinterClass.cs" />
+    <Compile Include="SDCWSHelper.cs" />
+    <Compile Include="SmokinJeosClass.cs" />
+    <Compile Include="UserClass.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KTIRFID\KTIRFID.csproj">
+      <Project>{F676B2F6-A2E6-4275-A02F-3F58EE6AD9B5}</Project>
+      <Name>KTIRFID</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTDAGlobaApplLib\KTDAGlobaApplLib.csproj">
+      <Project>{8A3D481D-D598-40F1-BF82-5A5CEF87B904}</Project>
+      <Name>KTDAGlobaApplLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTDBBaseLib\KTDBBaseLib.csproj">
+      <Project>{7F2F15E3-E9C6-474A-B5C5-D0FCD3307CAF}</Project>
+      <Name>KTDBBaseLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RFIDGlobal\RFIDGlobal.csproj">
+      <Project>{F17BBF0E-FA42-4762-9EC6-64DEF7B5DFAF}</Project>
+      <Name>RFIDGlobal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Custom\SmokinJoe-POC\TrackerRetailDataAccess\TrackerRetailDataAccess.csproj">
+      <Project>{B60BD16F-0CE4-4F8C-94C6-90DF6A6F8C4D}</Project>
+      <Name>TrackerRetailDataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DAL\SmartDCDataAccess\SmartDCDataAccess.csproj">
+      <Project>{C811875A-2563-471B-9398-54F6086FFAA6}</Project>
+      <Name>SmartDCDataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,51 @@
+﻿<Window x:Class="KTone.Win.KTSDCPrint.LocationDetails"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    Background="{DynamicResource BackGround}" Style="{DynamicResource MainWindoStyle}"
+    Title="Location Details" Height="340" Width="605" ShowInTaskbar="False" WindowState="Normal" Icon="..\People.ico" BorderBrush="Black" BorderThickness="2" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" VerticalAlignment="Stretch">
+    <DockPanel Height="Auto" VerticalAlignment="Center">
+        <DockPanel HorizontalAlignment="Stretch" DockPanel.Dock="Top" VerticalAlignment="Stretch" Margin="0,0,0,0">
+            <GroupBox Header="LocationSearch" Foreground="Blue" BorderBrush="Black" Margin="30,0,45,0" x:Name="grpSKU" VerticalAlignment="Top" DockPanel.Dock="Left" Height="Auto" Width="502.5" HorizontalAlignment="Center">
+                <StackPanel VerticalAlignment="Top" Width="Auto" Height="Auto" DockPanel.Dock="Top" Orientation="Horizontal">
+                    <Label Content="Location" HorizontalAlignment="Left" Margin="0,5,0,0" x:Name="lblLoc" RenderTransformOrigin="0.14,0.541" Height="25" Width="118" />
+                    <TextBox Height="25" Margin="20,5,0,0" BorderBrush="#FF000000" x:Name="txtLocation" Width="219" LostFocus="txtLocation_LostFocus" />
+                    <Button Margin="20,5,0,0" x:Name="btnSearch" Width="53" Click="btnSearch_Click" RenderTransformOrigin="0.509,0.15" Height="30" HorizontalAlignment="Right">
+                        <Image Source="../Images/icon-find.png" Height="15" Width="28"/>
+                    </Button>
+                </StackPanel>                
+            </GroupBox>
+        </DockPanel>
+        <DockPanel x:Name="dckpnlCustomer" Visibility="Visible" HorizontalAlignment="Stretch" DockPanel.Dock="Top" VerticalAlignment="Top" Margin="0,10,0,0">
+            <GroupBox Header="CustomDetails" BorderBrush="Black" Margin="30,0,45,0" DockPanel.Dock="Left" x:Name="grpCustom" Height="Auto" VerticalAlignment="Top" HorizontalAlignment="Center" Width="502.5" Foreground="Blue">
+                <StackPanel VerticalAlignment="Top" Width="Auto" Height="Auto" DockPanel.Dock="Top" Orientation="Vertical">
+                    <StackPanel VerticalAlignment="Top" Width="Auto" Height="Auto" DockPanel.Dock="Top" Orientation="Horizontal" >
+                        <Label Height="25" Margin="0,5,0,0" Content="Location" x:Name="lblLocation" HorizontalAlignment="Right" Width="118" VerticalAlignment="Top"/>
+                        <Label Height="26"  Margin="20,5,0,0"  BorderBrush="#FF000000"  x:Name="Location"   VerticalAlignment="Top" Width="270" HorizontalContentAlignment="Left"  HorizontalAlignment="Left" IsEnabled="True" FontWeight="Bold" />
+                    </StackPanel>
+
+                    <StackPanel VerticalAlignment="Top" Width="Auto" Height="Auto" DockPanel.Dock="Top" Orientation="Horizontal" >
+                        <Label Height="25" Margin="0,5,0,0" HorizontalAlignment="Right" x:Name="lblResource" Content="Resource" Width="118" VerticalAlignment="Top" />
+                        <Label  Margin="20,5,0,0" x:Name="Resource" Width="270" HorizontalAlignment="Right" d:LayoutOverrides="VerticalAlignment" Height="26" VerticalAlignment="Top" IsEnabled="True" FontWeight="Bold" />
+                    </StackPanel>
+                    
+                    <StackPanel VerticalAlignment="Top" Width="Auto" Height="Auto" DockPanel.Dock="Top" Orientation="Horizontal" >
+                        <Label Height="25" Margin="0,5,0,0" HorizontalAlignment="Right" x:Name="lblValue" Content="Resource Value" Width="118" VerticalAlignment="Top" />
+                        <Label  Margin="20,5,0,0" x:Name="ResourceValue" Width="270" HorizontalAlignment="Right" d:LayoutOverrides="VerticalAlignment" Height="26" VerticalAlignment="Top" IsEnabled="True" FontWeight="Bold" />
+                    </StackPanel>
+                    
+                    <StackPanel VerticalAlignment="Top" Width="Auto" Height="Auto" DockPanel.Dock="Top" Orientation="Horizontal" >
+                        <Label Height="25" HorizontalAlignment="Right" Margin="0,5,0,0" x:Name="lblDescription" VerticalAlignment="Top" Width="118" Content="Description" />
+                        <Label Height="52" Margin="20,5,0,0" x:Name="Description" Width="270" VerticalAlignment="Top" HorizontalAlignment="Right" IsEnabled="True" FontWeight="Bold" />
+                    </StackPanel>
+                    
+                </StackPanel>
+            </GroupBox>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Top" >
+            <StackPanel HorizontalAlignment="Stretch" Width="Auto" Height="Auto" DockPanel.Dock="Left" Orientation="Horizontal" >
+                <Button Height="30" HorizontalAlignment="Right" x:Name="btnNext" VerticalAlignment="Bottom" Width="75" Content="Next &gt;&gt;" Click="btnNext_Click" RenderTransformOrigin="5.287,6.412" d:LayoutOverrides="VerticalAlignment" Margin="435,5,0,5" IsEnabled="False" />
+            </StackPanel>
+        </DockPanel>
+    </DockPanel>
+</Window>

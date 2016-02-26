@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="ResMimeType">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="Version">
+		<value>1.0.0.0</value>
+	</resheader>
+	<resheader name="Reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="Writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+		<data name="CannotMovePreviousRecordInForwardOnly" xml:space="preserve">
+		<value>Cannot move to a previous record in forward-only mode.</value>
+	</data>
+	<data name="CannotReadRecordAtIndex" xml:space="preserve">
+		<value>Cannot read record at index '{0}'.</value>
+		<comment>index:int</comment>
+	</data>
+	<data name="EnumerationFinishedOrNotStarted" xml:space="preserve">
+		<value>Enumeration has either not started or has already finished.</value>
+	</data>
+	<data name="EnumerationVersionCheckFailed" xml:space="preserve">
+		<value>Collection was modified; enumeration operation may not execute.</value>
+	</data>
+	<data name="FieldHeaderNotFound" xml:space="preserve">
+		<value>'{0}' field header not found.</value>
+		<comment>header:string</comment>
+	</data>
+	<data name="FieldIndexOutOfRange" xml:space="preserve">
+		<value>Field index must be included in [0, FieldCount[. Specified field index was : '{0}'.</value>
+		<comment>index:int</comment>
+	</data>
+	<data name="MalformedCsvException" xml:space="preserve">
+		<value>The CSV appears to be corrupt near record '{0}', position '{1}'. Current raw data : '{2}'.</value>
+		<comment>currentRecordIndex:int;currentPosition:int;rawData:string</comment>
+	</data>
+	<data name="NoCurrentRecord" xml:space="preserve">
+		<value>No current record.</value>
+	</data>
+	<data name="NotEnoughSpaceInArray" xml:space="preserve">
+		<value>The number of fields in the record is greater than the available space from index to the end of the destination array.</value>
+	</data>
+	<data name="ObjectDisposed" xml:space="preserve">
+		<value>Object {0} has been disposed and can no longer be used.</value>
+		<comment>type:System.Type</comment>
+	</data>
+	<data name="RecordIndexLessThanZero" xml:space="preserve">
+		<value>Record index must be 0 or more.</value>
+	</data>
+</root>

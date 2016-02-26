@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:simpleType name="DataTypeDef">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="int" />
+			<xs:enumeration value="string" />
+			<xs:enumeration value="bool" />
+			<xs:enumeration value="short" />
+			<xs:enumeration value="byte" />
+			<xs:enumeration value="long" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="DataElementType">
+		<xs:sequence />
+		<xs:attribute name="FieldName" type="xs:string" />
+		<xs:attribute name="FieldDataType" type="DataTypeDef" />
+		<xs:attribute name="FieldValue" type="xs:string" />
+	</xs:complexType>
+	<xs:complexType name="DataElementsType">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="DataElement" type="DataElementType" />
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="TagDataTemplateType">
+		<xs:sequence>
+			<xs:element name="DataElements" type="DataElementsType" />
+		</xs:sequence>
+		<xs:attribute name="TagType" type="TagTypeDef" />
+	</xs:complexType>
+	<xs:simpleType name="TagTypeDef">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="EMSLRPTag" />
+			<xs:enumeration value="EMSHMSTag" />
+			<xs:enumeration value="EMSHMS_4kTag"/>
+			<xs:enumeration value="EMSLRP_STag" />
+			<xs:enumeration value="EMSLRP_I_10kBitsTag" />
+			<xs:enumeration value="EMSLRP_I_2kBitsTag" />
+			<xs:enumeration value="UnknownTag" />
+			<xs:enumeration value="TagItHFITag" />
+			<xs:enumeration value="ICodeSLISL2Tag" />
+			<xs:enumeration value="MyDSRF55VO2PTag" />
+			<xs:enumeration value="MyDSRF55V10PTag" />
+			<xs:enumeration value="LR512Tag" />
+			<xs:enumeration value="TagItHFTag" />
+			<xs:enumeration value="ICode1SL1Tag" />
+			<xs:enumeration value="PicoTag2KTag" />
+			<xs:enumeration value="EPCClass0Tag" />
+			<xs:enumeration value="EPCClass0_64BitTag" />
+			<xs:enumeration value="EPCClass0_96BitTag" />
+			<xs:enumeration value="EPCClass1Tag" />
+			<xs:enumeration value="EPCClass1_64BitTag" />
+			<xs:enumeration value="EPCClass1_96BitTag" />
+			<xs:enumeration value="MatricsTag" />
+			<xs:enumeration value="LegacyMatricsTag" />
+			<xs:enumeration value="OmronV720SeriesTag" />
+			<xs:enumeration value="OmronV600D23PxxTag"/>
+			<xs:enumeration value="ISO_18000_6BTag" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="RFIDXFormData">
+		<xs:complexType>
+			<xs:sequence minOccurs="1" maxOccurs="unbounded">
+				<xs:element name="TagDataTemplate" type="TagDataTemplateType"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

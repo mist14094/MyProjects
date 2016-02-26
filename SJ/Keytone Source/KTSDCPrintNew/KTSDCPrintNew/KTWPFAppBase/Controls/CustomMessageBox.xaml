@@ -1,0 +1,32 @@
+﻿
+   <Window x:Class="KTWPFAppBase.Controls.CustomMessageBox"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Height="170"
+	Loaded="this_Loaded" SizeToContent="WidthAndHeight"
+	Background="{DynamicResource BackGround}" Style="{DynamicResource ToolStyleWindow}"
+	Title="MessageBox"
+	Width="470" 
+	ResizeMode="NoResize" Icon="../People.ico" 
+	WindowStartupLocation="CenterScreen" BorderThickness="1" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" ShowInTaskbar="False" WindowStyle="None">
+       
+    <DockPanel x:Name="LayoutRoot">
+        <Border Height="Auto"  BorderBrush="Black" BorderThickness="0,0,0,0" DockPanel.Dock="Bottom" Margin="0,0,0,0">
+            <Grid Width="Auto" Height="Auto">
+                <DockPanel Margin="5,25,5,47">
+                    <Image x:Name="img" Stretch="None" Height="64" Width="64" Margin="0,0,10,0" />
+                    <ScrollViewer Width="Auto" Height="Auto" x:Name="scrlViewer"  >
+                        <Label Width="Auto" x:Name="lblMessage" FontSize="14" Foreground="#FF1D1B1B" FontWeight="Bold" Height="Auto" Margin="5,0,0,0">
+                            <TextBlock TextWrapping="WrapWithOverflow" x:Name="txtMessage" FontSize="11" Foreground="#FF1D1B1B"/>
+                        </Label>
+                    </ScrollViewer>
+                </DockPanel>
+                <DockPanel VerticalAlignment="Bottom" Height="Auto" LastChildFill="False" HorizontalAlignment="Center" Margin="0,0,0,0">
+                    <Button x:Name="btnOK" Background="{x:Null}" BorderBrush="{x:Null}" Width="86" Content="Ok" Click="ok_Click" Height="30" Margin="5,0,5,10"/>
+                    <Button x:Name="btnCancel" Background="{x:Null}" BorderBrush="{x:Null}" Width="86" Content="Cancel" Click="btnCancel_Click" Height="30" Margin="5,0,5,10" Visibility="Collapsed"/>
+                    <Button x:Name="btnExtra" Background="{x:Null}" BorderBrush="{x:Null}" Width="86" Content="Extra" Click="btnExtra_Click" Height="30" Margin="5,0,5,10" Visibility="Collapsed"/>
+                </DockPanel>
+            </Grid>
+        </Border>
+    </DockPanel>
+</Window>

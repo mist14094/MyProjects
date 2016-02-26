@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F17BBF0E-FA42-4762-9EC6-64DEF7B5DFAF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KTone.RFIDGlobal</RootNamespace>
+    <AssemblyName>RFIDGlobal</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>http://localhost/RFIDGlobal/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Build.Framework\KTRFService\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\Build.Framework\KTRFService\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NLog, Version=1.0.0.505, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\3rd_Party\NLog\bin\net-2.0\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\CommonAssemblyInfo.cs">
+      <Link>CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="AppRoleManager.cs" />
+    <Compile Include="Beep.cs" />
+    <Compile Include="ConfigParams\ConfigParamsExceptions.cs" />
+    <Compile Include="ConfigParams\ConfigParamsImpl.cs" />
+    <Compile Include="ConfigParams\GlobalConfigParams.cs" />
+    <Compile Include="ConfigParams\IConfigParams.cs" />
+    <Compile Include="ConfigParams\XSD\ConfigParams\ConfigParams.cs">
+      <DependentUpon>ConfigParams.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ConfigParams\XSD\ConfigParams\ConfigParams.Designer.cs">
+      <DependentUpon>ConfigParams.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="CRC\CRCAlgorithms.cs" />
+    <Compile Include="Crypting.cs" />
+    <Compile Include="CSVReader\CsvReader.cs" />
+    <Compile Include="CSVReader\ExceptionMessage.cs" />
+    <Compile Include="CSVReader\MalformedCsvException.cs" />
+    <Compile Include="EPCTagEncoding\Constants.cs" />
+    <Compile Include="EPCTagEncoding\Decode.cs" />
+    <Compile Include="EPCTagEncoding\DecodeASET.cs" />
+    <Compile Include="EPCTagEncoding\DecodeDoD.cs" />
+    <Compile Include="EPCTagEncoding\DecodeGIAI.cs" />
+    <Compile Include="EPCTagEncoding\DecodeGRAI.cs" />
+    <Compile Include="EPCTagEncoding\DecodeLCTN.cs" />
+    <Compile Include="EPCTagEncoding\DecodeSGLN.cs" />
+    <Compile Include="EPCTagEncoding\DecodeSGTIN.cs" />
+    <Compile Include="EPCTagEncoding\DecodeSSCC.cs" />
+    <Compile Include="EPCTagEncoding\Encode.cs" />
+    <Compile Include="EPCTagEncoding\EncodeASET.cs" />
+    <Compile Include="EPCTagEncoding\EncodeDoD.cs" />
+    <Compile Include="EPCTagEncoding\EncodeGIAI.cs" />
+    <Compile Include="EPCTagEncoding\EncodeGLN.cs" />
+    <Compile Include="EPCTagEncoding\EncodeGRAI.cs" />
+    <Compile Include="EPCTagEncoding\EncodeGTIN.cs" />
+    <Compile Include="EPCTagEncoding\EncodeLCTN.cs" />
+    <Compile Include="EPCTagEncoding\EncodeSSCC.cs" />
+    <Compile Include="EPCTagEncoding\EPCEncodeDecodeExceptions.cs" />
+    <Compile Include="EPCTagEncoding\EPCEncoding.cs" />
+    <Compile Include="EPCTagEncoding\EPCEnums.cs" />
+    <Compile Include="EPCTagEncoding\GenerateTestData.cs" />
+    <Compile Include="EPCTagEncoding\GID.cs" />
+    <Compile Include="EPCTagEncoding\ICompanyPrefixLookup.cs" />
+    <Compile Include="EPCTagEncoding\EPCURNManager.cs" />
+    <Compile Include="EPCTagEncoding\PartitionTables.cs" />
+    <Compile Include="EPCTagEncoding\TranslationTable.cs" />
+    <Compile Include="EPCTagEncoding\UCCStandardDetails.cs" />
+    <Compile Include="ExceptionLayer\IKTException.cs" />
+    <Compile Include="GenericObjectQueue.cs" />
+    <Compile Include="ImportData\DBManager.cs" />
+    <Compile Include="ImportData\DBTransact.cs" />
+    <Compile Include="ImportData\Exception.cs" />
+    <Compile Include="ImportData\FileUploader.cs" />
+    <Compile Include="ImportData\IImport.cs" />
+    <Compile Include="ImportData\IImportData.cs" />
+    <Compile Include="ImportData\ImportData.cs" />
+    <Compile Include="ImportData\LogFileList.cs" />
+    <Compile Include="KTAgentSpecific\AgentDBMgr.cs" />
+    <Compile Include="KTAgentSpecific\GenericAgentHelper.cs" />
+    <Compile Include="KTAgentSpecific\KTQueue.cs" />
+    <Compile Include="KTCmdLine\KTCmdLineParser.cs" />
+    <Compile Include="KTLogManager.cs" />
+    <Compile Include="KTMsgWriter.cs" />
+    <Compile Include="KTRFServiceConfigHelper.cs" />
+    <Compile Include="LCTNHelper\LCTNHelper.cs" />
+    <Compile Include="MetaDataEditor\MetaDataEditor.cs" />
+    <Compile Include="MetaDataEditor\MetaDataEditorMisc.cs" />
+    <Compile Include="ObjectBuffer.cs" />
+    <Compile Include="ObjectQueue.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RFUtils.cs" />
+    <Compile Include="SendMail.cs" />
+    <Compile Include="SystemInfo\BIOS.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SystemInfo\Bus.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SystemInfo\CacheMemory.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SystemInfo\DiskDrive.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SystemInfo\DiskPartition.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SystemInfo\LogicalDisk.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SystemInfo\Network.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SystemInfo\PhysicalMemory.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SystemInfo\Processor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SystemInfo\SerialPort.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SystemInfo\SystemInfo.cs" />
+    <Compile Include="SystemInfo\VideoController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TagDataXForm\ITagDataXForm.cs" />
+    <Compile Include="TagDataXForm\TagDataXFormImpl.cs" />
+    <Compile Include="TagDataXForm\XFormException.cs" />
+    <Compile Include="Utilities.cs" />
+    <Compile Include="XmlUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ConfigParams\Data\ConfigParams\GlobalConfigs\KTone.Global.config">
+    </None>
+    <None Include="ConfigParams\XSD\ConfigParams\ConfigParams.xsc">
+      <DependentUpon>ConfigParams.xsd</DependentUpon>
+    </None>
+    <None Include="ConfigParams\XSD\ConfigParams\ConfigParams.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ConfigParams.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ConfigParams\XSD\ConfigParams\ConfigParams.xss">
+      <DependentUpon>ConfigParams.xsd</DependentUpon>
+    </None>
+    <None Include="DeployScript.ps1" />
+    <None Include="EPCTagEncoding\XmlTranslationTableSpec.xsd">
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="EPCTagEncoding\XmlTranslationTableSpec.xsx">
+      <DependentUpon>XmlTranslationTableSpec.xsd</DependentUpon>
+    </None>
+    <None Include="MetaDataEditor\RFIDTagDataTemplateSpec.xsd">
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="MetaDataEditor\RFIDTagDataTemplateSpec.xsx">
+      <DependentUpon>RFIDTagDataTemplateSpec.xsd</DependentUpon>
+    </None>
+    <None Include="TagDataXForm\RFIDTagDataXFormSpec.xsd">
+      <SubType>
+      </SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EPCTagEncoding\ManagerTranslation.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CSVReader\ExceptionMessage.resx">
+      <DependentUpon>ExceptionMessage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KTDBBaseLib\KTDBBaseLib.csproj">
+      <Project>{7F2F15E3-E9C6-474A-B5C5-D0FCD3307CAF}</Project>
+      <Name>KTDBBaseLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>powershell -command .'$(projectdir)DeployScript.ps1' -solutionfilename:'$(SolutionFileName)' -projectdir:'$(ProjectDir)' -outdir:'$(OutDir)' -targetdir:'$(TargetDir)' -targetfilename:'$(TargetFileName)' -solutiondir:'$(SolutionDir)' -configName:'$(ConfigurationName)'</PostBuildEvent>
+  </PropertyGroup>
+</Project>

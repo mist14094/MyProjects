@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="KTone.Win.KTSDCPrint.ctrlItemGrid"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Height="Auto" Width="Auto" FontSize="17" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"  
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"        
+    mc:Ignorable="d" 
+    VerticalContentAlignment="Stretch">
+
+    <UserControl.Resources>
+        <DataTemplate x:Key="ViolationHeaderTemplate">
+            <CheckBox Checked="CheckEdit_Checked" Unchecked="CheckEdit_Unchecked" HorizontalAlignment="Center"></CheckBox>
+        </DataTemplate>
+        <!--For aligning the checkbox in center -->
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Button.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <ContentControl Template="{DynamicResource {dxg:GridColumnHeaderThemeKey ResourceKey=ButtonContentTemplate}}">
+                            <Grid>
+                                <Grid HorizontalAlignment="Center" >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <dxg:ColumnHeaderContentPresenter Grid.Column="0" Name="HeaderContent" HorizontalAlignment="Left" Width="Auto"
+															  VerticalAlignment="Center" RecognizesAccessKey="true" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                </Grid>
+                            </Grid>
+                        </ContentControl>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <DockPanel Width="Auto" Height="Auto" LastChildFill="True">
+        <Grid Width="Auto" Height="Auto">
+            <dxg:GridControl Height="Auto"  x:Name="gdItemList" dx:ThemeManager.ThemeName="Office2007Blue" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="auto" >
+                <dxg:GridControl.Columns>
+                    <dxg:GridColumn UnboundType="Boolean" FieldName="IsSelectedItem" Width="40" AllowAutoFilter="False" AllowBestFit="False" AllowSorting="False"  
+                     HeaderTemplate="{StaticResource ViolationHeaderTemplate}"  VisibleIndex="0">
+                    </dxg:GridColumn>
+                    <dxg:GridColumn x:Name="gdColAssetSubClass" Width="250"  FieldName="CustomerUniqueID" AllowBestFit="True" Header=" Serial Number " BestFitMode="VisibleRows"  AllowEditing="False" AllowColumnFiltering ="False" />
+                    <dxg:GridColumn  x:Name="gdColCompanyAsserID" Width="200" FieldName="PrintStatus" AllowBestFit="True" Header=" Status " BestFitMode="VisibleRows"  AllowEditing="False"  AllowColumnFiltering ="False"/>
+                    
+                </dxg:GridControl.Columns>
+
+                <dxg:GridControl.View>
+                    <dxg:TableView x:Name="view" AllowGrouping="False" AllowDrop="False"  ShowGroupedColumns="False" AllowMoveColumnToDropArea="False"/>
+                </dxg:GridControl.View>
+            </dxg:GridControl>
+        </Grid>
+    </DockPanel>
+</UserControl>
+

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" ?>
+<nlog xmlns="http://www.nlog-project.org/schemas/NLog.xsd"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  autoReload="true" >
+
+  <targets async="true" >
+    <target name="KTSDCPrintFile" xsi:type="File"
+				layout=" ${level} ${date} ${message}"
+				fileName="${basedir}/logs/KTSDCPrint.txt"
+				archiveFileName="${basedir}/logs/KTSDCPrint.{#####}.txt"
+				archiveAboveSize="1000000"
+				archiveNumbering="Sequence"
+				concurrentWrites="true"
+				keepFileOpen="true"
+				maxArchiveFiles="5"
+				encoding="iso-8859-2" />
+
+  </targets>
+
+  <rules>
+    <!-- <logger name="*" minlevel="Trace" writeTo="Tracenetwork"/> -->
+    <logger name="*"  minlevel="Trace" writeTo="KTSDCPrintFile" />
+
+  </rules>
+</nlog>
+

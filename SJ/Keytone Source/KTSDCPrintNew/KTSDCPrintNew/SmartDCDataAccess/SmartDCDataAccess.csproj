@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C811875A-2563-471B-9398-54F6086FFAA6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KTone.DAL.SmartDCDataAccess</RootNamespace>
+    <AssemblyName>SmartDCDataAccess</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NLog, Version=1.0.0.505, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\3rd_Party\NLog\bin\net-2.0\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActiveDirectory.cs" />
+    <Compile Include="CompanyCustom.cs" />
+    <Compile Include="CompanyMaster.cs" />
+    <Compile Include="ComponentInstance.cs" />
+    <Compile Include="ComponentMaster.cs" />
+    <Compile Include="CustomFieldCatagory.cs" />
+    <Compile Include="CycleCount.cs" />
+    <Compile Include="CycleCountInstance.cs" />
+    <Compile Include="CycleCountInstanceDetails.cs" />
+    <Compile Include="CycleCountMaster.cs" />
+    <Compile Include="CycleCountMasterDetail.cs" />
+    <Compile Include="HandheldDevice.cs" />
+    <Compile Include="HHDetails.cs" />
+    <Compile Include="InventoryReport.cs" />
+    <Compile Include="ItemMaster.cs" />
+    <Compile Include="Location.cs" />
+    <Compile Include="LocationCategory.cs" />
+    <Compile Include="GTINSerialNo.cs" />
+    <Compile Include="LocationMonitor.cs" />
+    <Compile Include="OrderMaster.cs" />
+    <Compile Include="SmartDCLD.cs" />
+    <Compile Include="ProductCustom.cs" />
+    <Compile Include="ProductMaster.cs" />
+    <Compile Include="ReaderGroups.cs" />
+    <Compile Include="ReaderInstance.cs" />
+    <Compile Include="RegularExpression.cs" />
+    <Compile Include="Sequence.cs" />
+    <Compile Include="SKUCustom.cs" />
+    <Compile Include="SKUMaster.cs" />
+    <Compile Include="SSRSReport.cs" />
+    <Compile Include="UserDataView.cs" />
+    <Compile Include="UserdefiendValues.cs" />
+    <Compile Include="UserDefinedField.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserDefinedGroup.cs" />
+    <Compile Include="UserFielDGroupMap.cs" />
+    <Compile Include="Violation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KTIRFID\KTIRFID.csproj">
+      <Project>{F676B2F6-A2E6-4275-A02F-3F58EE6AD9B5}</Project>
+      <Name>KTIRFID</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\KTone.Framework\KTone.Core\XCrypt\XCrypt.csproj">
+      <Project>{8271438B-2FAF-49A5-AA59-6A454ECFBFB9}</Project>
+      <Name>XCrypt</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTDBBaseLib\KTDBBaseLib.csproj">
+      <Project>{7F2F15E3-E9C6-474A-B5C5-D0FCD3307CAF}</Project>
+      <Name>KTDBBaseLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RFIDGlobal\RFIDGlobal.csproj">
+      <Project>{F17BBF0E-FA42-4762-9EC6-64DEF7B5DFAF}</Project>
+      <Name>RFIDGlobal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
