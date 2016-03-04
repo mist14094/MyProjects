@@ -216,7 +216,7 @@ namespace SJDealStore
 
 
 
-        public string InsertMasterFile(string FileName)
+        public string InsertMasterFile(string FileName, string CategoryName)
         {
             Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
             var dataTable = new DataTable();
@@ -227,6 +227,7 @@ namespace SJDealStore
                 CommandType = CommandType.StoredProcedure
             };
             selectCommand.Parameters.AddWithValue("@FileName ", FileName);
+            selectCommand.Parameters.AddWithValue("@CategoryName ", CategoryName);
             var adapter = new SqlDataAdapter(selectCommand);
             var connection = new SqlConnection(_constants.RFIDString);
             selectCommand.Connection = connection;
@@ -258,7 +259,7 @@ namespace SJDealStore
         private string InsertMasterFileDetails(int MasterID, string CL1,
         string CL2,string CL3,string CL4,string CL5,string CL6,string CL7,string CL8,string CL9,string CL10,string CL11,string CL12,string CL13,
         string CL14,string CL15,string CL16,string CL17,string CL18,string CL19,string CL20,string CL21,string CL22,string CL23,string CL24,string CL25,
-        string CL26,string CL27,string CL28,string CL29,string CL30)
+        string CL26,string CL27,string CL28,string CL29,string CL30,string CategoryName)
         {
             Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
             var dataTable = new DataTable();
@@ -300,6 +301,7 @@ namespace SJDealStore
             selectCommand.Parameters.AddWithValue("@CL28", CL28);
             selectCommand.Parameters.AddWithValue("@CL29", CL29);
             selectCommand.Parameters.AddWithValue("@CL30", CL30);
+            selectCommand.Parameters.AddWithValue("@CategoryName", CategoryName);
             var adapter = new SqlDataAdapter(selectCommand);
             var connection = new SqlConnection(_constants.RFIDString);
             selectCommand.Connection = connection;
@@ -328,7 +330,7 @@ namespace SJDealStore
         }
 
 
-        public string InsertMasterFileDetails(DataTable dt, int MasterID)
+        public string InsertMasterFileDetails(DataTable dt, int MasterID,string CategoryName)
         {
             try
             {
@@ -467,9 +469,11 @@ namespace SJDealStore
                             flag++;
                          
                         }
+
+
                         var result = InsertMasterFileDetails(MasterID, CL1, CL2, CL3, CL4, CL5, CL6, CL7, CL8, CL9, CL10, CL11, CL12,
                         CL13, CL14, CL15, CL16, CL17, CL18, CL19, CL20, CL21, CL22, CL23, CL24, CL25,
-                        CL26, CL27, CL28, CL29, CL30);
+                        CL26, CL27, CL28, CL29, CL30,CategoryName);
 
                     
                     }
@@ -1347,7 +1351,43 @@ namespace SJDealStore
                     System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
             }
         }
+        public DataTable GetItemsToBeImportedToSquare()
+        {
+            Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            var dataTable = new DataTable();
+            var selectCommand = new SqlCommand
+            {
+                CommandText = string.Format(_constants.GetItemsToBeImportedToSquare)
+                ,
+                CommandTimeout = 180,
+                CommandType = CommandType.StoredProcedure
+            };
 
+            var adapter = new SqlDataAdapter(selectCommand);
+            var connection = new SqlConnection(_constants.RFIDString);
+            selectCommand.Connection = connection;
+            try
+            {
+                connection.Open();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                Nlog.Trace(
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Error", ex);
+                return null;
+            }
+            finally
+            {
+                connection.Close();
+                connection.Dispose();
+                Nlog.Trace(message:
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
+            }
+        }
 
     }
 }

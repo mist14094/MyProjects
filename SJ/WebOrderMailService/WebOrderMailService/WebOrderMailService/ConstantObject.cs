@@ -22,7 +22,7 @@ namespace WebOrderMailService
         public string strNoStockDefnMail = ConfigurationManager.AppSettings["NoStockDefnMail"].ToString();
         public string EmailTempl = ConfigurationManager.AppSettings["EmailTempl"].ToString();
         public string GetAllItemsToBeMailed =
-           "SELECT [MailItemID],increment_id AS order_id ,[item_id] ,[created_at] ,[product_id] ,[qty_ordered] ,[SKU] ,[Name] ,[Price] ,[Desc] ,[Short Desc] ,[URL] ,[Image]  ,[MailSentFlag] ,[MailSentTime],MailItems.ImportedTime  FROM [SJWebOrders].[dbo].[SJ_MailItems] MailItems INNER JOIN [SJWebOrders].[dbo].[sj_MailMaster] MailMaster ON MailItems.order_id = MailMaster.EntityID WHERE MailSentFlag = 0" ;
+           "SELECT [MailItemID],increment_id AS order_id ,[item_id] ,[created_at] ,[product_id] ,[qty_ordered] ,[SKU] ,[Name] ,[Price] ,[Desc] ,[Short Desc] ,[URL] ,[Image]  ,[MailSentFlag] ,[MailSentTime],MailItems.ImportedTime , ShippingMethod FROM [SJWebOrders].[dbo].[SJ_MailItems] MailItems INNER JOIN [SJWebOrders].[dbo].[sj_MailMaster] MailMaster ON MailItems.order_id = MailMaster.EntityID WHERE MailSentFlag = 0";
         public string GetInventoryOnHand =
             "SELECT sku as SKU, Stores.StoreID as [Store ID],Stores.KT_StoreName as [Store Name],COUNT(*) AS QOH FROM TrackerRetail.dbo.ProductItems " +
             "LEFT OUTER JOIN TrackerRetail.dbo.vwLocations ON TrackerRetail.dbo.vwLocations.ZoneID = TrackerRetail.dbo.ProductItems.ZoneID " +

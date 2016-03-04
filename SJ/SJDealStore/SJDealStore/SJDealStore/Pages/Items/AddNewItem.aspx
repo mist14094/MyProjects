@@ -104,12 +104,13 @@
             <div>
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Operations - Reports</h3>
+                        <h3 class="panel-title">Operations - Add New Items</h3>
                     </div>
                     <div class="panel-body">
                   
                         <asp:DropDownList ID="ddlFileSelect" runat="server" Width="50%" >
                         </asp:DropDownList>
+                        <br />
                         <br />
                         <br />
                         UPC<br />

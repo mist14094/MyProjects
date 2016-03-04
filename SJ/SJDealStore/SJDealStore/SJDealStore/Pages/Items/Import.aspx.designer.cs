@@ -13,13 +13,13 @@ namespace SJDealStore.Pages.Items {
     public partial class Import {
         
         /// <summary>
-        /// form1 control.
+        /// form2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form2;
         
         /// <summary>
         /// FileUploadControl control.
@@ -31,6 +31,24 @@ namespace SJDealStore.Pages.Items {
         protected global::System.Web.UI.WebControls.FileUpload FileUploadControl;
         
         /// <summary>
+        /// txtCategoryName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCategoryName;
+        
+        /// <summary>
+        /// rfValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfValidator;
+        
+        /// <summary>
         /// UploadButton control.
         /// </summary>
         /// <remarks>
@@ -40,15 +58,6 @@ namespace SJDealStore.Pages.Items {
         protected global::System.Web.UI.WebControls.Button UploadButton;
         
         /// <summary>
-        /// GridView1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
-        
-        /// <summary>
         /// StatusLabel control.
         /// </summary>
         /// <remarks>
@@ -56,5 +65,14 @@ namespace SJDealStore.Pages.Items {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label StatusLabel;
+        
+        /// <summary>
+        /// gdViewExcelValues control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gdViewExcelValues;
     }
 }

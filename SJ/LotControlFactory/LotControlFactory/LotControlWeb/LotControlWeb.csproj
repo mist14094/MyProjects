@@ -65,15 +65,46 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\flash\ZeroClipboard.swf" />
+    <Content Include="css\bootstrap-theme.css" />
+    <Content Include="css\bootstrap-theme.min.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\theme.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\customize.min.js" />
+    <Content Include="js\docs.min.js" />
+    <Content Include="js\ie-emulation-modes-warning.js" />
+    <Content Include="js\ie10-viewport-bug-workaround.js" />
+    <Content Include="js\ie8-responsive-file-warning.js" />
+    <Content Include="js\npm.js" />
+    <Content Include="js\raw-files.min.js" />
+    <Content Include="MainHome.aspx" />
+    <Content Include="POTagPrint.aspx" />
     <Content Include="Scan.aspx" />
     <Content Include="HomeWithPrint.aspx" />
     <Content Include="packages.config" />
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="css\bootstrap-theme.css.map" />
+    <Content Include="css\bootstrap-theme.min.css.map" />
+    <Content Include="css\bootstrap.css.map" />
+    <Content Include="css\bootstrap.min.css.map" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="HomeMaster.Master" />
+    <Content Include="Home.aspx" />
+    <Content Include="LotControl\Labels\POLabels.label" />
+    <Content Include="Labels\POLabels.label" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\PublishProfiles\LotControlFactory.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -82,12 +113,33 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Home.aspx" />
+    <Content Include="Home1.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HomeMaster.Master.cs">
+      <DependentUpon>HomeMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeMaster.Master.designer.cs">
+      <DependentUpon>HomeMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MainHome.aspx.cs">
+      <DependentUpon>MainHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MainHome.aspx.designer.cs">
+      <DependentUpon>MainHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="POTagPrint.aspx.cs">
+      <DependentUpon>POTagPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="POTagPrint.aspx.designer.cs">
+      <DependentUpon>POTagPrint.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Scan.aspx.cs">
       <DependentUpon>Scan.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -102,6 +154,14 @@
     <Compile Include="HomeWithPrint.aspx.designer.cs">
       <DependentUpon>HomeWithPrint.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Home1.aspx.cs">
+      <DependentUpon>Home1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home1.aspx.designer.cs">
+      <DependentUpon>Home1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -109,7 +169,6 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LotControlBusiness\LotControlBusiness.csproj">

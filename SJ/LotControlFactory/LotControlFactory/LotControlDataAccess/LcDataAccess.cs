@@ -175,5 +175,60 @@ namespace LotControlDataAccess
                     System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
             }
         }
+
+
+        public DataTable InsertLabelPrintLog(int numberoftags, bool chkPrint, int barcode,
+            string stockCode, string description, string quantity, string warehouse,
+            string lotnumber, string grnNumber, string supplier, string poNumber, string counts)
+        {
+            Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            var dataTable = new DataTable();
+            var selectCommand = new SqlCommand
+            {
+                CommandText = string.Format(_constants.InsertLabelPrintLog)
+                ,
+                CommandTimeout = 180,
+                CommandType = CommandType.StoredProcedure
+            };
+
+            selectCommand.Parameters.Add("@Numberoftags", poNumber);
+            selectCommand.Parameters.Add("@ChkPrint", chkPrint);
+            selectCommand.Parameters.Add("@Barcode", barcode);
+            selectCommand.Parameters.Add("@StockCode", stockCode);
+            selectCommand.Parameters.Add("@Description", description);
+            selectCommand.Parameters.Add("@Quantity", quantity);
+            selectCommand.Parameters.Add("@Warehouse", warehouse);
+            selectCommand.Parameters.Add("@Lotnumber", lotnumber);
+            selectCommand.Parameters.Add("@GrnNumber", grnNumber);
+            selectCommand.Parameters.Add("@Supplier", supplier);
+            selectCommand.Parameters.Add("@PoNumber", poNumber);
+            selectCommand.Parameters.Add("@Counts", counts);
+
+
+            var adapter = new SqlDataAdapter(selectCommand);
+            var connection = new SqlConnection(_constants.FactoryLotControlString);
+            selectCommand.Connection = connection;
+            try
+            {
+                connection.Open();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                Nlog.Trace(
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Error", ex);
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+                connection.Dispose();
+                Nlog.Trace(message:
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
+            }
+        }
     }
 }

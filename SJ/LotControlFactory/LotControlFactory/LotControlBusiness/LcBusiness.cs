@@ -60,5 +60,14 @@ namespace LotControlBusiness
             return _access.GetBarcodeDetails(barcode);
         }
 
+        public object InsertLabelPrintLog(int numberoftags, bool chkPrint, int barcode, string stockCode, string description, string quantity, string warehouse, string lotnumber, string grnNumber, string supplier, string poNumber, string counts)
+        {
+            _nlog.Trace(message:
+                this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            return _access.InsertLabelPrintLog(numberoftags, chkPrint, barcode,
+                stockCode, description, quantity, warehouse,
+                lotnumber, grnNumber, supplier, poNumber, counts);
+        }
     }
 }

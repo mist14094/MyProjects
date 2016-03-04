@@ -14,6 +14,7 @@ namespace LotControlWeb
     {
 
         LotControlBusiness.LcBusiness Business = new LcBusiness();
+        LotControlBusiness.Label Lbl = new LotControlBusiness.Label();
         private DymoAddInClass _dymoAddin = new DymoAddInClass();
         private DymoLabelsClass _dymoLabel = new DymoLabelsClass();
 
@@ -31,6 +32,7 @@ namespace LotControlWeb
         {
             if (TextBox1.Text != "")
             {
+               var lblll=  Lbl.GetLablelsForPo(Business.ImportItemsinPO(TextBox1.Text));
                 GridView1.DataSource = Business.ImportItemsinPO(TextBox1.Text);
                 GridView1.DataBind();
             }

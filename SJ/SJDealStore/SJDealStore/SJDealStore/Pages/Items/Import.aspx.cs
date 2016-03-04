@@ -23,11 +23,11 @@ namespace SJDealStore.Pages.Items
             string conStr = "";
             switch (Extension)
             {
-                case ".xls": //Excel 97-03
+                case ".XLS": //Excel 97-03
                     conStr = ConfigurationManager.ConnectionStrings["Excel03ConString"]
                              .ConnectionString;
                     break;
-                case ".xlsx": //Excel 07
+                case ".XLSX": //Excel 07
                     conStr = ConfigurationManager.ConnectionStrings["Excel07ConString"]
                               .ConnectionString;
                     break;
@@ -71,17 +71,27 @@ namespace SJDealStore.Pages.Items
                     string FolderPath = ConfigurationManager.AppSettings["FolderPath"];
                     string FilePath = Server.MapPath(FolderPath + FileName);
                     FileUploadControl.SaveAs(FilePath);
-                   var dt= Import_To_Grid(FilePath, Extension, "No");
-                    GridView1.DataSource = dt;
-                    GridView1.DataBind();
-                   Layer.InsertMasterFileDetails(dt, int.Parse(Layer.InsertMasterFile(FileName)));
+                   var dt= Import_To_Grid(FilePath.ToUpper(), Extension.ToUpper(), "No");
+                   gdViewExcelValues.DataSource = dt;
+                   gdViewExcelValues.DataBind();
+                   int masterFileId = int.Parse(Layer.InsertMasterFile(FileName, txtCategoryName.Text));
+                    Layer.InsertMasterFileDetails(dt, masterFileId, txtCategoryName.Text);
+                    Layer.SjDealsSaveSettings(masterFileId, false, "SJ PRICE : ",
+                        "MSRP : ",
+                        "34", "8", "7", "4", "5", DateTime.Now.ToString("yyyyMMd"));
+         ;
+
                    StatusLabel.Text = "Upload Successful";
                 }
                 catch (Exception ex)
                 {
-                    StatusLabel.Text = "Its not a Excel File" + ex.Message;
+                    StatusLabel.Text = "Its not a Excel File - " + ex.Message;
                 }
            
+            }
+            else
+            {
+                StatusLabel.Text = "Please select a File to Upload";
             }
         }
     }

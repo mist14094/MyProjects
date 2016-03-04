@@ -28,12 +28,7 @@ namespace SJDealStore.Pages.Items
                 ddlFileSelect.DataTextField = "FileName";
                 ddlFileSelect.DataValueField = "Sno";
                 ddlFileSelect.DataBind();
-            
-             
-
                 IntitilaizeValues();
-                
-             
             }
         }
 

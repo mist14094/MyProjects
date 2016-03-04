@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Web;
 using NLog;
 using System.IO;
+using System.Web.Configuration;
 
 namespace WebOrderMailService
 {
@@ -67,9 +68,37 @@ namespace WebOrderMailService
                         NoStockExistSendEmail(lineItems);
                     }
                 }
+
+                if((lineItems["ShippingMethod"]).ToString()==WebConfigurationManager.AppSettings["StorePickup"].ToString())
+                {
+                    SendTextMessage(lineItems);
+                }
             }
         }
 
+
+
+        public string SendTextMessage(DataRow lineItems)
+        {
+
+            var strHtml = WebConfigurationManager.AppSettings["TextMessageBody"].ToString();
+            try
+            {
+                var toAddress = WebConfigurationManager.AppSettings["TextToAddress"].ToString();
+                var emaillog = SjMailAlertLog(toAddress, "", "",
+                    "Store Pickup", strHtml, _constantObject.strMailType, "TextMessage");
+
+                if (emaillog.Rows.Count > 0)
+                {
+                    UpdateMailID(emaillog.Rows[0][0].ToString(), lineItems["MailItemID"].ToString());
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+            return strHtml;
+        }
         public string NoSkuSendEmail(DataRow lineItems)
         {
             // Response.Write("No SKU" + lineItems["SKU"].ToString() +" - " + lineItems["Name"].ToString() + "<br/>" + Environment.NewLine);

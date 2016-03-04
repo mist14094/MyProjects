@@ -64,5 +64,7 @@ namespace SJDealStore
 
         public string AddNewItems = "[Jarvis].[dbo].[SJDeals_AddItems]";
 
+        public string GetItemsToBeImportedToSquare = "[Jarvis].[dbo].[SJDeals_GetItemsToBeImportedToSquare]";
+
     }
 }

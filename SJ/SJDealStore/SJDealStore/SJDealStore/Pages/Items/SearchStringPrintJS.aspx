@@ -145,7 +145,7 @@
                 <div>
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Operations - Returns</h3>
+                            <h3 class="panel-title">Operations - Print Tags</h3>
                         </div>
                         <div class="panel-body">
                             Search Item
@@ -236,6 +236,10 @@
                                     <SortedDescendingCellStyle BackColor="#CAC9C9" />
                                     <SortedDescendingHeaderStyle BackColor="#00547E" />
                                 </asp:GridView>
+
+                                <br />
+                              Edit  <asp:HyperLink ID="hpOn" runat="server" NavigateUrl="SearchStringPrintJS.aspx?Edit=On">On</asp:HyperLink> | 
+&nbsp;<asp:HyperLink ID="hpOff" runat="server" NavigateUrl="SearchStringPrintJS.aspx">Off</asp:HyperLink>
 
                                 <br />
                             </div>

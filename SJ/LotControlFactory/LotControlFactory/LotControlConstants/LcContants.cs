@@ -38,5 +38,6 @@ namespace LotControlConstants
         public string GetLotDetails = "SELECT [LotTransactions].PurchaseOrderLin,[LotTransactions].StockCode,[LotTransactions].Warehouse,[LotTransactions].LotJob,[LotTransactions].TrnDate,[LotTransactions].Reference,[LotTransactions].JobPurchOrder,[LotTransactions].Supplier,GrnDetails.StockDescription,GrnDetails.QtyReceived,QtyUom,OrigGrnValue FROM    [SysproCompanyA].[dbo].[LotTransactions] LEFT OUTER JOIN SysproCompanyA..GrnDetails   ON SysproCompanyA.dbo.GrnDetails.PurchaseOrder = SysproCompanyA.dbo.LotTransactions.JobPurchOrder and SysproCompanyA.dbo.GrnDetails.StockCode = SysproCompanyA.dbo.LotTransactions.StockCode  where  JobPurchOrder='{0}' order by LotTransactions.PurchaseOrderLin";
         public string ImportItemsinPO = "ImportItemsinPO";
         public string GetBarcodeDetails = "SELECT *   FROM [FactoryLotControl].[dbo].[LotDetails] WHERE Sno={0}";
+        public string InsertLabelPrintLog = "InsertLabelPrintLog";
     }
 }
