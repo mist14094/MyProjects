@@ -14,7 +14,7 @@ namespace LotControlWeb
     {
 
         LotControlBusiness.LcBusiness Business = new LcBusiness();
-        LotControlBusiness.Label Lbl = new LotControlBusiness.Label();
+        LotControlBusiness.LineItem Lbl = new LotControlBusiness.LineItem();
         private DymoAddInClass _dymoAddin = new DymoAddInClass();
         private DymoLabelsClass _dymoLabel = new DymoLabelsClass();
 

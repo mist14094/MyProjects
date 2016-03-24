@@ -15,9 +15,8 @@ namespace LotControlWeb
     public partial class POTagPrint : System.Web.UI.Page
     {
 
-        private LotControlBusiness.LcBusiness Business = new LcBusiness();
-        private LotControlBusiness.Label Lbl = new LotControlBusiness.Label();
-
+        private LotControlBusiness.LineItem Lbl = new LotControlBusiness.LineItem();
+        LcBusiness Business = new LcBusiness();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,7 +25,12 @@ namespace LotControlWeb
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            btnPrint.Visible = false;
+            SearchPO();
+        }
+
+        private void SearchPO()
+        {
+            btnFinalize.Visible = false;
             if (txtPONumber.Text != "")
             {
                 var poItems = Lbl.GetLablelsForPo(Business.ImportItemsinPO(txtPONumber.Text));
@@ -35,7 +39,7 @@ namespace LotControlWeb
                 lblWarning.Text = poItems.Count.ToString() + " Items Found";
                 if (poItems.Count > 0)
                 {
-                    btnPrint.Visible = true;
+                    btnFinalize.Visible = true;
                 }
             }
         }
@@ -55,6 +59,22 @@ namespace LotControlWeb
                     e.Row.BackColor = System.Drawing.Color.Orange;
 
                 }
+
+
+                if ((bool)DataBinder.Eval(e.Row.DataItem, "OddNumberofTags") == true)
+                {
+                    e.Row.BackColor = System.Drawing.Color.LightBlue;
+
+                }
+
+                if ((bool) DataBinder.Eval(e.Row.DataItem, "isFinalized") == true)
+                {
+                    ((TextBox) e.Row.Cells[0].FindControl("AltUOM")).Enabled = false;
+                    ((Button)e.Row.Cells[0].FindControl("UpdateTxt")).Enabled = false;
+                }
+            
+
+
             }
         }
 
@@ -77,7 +97,7 @@ namespace LotControlWeb
 
         protected void btnPrint_Click(object sender, EventArgs e)
         {
-            int i = 0;
+           // int i = 0;
             foreach (GridViewRow gvr in GridView1.Rows)
             {
                 int numberoftags = int.Parse(((TextBox) gvr.Cells[0].FindControl("NoOfTags")).Text);
@@ -92,42 +112,41 @@ namespace LotControlWeb
                 string grnNumber = gvr.Cells[7].Text;
                 string supplier = gvr.Cells[8].Text;
                 string poNumber = txtPONumber.Text;
-                Printtags(numberoftags, chkPrint, barcode, stockCode, description, quantity, warehouse, lotnumber,
-                    grnNumber, supplier, poNumber,i.ToString());
-                i++;
+             //   Printtags(numberoftags, chkPrint, barcode, stockCode, description, quantity, warehouse, lotnumber,
+             //       grnNumber, supplier, poNumber,i.ToString());
+             //   i++;
             }
 
         }
 
-        private void Printtags(int numberoftags, bool chkPrint, int barcode,
-            string stockCode, string description, string quantity, string warehouse,
-            string lotnumber, string grnNumber, string supplier, string poNumber,string counts
-            )
+        protected void UpdateClick(object sender, System.EventArgs e)
         {
-            if (chkPrint)
+            //Get the button that raised the event
+            Button btn = (Button)sender;
+
+            //Get the row that contains this button
+            GridViewRow gvr = (GridViewRow)btn.NamingContainer;
+            Lbl.UpdateAltUOM(int.Parse(gvr.Cells[1].Text),float.Parse(((TextBox) gvr.Cells[0].FindControl("AltUOM")).Text));
+            SearchPO();
+        } 
+
+
+
+        protected void btnFinalize_Click(object sender, EventArgs e)
+        {
+            var poItems = Lbl.GetLablelsForPo(Business.ImportItemsinPO(txtPONumber.Text));
+            foreach ( LineItem item in poItems)
             {
-                ClientScript.RegisterStartupScript(GetType(), "hwa" +counts,
-                    "PrintTags('" +
-                    
-                  //  + HttpContext.Current.Request.Url.Scheme + ":\\\\\\\\" +
-                  //  HttpContext.Current.Request.Url.Authority + "\\\\" + "OverStock_1.label" 
-
-
-                    HttpContext.Current.Request.Url.AbsoluteUri.Replace(HttpContext.Current.Request.Url.LocalPath, WebConfigurationManager.AppSettings["LabelPath"]) + 
-                    "','" +barcode +
-                    "','Supplier : " + supplier + " | Total Quantity : " + quantity +
-                    "','LOT# " + lotnumber +
-                    "','" + stockCode +
-                    "','" + description +
-                    "','" + poNumber +
-                    "','" + grnNumber +
-                    "','" + numberoftags +
-                    "');",true);
-
-                Lbl.PrintLog(numberoftags, chkPrint, barcode,
-                stockCode, description, quantity, warehouse,
-                lotnumber, grnNumber, supplier, poNumber, counts);
+                item.FinalizeLine();
+                
             }
+            Response.Redirect(string.Format("poLabels.aspx?PONumber={0}", txtPONumber.Text));
+        }
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            Response.Cache.SetExpires(DateTime.Now.AddSeconds(-1));
+            Response.Cache.SetNoStore();
         }
     }
 }

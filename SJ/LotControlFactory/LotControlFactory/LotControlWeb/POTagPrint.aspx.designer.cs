@@ -76,12 +76,21 @@ namespace LotControlWeb {
         protected global::System.Web.UI.WebControls.Label lblNoLotNumber;
         
         /// <summary>
-        /// btnPrint control.
+        /// lblFlagOddNumberofTags control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPrint;
+        protected global::System.Web.UI.WebControls.Label lblFlagOddNumberofTags;
+        
+        /// <summary>
+        /// btnFinalize control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnFinalize;
     }
 }

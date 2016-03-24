@@ -10,9 +10,9 @@ using LotControlDataAccess;
 namespace LotControlBusiness
 {
     
-    public class Label
+    public class LineItem
     {
-        public int LabelId { get; set; }
+        public int LineItemId { get; set; }
         public string StockCode { get; set; }
         public string Description { get; set; }
         public int Quantity { get; set; }
@@ -30,13 +30,14 @@ namespace LotControlBusiness
         public string Notes { get; set; }
         public int TagsNeededForThisLine { get; set; }
         public float AltUOM { get; set; }
-
+        public string TagDenominations { get; set; }
         private string _tagqty = "N/A";
-        
+        public bool OddNumberofTags { get; set; }
+        public bool isFinalized { get; set; }
     
-        public List<Label> GetLablelsForPo(DataTable dt)
+        public List<LineItem> GetLablelsForPo(DataTable dt)
         {
-           List<Label> labels = new List<Label>();
+           List<LineItem> labels = new List<LineItem>();
             try
             {
 
@@ -45,9 +46,9 @@ namespace LotControlBusiness
 
                     foreach (DataRow row in dt.Rows)
                     {
-                        var lb = new Label
+                        var lb = new LineItem
                         {
-                            LabelId = int.Parse(row["Sno"].ToString().Trim()),
+                            LineItemId = int.Parse(row["Sno"].ToString().Trim()),
                             StockCode = row["StockCode"].ToString().Trim(),
                             Description = row["Description"].ToString().Trim(),
                             Quantity = int.Parse(row["Quantity"].ToString().Trim()),
@@ -63,7 +64,8 @@ namespace LotControlBusiness
                             TotalPrintedTickets = int.Parse(row["TotalPrintedTickets"].ToString().Trim()),
                             Uom = row["UOM"].ToString().Trim(),
                             Warehouse = row["Warehouse"].ToString().Trim(),
-                            AltUOM = float.Parse(row["AltUOM"].ToString().Trim())
+                            AltUOM = float.Parse(row["AltUOM"].ToString().Trim()),
+                           isFinalized = bool.Parse(row["isFinalized"].ToString().Trim())
 
                         };
 
@@ -97,7 +99,16 @@ namespace LotControlBusiness
 
                         if (lb.AltUOM >= 100)
                         {
-                            lb.TagsNeededForThisLine = (int) Math.Round(lb.Quantity/lb.AltUOM, MidpointRounding.ToEven);
+                            lb.TagsNeededForThisLine = (int) (lb.Quantity/lb.AltUOM);
+                            lb.TagDenominations = lb.AltUOM.ToString() + " X " + lb.TagsNeededForThisLine.ToString();
+                            lb.OddNumberofTags = false;
+                            if (lb.Quantity%lb.AltUOM > 0)
+                            {
+                                lb.TagsNeededForThisLine++;
+                                lb.TagDenominations = lb.TagDenominations + " + " + lb.Quantity%lb.AltUOM + " X 1";
+                                lb.OddNumberofTags = true;
+                            }
+                            lb.TagDenominations = lb.TagDenominations +" "+ lb.Uom;
                         }
                         else
                         {
@@ -123,16 +134,18 @@ namespace LotControlBusiness
             return labels;
         }
 
-        public void PrintLog(int numberoftags, bool chkPrint, int barcode,
-            string stockCode, string description, string quantity, string warehouse,
-            string lotnumber, string grnNumber, string supplier, string poNumber, string counts)
+        public void UpdateAltUOM(int Barcode, float NewQuantity)
         {
-            LcBusiness  business = new LcBusiness();
-            var result = business.InsertLabelPrintLog(numberoftags, chkPrint, barcode,
-                stockCode, description, quantity, warehouse,
-                lotnumber, grnNumber, supplier, poNumber, counts);
+            LcBusiness business = new LcBusiness();
+            business.UpdateAltUOM(Barcode, NewQuantity);
         }
 
+        public void FinalizeLine()
+        {
+            LcBusiness business = new LcBusiness();
+            business.updateFinalized(this.LineItemId);
+        }
+     
 
     }
 

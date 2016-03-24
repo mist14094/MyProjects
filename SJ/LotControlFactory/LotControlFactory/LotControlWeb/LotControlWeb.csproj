@@ -83,6 +83,7 @@
     <Content Include="js\raw-files.min.js" />
     <Content Include="MainHome.aspx" />
     <Content Include="POTagPrint.aspx" />
+    <Content Include="POLabels.aspx" />
     <Content Include="Scan.aspx" />
     <Content Include="HomeWithPrint.aspx" />
     <Content Include="packages.config" />
@@ -139,6 +140,13 @@
     </Compile>
     <Compile Include="POTagPrint.aspx.designer.cs">
       <DependentUpon>POTagPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="POLabels.aspx.cs">
+      <DependentUpon>POLabels.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="POLabels.aspx.designer.cs">
+      <DependentUpon>POLabels.aspx</DependentUpon>
     </Compile>
     <Compile Include="Scan.aspx.cs">
       <DependentUpon>Scan.aspx</DependentUpon>

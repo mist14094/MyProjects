@@ -69,5 +69,32 @@ namespace LotControlBusiness
                 stockCode, description, quantity, warehouse,
                 lotnumber, grnNumber, supplier, poNumber, counts);
         }
+
+
+        public DataTable UpdateAltUOM(int barcode, float quantity)
+        {
+            _nlog.Trace(message:
+              this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+              System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            return _access.UpdateAltUOM(barcode,quantity);
+        }
+
+        public DataTable updateFinalized(int barcode)
+        {
+            _nlog.Trace(message:
+              this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+              System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            return _access.updateFinalized(barcode);
+        }
+
+        public  DataTable GetLabelForPO(string poNumber)
+        {
+            _nlog.Trace(message:
+                this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            return _access.GetLabelForPO(poNumber);
+
+        }
+
     }
 }

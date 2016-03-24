@@ -39,5 +39,8 @@ namespace LotControlConstants
         public string ImportItemsinPO = "ImportItemsinPO";
         public string GetBarcodeDetails = "SELECT *   FROM [FactoryLotControl].[dbo].[LotDetails] WHERE Sno={0}";
         public string InsertLabelPrintLog = "InsertLabelPrintLog";
+        public string UpdateAltUOM = "UPDATE dbo.LotDetails SET AltUOM={0} WHERE Sno={1}";
+        public string updateFinalized = "  UPDATE dbo.LotDetails SET [IsFinalized]=1 WHERE Sno={0}";
+        public string GetLabelForPO = "GetLabelForPO";
     }
 }
