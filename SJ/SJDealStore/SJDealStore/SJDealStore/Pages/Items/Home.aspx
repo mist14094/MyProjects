@@ -97,7 +97,8 @@
                <br/>  <br/>
                <asp:Button ID="Button7" runat="server" Text="Manage Manifest" type="button" class="btn btn-lg btn-success" style="width: 90%;" OnClick="Button7_Click"/>
  <br/>  <br/>
-             
+              <asp:Button ID="Button9" runat="server" Text="Add Item with Print" type="button" class="btn btn-lg btn-success" style="width: 90%;" OnClick="Button9_Click"/>
+ <br/>  <br/>
           <br/></center>
         </p>
     </div>

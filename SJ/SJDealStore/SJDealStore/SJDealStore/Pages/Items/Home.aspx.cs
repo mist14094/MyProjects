@@ -28,8 +28,8 @@ namespace SJDealStore.Pages.Items
         {
             Response.Redirect("SearchString.aspx");
         }
-        
-        
+
+
         protected void Button4_Click(object sender, EventArgs e)
         {
             Response.Redirect("SearchStringPrintJS.aspx");
@@ -49,10 +49,15 @@ namespace SJDealStore.Pages.Items
         {
             Response.Redirect("ManageManifest.aspx");
         }
-        
+
         protected void Button8_Click(object sender, EventArgs e)
         {
             Response.Redirect("AddNewItem.aspx");
+        }
+
+        protected void Button9_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AddNewItemWithPrint.aspx");
         }
     }
 }

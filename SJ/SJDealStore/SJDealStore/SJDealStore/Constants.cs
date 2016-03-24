@@ -63,6 +63,7 @@ namespace SJDealStore
         public string DeleteManifestItem = "DELETE FROM [Jarvis].[dbo].[SJDeals_ManifestDetail]   WHERE sno={0}";
 
         public string AddNewItems = "[Jarvis].[dbo].[SJDeals_AddItems]";
+        public string AddItemsWithReceiving = "[Jarvis].[dbo].[SJDeals_AddItemsWithReceiving]";
 
         public string GetItemsToBeImportedToSquare = "[Jarvis].[dbo].[SJDeals_GetItemsToBeImportedToSquare]";
 
