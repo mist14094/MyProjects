@@ -187,7 +187,7 @@
                         <br/> 
                         
                           Number of Units <br />
-                        <asp:TextBox ID="txtNoOfUnits" runat="server" Text="1" Width="70%"></asp:TextBox>
+                        <asp:TextBox ID="txtNoOfUnits" runat="server" Width="70%"></asp:TextBox>
                         &nbsp;
                         <asp:RequiredFieldValidator  Display="Dynamic" ID="RequiredFieldValidator5" runat="server" ErrorMessage="No of Units Required" ControlToValidate="txtNoOfUnits"></asp:RequiredFieldValidator>
                      

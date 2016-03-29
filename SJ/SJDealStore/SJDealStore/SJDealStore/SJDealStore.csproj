@@ -77,6 +77,7 @@
     <Content Include="Pages\dist\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Pages\dist\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Pages\Items\AddNewItemWithPrint.aspx" />
+    <Content Include="Pages\Items\ShopKeepImport.aspx" />
     <Content Include="Pages\Items\ManageManifest.aspx" />
     <Content Include="Pages\Items\Import.aspx" />
     <Content Include="Pages\Items\OverStock_1.xml">
@@ -114,6 +115,7 @@
     <Content Include="OverStock_1.label" />
     <Content Include="Pages\Templ.xlsx" />
     <None Include="Properties\PublishProfiles\SJDealStore.pubxml" />
+    <Content Include="Pages\ShopKeep.csv" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -263,6 +265,13 @@
     <Compile Include="Pages\Items\AddNewItemWithPrint.aspx.designer.cs">
       <DependentUpon>AddNewItemWithPrint.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Items\ShopKeepImport.aspx.cs">
+      <DependentUpon>ShopKeepImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Items\ShopKeepImport.aspx.designer.cs">
+      <DependentUpon>ShopKeepImport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Items\ManageManifest.aspx.cs">
       <DependentUpon>ManageManifest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -359,6 +368,7 @@
     <Compile Include="Pages\Items\Returns.aspx.designer.cs">
       <DependentUpon>Returns.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ShopKeep.cs" />
     <Compile Include="SquareSjApi.cs" />
   </ItemGroup>
   <ItemGroup>

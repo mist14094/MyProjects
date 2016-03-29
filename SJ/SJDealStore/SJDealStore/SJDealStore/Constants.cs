@@ -67,5 +67,10 @@ namespace SJDealStore
 
         public string GetItemsToBeImportedToSquare = "[Jarvis].[dbo].[SJDeals_GetItemsToBeImportedToSquare]";
 
+        public string ShopKeepImport = "[Jarvis].[dbo].[SJDeals_ShopKeepImport]";
+        public string ShopKeepDataDelete = "DELETE FROM [Jarvis].[dbo].[ShopKeep]";
+
+         public string GetShopKeepItems = "[Jarvis].[dbo].[SJDeals_GetShopKeepItems]";
+
     }
 }
