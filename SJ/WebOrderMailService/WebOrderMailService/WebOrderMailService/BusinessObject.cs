@@ -151,7 +151,7 @@ namespace WebOrderMailService
 
             try
             {
-                string storeid = qoh.Select("QOH=min(QOH)")[0]["Store ID"].ToString();
+                string storeid = qoh.Select("QOH=max(QOH)")[0]["Store ID"].ToString();
                 var toAddress = GetUserNameForStoreId(storeid);
                 var emaillog = SjMailAlertLog(toAddress.Rows[0][0].ToString(), _constantObject.strCcAddress, _constantObject.strBccAddress,
                     _constantObject.strSubject, strHtml, _constantObject.strMailType, "StockExistSendEmail");
