@@ -93,7 +93,7 @@ namespace WebOrderMailService
                     UpdateMailID(emaillog.Rows[0][0].ToString(), lineItems["MailItemID"].ToString());
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
             }
@@ -124,7 +124,7 @@ namespace WebOrderMailService
                     UpdateMailID(emaillog.Rows[0][0].ToString(), lineItems["MailItemID"].ToString());
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
             }
@@ -161,7 +161,7 @@ namespace WebOrderMailService
                     UpdateMailID(emaillog.Rows[0][0].ToString(), lineItems["MailItemID"].ToString());
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
             }
@@ -194,7 +194,7 @@ namespace WebOrderMailService
                     UpdateMailID(emaillog.Rows[0][0].ToString(), lineItems["MailItemID"].ToString());
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
             }

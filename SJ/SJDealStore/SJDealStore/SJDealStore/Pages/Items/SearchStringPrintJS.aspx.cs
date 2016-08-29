@@ -300,7 +300,51 @@ namespace SJDealStore.Pages.Items
 
         protected void grdResult_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-          
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+               
+                string Barcode = e.Row.Cells[int.Parse(ddlBarcode.SelectedValue)].Text;
+                string SKUNumber = e.Row.Cells[int.Parse(ddlOrginal.SelectedValue)].Text;
+                string Desc = e.Row.Cells[int.Parse(ddlDesc.SelectedValue)].Text;
+                string Price = e.Row.Cells[int.Parse(ddlPrice.SelectedValue)].Text.Replace("$","");
+                string MSRP = e.Row.Cells[int.Parse(OrgPrice.SelectedValue)].Text.Replace("$","");
+                string FileNumber = ddlFileSelect.SelectedValue;
+
+                TableCell cell = new TableCell();
+                HyperLink hlEdit = new HyperLink();
+                hlEdit.Target = "_blank";
+                
+                hlEdit.NavigateUrl = string.Format("EditItemWithPrint.aspx?Barcode={0}&SKUNumber={1}&Desc={2}&Price={3}&MSRP={4}&FileNumber={5}",
+                    Barcode, SKUNumber, Desc, Price, MSRP, FileNumber);
+                hlEdit.Text = "Edit";
+                cell.Text = "TestH";
+                cell.Controls.Add(hlEdit);
+                e.Row.Cells.Add(cell);
+
+
+
+
+                TableCell cell1 = new TableCell();
+                HyperLink hlEdit1 = new HyperLink();
+                hlEdit1.Target = "_blank";
+
+                hlEdit1.NavigateUrl = string.Format("CopyItemWithPrint.aspx?Barcode={0}&SKUNumber={1}&Desc={2}&Price={3}&MSRP={4}&FileNumber={5}",
+                    Barcode, SKUNumber, Desc, Price, MSRP, FileNumber);
+                hlEdit1.Text = "Copy";
+                cell1.Text = "TestH";
+                cell1.Controls.Add(hlEdit1);
+                e.Row.Cells.Add(cell1);
+            }
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                TableHeaderCell hcell = new TableHeaderCell();
+                hcell.Text = "Edit";
+                e.Row.Cells.Add(hcell);
+
+                TableHeaderCell hcell1 = new TableHeaderCell();
+                hcell1.Text = "Copy";
+                e.Row.Cells.Add(hcell1);
+            }
         }
     }
 }

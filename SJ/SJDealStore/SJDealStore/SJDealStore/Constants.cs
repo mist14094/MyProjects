@@ -71,6 +71,7 @@ namespace SJDealStore
         public string ShopKeepDataDelete = "DELETE FROM [Jarvis].[dbo].[ShopKeep]";
 
          public string GetShopKeepItems = "[Jarvis].[dbo].[SJDeals_GetShopKeepItems]";
+         public string EditItemsWithReceiving = "[Jarvis].[dbo].[SJDeals_EditItemsWithReceiving]";
 
     }
 }

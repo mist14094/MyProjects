@@ -42,5 +42,7 @@ namespace LotControlConstants
         public string UpdateAltUOM = "UPDATE dbo.LotDetails SET AltUOM={0} WHERE Sno={1}";
         public string updateFinalized = "  UPDATE dbo.LotDetails SET [IsFinalized]=1 WHERE Sno={0}";
         public string GetLabelForPO = "GetLabelForPO";
+        public string GetJobDetails ="GetJobDetails";
+        public string GetJobMasterDetails = " SELECT a.*,b.StockUom FROM [SysproCompanyA].[dbo].WipMaster a LEFT OUTER JOIN [SysproCompanyA].[dbo].InvMaster b ON b.StockCode = a.StockCode WHERE  Job='{0}'";
     }
 }

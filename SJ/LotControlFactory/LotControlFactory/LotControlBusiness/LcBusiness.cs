@@ -96,5 +96,24 @@ namespace LotControlBusiness
 
         }
 
+
+        public DataTable GetJobDetails(string jobNumber)
+        {
+            _nlog.Trace(message:
+                this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            return _access.GetJobDetails(jobNumber);
+
+        }
+
+        public DataTable GetJobMasterDetails(string jobNumber)
+        {
+            _nlog.Trace(message:
+                this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            return _access.GetJobMasterDetails(jobNumber);
+
+        }
+
     }
 }

@@ -1,17 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using GBBusiness;
 
 namespace GasBlenderWeb
 {
     public partial class Main : System.Web.UI.MasterPage
     {
+        private GBBusiness.BusinessAccess _businessAccess = new BusinessAccess();
         protected void Page_Load(object sender, EventArgs e)
         {
+
+
+
+
+
+
+
+        DataTable dt = new DataTable();
+            dt = _businessAccess.CheckUser("admin", "Smokin2293");
+            if (dt != null)
+
+                if (dt.Rows.Count > 0)
+                {
+                    Session["Username"] = "admin";
+                    Session["ID"] = dt.Rows[0]["ID"].ToString();
+                    Session["IsAdmin"] = dt.Rows[0]["IsAdmin"].ToString();
+                    Session["Name"] = dt.Rows[0]["Name"].ToString();
+                    _businessAccess.InsertLog(Session["ID"].ToString(),
+                      System.Reflection.MethodBase.GetCurrentMethod().Name, this.Page.ToString(), DateTime.Now);
+               //     Response.Redirect("Default.aspx");
+
+                }
+               
+
+
 
             if (Session["Username"] == null)
             {

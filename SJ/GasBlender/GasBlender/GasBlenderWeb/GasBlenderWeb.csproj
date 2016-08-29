@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -1207,6 +1208,7 @@
     <Content Include="bin\GBData.dll" />
     <Content Include="bin\GBData.pdb" />
     <Content Include="bin\NLog.dll" />
+    <Content Include="ReceiveTruck_NewPage.aspx" />
     <Content Include="ReceiveTruck.aspx" />
     <Content Include="ReceiveTruckOLDSunday.aspx" />
     <Content Include="Images\calendar.png" />
@@ -2364,6 +2366,7 @@
     <Content Include="BOLReport.aspx" />
     <Content Include="TransactionReport.aspx" />
     <Content Include="SetupUser.aspx" />
+    <Content Include="WebForm1.aspx" />
     <Content Include="WebForm3.aspx" />
     <Content Include="WReceiveTruck.aspx" />
     <Content Include="SetupCarrier.aspx" />
@@ -2403,6 +2406,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ReceiveTruck_NewPage.aspx.cs">
+      <DependentUpon>ReceiveTruck_NewPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReceiveTruck_NewPage.aspx.designer.cs">
+      <DependentUpon>ReceiveTruck_NewPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ReceiveTruck.aspx.cs">
       <DependentUpon>ReceiveTruck.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2563,6 +2573,13 @@
     </Compile>
     <Compile Include="SetupUser.aspx.designer.cs">
       <DependentUpon>SetupUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm3.aspx.cs">
       <DependentUpon>WebForm3.aspx</DependentUpon>

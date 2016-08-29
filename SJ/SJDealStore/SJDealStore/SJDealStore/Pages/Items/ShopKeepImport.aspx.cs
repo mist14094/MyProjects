@@ -52,7 +52,7 @@ namespace SJDealStore.Pages.Items
                 try
                 {
 
-
+                    string StoreID = ddlStoreID.SelectedValue;
                     string FileName = Path.GetFileName(FileUploadControl.PostedFile.FileName);
                     string Extension = Path.GetExtension(FileUploadControl.PostedFile.FileName);
                     string FolderPath = ConfigurationManager.AppSettings["FolderPath"];
@@ -79,7 +79,7 @@ namespace SJDealStore.Pages.Items
                     StatusLabel.Text = "Upload Successful";
 
 
-                    dt = Layer.GetShopKeepItems();
+                    dt = Layer.GetShopKeepItems(StoreID);
                     gdViewExcelValues.DataSource = dt;
                     gdViewExcelValues.DataBind();
 
@@ -89,7 +89,7 @@ namespace SJDealStore.Pages.Items
                     Response.AddHeader("content-disposition", "attachment;filename=ShopKeepImport.csv");
                     Response.Charset = "";
                     Response.ContentType = "application/text";
-                    Response.Output.Write(Layer.GetShopKeepItemsCSV());
+                    Response.Output.Write(Layer.GetShopKeepItemsCSV(StoreID));
 
                     Response.Flush();
 

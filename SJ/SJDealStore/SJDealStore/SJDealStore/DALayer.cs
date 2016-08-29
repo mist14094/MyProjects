@@ -1396,6 +1396,57 @@ namespace SJDealStore
                     System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
             }
         }
+
+
+        public DataTable EditItemsWithReceiving(string skuNumber, string descr, string msrp, string sjPrice, string masterId, int NoOfItems,int LineNo)
+        {
+            Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            var dataTable = new DataTable();
+            var selectCommand = new SqlCommand
+            {
+                CommandText = string.Format(_constants.EditItemsWithReceiving)
+                ,
+                CommandTimeout = 180,
+                CommandType = CommandType.StoredProcedure
+            };
+
+            selectCommand.Parameters.Add("@SKUNumber", skuNumber);
+            selectCommand.Parameters.Add("@Descr", descr);
+            selectCommand.Parameters.Add("@MSRP", msrp);
+            selectCommand.Parameters.Add("@SJPrice", sjPrice);
+            selectCommand.Parameters.Add("@MasterID", masterId);
+            selectCommand.Parameters.Add("@TotalUnits", NoOfItems);
+            selectCommand.Parameters.Add("@LineNo", LineNo);
+            var adapter = new SqlDataAdapter(selectCommand);
+            var connection = new SqlConnection(_constants.RFIDString);
+            selectCommand.Connection = connection;
+            try
+            {
+                connection.Open();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                Nlog.Trace(
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Error", ex);
+                return null;
+            }
+            finally
+            {
+                connection.Close();
+                connection.Dispose();
+                Nlog.Trace(message:
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
+            }
+        }
+
+
+
+
+
         public DataTable GetItemsToBeImportedToSquare()
         {
             Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");

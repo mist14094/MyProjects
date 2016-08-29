@@ -76,6 +76,8 @@
     <Content Include="Pages\dist\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Pages\dist\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Pages\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Pages\Items\CopyItemWithPrint.aspx" />
+    <Content Include="Pages\Items\EditItemWithPrint.aspx" />
     <Content Include="Pages\Items\AddNewItemWithPrint.aspx" />
     <Content Include="Pages\Items\ShopKeepImport.aspx" />
     <Content Include="Pages\Items\ManageManifest.aspx" />
@@ -258,6 +260,20 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="DALayer.cs" />
+    <Compile Include="Pages\Items\CopyItemWithPrint.aspx.cs">
+      <DependentUpon>CopyItemWithPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Items\CopyItemWithPrint.aspx.designer.cs">
+      <DependentUpon>CopyItemWithPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Items\EditItemWithPrint.aspx.cs">
+      <DependentUpon>EditItemWithPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Items\EditItemWithPrint.aspx.designer.cs">
+      <DependentUpon>EditItemWithPrint.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Items\AddNewItemWithPrint.aspx.cs">
       <DependentUpon>AddNewItemWithPrint.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

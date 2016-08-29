@@ -111,6 +111,13 @@
                   
                       
                             <div>
+                                Select Store
+                                <asp:DropDownList ID="ddlStoreID" runat="server">
+                                    <asp:ListItem Value="11">Laxxx Shax</asp:ListItem>
+                                    <asp:ListItem Value="13">Indian Trading Post</asp:ListItem>
+                                </asp:DropDownList>
+                               
+                                <br />
                                 File Name
      <asp:FileUpload id="FileUploadControl" runat="server" Width="50%"/>
                                 

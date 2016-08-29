@@ -7,7 +7,7 @@
    
 
     <div class="input-group">
-        <span class="input-group-addon" id="basic-addon1">Type a PO Number</span>
+        <span class="input-group-addon" id="basic-addon1">JobDetailsType a PO Number</span>
         <asp:TextBox ID="txtPONumber" runat="server" type="text" Text="016656" class="form-control" placeholder="PO Number" aria-describedby="basic-addon1"></asp:TextBox>
     </div>
     <asp:RequiredFieldValidator ID="rfvPONumber" runat="server" ErrorMessage="* Need a PO Number" class="center-block" ControlToValidate="txtPONumber"></asp:RequiredFieldValidator>

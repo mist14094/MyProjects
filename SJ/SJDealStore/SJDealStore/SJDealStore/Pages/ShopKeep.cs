@@ -76,7 +76,7 @@ namespace SJDealStore
             }
         }
 
-        public DataTable GetShopKeepItems()
+        public DataTable GetShopKeepItems(string StoreID)
         {
             Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
             var dataTable = new DataTable();
@@ -88,7 +88,7 @@ namespace SJDealStore
                 CommandType = CommandType.StoredProcedure
             };
 
-      
+            selectCommand.Parameters.AddWithValue("@StoreID", StoreID);
             var adapter = new SqlDataAdapter(selectCommand);
             var connection = new SqlConnection(_constants.RFIDString);
             selectCommand.Connection = connection;
@@ -154,10 +154,10 @@ namespace SJDealStore
             }
         }
 
-        public string GetShopKeepItemsCSV()
+        public string GetShopKeepItemsCSV(string StoreID)
         {
             DataTable table = new DataTable();
-            table = GetShopKeepItems();
+            table = GetShopKeepItems(StoreID);
             var result = new StringBuilder();
             for (int i = 0; i < table.Columns.Count; i++)
             {

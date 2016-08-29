@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -82,6 +83,7 @@
     <Content Include="js\npm.js" />
     <Content Include="js\raw-files.min.js" />
     <Content Include="MainHome.aspx" />
+    <Content Include="JobDetails.aspx" />
     <Content Include="POTagPrint.aspx" />
     <Content Include="POLabels.aspx" />
     <Content Include="Scan.aspx" />
@@ -133,6 +135,13 @@
     </Compile>
     <Compile Include="MainHome.aspx.designer.cs">
       <DependentUpon>MainHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JobDetails.aspx.cs">
+      <DependentUpon>JobDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JobDetails.aspx.designer.cs">
+      <DependentUpon>JobDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="POTagPrint.aspx.cs">
       <DependentUpon>POTagPrint.aspx</DependentUpon>

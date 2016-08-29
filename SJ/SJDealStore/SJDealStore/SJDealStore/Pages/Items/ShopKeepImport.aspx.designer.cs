@@ -22,6 +22,15 @@ namespace SJDealStore.Pages.Items {
         protected global::System.Web.UI.HtmlControls.HtmlForm form2;
         
         /// <summary>
+        /// ddlStoreID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlStoreID;
+        
+        /// <summary>
         /// FileUploadControl control.
         /// </summary>
         /// <remarks>
