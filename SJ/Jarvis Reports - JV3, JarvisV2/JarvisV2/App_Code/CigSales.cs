@@ -39,6 +39,27 @@ public class CigrteSales
         return null;
     }
 
+    public List<CigrteSales> GetCigarSalesData()
+    {
+        string _RFIDSystem = ConfigurationManager.ConnectionStrings["RFIDString"].ConnectionString;
+        DataTable allData = new DataTable();
+        SqlConnection connection = new SqlConnection(_RFIDSystem);
+        try
+        {
+            SqlCommand cmd = new SqlCommand(" SELECT * FROM [Jarvis].[dbo].[SJ_CigarSales]", connection);
+            cmd.CommandType = CommandType.Text;
+            //cmd.Parameters.Add(new SqlParameter("@numberofdays", NoOfDays));
+            connection.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(allData);
+            return GetCigSales(allData);
+        }
+        catch (Exception ex)
+        { }
+
+        return null;
+    }
+
 
     private List<CigrteSales> GetCigSales(DataTable dt)
     {
@@ -47,17 +68,27 @@ public class CigrteSales
         {
             foreach (DataRow row in dt.Rows)
             {
-                CigrteSales sales = new CigrteSales();
-                sales.TicketDate = (DateTime) row["TicketDate"];
-                sales.Store = (int) row["Store"];
-                sales.Sku = (string) row["sku"];
-                sales.Upc = (string)row["upc"];
-                sales.SkuDesc = (string) row["sku_dsc"];
-                sales.TotalUnits = (int) row["TotalUnits"];
-                sales.TotalDollars = (decimal) row["TotalDollars"];
-                sales.GrossProfit = (decimal) row["GrossProfit"];
-                sales.DateCreated = (DateTime) row["DateCreated"];
-                list.Add(sales);
+
+                try
+                {
+                    CigrteSales sales = new CigrteSales();
+
+                    sales.TicketDate = (DateTime) row["TicketDate"];
+                    sales.Store = (int) row["Store"];
+                    sales.Sku = (string) row["sku"];
+                    sales.Upc = (string) row["upc"];
+                    sales.SkuDesc = (string) row["sku_dsc"];
+                    sales.TotalUnits = (int) row["TotalUnits"];
+                    sales.TotalDollars = (decimal) row["TotalDollars"];
+                    sales.GrossProfit = (decimal) row["GrossProfit"];
+                    sales.DateCreated = (DateTime) row["DateCreated"];
+                    list.Add(sales);
+                }
+                catch (Exception ex)
+                {
+                    
+                }
+
             }
         }
         return list;

@@ -6,7 +6,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Coupon Sales Report</title>
+    <title>Cig. Sales Report</title>
     <link rel="stylesheet" type="text/css" href="//www.shieldui.com/shared/components/latest/css/shieldui-all.min.css" />
     <link rel="stylesheet" type="text/css" href="//www.shieldui.com/shared/components/latest/css/light-mint/all.min.css" />
     <script type="text/javascript" src="//www.shieldui.com/shared/components/latest/js/jquery-1.10.2.min.js"></script>
@@ -82,16 +82,44 @@
         
  <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
-
+        <center>
         Select Store
 
         <asp:DropDownList ID="ddlStoreID" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlStoreID_SelectedIndexChanged"></asp:DropDownList>
-    <shield:ShieldChart ID="ShieldChart1" Width="100%" Height="900px" runat="server"
+   &nbsp; &nbsp;From Date
+        <asp:TextBox ID="StartDate" runat="server" AutoPostBack="True"></asp:TextBox>
+          
+            <ajaxToolkit:CalendarExtender ID="StartDate_CalendarExtender" runat="server" Enabled="True" TargetControlID="StartDate">
+            </ajaxToolkit:CalendarExtender>
+      &nbsp;   &nbsp;End Date
+           <asp:TextBox ID="EndDate" runat="server" AutoPostBack="True"></asp:TextBox>
+
+            <ajaxToolkit:CalendarExtender ID="EndDate_CalendarExtender" runat="server" Enabled="True" TargetControlID="EndDate">
+            </ajaxToolkit:CalendarExtender>
+
+        &nbsp;&nbsp; <asp:ImageButton ID="imbDownloadExcel" Height="24px" runat="server" ImageUrl="~/images/Excel.gif" OnClick="imbDownloadExcel_Click"  />
+
+        </center>
+        
+        <div id="Chart" runat="server" Visible="True">
+&nbsp;<shield:ShieldChart ID="ShieldChart1" Width="100%" Height="900px" runat="server"
     CssClass="chart" >
    
-</shield:ShieldChart>
+</shield:ShieldChart><br/><b>
        <div style="font-family:Segoe UI, Tahoma, Verdana, sans-serif;font-size:12px;cursor:pointer;color:#3E576F;fill:#3E576F;">
-        <asp:Panel ID="Panel2" runat="server" CssClass="collapsePanelHeader" Height="30px"> 
+            Brand&nbsp;  <asp:DropDownList ID="ddlBrand" runat="server" OnSelectedIndexChanged="ddlBrand_SelectedIndexChanged"></asp:DropDownList>
+            Style&nbsp;   <asp:DropDownList ID="ddlStyle" runat="server" OnSelectedIndexChanged="ddlStyle_SelectedIndexChanged"></asp:DropDownList>
+            Box/Soft&nbsp;   <asp:DropDownList ID="ddlBS" runat="server" OnSelectedIndexChanged="ddlBS_SelectedIndexChanged"></asp:DropDownList>
+            King/100&nbsp;   <asp:DropDownList ID="ddlK100" runat="server" OnSelectedIndexChanged="ddlK100_SelectedIndexChanged"></asp:DropDownList>
+            Menthol&nbsp;   <asp:DropDownList ID="ddlMenthol" runat="server" OnSelectedIndexChanged="ddlMenthol_SelectedIndexChanged"></asp:DropDownList>
+            Canadian&nbsp;   <asp:DropDownList ID="ddlCanadian" runat="server" OnSelectedIndexChanged="ddlCanadian_SelectedIndexChanged"></asp:DropDownList>
+            Non-Filter&nbsp;   <asp:DropDownList ID="ddlNonFilter" runat="server" OnSelectedIndexChanged="ddlNonFilter_SelectedIndexChanged"></asp:DropDownList>
+      </div> </b>
+            
+            <br />
+            <asp:Panel ID="Panel2" runat="server" CssClass="collapsePanelHeader" Height="30px">
+            
+
             <div style="padding:5px; cursor: pointer; vertical-align: middle;">
                 <div style="float: left;">Expand</div>
                 <div style="float: left; margin-left: 20px;">
@@ -107,8 +135,10 @@
             <br />
             <p>
 
-                <asp:Button ID="Button1" runat="server" Text="Apply" onclick="Button1_Click" />
-               
+                <asp:Button ID="Button1" runat="server" Text="Apply" onclick="Button1_Click" Width="149px" />
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="Button2" runat="server" Text="Reset"  Width="149px" OnClick="Button2_Click" />
+
                 <asp:CheckBoxList ID="CheckBoxList1" runat="server" >
                 </asp:CheckBoxList>
                
@@ -126,7 +156,7 @@
         CollapseControlID="Panel2" 
      
         
-        Collapsed="True"
+        Collapsed="False"
         TextLabelID="Label1"
         ImageControlID="Image1"    
         ExpandedText="(Hide Details...)"
@@ -135,11 +165,10 @@
         CollapsedImage="~/images/expand_blue.jpg"
         SuppressPostBack="true"
         SkinID="CollapsiblePanelDemo" />
+</div>
 
 
-
-    </div>
-
+    
 
 
     </form>
