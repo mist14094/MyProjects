@@ -753,11 +753,13 @@ namespace DealStore
                                                     num5++;
                                                 }
                                                 command.CommandText = str4;
-                                                num4 = (int)command.ExecuteScalar();
+                                              var  nnum4 = command.ExecuteScalar();
+
+                                                num4 = int.Parse(nnum4.ToString());
                                                 connection2.Close();
                                                 connection2.Dispose();
                                             }
-                                            catch (Exception)
+                                            catch (Exception EX)
                                             {
                                             }
                                         }
@@ -789,7 +791,7 @@ namespace DealStore
                                                 connection2.Close();
                                                 connection2.Dispose();
                                             }
-                                            catch (Exception)
+                                            catch (Exception exception)
                                             {
                                             }
                                         }
@@ -815,7 +817,7 @@ namespace DealStore
                                             int bottom = 0;
                                             int width = 0x120;
                                             int height = 200;
-                                            string str5 = "Overstock Miami";
+                                            string str5 = "Overstock Store ";
                                             string str6 = this.txtProduct.Text.Trim() ?? "";
                                             string str7 = text + " Price : $" + decimal.Parse(this.txtPrice.Text.Trim()).ToString("0.00");
                                             string str8 = "OUR PRICE $" + decimal.Parse(this.txtDiscountPrice.Text.Trim()).ToString("0.00");

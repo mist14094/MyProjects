@@ -32,81 +32,102 @@ namespace DealStore
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "loginForm";
-
-            this.groupBox2 = new GroupBox();
-            this.ddlUsers = new ComboBox();
-            this.label4 = new Label();
-            this.btnClearForm = new Button();
-            this.txtPassword = new TextBox();
-            this.label2 = new Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ddlUsers = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnClearForm = new System.Windows.Forms.Button();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
-            base.SuspendLayout();
-            this.groupBox2.BackColor = SystemColors.ActiveBorder;
+            this.SuspendLayout();
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.groupBox2.Controls.Add(this.ddlUsers);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.btnClearForm);
             this.groupBox2.Controls.Add(this.txtPassword);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Font = new Font("Microsoft Sans Serif", 8.25f, FontStyle.Bold, GraphicsUnit.Point, 0);
-            this.groupBox2.Location = new Point(0xb1, 0xd6);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(177, 214);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new Size(0x1a9, 0x76);
+            this.groupBox2.Size = new System.Drawing.Size(425, 118);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
-            this.ddlUsers.DropDownStyle = ComboBoxStyle.DropDownList;
+            // 
+            // ddlUsers
+            // 
+            this.ddlUsers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlUsers.FormattingEnabled = true;
-            this.ddlUsers.Items.AddRange(new object[] { "Yes", "No" });
-            this.ddlUsers.Location = new Point(0x8a, 0x1b);
+            this.ddlUsers.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.ddlUsers.Location = new System.Drawing.Point(138, 27);
             this.ddlUsers.Name = "ddlUsers";
-            this.ddlUsers.Size = new Size(0x111, 0x15);
+            this.ddlUsers.Size = new System.Drawing.Size(273, 21);
             this.ddlUsers.TabIndex = 2;
+            // 
+            // label4
+            // 
             this.label4.AutoSize = true;
-            this.label4.Font = new Font("Verdana", 8.25f, FontStyle.Bold, GraphicsUnit.Point, 0);
-            this.label4.Location = new Point(7, 30);
+            this.label4.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(7, 30);
             this.label4.Name = "label4";
-            this.label4.Size = new Size(0x4e, 13);
+            this.label4.Size = new System.Drawing.Size(78, 13);
             this.label4.TabIndex = 10;
             this.label4.Text = "User Name";
-            this.btnClearForm.Font = new Font("Verdana", 8.25f, FontStyle.Bold, GraphicsUnit.Point, 0);
-            this.btnClearForm.Location = new Point(0x8a, 0x51);
+            // 
+            // btnClearForm
+            // 
+            this.btnClearForm.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearForm.Location = new System.Drawing.Point(138, 81);
             this.btnClearForm.Name = "btnClearForm";
-            this.btnClearForm.Size = new Size(0x81, 0x17);
+            this.btnClearForm.Size = new System.Drawing.Size(129, 23);
             this.btnClearForm.TabIndex = 4;
             this.btnClearForm.Text = "Login";
             this.btnClearForm.UseVisualStyleBackColor = true;
-            this.btnClearForm.Click += new EventHandler(this.btnClearForm_Click);
-            this.txtPassword.Font = new Font("Verdana", 8.25f, FontStyle.Bold, GraphicsUnit.Point, 0);
-            this.txtPassword.Location = new Point(0x8a, 0x36);
+            this.btnClearForm.Click += new System.EventHandler(this.btnClearForm_Click);
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(138, 54);
             this.txtPassword.MaxLength = 20;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new Size(0x111, 0x15);
+            this.txtPassword.Size = new System.Drawing.Size(273, 21);
             this.txtPassword.TabIndex = 1;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
+            // 
+            // label2
+            // 
             this.label2.AutoSize = true;
-            this.label2.Font = new Font("Verdana", 8.25f, FontStyle.Bold, GraphicsUnit.Point, 0);
-            this.label2.Location = new Point(7, 0x39);
+            this.label2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(7, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new Size(0x49, 13);
+            this.label2.Size = new System.Drawing.Size(73, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Password:";
-            base.AutoScaleDimensions = new SizeF(6f, 13f);
-            base.AutoScaleMode = AutoScaleMode.Font;
-            base.ClientSize = new Size(0x30b, 0x222);
-            base.ControlBox = false;
-            base.Controls.Add(this.groupBox2);
-            this.MaximumSize = new Size(0x31b, 580);
-            this.MinimumSize = new Size(0x31b, 580);
-            base.Name = "loginForm";
-            base.StartPosition = FormStartPosition.CenterScreen;
+            // 
+            // loginForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(779, 541);
+            this.ControlBox = false;
+            this.Controls.Add(this.groupBox2);
+            this.MaximumSize = new System.Drawing.Size(795, 580);
+            this.MinimumSize = new System.Drawing.Size(795, 580);
+            this.Name = "loginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            base.WindowState = FormWindowState.Maximized;
-            base.Load += new EventHandler(this.loginForm_Load);
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.loginForm_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            base.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

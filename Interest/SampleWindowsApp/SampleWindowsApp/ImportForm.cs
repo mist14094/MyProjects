@@ -92,7 +92,7 @@ namespace DealStore
             Session.dtLoginTime = DateTime.Now;
             try
             {
-                DataTable dataTable = DBAccess.GetDataTable("SELECT StockUser.USER_ID, StockUser.USER_FULL_NAME, FORMAT(ActivityLog.AL_LOGIN_TIME, \"mm/dd/yyyy\") AS ActivityDate, ActivityLog.AL_LOGIN_TIME, ActivityLog.AL_LOGOUT_TIME, 0.00 AS HOURS_WORKED, 0 AS ITEMS_SCANNED, 0.00 AS AVERAGE_PER_HOUR, 0.00 AS DOLLAR_VALUE FROM ActivityLog, StockUser WHERE ActivityLog.AL_USER = StockUser.USER_ID AND ActivityLog.AL_LOGIN_TIME IS NOT NULL AND ActivityLog.AL_LOGOUT_TIME IS NOT NULL AND ActivityLog.AL_LOGIN_TIME BETWEEN '" + DateTime.Parse(this.dpEPStartDate.Value.ToShortDateString()).ToString() + "' AND '" + DateTime.Parse(this.dpEPEndDate.Value.ToShortDateString()).AddDays(1.0).AddSeconds(-1.0).ToString() + "' ORDER BY 3, 2", DBAccess.msAccessCon);
+                DataTable dataTable = DBAccess.GetDataTable("SELECT StockUser.USER_ID, StockUser.USER_FULL_NAME, CONVERT(VARCHAR(11), ActivityLog.AL_LOGIN_TIME, 101)  AS ActivityDate, ActivityLog.AL_LOGIN_TIME, ActivityLog.AL_LOGOUT_TIME, 0.00 AS HOURS_WORKED, 0 AS ITEMS_SCANNED, 0.00 AS AVERAGE_PER_HOUR, 0.00 AS DOLLAR_VALUE FROM ActivityLog, StockUser WHERE ActivityLog.AL_USER = StockUser.USER_ID AND ActivityLog.AL_LOGIN_TIME IS NOT NULL AND ActivityLog.AL_LOGOUT_TIME IS NOT NULL AND ActivityLog.AL_LOGIN_TIME BETWEEN '" + DateTime.Parse(this.dpEPStartDate.Value.ToShortDateString()).ToString() + "' AND '" + DateTime.Parse(this.dpEPEndDate.Value.ToShortDateString()).AddDays(1.0).AddSeconds(-1.0).ToString() + "' ORDER BY 3, 2", DBAccess.msAccessCon);
                 if (dataTable.Rows.Count > 0)
                 {
                     foreach (DataRow row in dataTable.Rows)
@@ -109,12 +109,12 @@ namespace DealStore
                             row["ITEMS_SCANNED"] = table2.Rows[0]["ITEMS_SCANNED"];
                             try
                             {
-                                if (double.Parse(table2.Rows[0]["DOLLAR_VALUE"].ToString()) > 0.0)
+                                if (double.Parse(table2.Rows[0]["DOLLAR_VALUE"].ToString()==""?"0":table2.Rows[0]["DOLLAR_VALUE"].ToString()) > 0.0)
                                 {
                                     row["DOLLAR_VALUE"] = table2.Rows[0]["DOLLAR_VALUE"];
                                 }
                             }
-                            catch (Exception)
+                            catch (Exception EX)
                             {
                             }
                         }

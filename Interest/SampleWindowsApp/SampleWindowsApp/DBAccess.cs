@@ -6,8 +6,9 @@ using System.IO;
 internal class DBAccess
 {
     // Fields
-  /////////  public static string msAccessCon = ("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + GetNetworkPath() + @"\Stock.accdb;Jet OLEDB:Database Password=outlet960;");
+  //public static string msAccessCon = ("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + GetNetworkPath() + @"\Stock.accdb;Jet OLEDB:Database Password=outlet960;");
     public static string msAccessCon = ("Provider=SQLOLEDB;Data Source=SJMTECH17\\SQLSERVER2012;Initial Catalog=movedb;User ID = sa; Password=manager@123;");
+    //public static string msAccessCon = ("Provider=SQLOLEDB;Data Source=PROCESSING-7\\SQLEXPRESS;Initial Catalog=movedb;User ID = sa; Password=manager@123;");
 
     // Methods
     public static DataTable GetDataTable(string query, string msExcelCon)
