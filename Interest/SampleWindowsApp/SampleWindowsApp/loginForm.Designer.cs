@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Security.AccessControl;
 using System.Windows.Forms;
 
 namespace DealStore
@@ -88,6 +89,7 @@ namespace DealStore
             this.btnClearForm.Text = "Login";
             this.btnClearForm.UseVisualStyleBackColor = true;
             this.btnClearForm.Click += new System.EventHandler(this.btnClearForm_Click);
+           
             // 
             // txtPassword
             // 
@@ -124,10 +126,12 @@ namespace DealStore
             this.Text = "Login";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.loginForm_Load);
+
+           
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-
+           
         }
 
         #endregion

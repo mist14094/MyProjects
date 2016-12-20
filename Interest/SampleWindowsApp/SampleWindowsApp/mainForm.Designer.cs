@@ -310,7 +310,7 @@ namespace DealStore
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(274, 29);
             this.label2.TabIndex = 35;
-            this.label2.Text = "OVERSTOCK MIAMI";
+            this.label2.Text = System.Configuration.ConfigurationManager.AppSettings["StoreName"];
             // 
             // lblLoginUser
             // 
@@ -347,6 +347,7 @@ namespace DealStore
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(273, 21);
             this.txtPassword.TabIndex = 1;
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnKeyDownHandler);
             // 
             // button6
             // 
@@ -436,7 +437,7 @@ namespace DealStore
             this.MinimumSize = new System.Drawing.Size(800, 725);
             this.Name = "mainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "3S Scanner Version 2.2";
+            this.Text = System.Configuration.ConfigurationManager.AppSettings["FrmTitle"];
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainForm_FormClosing);
             this.Load += new System.EventHandler(this.mainForm_Load);

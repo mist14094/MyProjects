@@ -817,7 +817,7 @@ namespace DealStore
                                             int bottom = 0;
                                             int width = 0x120;
                                             int height = 200;
-                                            string str5 = "Overstock Store ";
+                                            string str5 = System.Configuration.ConfigurationManager.AppSettings["ReceiptTitle"]; 
                                             string str6 = this.txtProduct.Text.Trim() ?? "";
                                             string str7 = text + " Price : $" + decimal.Parse(this.txtPrice.Text.Trim()).ToString("0.00");
                                             string str8 = "OUR PRICE $" + decimal.Parse(this.txtDiscountPrice.Text.Trim()).ToString("0.00");
@@ -1044,7 +1044,7 @@ namespace DealStore
             {
                 this.FillVendorLoads(this.ddlVendors.Text);
                 this.ddlRoundValue.SelectedIndex = 4;
-                this.cbNoLoad.Checked = true;
+                this.cbNoLoad.Checked = false;
             }
             catch (Exception)
             {

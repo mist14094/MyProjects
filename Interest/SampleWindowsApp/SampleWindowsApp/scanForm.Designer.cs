@@ -277,6 +277,8 @@ namespace DealStore
             // cbNoLoad
             // 
             this.cbNoLoad.AutoSize = true;
+            this.cbNoLoad.Checked = true;
+            this.cbNoLoad.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbNoLoad.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbNoLoad.Location = new System.Drawing.Point(377, 83);
             this.cbNoLoad.Name = "cbNoLoad";

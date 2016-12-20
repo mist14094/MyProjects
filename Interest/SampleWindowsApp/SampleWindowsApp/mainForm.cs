@@ -94,6 +94,7 @@ namespace DealStore
                 this.ddlUsers.DataSource = dataTable;
                 this.gbLogin.Visible = true;
                 this.gbLogin.BringToFront();
+                this.ddlUsers.Focus();
             }
             catch (Exception)
             {
@@ -599,6 +600,115 @@ namespace DealStore
             }
         }
 
+        private void OnKeyDownHandler(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                Session.dtLoginTime = DateTime.Now;
+                try
+                {
+                    if ((this.ddlUsers.SelectedValue.ToString() != "") && (this.txtPassword.Text.Trim() != ""))
+                    {
+                        DataTable dataTable =
+                            DBAccess.GetDataTable(
+                                "SELECT USER_ID, IS_MANAGER, IS_SUPERVISOR FROM StockUser WHERE USER_ID = " +
+                                this.ddlUsers.SelectedValue.ToString() + " AND USER_PASSWORD = '" +
+                                this.txtPassword.Text.Trim() + "'", DBAccess.msAccessCon);
+                        if (dataTable.Rows.Count > 0)
+                        {
+                            try
+                            {
+
+
+
+
+                                OleDbConnection connection = new OleDbConnection(DBAccess.msAccessCon);
+                                connection.Open();
+
+                                string cmdText =
+                                    " DECLARE @AL_USER int; DECLARE @AL_LOGIN_TIME DATETIME;  INSERT INTO ActivityLog(AL_USER, AL_LOGIN_TIME) VALUES(?, ?)";
+                                OleDbCommand command = new OleDbCommand(cmdText, connection);
+                                command.CommandType = CommandType.Text;
+                                command.Parameters.AddWithValue("@AL_USER", this.ddlUsers.SelectedValue.ToString());
+                                command.Parameters.AddWithValue("@AL_LOGIN_TIME", DateTime.Now);
+                                //command.Parameters.Add("@AL_USER", OleDbType.Integer).Value = int.Parse(this.ddlUsers.SelectedValue.ToString());
+                                DateTime now = DateTime.Now;
+                                //command.Parameters.Add("@AL_LOGIN_TIME", OleDbType.Date).Value = now;
+                                command.ExecuteScalar();
+                                connection.Close();
+                                command.Dispose();
+                                connection.Dispose();
+                                DataTable table2 =
+                                    DBAccess.GetDataTable(
+                                        "SELECT ACTIVITY_LOG_ID FROM ActivityLog WHERE AL_USER = " +
+                                        this.ddlUsers.SelectedValue.ToString() + " AND AL_LOGIN_TIME BETWEEN '" +
+                                        DateTime.Parse(now.ToShortDateString()).ToString() + "' AND '" +
+                                        DateTime.Parse(now.ToShortDateString()).AddDays(1.0).AddSeconds(-1.0).ToString() +
+                                        "' ORDER BY ACTIVITY_LOG_ID DESC", DBAccess.msAccessCon);
+                                if (table2.Rows.Count > 0)
+                                {
+                                    Session.activityLogID = long.Parse(table2.Rows[0]["ACTIVITY_LOG_ID"].ToString());
+                                }
+                            }
+                            catch (Exception EX)
+                            {
+                            }
+                            this.txtPassword.Text = "";
+                            this.gbLogin.Visible = false;
+                            this.gbLogin.SendToBack();
+                            Session.userID = int.Parse(this.ddlUsers.SelectedValue.ToString());
+                            Session.isManager = dataTable.Rows[0]["IS_MANAGER"].ToString();
+                            Session.isSupervisor = dataTable.Rows[0]["IS_SUPERVISOR"].ToString();
+                            this.scanToolStripMenuItem.Enabled = true;
+                            this.palletsToolStripMenuItem.Enabled = true;
+                            this.dataEntryToolStripMenuItem.Enabled = true;
+                            this.button1.Enabled = true;
+                            this.button2.Enabled = true;
+                            this.lblLoginUser.Text = "Logon User ID: " + Session.userID.ToString();
+                            if (Session.isManager == "Yes")
+                            {
+                                this.importToolStripMenuItem.Enabled = true;
+                                this.settingsToolStripMenuItem.Enabled = true;
+                                this.manageVendorsToolStripMenuItem.Enabled = true;
+                                this.manageUsersToolStripMenuItem.Enabled = true;
+                                this.palletsToolStripMenuItem.Enabled = true;
+                                this.button3.Enabled = true;
+                                this.button4.Enabled = true;
+                                this.button8.Enabled = true;
+                                this.button9.Enabled = true;
+                            }
+                            else
+                            {
+                                this.importToolStripMenuItem.Enabled = false;
+                                this.settingsToolStripMenuItem.Enabled = false;
+                                this.manageVendorsToolStripMenuItem.Enabled = false;
+                                this.manageUsersToolStripMenuItem.Enabled = false;
+                                this.palletsToolStripMenuItem.Enabled = false;
+                                this.button3.Enabled = false;
+                                this.button4.Enabled = false;
+                                this.button8.Enabled = false;
+                                this.button9.Enabled = false;
+                            }
+                            this.BringToFrontAll();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Login Failed", "Login");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please input all fields.", "Login");
+                    }
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message, "Login");
+                }
+            }
+        }
+
         private void button6_Click(object sender, EventArgs e)
         {
             Session.dtLoginTime = DateTime.Now;
@@ -607,7 +717,7 @@ namespace DealStore
                 if ((this.ddlUsers.SelectedValue.ToString() != "") && (this.txtPassword.Text.Trim() != ""))
                 {
                     DataTable dataTable = DBAccess.GetDataTable("SELECT USER_ID, IS_MANAGER, IS_SUPERVISOR FROM StockUser WHERE USER_ID = " + this.ddlUsers.SelectedValue.ToString() + " AND USER_PASSWORD = '" + this.txtPassword.Text.Trim() + "'", DBAccess.msAccessCon);
-                    if (dataTable.Rows.Count > 0)
+                    if (dataTable.Rows.Count > 0)                                                                                                    
                     {
                         try
                         {
