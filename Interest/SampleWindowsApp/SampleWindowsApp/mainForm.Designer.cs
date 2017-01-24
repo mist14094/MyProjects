@@ -184,8 +184,8 @@ namespace DealStore
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::SampleWindowsApp.Resrc.pictureBox1;
-            this.pictureBox1.InitialImage = global::SampleWindowsApp.Resrc.pictureBox1;
+            this.pictureBox1.Image = global::DealStore.Resrc.pictureBox1;
+            this.pictureBox1.InitialImage = global::DealStore.Resrc.pictureBox1;
             this.pictureBox1.Location = new System.Drawing.Point(530, 24);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(254, 120);
@@ -196,7 +196,7 @@ namespace DealStore
             // button5
             // 
             this.button5.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button5.BackgroundImage = global::SampleWindowsApp.Resrc.button5;
+            this.button5.BackgroundImage = global::DealStore.Resrc.button5;
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button5.Location = new System.Drawing.Point(531, 537);
             this.button5.Name = "button5";
@@ -208,7 +208,7 @@ namespace DealStore
             // button4
             // 
             this.button4.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button4.BackgroundImage = global::SampleWindowsApp.Resrc.button4;
+            this.button4.BackgroundImage = global::DealStore.Resrc.button4;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button4.Location = new System.Drawing.Point(531, 313);
             this.button4.Name = "button4";
@@ -220,7 +220,7 @@ namespace DealStore
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button3.BackgroundImage = global::SampleWindowsApp.Resrc.button3;
+            this.button3.BackgroundImage = global::DealStore.Resrc.button3;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button3.Location = new System.Drawing.Point(34, 313);
             this.button3.Name = "button3";
@@ -232,7 +232,7 @@ namespace DealStore
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button1.BackgroundImage = global::SampleWindowsApp.Resrc.button1;
+            this.button1.BackgroundImage = global::DealStore.Resrc.button1;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button1.Location = new System.Drawing.Point(34, 201);
             this.button1.Name = "button1";
@@ -244,7 +244,7 @@ namespace DealStore
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button2.BackgroundImage = global::SampleWindowsApp.Resrc.button2;
+            this.button2.BackgroundImage = global::DealStore.Resrc.button2;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button2.Location = new System.Drawing.Point(531, 201);
             this.button2.Name = "button2";
@@ -256,7 +256,7 @@ namespace DealStore
             // button9
             // 
             this.button9.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button9.BackgroundImage = global::SampleWindowsApp.Resrc.button9;
+            this.button9.BackgroundImage = global::DealStore.Resrc.button9;
             this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button9.Location = new System.Drawing.Point(531, 425);
             this.button9.Name = "button9";
@@ -268,7 +268,7 @@ namespace DealStore
             // button8
             // 
             this.button8.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button8.BackgroundImage = global::SampleWindowsApp.Resrc.button8;
+            this.button8.BackgroundImage = global::DealStore.Resrc.button8;
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button8.Location = new System.Drawing.Point(34, 425);
             this.button8.Name = "button8";
@@ -280,7 +280,7 @@ namespace DealStore
             // button7
             // 
             this.button7.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button7.BackgroundImage = global::SampleWindowsApp.Resrc.button7;
+            this.button7.BackgroundImage = global::DealStore.Resrc.button7;
             this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button7.Location = new System.Drawing.Point(34, 537);
             this.button7.Name = "button7";

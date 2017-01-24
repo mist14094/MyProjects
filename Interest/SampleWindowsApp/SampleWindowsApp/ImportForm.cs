@@ -497,7 +497,7 @@ namespace DealStore
                                         }
                                     }
                                 }
-                                catch (Exception)
+                                catch (Exception ex)
                                 {
                                 }
                             }
