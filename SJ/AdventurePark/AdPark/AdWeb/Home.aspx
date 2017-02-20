@@ -1,0 +1,34 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/HomeMaster.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="AdWeb.Home" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <br/><br/>
+    <div class="media" style="max-width: 992px; margin-left: auto; margin-right: auto;">
+        <div class="panel panel-default">
+     
+                <table class="table">
+                    <tr>
+                        <td>
+                            <asp:Button ID="btnAddUser" runat="server" Text="Add User" class="btn btn-success btn-lg" style="width: 100%" OnClick="btnAddUser_Click"  />
+                            
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                            <asp:Button ID="btTagUpdate" runat="server" Text="Update User Activities" class="btn btn-success btn-lg" style="width: 100%" OnClick="btTagUpdate_Click"  /></td>
+                    </tr>
+                     <tr>
+                        <td>
+                            <asp:Button ID="btnTagLog" runat="server" Text="View Tag Log" class="btn btn-success btn-lg" style="width: 100%" OnClick="btnTagLog_Click"/></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button type="button" class="btn btn-success btn-lg"   style="width: 100%">Settings</button></td>
+                    </tr>
+                </table>
+
+
+        </div>
+    </div>
+</asp:Content>

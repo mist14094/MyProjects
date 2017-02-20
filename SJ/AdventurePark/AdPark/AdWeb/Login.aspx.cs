@@ -1,27 +1,51 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using NLog;
 using AdBsnsLayer;
+
 namespace AdWeb
 {
     public partial class Login : System.Web.UI.Page
     {
-        private static Logger logger = LogManager.GetCurrentClassLogger();
-        AdBsnsLayer.User User = new AdBsnsLayer.User();
+        AdBsnsLayer.LoginUser lgnUser = new LoginUser();
+        AdBsnsLayer.Logr Logr = new Logr();
         protected void Page_Load(object sender, EventArgs e)
         {
+            var user = Session["User"];
 
-            //      User.InsertUser("Rob", "Lynda", "Greenwood Dr", "Sanborn", "NY", "USA", "14094", "7162553032",
-            //          "r.vivekit@gmail.com", DateTime.Now, "12345678");
-            GridView1.DataSource  =   User.GetAllUsers();
-            GridView1.DataBind();
-            logger.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
-            
+            if (!IsPostBack)
+            {
+                if (user != null)
+                {
+                    Response.Redirect("Home.aspx");
+                }
+            }
+
+        }
+
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            txtPassWord.Text = "";
+            txtUserName.Text = "";
+        }
+
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            Logr.InsertLog("User Log", this.GetType().Namespace + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name, Request.Url.AbsoluteUri, 1, System.Net.Dns.GetHostName() + System.Web.HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"], Request.UserAgent, false, false);
+          //  Session["User"]
+            var CrctUser  = lgnUser.CheckUser(txtUserName.Text, txtPassWord.Text);
+            if (CrctUser.UserName !=null)
+            {
+                Session["User"] = CrctUser;
+                Response.Redirect("Home.aspx");
+            }
+            else
+            {
+                lblMessage.Text = "Username/Password Wrong";
+            }
         }
     }
 }

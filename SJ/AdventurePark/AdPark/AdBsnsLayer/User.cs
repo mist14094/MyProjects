@@ -28,6 +28,7 @@ namespace AdBsnsLayer
         public DateTime DateOfBirth { get; set; }
         public DateTime CreatedDate { get; set; }
         public string TagNumber { get; set; }
+        public int LoginUsers { get; set; }
         public User()
         {
             _nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
@@ -36,7 +37,7 @@ namespace AdBsnsLayer
 
         }
 
-        public List<User> DataTabletoUser(DataTable dt)
+        private List<User> DataTabletoUser(DataTable dt)
         {
             _nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
             List < User > Users = new List<User>();
@@ -59,6 +60,7 @@ namespace AdBsnsLayer
                 user.TagNumber = drRow["TagNumber"].ToString();
                 user.CreatedDate = DateTime.Parse(drRow["CreatedDate"].ToString());
                 user.DateOfBirth = DateTime.Parse(drRow["DateOfBirth"].ToString());
+                user.LoginUsers = int.Parse(drRow["LoginUsers"].ToString());
                 Users.Add(user);
             }
           
@@ -74,7 +76,7 @@ namespace AdBsnsLayer
         }
 
         public int? InsertUser(string FirstName, string LastName, string Address, string City, string State, string Country, string Zipcode,
-            string ContactNumber, string EmailID, DateTime DateOfBirth, string TagNumber)
+            string ContactNumber, string EmailID, DateTime DateOfBirth, string TagNumber,int LoginUsers,int ActiveMenu,string  ActiveMenuName)
         {
 
             DataAccess access = new DataAccess();
@@ -82,11 +84,15 @@ namespace AdBsnsLayer
             try
             {
                 var val = access.InsertUser( FirstName,  LastName,  Address,  City,  State,  Country,  Zipcode,
-             ContactNumber,  EmailID,  DateOfBirth,  TagNumber);
+             ContactNumber,  EmailID,  DateOfBirth,  TagNumber, LoginUsers, ActiveMenu);
 
                 if (val.Rows.Count > 0)
                 {
+                    Log log = new Log();
+                    log.InsertLogMessage(TagNumber, 
+                        string.Format("Tag created - ID ={0}, Plan - {1}", val.Rows[0][0].ToString(), ActiveMenuName));
                     return int.Parse(val.Rows[0][0].ToString());
+
                 }
                 else
                 {

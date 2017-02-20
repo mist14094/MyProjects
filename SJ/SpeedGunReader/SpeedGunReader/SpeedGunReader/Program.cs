@@ -16,7 +16,7 @@ namespace SpeedGunReader
             {
                 for (int i = 0; i <= 16; i++)
                 {
-                    SerialPort mySerialPort = new SerialPort("COM1");
+                    SerialPort mySerialPort = new SerialPort("USB");
                     mySerialPort.BaudRate = 1200;
                     mySerialPort.Parity = Parity.None;
                     mySerialPort.StopBits = StopBits.One;

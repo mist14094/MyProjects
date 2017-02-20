@@ -45,6 +45,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActivitiesMenu.cs" />
+    <Compile Include="CountInAndOutProcessor.cs" />
+    <Compile Include="Devices.cs" />
+    <Compile Include="Engine.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="LoginUser.cs" />
+    <Compile Include="Logr.cs" />
+    <Compile Include="JustOnceProcessor.cs" />
+    <Compile Include="TagDetail.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
