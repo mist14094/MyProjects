@@ -29,15 +29,18 @@ namespace AdBsnsLayer
         public enum _DeviceType 
         {
             JustCount = 1,
-            CountAndWait = 2,
             CountInAndOut_In = 3,
             CountInAndOut_Out = 4,
-            CountExpire = 5,
-            Others=6
+            CountExpire_In = 5,
+            CountExpire_Out = 6,
+            CountAndWait_Counter=7,
+            CountAndWait_Value=8,
+            Others =9
         }
         public _DeviceType DeviceType { get; set; }
         public string DeviceColumn { get; set; }
         public string DeviceTable { get; set; }
+        public string DisplayName { get; set; }
         public DateTime CreatedDate { get; set; }
 
         private List<Devices> DataTabletoDevices(DataTable dt)
@@ -57,6 +60,7 @@ namespace AdBsnsLayer
                 Device.DeviceType =(_DeviceType) int.Parse(drRow["DeviceType"].ToString());
                 Device.DeviceColumn = drRow["DeviceColumn"].ToString();
                 Device.DeviceTable = drRow["DeviceTable"].ToString();
+                Device.DisplayName = drRow["DisplayName"].ToString();
                 Device.CreatedDate = DateTime.Parse(drRow["CreatedDate"].ToString());
                 lstDevices.Add(Device);
             }

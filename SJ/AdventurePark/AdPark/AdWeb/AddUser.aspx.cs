@@ -51,6 +51,7 @@ namespace AdWeb
                 lblModalTitle.Text = "Tag Associated";
                 lblModalBody.Text = "Enjoy your Adventure - ID# " + userCreated.ToString();
                 lblModalBody.ForeColor = Color.DarkGreen;
+                Response.Redirect(string.Format("AssociateActv.aspx?TagNumber={0}", txtTagNumber.Text));
             }
          
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);

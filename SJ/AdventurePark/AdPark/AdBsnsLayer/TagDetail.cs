@@ -150,6 +150,14 @@ namespace AdBsnsLayer
                string.Format("Tag Used - ID ={0}, in {1} - Activity Started ", TagNumber, ColumnName));
         }
 
+        public void UseTagForActivityWOReducing(string TagNumber, string ColumnName)
+        {
+            _nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            Log log = new Log();
+            log.InsertLogMessage(TagNumber,
+               string.Format("Tag Used - ID ={0}, in {1} - Activity Started ", TagNumber, ColumnName));
+        }
+
 
         public void UseTagForActivityButExpired(string TagNumber, string ColumnName)
         {
@@ -165,6 +173,15 @@ namespace AdBsnsLayer
             Log log = new Log();
             log.InsertLogMessage(TagNumber,
                string.Format("Tag - ID ={0} - Finished the {1} in {2}", TagNumber, ColumnName,Minutes));
+        }
+
+
+        public void CountAndExpireProcesssor_OutLog(string TagNumber, string ColumnName, string Minutes)
+        {
+            _nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            Log log = new Log();
+            log.InsertLogMessage(TagNumber,
+               string.Format("Tag - ID ={0} - Finished the {1} in {2}", TagNumber, ColumnName, Minutes));
         }
 
 

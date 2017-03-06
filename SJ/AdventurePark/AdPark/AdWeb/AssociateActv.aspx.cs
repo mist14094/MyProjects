@@ -16,14 +16,21 @@ namespace AdWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             var user = Session["User"];
-
+            string v = Request.QueryString["TagNumber"];
             if (!IsPostBack)
             {
                 if (user == null)
                 {
                     Response.Redirect("Login.aspx");
                 }
+                if (v != null)
+                {
+                    txtTagNumber.Text = v;
+                    CheckTags(txtTagNumber.Text);
+                }
+                
             }
+            
             // var asd = menu.GetAllTagActivities();
 
         }

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using AdBsnsLayer;
 namespace AdWeb
 {
-    public partial class Home : System.Web.UI.Page
+    public partial class DeviceNotFound : System.Web.UI.Page
     {
         AdBsnsLayer.User User = new User();
         TagDetail Tag = new TagDetail();
@@ -41,12 +41,12 @@ namespace AdWeb
 
         protected void btnDevices_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Devices.aspx");
+
         }
 
-        protected void btnMonitor_Click(object sender, EventArgs e)
+        protected void btnTubing_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Monitor.aspx");
+            Response.Redirect(string.Format("JustCount.aspx?DeviceID={0}",9));
         }
     }
 }

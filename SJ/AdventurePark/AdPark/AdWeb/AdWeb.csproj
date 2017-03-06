@@ -133,7 +133,15 @@
     <Content Include="AddUser.aspx" />
     <Content Include="assets\flash\ZeroClipboard.swf" />
     <Content Include="assets\logo_new_1447442089__64290.png" />
+    <Content Include="CountAndWait.aspx" />
+    <Content Include="CountExpire.aspx" />
+    <Content Include="DeviceNotFound.aspx" />
+    <Content Include="JustCountMonitor.aspx" />
+    <Content Include="Monitor.aspx" />
     <Content Include="Engine.aspx" />
+    <Content Include="Devices.aspx" />
+    <Content Include="CountInAndOut.aspx" />
+    <Content Include="JustCount.aspx" />
     <Content Include="TagLog.aspx" />
     <Content Include="AssociateActv.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -187,6 +195,7 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="scripts\jquery-1.9.1.min.map" />
+    <None Include="Properties\PublishProfiles\AdventurePark.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -214,12 +223,68 @@
     <Compile Include="AddUser.aspx.designer.cs">
       <DependentUpon>AddUser.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CountAndWait.aspx.cs">
+      <DependentUpon>CountAndWait.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CountAndWait.aspx.designer.cs">
+      <DependentUpon>CountAndWait.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CountExpire.aspx.cs">
+      <DependentUpon>CountExpire.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CountExpire.aspx.designer.cs">
+      <DependentUpon>CountExpire.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceNotFound.aspx.cs">
+      <DependentUpon>DeviceNotFound.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeviceNotFound.aspx.designer.cs">
+      <DependentUpon>DeviceNotFound.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JustCountMonitor.aspx.cs">
+      <DependentUpon>JustCountMonitor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JustCountMonitor.aspx.designer.cs">
+      <DependentUpon>JustCountMonitor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Monitor.aspx.cs">
+      <DependentUpon>Monitor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Monitor.aspx.designer.cs">
+      <DependentUpon>Monitor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Engine.aspx.cs">
       <DependentUpon>Engine.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Engine.aspx.designer.cs">
       <DependentUpon>Engine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Devices.aspx.cs">
+      <DependentUpon>Devices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Devices.aspx.designer.cs">
+      <DependentUpon>Devices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CountInAndOut.aspx.cs">
+      <DependentUpon>CountInAndOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CountInAndOut.aspx.designer.cs">
+      <DependentUpon>CountInAndOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JustCount.aspx.cs">
+      <DependentUpon>JustCount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JustCount.aspx.designer.cs">
+      <DependentUpon>JustCount.aspx</DependentUpon>
     </Compile>
     <Compile Include="TagLog.aspx.cs">
       <DependentUpon>TagLog.aspx</DependentUpon>
