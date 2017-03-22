@@ -1330,10 +1330,127 @@ namespace AdDataLayer
                 Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
             }
         }
+        public DataTable GetUserDetailsWithWaiver()
+        {
+
+            Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            var dataTable = new DataTable();
+            var selectCommand = new SqlCommand
+            {
+                CommandText = string.Format(_constants.GetUserDetailsWithWaiver),
+                CommandTimeout = 180,
+                CommandType = CommandType.Text
+            };
+
+            var adapter = new SqlDataAdapter(selectCommand);
+            var connection = new SqlConnection(_connectionString);
 
 
+            selectCommand.Connection = connection;
+            try
+            {
+                connection.Open();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+
+                Nlog.Error(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Error" + ex.InnerException + ex.Message + Environment.NewLine + ex.StackTrace);
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+                connection.Dispose();
+                Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
+            }
+        }
+
+        public DataTable updateUserDetailsWithWaiver(string sno)
+        {
+
+            Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            var dataTable = new DataTable();
+            var selectCommand = new SqlCommand
+            {
+                CommandText = string.Format(_constants.updateUserDetailsWithWaiver,sno),
+                CommandTimeout = 180,
+                CommandType = CommandType.Text
+            };
+
+            var adapter = new SqlDataAdapter(selectCommand);
+            var connection = new SqlConnection(_connectionString);
 
 
+            selectCommand.Connection = connection;
+            try
+            {
+                connection.Open();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+
+                Nlog.Error(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Error" + ex.InnerException + ex.Message + Environment.NewLine + ex.StackTrace);
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+                connection.Dispose();
+                Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
+            }
+        }
+
+        public DataTable InsertUserWaiver(string FirstName, string LastName, string Address, string City, string State, string Country, string Zipcode,
+            string ContactNumber, string EmailID, string ParticipantID, DateTime DateOfBirth, DateTime CreatedDate, bool IsMinor)
+        {
+
+            Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            var dataTable = new DataTable();
+            var selectCommand = new SqlCommand
+            {
+                CommandText = string.Format(_constants.InsertUserWaiver),
+                CommandTimeout = 180,
+                CommandType = CommandType.StoredProcedure
+            };
+            selectCommand.Parameters.AddWithValue("@FirstName", FirstName);
+            selectCommand.Parameters.AddWithValue("@LastName", LastName);
+            selectCommand.Parameters.AddWithValue("@Address", Address);
+            selectCommand.Parameters.AddWithValue("@City", City);
+            selectCommand.Parameters.AddWithValue("@State", State);
+            selectCommand.Parameters.AddWithValue("@Country", Country);
+            selectCommand.Parameters.AddWithValue("@Zipcode", Zipcode);
+            selectCommand.Parameters.AddWithValue("@ContactNumber", ContactNumber);
+            selectCommand.Parameters.AddWithValue("@EmailID", EmailID);
+            selectCommand.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
+            selectCommand.Parameters.AddWithValue("@ParticipantID", ParticipantID);
+            selectCommand.Parameters.AddWithValue("@CreatedDate", CreatedDate);
+            selectCommand.Parameters.AddWithValue("@IsMinor", IsMinor);
+            var adapter = new SqlDataAdapter(selectCommand);
+            var connection = new SqlConnection(_connectionString);
+            selectCommand.Connection = connection;
+            try
+            {
+                connection.Open();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+
+                Nlog.Error(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Error" + ex.InnerException + ex.Message + Environment.NewLine + ex.StackTrace);
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+                connection.Dispose();
+                Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
+            }
+        }
 
     }
 }

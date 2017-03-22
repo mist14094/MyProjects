@@ -55,6 +55,7 @@
     <Compile Include="LoginUser.cs" />
     <Compile Include="Logr.cs" />
     <Compile Include="JustOnceProcessor.cs" />
+    <Compile Include="SmartWaiverIntegration.cs" />
     <Compile Include="TagDetail.cs" />
     <Compile Include="ThrowLeaderBoard.cs" />
     <Compile Include="User.cs" />

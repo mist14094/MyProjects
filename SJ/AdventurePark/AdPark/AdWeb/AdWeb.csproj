@@ -112,6 +112,7 @@
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Activities" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -130,7 +131,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddUserWithWaiver.aspx" />
     <Content Include="AddUser.aspx" />
+    <Content Include="AdvPark.asmx" />
     <Content Include="assets\flash\ZeroClipboard.swf" />
     <Content Include="assets\logo_new_1447442089__64290.png" />
     <Content Include="CountAndWait.aspx" />
@@ -216,12 +219,23 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddUserWithWaiver.aspx.cs">
+      <DependentUpon>AddUserWithWaiver.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddUserWithWaiver.aspx.designer.cs">
+      <DependentUpon>AddUserWithWaiver.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AddUser.aspx.cs">
       <DependentUpon>AddUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AddUser.aspx.designer.cs">
       <DependentUpon>AddUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdvPark.asmx.cs">
+      <DependentUpon>AdvPark.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="CountAndWait.aspx.cs">
       <DependentUpon>CountAndWait.aspx</DependentUpon>

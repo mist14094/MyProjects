@@ -70,5 +70,13 @@ namespace AdConstants
 
         public string MonitorJustCount =
             "SELECT FirstName,dbo.[{0}].CreatedDate  FROM [{0}] INNER JOIN dbo.adv_UserDetails ON dbo.adv_UserDetails.TagNumber = dbo.[{0}].TagNumber ORDER BY dbo.[{0}].CreatedDate desc";
+
+        public string GetUserDetailsWithWaiver = "SELECT * FROM [adv_UserDetailsWithWaiver]";
+
+        public string updateUserDetailsWithWaiver =
+            " UPDATE[dbo].[adv_UserDetailsWithWaiver] SET[IsImported] = '1' WHERE sno = '{0}'";
+
+        public string InsertUserWaiver =
+            "InsertUserWaiver";
     }
 }

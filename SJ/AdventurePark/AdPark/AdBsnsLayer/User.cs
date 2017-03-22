@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net.Configuration;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,7 @@ namespace AdBsnsLayer
         public DateTime CreatedDate { get; set; }
         public string TagNumber { get; set; }
         public int LoginUsers { get; set; }
+        public bool IsImported { get; set; }
         public User()
         {
             _nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
@@ -65,6 +67,37 @@ namespace AdBsnsLayer
             }
           
            
+            return Users;
+        }
+
+
+        private List<User> DataTabletoWaiveredUser(DataTable dt)
+        {
+            _nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            List<User> Users = new List<User>();
+
+
+
+            foreach (DataRow drRow in dt.Rows)
+            {
+                var user = new User();
+                user.Sno = int.Parse(drRow["Sno"].ToString());
+                user.FirstName = drRow["FirstName"].ToString();
+                user.LastName = drRow["LastName"].ToString();
+                user.EmailId = drRow["EmailID"].ToString();
+                user.Address = drRow["Address"].ToString();
+                user.City = drRow["City"].ToString();
+                user.State = drRow["State"].ToString();
+                user.Country = drRow["Country"].ToString();
+                user.Zipcode = drRow["Zipcode"].ToString();
+                user.ContactNumber = drRow["ContactNumber"].ToString();
+                user.CreatedDate = DateTime.Parse(drRow["CreatedDate"].ToString());
+                user.DateOfBirth = DateTime.Parse(drRow["DateOfBirth"].ToString());
+                user.IsImported = bool.Parse(drRow["IsImported"].ToString());
+                Users.Add(user);
+            }
+
+
             return Users;
         }
 
@@ -105,6 +138,74 @@ namespace AdBsnsLayer
             }
             return null;
         }
+ public int? InsertUserWaiver(string FirstName, string LastName, string Address, string City, string State, string Country, string Zipcode,
+            string ContactNumber, string EmailID, string ParticipantID, DateTime DateOfBirth, DateTime CreatedDate, bool isMinor)
+        {
+
+            DataAccess access = new DataAccess();
+
+            try
+            {
+                var val = access.InsertUserWaiver( FirstName,  LastName,  Address,  City,  State,  Country,  Zipcode,
+            ContactNumber,  EmailID,  ParticipantID,  DateOfBirth,  CreatedDate, isMinor);
+
+                if (val.Rows.Count > 0)
+                {
+                   
+                    return int.Parse(val.Rows[0][0].ToString());
+
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return null;
+        }
+
+        public List<User> GetUserDetailsWithWaiver()
+        {
+
+            _nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            return DataTabletoWaiveredUser(Access.GetUserDetailsWithWaiver());
+        }
+
+        public int? updateUserDetailsWithWaiver(string Sno)
+        {
+
+            DataAccess access = new DataAccess();
+
+            try
+            {
+                var val = access.updateUserDetailsWithWaiver(Sno);
+
+                if (val.Rows.Count > 0)
+                {
+                   return int.Parse(val.Rows[0][0].ToString());
+
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return null;
+        }
+
+
+
+
+
+
+
 
 
 
