@@ -15,7 +15,7 @@ namespace AdBsnsLayer
     {
 
         private readonly Logger _nlog = LogManager.GetCurrentClassLogger();
-        private AdDataLayer.DataAccess Access = new DataAccess();
+        private readonly AdDataLayer.DataAccess _access = new DataAccess();
         public int Sno { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -105,7 +105,7 @@ namespace AdBsnsLayer
         {
 
             _nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
-            return DataTabletoUser(Access.GetAllUsers());
+            return DataTabletoUser(_access.GetAllUsers());
         }
 
         public int? InsertUser(string FirstName, string LastName, string Address, string City, string State, string Country, string Zipcode,
@@ -171,7 +171,7 @@ namespace AdBsnsLayer
         {
 
             _nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
-            return DataTabletoWaiveredUser(Access.GetUserDetailsWithWaiver());
+            return DataTabletoWaiveredUser(_access.GetUserDetailsWithWaiver());
         }
 
         public int? updateUserDetailsWithWaiver(string Sno)
