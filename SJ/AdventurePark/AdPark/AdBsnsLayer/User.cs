@@ -146,19 +146,19 @@ namespace AdBsnsLayer
 
             try
             {
-                var val = access.InsertUserWaiver( FirstName,  LastName,  Address,  City,  State,  Country,  Zipcode,
-            ContactNumber,  EmailID,  ParticipantID,  DateOfBirth,  CreatedDate, isMinor);
+           //   //  var val = access.InsertUserWaiver( FirstName,  LastName,  Address,  City,  State,  Country,  Zipcode,
+           //// ContactNumber,  EmailID,  ParticipantID,  DateOfBirth,  CreatedDate, isMinor);
 
-                if (val.Rows.Count > 0)
-                {
+           //     if (val.Rows.Count > 0)
+           //     {
                    
-                    return int.Parse(val.Rows[0][0].ToString());
+           //         return int.Parse(val.Rows[0][0].ToString());
 
-                }
-                else
-                {
-                    return null;
-                }
+           //     }
+           //     else
+           //     {
+           //         return null;
+           //     }
             }
             catch (Exception ex)
             {

@@ -34,15 +34,33 @@ namespace AdWeb
         }
 
         [WebMethod]
-        public void SmartWaiverIntegration()
+        public string SmartWaiverIntegration()
         {
             AdBsnsLayer.SmartWaiverIntegration Integration = new SmartWaiverIntegration();
-            using (WebClient client = new WebClient())
-            {
-                SmartWaiverIntegration.xml WaiverValues =
-                    Integration.Deserialize(client.DownloadString(WebConfigurationManager.AppSettings["SmartWaiverLink"]));
 
-                //   User.InsertUserWaiver();
+            try
+            {
+                using (WebClient client = new WebClient())
+                {
+                    bool WaiverValues;
+                    WaiverValues = true;
+                    int counter = 0;
+                    while (WaiverValues)
+                    {
+                        var deserialize = Integration.Deserialize(client.DownloadString(string.Format(WebConfigurationManager.AppSettings["SmartWaiverLink"] + "&rest_request_hours=72&rest_offset={0}&rest_limit=20", counter.ToString())));
+                        if (
+                            deserialize != null)
+                            WaiverValues = (bool) deserialize;
+                        counter = counter + 20;
+                    }
+                   
+                }
+                return "Success";
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
             }
         }
     }

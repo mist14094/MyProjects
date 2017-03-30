@@ -78,5 +78,8 @@ namespace AdConstants
 
         public string InsertUserWaiver =
             "InsertUserWaiver";
+
+        public string UserDetailsWithWaiverInsert =
+            "UserDetailsWithWaiverInsert";
     }
 }

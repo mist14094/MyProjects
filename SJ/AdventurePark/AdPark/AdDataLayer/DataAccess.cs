@@ -1404,34 +1404,271 @@ namespace AdDataLayer
             }
         }
 
-        public DataTable InsertUserWaiver(string FirstName, string LastName, string Address, string City, string State, string Country, string Zipcode,
-            string ContactNumber, string EmailID, string ParticipantID, DateTime DateOfBirth, DateTime CreatedDate, bool IsMinor)
+        public DataTable UserDetailsWithWaiverInsert(UserDetailsWithWaiverClass clsdbo_adv_UserDetailsWithWaiver)
         {
 
             Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
             var dataTable = new DataTable();
-            var selectCommand = new SqlCommand
+            var insertCommand = new SqlCommand
             {
-                CommandText = string.Format(_constants.InsertUserWaiver),
-                CommandTimeout = 180,
+                CommandText = string.Format(_constants.UserDetailsWithWaiverInsert),
+                CommandTimeout = 10,
                 CommandType = CommandType.StoredProcedure
             };
-            selectCommand.Parameters.AddWithValue("@FirstName", FirstName);
-            selectCommand.Parameters.AddWithValue("@LastName", LastName);
-            selectCommand.Parameters.AddWithValue("@Address", Address);
-            selectCommand.Parameters.AddWithValue("@City", City);
-            selectCommand.Parameters.AddWithValue("@State", State);
-            selectCommand.Parameters.AddWithValue("@Country", Country);
-            selectCommand.Parameters.AddWithValue("@Zipcode", Zipcode);
-            selectCommand.Parameters.AddWithValue("@ContactNumber", ContactNumber);
-            selectCommand.Parameters.AddWithValue("@EmailID", EmailID);
-            selectCommand.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
-            selectCommand.Parameters.AddWithValue("@ParticipantID", ParticipantID);
-            selectCommand.Parameters.AddWithValue("@CreatedDate", CreatedDate);
-            selectCommand.Parameters.AddWithValue("@IsMinor", IsMinor);
-            var adapter = new SqlDataAdapter(selectCommand);
+            if (clsdbo_adv_UserDetailsWithWaiver.FirstName != null)
+            {
+                insertCommand.Parameters.AddWithValue("@FirstName", clsdbo_adv_UserDetailsWithWaiver.FirstName);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@FirstName", DBNull.Value);
+            }
+            if (clsdbo_adv_UserDetailsWithWaiver.LastName != null)
+            {
+                insertCommand.Parameters.AddWithValue("@LastName", clsdbo_adv_UserDetailsWithWaiver.LastName);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@LastName", DBNull.Value);
+            }
+            if (clsdbo_adv_UserDetailsWithWaiver.Address != null)
+            {
+                insertCommand.Parameters.AddWithValue("@Address", clsdbo_adv_UserDetailsWithWaiver.Address);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@Address", DBNull.Value);
+            }
+            if (clsdbo_adv_UserDetailsWithWaiver.City != null)
+            {
+                insertCommand.Parameters.AddWithValue("@City", clsdbo_adv_UserDetailsWithWaiver.City);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@City", DBNull.Value);
+            }
+            if (clsdbo_adv_UserDetailsWithWaiver.State != null)
+            {
+                insertCommand.Parameters.AddWithValue("@State", clsdbo_adv_UserDetailsWithWaiver.State);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@State", DBNull.Value);
+            }
+            if (clsdbo_adv_UserDetailsWithWaiver.Country != null)
+            {
+                insertCommand.Parameters.AddWithValue("@Country", clsdbo_adv_UserDetailsWithWaiver.Country);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@Country", DBNull.Value);
+            }
+            if (clsdbo_adv_UserDetailsWithWaiver.Zipcode != null)
+            {
+                insertCommand.Parameters.AddWithValue("@Zipcode", clsdbo_adv_UserDetailsWithWaiver.Zipcode);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@Zipcode", DBNull.Value);
+            }
+            if (clsdbo_adv_UserDetailsWithWaiver.ContactNumber != null)
+            {
+                insertCommand.Parameters.AddWithValue("@ContactNumber", clsdbo_adv_UserDetailsWithWaiver.ContactNumber);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@ContactNumber", DBNull.Value);
+            }
+            if (clsdbo_adv_UserDetailsWithWaiver.EmailID != null)
+            {
+                insertCommand.Parameters.AddWithValue("@EmailID", clsdbo_adv_UserDetailsWithWaiver.EmailID);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@EmailID", DBNull.Value);
+            }
+            if (clsdbo_adv_UserDetailsWithWaiver.DateOfBirth.Equals(null) == false)
+            {
+                insertCommand.Parameters.AddWithValue("@DateOfBirth", clsdbo_adv_UserDetailsWithWaiver.DateOfBirth);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@DateOfBirth", DBNull.Value);
+            }
+            if (clsdbo_adv_UserDetailsWithWaiver.CreatedDate.HasValue == true)
+            {
+                insertCommand.Parameters.AddWithValue("@CreatedDate", clsdbo_adv_UserDetailsWithWaiver.CreatedDate);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@CreatedDate", DBNull.Value);
+            }
+            if (clsdbo_adv_UserDetailsWithWaiver.ParticipantID != null)
+            {
+                insertCommand.Parameters.AddWithValue("@ParticipantID", clsdbo_adv_UserDetailsWithWaiver.ParticipantID);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@ParticipantID", DBNull.Value);
+            }
+            if (clsdbo_adv_UserDetailsWithWaiver.IsImported.HasValue == true)
+            {
+                insertCommand.Parameters.AddWithValue("@IsImported", clsdbo_adv_UserDetailsWithWaiver.IsImported);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@IsImported", DBNull.Value);
+            }
+            if (clsdbo_adv_UserDetailsWithWaiver.IsMinor.HasValue == true)
+            {
+                insertCommand.Parameters.AddWithValue("@IsMinor", clsdbo_adv_UserDetailsWithWaiver.IsMinor);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@IsMinor", DBNull.Value);
+            }
+            if (clsdbo_adv_UserDetailsWithWaiver.waiver_id != null)
+            {
+                insertCommand.Parameters.AddWithValue("@waiver_id", clsdbo_adv_UserDetailsWithWaiver.waiver_id);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@waiver_id", DBNull.Value);
+            }
+            if (clsdbo_adv_UserDetailsWithWaiver.date_accepted_utc.HasValue == true)
+            {
+                insertCommand.Parameters.AddWithValue("@date_accepted_utc", clsdbo_adv_UserDetailsWithWaiver.date_accepted_utc);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@date_accepted_utc", DBNull.Value);
+            }
+            if (clsdbo_adv_UserDetailsWithWaiver.pdf_url != null)
+            {
+                insertCommand.Parameters.AddWithValue("@pdf_url", clsdbo_adv_UserDetailsWithWaiver.pdf_url);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@pdf_url", DBNull.Value);
+            }
+            if (clsdbo_adv_UserDetailsWithWaiver.Date_visiting.HasValue == true)
+            {
+                insertCommand.Parameters.AddWithValue("@Date_visiting", clsdbo_adv_UserDetailsWithWaiver.Date_visiting);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@Date_visiting", DBNull.Value);
+            }
+            if (clsdbo_adv_UserDetailsWithWaiver.Time_Visiting != null)
+            {
+                insertCommand.Parameters.AddWithValue("@Time_Visiting", clsdbo_adv_UserDetailsWithWaiver.Time_Visiting);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@Time_Visiting", DBNull.Value);
+            }
+            if (clsdbo_adv_UserDetailsWithWaiver.ZipLining != null)
+            {
+                insertCommand.Parameters.AddWithValue("@ZipLining", clsdbo_adv_UserDetailsWithWaiver.ZipLining);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@ZipLining", DBNull.Value);
+            }
+            if (clsdbo_adv_UserDetailsWithWaiver.JumpOff != null)
+            {
+                insertCommand.Parameters.AddWithValue("@JumpOff", clsdbo_adv_UserDetailsWithWaiver.JumpOff);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@JumpOff", DBNull.Value);
+            }
+            if (clsdbo_adv_UserDetailsWithWaiver.RopesCourse != null)
+            {
+                insertCommand.Parameters.AddWithValue("@RopesCourse", clsdbo_adv_UserDetailsWithWaiver.RopesCourse);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@RopesCourse", DBNull.Value);
+            }
+            if (clsdbo_adv_UserDetailsWithWaiver.waiver_title != null)
+            {
+                insertCommand.Parameters.AddWithValue("@waiver_title", clsdbo_adv_UserDetailsWithWaiver.waiver_title);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@waiver_title", DBNull.Value);
+            }
+            if (clsdbo_adv_UserDetailsWithWaiver.pending_email_validation.HasValue == true)
+            {
+                insertCommand.Parameters.AddWithValue("@pending_email_validation", clsdbo_adv_UserDetailsWithWaiver.pending_email_validation);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@pending_email_validation", DBNull.Value);
+            }
+            if (clsdbo_adv_UserDetailsWithWaiver.completed_at_kiosk != null)
+            {
+                insertCommand.Parameters.AddWithValue("@completed_at_kiosk", clsdbo_adv_UserDetailsWithWaiver.completed_at_kiosk);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@completed_at_kiosk", DBNull.Value);
+            }
+            if (clsdbo_adv_UserDetailsWithWaiver.overageofmajority != null)
+            {
+                insertCommand.Parameters.AddWithValue("@overageofmajority", clsdbo_adv_UserDetailsWithWaiver.overageofmajority);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@overageofmajority", DBNull.Value);
+            }
+            if (clsdbo_adv_UserDetailsWithWaiver.web_browsers_user_agent != null)
+            {
+                insertCommand.Parameters.AddWithValue("@web_browsers_user_agent", clsdbo_adv_UserDetailsWithWaiver.web_browsers_user_agent);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@web_browsers_user_agent", DBNull.Value);
+            }
+            if (clsdbo_adv_UserDetailsWithWaiver.completed_from_ip_address != null)
+            {
+                insertCommand.Parameters.AddWithValue("@completed_from_ip_address", clsdbo_adv_UserDetailsWithWaiver.completed_from_ip_address);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@completed_from_ip_address", DBNull.Value);
+            }
+            if (clsdbo_adv_UserDetailsWithWaiver.SERVERSIDE_WAIVER_START_TS != null)
+            {
+                insertCommand.Parameters.AddWithValue("@SERVERSIDE_WAIVER_START_TS", clsdbo_adv_UserDetailsWithWaiver.SERVERSIDE_WAIVER_START_TS);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@SERVERSIDE_WAIVER_START_TS", DBNull.Value);
+            }
+            if (clsdbo_adv_UserDetailsWithWaiver.waiver_type_guid != null)
+            {
+                insertCommand.Parameters.AddWithValue("@waiver_type_guid", clsdbo_adv_UserDetailsWithWaiver.waiver_type_guid);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@waiver_type_guid", DBNull.Value);
+            }
+            if (clsdbo_adv_UserDetailsWithWaiver.marketingallowed != null)
+            {
+                insertCommand.Parameters.AddWithValue("@marketingallowed", clsdbo_adv_UserDetailsWithWaiver.marketingallowed);
+            }
+            else
+            {
+                insertCommand.Parameters.AddWithValue("@marketingallowed", DBNull.Value);
+            }
+            insertCommand.Parameters.Add("@ReturnValue", System.Data.SqlDbType.Int);
+            insertCommand.Parameters["@ReturnValue"].Direction = ParameterDirection.Output;
+
+            var adapter = new SqlDataAdapter(insertCommand);
             var connection = new SqlConnection(_connectionString);
-            selectCommand.Connection = connection;
+            insertCommand.Connection = connection;
             try
             {
                 connection.Open();
@@ -1450,7 +1687,61 @@ namespace AdDataLayer
                 connection.Dispose();
                 Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
             }
+
+            
+
         }
+
+
+
+
+        //public DataTable InsertUserWaiver(string FirstName, string LastName, string Address, string City, string State, string Country, string Zipcode,
+        //    string ContactNumber, string EmailID, string ParticipantID, DateTime DateOfBirth, DateTime CreatedDate, bool IsMinor)
+        //{
+
+        //    Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+        //    var dataTable = new DataTable();
+        //    var selectCommand = new SqlCommand
+        //    {
+        //        CommandText = string.Format(_constants.InsertUserWaiver),
+        //        CommandTimeout = 180,
+        //        CommandType = CommandType.StoredProcedure
+        //    };
+        //    selectCommand.Parameters.AddWithValue("@FirstName", FirstName);
+        //    selectCommand.Parameters.AddWithValue("@LastName", LastName);
+        //    selectCommand.Parameters.AddWithValue("@Address", Address);
+        //    selectCommand.Parameters.AddWithValue("@City", City);
+        //    selectCommand.Parameters.AddWithValue("@State", State);
+        //    selectCommand.Parameters.AddWithValue("@Country", Country);
+        //    selectCommand.Parameters.AddWithValue("@Zipcode", Zipcode);
+        //    selectCommand.Parameters.AddWithValue("@ContactNumber", ContactNumber);
+        //    selectCommand.Parameters.AddWithValue("@EmailID", EmailID);
+        //    selectCommand.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
+        //    selectCommand.Parameters.AddWithValue("@ParticipantID", ParticipantID);
+        //    selectCommand.Parameters.AddWithValue("@CreatedDate", CreatedDate);
+        //    selectCommand.Parameters.AddWithValue("@IsMinor", IsMinor);
+        //    var adapter = new SqlDataAdapter(selectCommand);
+        //    var connection = new SqlConnection(_connectionString);
+        //    selectCommand.Connection = connection;
+        //    try
+        //    {
+        //        connection.Open();
+        //        adapter.Fill(dataTable);
+        //        return dataTable;
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //        Nlog.Error(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Error" + ex.InnerException + ex.Message + Environment.NewLine + ex.StackTrace);
+        //        throw ex;
+        //    }
+        //    finally
+        //    {
+        //        connection.Close();
+        //        connection.Dispose();
+        //        Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
+        //    }
+        //}
 
     }
 }
