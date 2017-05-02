@@ -54,6 +54,9 @@
                                         <asp:ListItem class="radio-inline">Get Out </asp:ListItem>
                                     </asp:RadioButtonList>
                              <asp:RequiredFieldValidator ID="rfvInandOut" runat="server" ControlToValidate="rblInandOut" ForeColor="#ff0000" ErrorMessage="*Select In time or Out time"></asp:RequiredFieldValidator>
+                           
+                                          <asp:Label ID="lblDeviceCounter" runat="server" Text="" Visible="False"></asp:Label>
+                            &nbsp;<asp:Label ID="lblDeviceSpeed" runat="server" Text="" Visible="False" ></asp:Label>
                                 </div>   </center>   
                         </div>
                           

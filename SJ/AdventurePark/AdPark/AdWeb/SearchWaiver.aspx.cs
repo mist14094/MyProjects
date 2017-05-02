@@ -14,64 +14,72 @@ namespace AdWeb
     {
         AdBsnsLayer.User User= new User();
         AdBsnsLayer.ActivitiesMenu Menu = new ActivitiesMenu();
-
+        AdBsnsLayer.SmartWaiverIntegration  _integration = new SmartWaiverIntegration();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //var user = Session["User"];
-
-            //if (!IsPostBack)
-            //{
-            //    if (user == null)
-            //    {
-            //        Response.Redirect("Login.aspx");
-            //    }
-            //}
+            var user = Session["User"];
 
             if (!IsPostBack)
             {
-                rblMenuType.DataSource = Menu.GetAllActivitiesMenu();
-                rblMenuType.DataValueField = "Sno";
-                rblMenuType.DataTextField = "PlanName";
+                RadGrid1.ClientSettings.Scrolling.AllowScroll = true;
+                RadGrid1.ClientSettings.Scrolling.UseStaticHeaders = true;
+                if (user == null)
+                {
+                    Response.Redirect("Login.aspx");
+                }
+            }
 
+            if (!IsPostBack)
+            {
                
-             
-                 dplWaiverList.DataSource = User.GetUserDetailsWithWaiver();
-                rblMenuType.DataValueField = "Sno";
-                rblMenuType.DataTextField = "FirstName";
-
-                rblMenuType.DataBind();
-                txtFirstName.Focus();
             }
         }
 
-        protected void btnSave_Click(object sender, EventArgs e)
-        {
-          var userCreated= User.InsertUser(txtFirstName.Text, txtLastName.Text, txtAddress.Text, txtCity.Text,
-                txtState.Text, txtCountry.Text, txtZipCode.Text, txtMobile.Text, txtEmailId.Text,
-                DateTime.Parse(txtDob.Text), txtTagNumber.Text, ((LoginUser) Session["User"]).Sno, int.Parse(rblMenuType.SelectedItem.Value),rblMenuType.SelectedItem.Text);
-            if (userCreated == null)
-            {
-                lblModalTitle.Text = "Tag Already Associated";
-                lblModalBody.Text = "This band is already in the system. Try with other tag";
-                lblModalBody.ForeColor = Color.Red;
-            }
-            else
-            {
-                lblModalTitle.Text = "Tag Associated";
-                lblModalBody.Text = "Enjoy your Adventure - ID# " + userCreated.ToString();
-                lblModalBody.ForeColor = Color.DarkGreen;
-                Response.Redirect(string.Format("AssociateActv.aspx?TagNumber={0}", txtTagNumber.Text));
-            }
-         
-            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
-            upModal.Update();
-
-
-        }
+       
 
         protected void btnClear_Click(object sender, EventArgs e)
         {
            
+        }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            GetData();
+        }
+
+        protected void RadGrid1_PageIndexChanged(object sender, Telerik.Web.UI.GridPageChangedEventArgs e)
+        {
+            GetData();
+        }
+
+        protected void RadGrid1_SortCommand(object sender, Telerik.Web.UI.GridSortCommandEventArgs e)
+        {
+            GetData();
+        }
+
+        private void GetData()
+        {
+            if (txtSearchString.Text.Length > 2)
+            {
+                try
+                {
+                    var dt = DateTime.Parse(txtSearchString.Text);
+                    RadGrid1.DataSource = _integration.SearchUserWaiver(null, dt);
+                    RadGrid1.DataBind();
+                }
+                catch (Exception exception)
+                {
+                    RadGrid1.DataSource = _integration.SearchUserWaiver(txtSearchString.Text, null);
+                    RadGrid1.DataBind();
+
+                }
+            }
+        }
+
+        protected void btnTop20Waiver_Click(object sender, EventArgs e)
+        {
+            RadGrid1.DataSource = _integration.Top20Waiver();
+            RadGrid1.DataBind();
         }
     }
 }

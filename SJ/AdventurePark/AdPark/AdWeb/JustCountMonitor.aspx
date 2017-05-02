@@ -1,74 +1,89 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/HomeMaster.Master" AutoEventWireup="true" CodeBehind="JustCountMonitor.aspx.cs" Inherits="AdWeb.JustCountMonitor"  EnableEventValidation="true"  %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="JustCountMonitor.aspx.cs" Inherits="AdWeb.JustCountMonitor" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-    <style type="text/css">
+<!DOCTYPE html>
 
-        input:required:invalid, input:focus:invalid {
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAeVJREFUeNqkU01oE1EQ/mazSTdRmqSxLVSJVKU9RYoHD8WfHr16kh5EFA8eSy6hXrwUPBSKZ6E9V1CU4tGf0DZWDEQrGkhprRDbCvlpavan3ezu+LLSUnADLZnHwHvzmJlvvpkhZkY7IqFNaTuAfPhhP/8Uo87SGSaDsP27hgYM/lUpy6lHdqsAtM+BPfvqKp3ufYKwcgmWCug6oKmrrG3PoaqngWjdd/922hOBs5C/jJA6x7AiUt8VYVUAVQXXShfIqCYRMZO8/N1N+B8H1sOUwivpSUSVCJ2MAjtVwBAIdv+AQkHQqbOgc+fBvorjyQENDcch16/BtkQdAlC4E6jrYHGgGU18Io3gmhzJuwub6/fQJYNi/YBpCifhbDaAPXFvCBVxXbvfbNGFeN8DkjogWAd8DljV3KRutcEAeHMN/HXZ4p9bhncJHCyhNx52R0Kv/XNuQvYBnM+CP7xddXL5KaJw0TMAF8qjnMvegeK/SLHubhpKDKIrJDlvXoMX3y9xcSMZyBQ+tpyk5hzsa2Ns7LGdfWdbL6fZvHn92d7dgROH/730YBLtiZmEdGPkFnhX4kxmjVe2xgPfCtrRd6GHRtEh9zsL8xVe+pwSzj+OtwvletZZ/wLeKD71L+ZeHHWZ/gowABkp7AwwnEjFAAAAAElFTkSuQmCC);
-    background-position: right center;
-    background-repeat: no-repeat;
-    -moz-box-shadow: none;
-  }
-  input:required:valid {
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAepJREFUeNrEk79PFEEUx9/uDDd7v/AAQQnEQokmJCRGwc7/QeM/YGVxsZJQYI/EhCChICYmUJigNBSGzobQaI5SaYRw6imne0d2D/bYmZ3dGd+YQKEHYiyc5GUyb3Y+77vfeWNpreFfhvXfAWAAJtbKi7dff1rWK9vPHx3mThP2Iaipk5EzTg8Qmru38H7izmkFHAF4WH1R52654PR0Oamzj2dKxYt/Bbg1OPZuY3d9aU82VGem/5LtnJscLxWzfzRxaWNqWJP0XUadIbSzu5DuvUJpzq7sfYBKsP1GJeLB+PWpt8cCXm4+2+zLXx4guKiLXWA2Nc5ChOuacMEPv20FkT+dIawyenVi5VcAbcigWzXLeNiDRCdwId0LFm5IUMBIBgrp8wOEsFlfeCGm23/zoBZWn9a4C314A1nCoM1OAVccuGyCkPs/P+pIdVIOkG9pIh6YlyqCrwhRKD3GygK9PUBImIQQxRi4b2O+JcCLg8+e8NZiLVEygwCrWpYF0jQJziYU/ho2TUuCPTn8hHcQNuZy1/94sAMOzQHDeqaij7Cd8Dt8CatGhX3iWxgtFW/m29pnUjR7TSQcRCIAVW1FSr6KAVYdi+5Pj8yunviYHq7f72po3Y9dbi7CxzDO1+duzCXH9cEPAQYAhJELY/AqBtwAAAAASUVORK5CYII=);
-    background-position: right center;
-    background-repeat: no-repeat;
-  }
-
-</style>
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <%--<script language="javascript">
-  
-
-        $(document).ready(function () {
-            $('<%= txtTagNumber.ClientID %>').keydown(function (e) {
-              if (e.keyCode == 13) $('<%= btnScan.ClientID %>'.click());
-            });
-        });
-    </script>--%>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="css/bootstrapNew.css" rel="stylesheet" />
+    <link href="css/bootstrap-theme.css" rel="stylesheet" />
     
-    <script>setTimeout('window.location.href = window.location.href', 5000);</script>
-    <div class="media" style="max-width: 992px; margin-left: auto; margin-right: auto;">
+    <link href='https://fonts.googleapis.com/css?family=Lobster|Open+Sans:400,400italic,300italic,300|Raleway:300,400,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link href="css/bootstrap-theme.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title" style="align-self: center;">
-                    <asp:Label ID="lblTitle" runat="server" Text=""></asp:Label></h3>
-            </div>
-           <%-- <form data-toggle="validator" role="form">--%>
-                  <div class="form-group">
-            <div class="container">
-                <div class="row">
-                    
-                     <div class="col-sm-2">
-                        <br />
-                        <div class="input-group" style="width: 100%;">
-                          
-                            <asp:Label ID="lblResult" runat="server" Text="" Visible="False"></asp:Label>
-                        </div>
-                        <br />
-                    </div>
-                    <div>
-                        <div class="col-sm-10" style="width: 100%;">
-                        <asp:GridView class="table table-inverse" ID="GridView1" runat="server" EmptyDataText="No Records Found"></asp:GridView>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                        
-</div>
-             <%--  </form>--%>
-                 
-                 
-                 
-                  
-            
-        </div>
-    </div>
-    
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
         
+        
+    <div class="content">
+      <div class="container wow fadeInUp delay-03s"  >
+        <div class="row">
+          <div class="logo text-center">
+            <img src="img/logo.png" alt="logo" width="20%">
+            
+      <div class="container" >
+          <div class="row">
+
+               
+              
+                <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+
+                <ContentTemplate>
+        <div>
+         <b> <h1 style="color: red; font-style: normal; text-decoration: underline; font-weight: bolder;">
+             <asp:Label ID="lblTitle" runat="server" Text=""></asp:Label></h1></b>  
+          
+
+                    <asp:Timer ID="Timer1" runat="server" Interval="3000" OnTick="Timer1_Tick"></asp:Timer>
+ <div class="container">
+     <br/><br/>
+                    <asp:GridView     class="table" style="color: black; font-size: 120%" ID="grdMonitor" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+                        <AlternatingRowStyle BackColor="White" />
+                        <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                        <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+                        <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+                        <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+                        <SortedAscendingCellStyle BackColor="#FDF5AC" />
+                        <SortedAscendingHeaderStyle BackColor="#4D0000" />
+                        <SortedDescendingCellStyle BackColor="#FCF6C0" />
+                        <SortedDescendingHeaderStyle BackColor="#820000" />
+                    </asp:GridView>
+     </div>
+                </ContentTemplate>
+
+            </asp:UpdatePanel>
+        </div>
+              
+              
+              
+              
+              
+
+          </div>
+        </div>
+      
+    </div>
+            </div>
+          </div>
+        </div>
     
-</asp:Content>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="contactform/contactform.js"></script>
+
+        
+        
+        
+
+    </form>
+</body>
+</html>

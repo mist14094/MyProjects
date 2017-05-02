@@ -22,15 +22,6 @@ namespace AdWeb {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// dplWaiverList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dplWaiverList;
-        
-        /// <summary>
         /// txtFirstName control.
         /// </summary>
         /// <remarks>
@@ -121,15 +112,6 @@ namespace AdWeb {
         protected global::System.Web.UI.WebControls.TextBox txtMobile;
         
         /// <summary>
-        /// rfvMobile control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMobile;
-        
-        /// <summary>
         /// txtEmailId control.
         /// </summary>
         /// <remarks>
@@ -139,15 +121,6 @@ namespace AdWeb {
         protected global::System.Web.UI.WebControls.TextBox txtEmailId;
         
         /// <summary>
-        /// rfvEmailId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmailId;
-        
-        /// <summary>
         /// txtDob control.
         /// </summary>
         /// <remarks>
@@ -155,15 +128,6 @@ namespace AdWeb {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDob;
-        
-        /// <summary>
-        /// rfvDob control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDob;
         
         /// <summary>
         /// rblMenuType control.

@@ -49,6 +49,24 @@ namespace AdWeb {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvInandOut;
         
         /// <summary>
+        /// lblDeviceCounter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDeviceCounter;
+        
+        /// <summary>
+        /// lblDeviceSpeed control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDeviceSpeed;
+        
+        /// <summary>
         /// txtTagNumber control.
         /// </summary>
         /// <remarks>

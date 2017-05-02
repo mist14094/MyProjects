@@ -23,8 +23,12 @@ namespace AdConstants
                 DefaultString = value;
             }
         }
-        public string GetAllUsers = "SELECT  [Sno],[FirstName],[LastName],[Address],[City],[State],[Country],[Zipcode],[ContactNumber],[EmailID],[DateOfBirth],[CreatedDate],[TagNumber] FROM [AdventurePark].[dbo].[adv_UserDetails]";
+
+        
+
+        public string GetAllUsers = "SELECT  [Sno],[FirstName],[LastName],[Address],[City],[State],[Country],[Zipcode],[ContactNumber],[EmailID],[DateOfBirth],[CreatedDate],[TagNumber],[WaiverSno] FROM [AdventurePark].[dbo].[adv_UserDetails]";
         public string InsertUser = "InsertUser";
+        public string InsertUserWithWaiver = "InsertUserWithWaiver";
         public string CheckLogin = "CheckLogin";
         public string InsertUserLog = "InsertUserLog";
         public string InsertInternalLog = "InsertInternalLog";
@@ -56,7 +60,7 @@ namespace AdConstants
         public string SelectCountAndWait = "SELECT * FROM [dbo].[{0}]";
         public string SelectCountAndWaitWithTagNumber = "SELECT * FROM [dbo].[{0}]";
         public string InsertCountAndWaitCounter = "INSERT INTO [dbo].[{0}]([TagNumber]) VALUES('{1}')";
-        public string UpdateExpiredCountAndWait = "UPDATE [{0}] SET [Value] =0,[CurrentState]='Expired' WHERE  DATEDIFF(ss,[CreatedDate],GETDATE())>60";
+        public string UpdateExpiredCountAndWait = "UPDATE [{0}] SET [Value] =0,[CurrentState]='Expired' WHERE  DATEDIFF(ss,[CreatedDate],GETDATE())>60 and [CurrentState] IS NULL";
         public string UpdateExpiredCountAndWait_Out = "UPDATE [{0}] SET [Value] ={1},[CurrentState]='Captured' WHERE [SNO]={2}";
 
         public string InsertThrowLeaderBoard =
@@ -71,9 +75,9 @@ namespace AdConstants
         public string MonitorJustCount =
             "SELECT FirstName,dbo.[{0}].CreatedDate  FROM [{0}] INNER JOIN dbo.adv_UserDetails ON dbo.adv_UserDetails.TagNumber = dbo.[{0}].TagNumber ORDER BY dbo.[{0}].CreatedDate desc";
 
-        public string GetUserDetailsWithWaiver = "SELECT * FROM [adv_UserDetailsWithWaiver]";
+        public string GetUserDetailsWithWaiver = "SELECT * FROM [adv_UserDetailsWithWaiver] where Sno={0} order by [CreatedDate] desc";
 
-        public string updateUserDetailsWithWaiver =
+        public string UpdateUserDetailsWithWaiver =
             " UPDATE[dbo].[adv_UserDetailsWithWaiver] SET[IsImported] = '1' WHERE sno = '{0}'";
 
         public string InsertUserWaiver =
@@ -81,5 +85,13 @@ namespace AdConstants
 
         public string UserDetailsWithWaiverInsert =
             "UserDetailsWithWaiverInsert";
+
+        public string UserWaiverSearch = "UserWaiverSearch";
+        public string Top20Waiver = "Top20Waiver";
+        public string TagSearch = "TagSearch";
+        public string Top20Tag = "Top20Tag";
+        public string RopeCourseMonitor = "Monitor_RopeCourse";
+        public string SoccerDartsMonitor = "Monitor_SoccerDarts";
+        public string LacrosseMonitor = "Monitor_Lacrosse";
     }
 }

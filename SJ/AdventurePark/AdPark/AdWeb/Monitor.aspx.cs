@@ -81,12 +81,12 @@ namespace AdWeb
 
         protected void btnRopeCourse_Click(object sender, EventArgs e)
         {
-            Response.Redirect(string.Format("CountExpire.aspx?DeviceID={0}", 17));
+            Response.Redirect("RopeCourseMonitor.aspx");
         }
 
         protected void btnLacrosseThrow_Click(object sender, EventArgs e)
         {
-            Response.Redirect(string.Format("CountAndWait.aspx?DeviceID={0}", 19));
+            Response.Redirect("LacrosseMonitor.aspx");
         }
     }
 }

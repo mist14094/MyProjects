@@ -16,11 +16,11 @@
                     </tr>
                      <tr>
                         <td>
-                            <asp:Button ID="btnSoftballThrow" runat="server" Text="Softball Throw" class="btn btn-success btn-lg" style="width: 100%" /></td>
+                            <asp:Button ID="btnSoftballThrow" runat="server" Text="Softball Throw" class="btn btn-success btn-lg" style="width: 100%" OnClick="btnSoftballThrow_Click" /></td>
                     </tr>
                      <tr>
                         <td>
-                            <asp:Button ID="btnHeaveyBallThrow" runat="server" Text="Heavyball Throw" class="btn btn-success btn-lg" style="width: 100%" /></td>
+                            <asp:Button ID="btnHeaveyBallThrow" runat="server" Text="Heavyball Throw" class="btn btn-success btn-lg" style="width: 100%" OnClick="btnHeaveyBallThrow_Click" /></td>
                     </tr>
                      <tr>
                         <td>
@@ -38,7 +38,7 @@
                     </tr>
                      <tr>
                         <td>
-                            <asp:Button ID="btnSoccerDarts" runat="server" Text="Soccer Darts" class="btn btn-success btn-lg" style="width: 100%" /></td>
+                            <asp:Button ID="btnSoccerDarts" runat="server" Text="Soccer Darts" class="btn btn-success btn-lg" style="width: 100%" OnClick="btnSoccerDarts_Click" /></td>
                     </tr>
                      <tr>
                         <td>
@@ -60,10 +60,10 @@
                         <td>
                             <asp:Button ID="btnExtraAct1InCount" runat="server" Text="Extra Act 1" class="btn btn-success btn-lg" style="width: 100%" OnClick="btnExtraAct1InCount_Click"  /></td>
                     </tr>   
-                    <tr>
+                  <%--  <tr>
                         <td>
                             <asp:Button ID="btnExtracAct1InTime" runat="server" Text="Extra Time 1" class="btn btn-success btn-lg" style="width: 100%"  /></td>
-                    </tr>
+                    </tr>--%>
                    
                 </table>
 

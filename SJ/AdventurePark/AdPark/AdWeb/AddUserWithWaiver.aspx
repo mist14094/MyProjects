@@ -15,11 +15,7 @@
        <%--///////////////////////////////////////////////////////////////////////////--%>
             
                 <br/>           
-             <div class="input-group"  style="width:100%;">
-                <span class="input-group-addon" id="basic-addon3"  style="width:175px;">Select Participants</span>
-                 
-                 <asp:DropDownList ID="dplWaiverList" runat="server"></asp:DropDownList>
-            </div>
+
            
             <br/>           
              <div class="input-group"  style="width:100%;">
@@ -90,7 +86,7 @@
                  <asp:TextBox ID="txtMobile" type="text"  runat="server" Width="100%" class="form-control" aria-describedby="basic-addon1"      ></asp:TextBox>     
                     
             </div>
-             <asp:RequiredFieldValidator ID="rfvMobile" runat="server"  ControlToValidate="txtMobile" ErrorMessage="*Contact Number Required"></asp:RequiredFieldValidator>
+            <%-- <asp:RequiredFieldValidator ID="rfvMobile" runat="server"  ControlToValidate="txtMobile" ErrorMessage="*Contact Number Required"></asp:RequiredFieldValidator>--%>
             <br/> 
             
                <br/>           
@@ -99,16 +95,16 @@
                  <asp:TextBox ID="txtEmailId" type="email"  runat="server" Width="100%" class="form-control" aria-describedby="basic-addon1"      ></asp:TextBox>     
                     
             </div>
-             <asp:RequiredFieldValidator ID="rfvEmailId" runat="server"  ControlToValidate="txtEmailId" ErrorMessage="*Email ID Required"></asp:RequiredFieldValidator>
+            <%-- <asp:RequiredFieldValidator ID="rfvEmailId" runat="server"  ControlToValidate="txtEmailId" ErrorMessage="*Email ID Required"></asp:RequiredFieldValidator>--%>
             <br/> 
             
                <br/>           
              <div class="input-group"  style="width:100%;">
                 <span class="input-group-addon" id="basic-addon3"  style="width:175px;">Date of Birth</span>
-                 <asp:TextBox ID="txtDob" type="date"  runat="server" Width="100%" class="form-control" aria-describedby="basic-addon1"      ></asp:TextBox>     
+                 <asp:TextBox ID="txtDob"  runat="server" Width="100%" class="form-control" aria-describedby="basic-addon1"      ></asp:TextBox>     
                     
             </div>
-             <asp:RequiredFieldValidator ID="rfvDob" runat="server"  ControlToValidate="txtDob" ErrorMessage="*Date Of Birth Required"></asp:RequiredFieldValidator>
+             <%--<asp:RequiredFieldValidator ID="rfvDob" runat="server"  ControlToValidate="txtDob" ErrorMessage="*Date Of Birth Required"></asp:RequiredFieldValidator>--%>
             <br/> 
             
             
@@ -140,7 +136,7 @@
             <table class="nav-justified">
                 <tr>
                     <td>  <asp:Button  ID="btnSave" runat="server" Text="Save"  OnClick="btnSave_Click" type="button" class="btn btn btn-success center-block" Width="80%"/></td>
-                    <td>&nbsp;</td>
+                    <td></td>
                     <td><asp:Button ID="btnClear" runat="server"  Text="Clear" type="button" class="btn btn btn-success center-block" Width="80%" OnClick="btnClear_Click" /></td>
                 </tr>
             </table>

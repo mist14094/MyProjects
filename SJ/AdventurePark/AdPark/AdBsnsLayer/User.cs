@@ -26,11 +26,12 @@ namespace AdBsnsLayer
         public string Zipcode { get; set; }
         public string ContactNumber { get; set; }
         public string EmailId { get; set; }
-        public DateTime DateOfBirth { get; set; }
+        public DateTime? DateOfBirth { get; set; }
         public DateTime CreatedDate { get; set; }
         public string TagNumber { get; set; }
         public int LoginUsers { get; set; }
         public bool IsImported { get; set; }
+        public int WaiverSno { get; set; }
         public User()
         {
             _nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
@@ -63,6 +64,7 @@ namespace AdBsnsLayer
                 user.CreatedDate = DateTime.Parse(drRow["CreatedDate"].ToString());
                 user.DateOfBirth = DateTime.Parse(drRow["DateOfBirth"].ToString());
                 user.LoginUsers = int.Parse(drRow["LoginUsers"].ToString());
+                user.WaiverSno = int.Parse(drRow["WaiverSno"].ToString());
                 Users.Add(user);
             }
           
@@ -92,8 +94,16 @@ namespace AdBsnsLayer
                 user.Zipcode = drRow["Zipcode"].ToString();
                 user.ContactNumber = drRow["ContactNumber"].ToString();
                 user.CreatedDate = DateTime.Parse(drRow["CreatedDate"].ToString());
-                user.DateOfBirth = DateTime.Parse(drRow["DateOfBirth"].ToString());
-                user.IsImported = bool.Parse(drRow["IsImported"].ToString());
+                if (drRow["DateOfBirth"].ToString() == "")
+                {
+                    user.DateOfBirth = null;
+                }else
+                {
+                    user.DateOfBirth =  DateTime.Parse(drRow["DateOfBirth"].ToString());
+                }
+               
+                user.IsImported = bool.Parse(drRow["IsImported"].ToString()==""?"False": drRow["IsImported"].ToString());
+                
                 Users.Add(user);
             }
 
@@ -138,27 +148,29 @@ namespace AdBsnsLayer
             }
             return null;
         }
- public int? InsertUserWaiver(string FirstName, string LastName, string Address, string City, string State, string Country, string Zipcode,
-            string ContactNumber, string EmailID, string ParticipantID, DateTime DateOfBirth, DateTime CreatedDate, bool isMinor)
+        public int? InsertUserWithWaiver(string FirstName, string LastName, string Address, string City, string State, string Country, string Zipcode,
+                  string ContactNumber, string EmailID, DateTime DateOfBirth, string TagNumber, int LoginUsers, int ActiveMenu, string ActiveMenuName,string WaiverId)
         {
 
             DataAccess access = new DataAccess();
 
             try
             {
-           //   //  var val = access.InsertUserWaiver( FirstName,  LastName,  Address,  City,  State,  Country,  Zipcode,
-           //// ContactNumber,  EmailID,  ParticipantID,  DateOfBirth,  CreatedDate, isMinor);
+                var val = access.InsertUserWithWaiver(FirstName, LastName, Address, City, State, Country, Zipcode,
+             ContactNumber, EmailID, DateOfBirth, TagNumber, LoginUsers, ActiveMenu,WaiverId);
 
-           //     if (val.Rows.Count > 0)
-           //     {
-                   
-           //         return int.Parse(val.Rows[0][0].ToString());
+                if (val.Rows.Count > 0)
+                {
+                    Log log = new Log();
+                    log.InsertLogMessage(TagNumber,
+                        string.Format("Tag created - ID ={0}, Plan - {1}", val.Rows[0][0].ToString(), ActiveMenuName));
+                    return int.Parse(val.Rows[0][0].ToString());
 
-           //     }
-           //     else
-           //     {
-           //         return null;
-           //     }
+                }
+                else
+                {
+                    return null;
+                }
             }
             catch (Exception ex)
             {
@@ -167,11 +179,11 @@ namespace AdBsnsLayer
             return null;
         }
 
-        public List<User> GetUserDetailsWithWaiver()
+        public List<User> GetUserDetailsWithWaiver(string Sno)
         {
 
             _nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
-            return DataTabletoWaiveredUser(_access.GetUserDetailsWithWaiver());
+            return DataTabletoWaiveredUser(_access.GetUserDetailsWithWaiver(Sno));
         }
 
         public int? updateUserDetailsWithWaiver(string Sno)

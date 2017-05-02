@@ -122,7 +122,7 @@
                             
                             <span class="input-group-addon" id="basic-addon3" style="width: 150px;">Soccer Dart</span>
                             <asp:TextBox ID="txtSoccerDartOrg" disabled type="number" runat="server" Width="100%" Text="0" class="form-control" aria-describedby="basic-addon1" required></asp:TextBox>
-                              <asp:TextBox ID="txtSoccerDartMod"   min="0" type="number" runat="server" Width="100%" Text="0" class="form-control" aria-describedby="basic-addon1" required></asp:TextBox>
+                              <asp:TextBox ID="txtSoccerDartMod"   min="0" type="number"  step="60" runat="server" Width="100%" Text="0" class="form-control" aria-describedby="basic-addon1" required></asp:TextBox>
                         </div>
                     </div>
                     

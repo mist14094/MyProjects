@@ -48,5 +48,20 @@ namespace AdWeb
         {
             Response.Redirect("Monitor.aspx");
         }
+
+        protected void btnSearchWaiver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("SearchWaiver.aspx");
+        }
+
+        protected void btnSearchTag_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/SearchTag.aspx");
+        }
+
+        protected void btnViewTagRemainingActivities_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ViewTagRemaining.aspx");
+        }
     }
 }

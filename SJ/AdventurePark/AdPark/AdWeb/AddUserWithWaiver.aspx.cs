@@ -17,38 +17,65 @@ namespace AdWeb
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //var user = Session["User"];
+            var user = Session["User"];
 
-            //if (!IsPostBack)
-            //{
-            //    if (user == null)
-            //    {
-            //        Response.Redirect("Login.aspx");
-            //    }
-            //}
+            if (!IsPostBack)
+            {
+                if (user == null)
+                {
+                    Response.Redirect("Login.aspx");
+                }
+            }
 
             if (!IsPostBack)
             {
                 rblMenuType.DataSource = Menu.GetAllActivitiesMenu();
                 rblMenuType.DataValueField = "Sno";
                 rblMenuType.DataTextField = "PlanName";
-
-               
-             
-                 dplWaiverList.DataSource = User.GetUserDetailsWithWaiver();
-                rblMenuType.DataValueField = "Sno";
-                rblMenuType.DataTextField = "FirstName";
-
                 rblMenuType.DataBind();
-                txtFirstName.Focus();
+
+                var v = Request.QueryString["Sno"];
+                if (v == null)
+                {
+                    Response.Redirect("~/SearchWaiver.aspx");
+                }
+                else
+                {
+                   var UserList= User.GetUserDetailsWithWaiver(v.ToString());
+                    if (UserList.Count > 0)
+                    {
+                        txtFirstName.Text = UserList[0].FirstName;
+                        txtLastName.Text= UserList[0].LastName;
+                        txtEmailId.Text = UserList[0].EmailId;
+                        if (UserList[0].DateOfBirth != null)
+                        {
+                            txtDob.Text = DateTime.Parse(UserList[0].DateOfBirth.ToString()).ToString("MM/dd/yyyy");
+                        }
+                        
+
+                    }
+
+                    
+                }
+
             }
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-          var userCreated= User.InsertUser(txtFirstName.Text, txtLastName.Text, txtAddress.Text, txtCity.Text,
-                txtState.Text, txtCountry.Text, txtZipCode.Text, txtMobile.Text, txtEmailId.Text,
-                DateTime.Parse(txtDob.Text), txtTagNumber.Text, ((LoginUser) Session["User"]).Sno, int.Parse(rblMenuType.SelectedItem.Value),rblMenuType.SelectedItem.Text);
+            DateTime dt;
+            try
+            {
+                dt = DateTime.Parse(txtDob.Text);
+            }
+            catch (Exception exception)
+            {
+               dt=DateTime.Now;
+            }
+          
+          var userCreated= User.InsertUserWithWaiver(txtFirstName.Text, txtLastName.Text, txtAddress.Text, txtCity.Text,
+                txtState.Text, txtCountry.Text, txtZipCode.Text, txtMobile.Text, txtEmailId.Text,dt
+                , txtTagNumber.Text, ((LoginUser) Session["User"]).Sno, int.Parse(rblMenuType.SelectedItem.Value),rblMenuType.SelectedItem.Text, Request.QueryString["Sno"].ToString());
             if (userCreated == null)
             {
                 lblModalTitle.Text = "Tag Already Associated";
@@ -71,7 +98,12 @@ namespace AdWeb
 
         protected void btnClear_Click(object sender, EventArgs e)
         {
-           
+           Response.Redirect("AddUserWithWaiver.aspx");
+        }
+
+        protected void btnTop20Waiver_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

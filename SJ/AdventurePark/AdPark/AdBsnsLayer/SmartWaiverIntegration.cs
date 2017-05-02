@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -779,5 +780,28 @@ namespace AdBsnsLayer
 
             }
         }
+
+        public DataTable SearchUserWaiver(string LastName, DateTime? DateOfBirth)
+        {
+
+            return Access.UserWaiverSearch(LastName,DateOfBirth);
+        }
+
+        public DataTable Top20Waiver()
+        {
+
+            return Access.Top20Waiver();
+        }
+        public DataTable TagSearch(string searchString)
+        {
+
+            return Access.TagSearch(searchString);
+        }
+        public DataTable Top20Tag()
+        {
+
+            return Access.Top20Tag();
+        }
+
     }
 }

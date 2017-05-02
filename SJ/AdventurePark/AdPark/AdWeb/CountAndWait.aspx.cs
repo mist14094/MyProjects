@@ -30,11 +30,15 @@ namespace AdWeb
             }
             else
             {
-               List<AdBsnsLayer.Devices> deviceListed = _devices.GetAllDevices().Where(devices => devices.DeviceID == int.Parse(v.ToString()) && (devices.DeviceType == AdBsnsLayer.Devices._DeviceType.CountAndWait_Counter || devices.DeviceType == AdBsnsLayer.Devices._DeviceType.CountAndWait_Value)).ToList();
+                var AllDevices = _devices.GetAllDevices();
+               List<AdBsnsLayer.Devices> deviceListed = AllDevices.Where(devices => devices.DeviceID == int.Parse(v.ToString()) && (devices.DeviceType == AdBsnsLayer.Devices._DeviceType.CountAndWait_Counter || devices.DeviceType == AdBsnsLayer.Devices._DeviceType.CountAndWait_Value)).ToList();
+
                 if (deviceListed.Any())
                 {
                     lblTitle.Text = "Welcome to " + deviceListed[0].DisplayName;
                     txtTagNumber.Focus();
+                   lblDeviceCounter.Text = AllDevices.Where(devices => devices.DeviceID == int.Parse(v.ToString()) && (devices.DeviceType == AdBsnsLayer.Devices._DeviceType.CountAndWait_Counter)).ToList()[0].DeviceID.ToString();
+                   lblDeviceSpeed.Text= AllDevices.Where(devices => (devices.DeviceType == AdBsnsLayer.Devices._DeviceType.CountAndWait_Value) && (devices.DisplayName== deviceListed[0].DisplayName) ).ToList().ToList()[0].DeviceID.ToString();
                 }
                 else
                 { Response.Redirect("DeviceNotFound.aspx"); }
@@ -57,16 +61,18 @@ namespace AdWeb
 
         private void CheckTags(string tagNumber)
         {
+
+
             int deviceId = 0;
             string  engineResult="";
             if (rblInandOut.SelectedIndex == 0)
             {
-                deviceId = 19;
+                deviceId = int.Parse(lblDeviceCounter.Text);
                 engineResult = _engine.Process(deviceId, txtTagNumber.Text, "0".ToString(), ((LoginUser)Session["User"]).Sno.ToString());
             }
             else
             {
-                deviceId = 20;
+                deviceId = int.Parse(lblDeviceSpeed.Text);
                 engineResult = _engine.Process(deviceId,"CountAndWaitValue", int.Parse(txtTagNumber.Text).ToString(), ((LoginUser)Session["User"]).Sno.ToString());
             }
 

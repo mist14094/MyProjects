@@ -476,12 +476,12 @@ namespace DealStore
                                         }
                                         else
                                         {
-                                            string str5 = "DELETE FROM Product WHERE PRODUCT_UPC = @PRODUCT_UPC AND PRODUCT_VENDOR_LOAD_ID = @PRODUCT_VENDOR_LOAD_ID";
-                                            str5 = "DELETE FROM Product WHERE PRODUCT_UPC = ? AND PRODUCT_VENDOR_LOAD_ID = ?";
-                                            command2 = new OleDbCommand(str5, connection);
-                                            command2.Parameters.Add("@PRODUCT_UPC", OleDbType.VarChar, 0x19).Value = row[2].ToString();
-                                            command2.Parameters.Add("@PRODUCT_VENDOR_LOAD_ID", OleDbType.Integer).Value = int.Parse(this.ddlImportVendorLoad.SelectedValue.ToString());
-                                            command2.ExecuteNonQuery();
+                                            //string str5 = "DELETE FROM Product WHERE PRODUCT_UPC = @PRODUCT_UPC AND PRODUCT_VENDOR_LOAD_ID = @PRODUCT_VENDOR_LOAD_ID";
+                                            //str5 = "DELETE FROM Product WHERE PRODUCT_UPC = ? AND PRODUCT_VENDOR_LOAD_ID = ?";
+                                            //command2 = new OleDbCommand(str5, connection);
+                                            //command2.Parameters.Add("@PRODUCT_UPC", OleDbType.VarChar, 0x19).Value = row[2].ToString();
+                                            //command2.Parameters.Add("@PRODUCT_VENDOR_LOAD_ID", OleDbType.Integer).Value = int.Parse(this.ddlImportVendorLoad.SelectedValue.ToString());
+                                            //command2.ExecuteNonQuery();
                                             str4 = "INSERT INTO Product(PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_UPC, PRODUCT_VENDOR, PRODUCT_VENDOR_LOAD_ID, PRODUCT_QUANTITY, PRODUCT_IMPORT_DATE, CREATEDATE) VALUES(@PRODUCT_NAME, @PRODUCT_PRICE, @PRODUCT_UPC, @PRODUCT_VENDOR, @PRODUCT_VENDOR_LOAD_ID, @PRODUCT_QUANTITY, @PRODUCT_IMPORT_DATE, @CREATEDATE)";
                                             str4 = "INSERT INTO Product(PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_UPC, PRODUCT_VENDOR, PRODUCT_VENDOR_LOAD_ID, PRODUCT_QUANTITY, PRODUCT_IMPORT_DATE, CREATEDATE) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
                                             OleDbCommand command3 = new OleDbCommand(str4, connection);

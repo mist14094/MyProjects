@@ -88,5 +88,20 @@ namespace AdWeb
         {
             Response.Redirect(string.Format("CountAndWait.aspx?DeviceID={0}", 19));
         }
+
+        protected void btnSoftballThrow_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(string.Format("CountAndWait.aspx?DeviceID={0}", 21));
+        }
+
+        protected void btnHeaveyBallThrow_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(string.Format("CountAndWait.aspx?DeviceID={0}", 23));
+        }
+
+        protected void btnSoccerDarts_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(string.Format("CountExpire.aspx?DeviceID={0}", 25));
+        }
     }
 }

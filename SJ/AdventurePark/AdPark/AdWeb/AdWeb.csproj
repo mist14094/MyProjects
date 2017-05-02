@@ -43,32 +43,32 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.AI.DependencyCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.1.2.3\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.1.2.3\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.1.2.3\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.AI.Web, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.1.2.3\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.AI.WindowsServer, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.1.2.3\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.ApplicationInsights, Version=1.2.3.490, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.1.2.3\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -129,8 +129,36 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Telerik.Web.UI, Version=2016.1.225.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for ASP.NET AJAX Q1 2016\Bin45\Telerik.Web.UI.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.cosmo.css" />
+    <Content Include="Content\bootstrap.cosmo.min.css" />
+    <Content Include="css\animate.css" />
+    <Content Include="css\bootstrapNew.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\styleMonitor.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\Tables.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="img\banner01.jpg" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\logo_black.png" />
+    <Content Include="js\custom.js" />
+    <Content Include="js\jquery.countdown.js" />
+    <Content Include="js\jquery.countdown.min.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\wow.js" />
+    <Content Include="JustCountMonitor.aspx" />
+    <Content Include="LacrosseMonitor.aspx" />
+    <Content Include="SoccerDartMonitor.aspx" />
+    <Content Include="RopeCourseMonitor.aspx" />
+    <Content Include="ViewTagRemaining.aspx" />
+    <Content Include="SearchTag.aspx" />
+    <Content Include="SearchWaiver.aspx" />
     <Content Include="AddUserWithWaiver.aspx" />
     <Content Include="AddUser.aspx" />
     <Content Include="AdvPark.asmx" />
@@ -139,7 +167,6 @@
     <Content Include="CountAndWait.aspx" />
     <Content Include="CountExpire.aspx" />
     <Content Include="DeviceNotFound.aspx" />
-    <Content Include="JustCountMonitor.aspx" />
     <Content Include="Monitor.aspx" />
     <Content Include="Engine.aspx" />
     <Content Include="Devices.aspx" />
@@ -194,6 +221,11 @@
     <Content Include="css\bootstrap-theme.min.css.map" />
     <Content Include="css\bootstrap.css.map" />
     <Content Include="css\bootstrap.min.css.map" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -219,6 +251,55 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="JustCountMonitor.aspx.cs">
+      <DependentUpon>JustCountMonitor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JustCountMonitor.aspx.designer.cs">
+      <DependentUpon>JustCountMonitor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LacrosseMonitor.aspx.cs">
+      <DependentUpon>LacrosseMonitor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LacrosseMonitor.aspx.designer.cs">
+      <DependentUpon>LacrosseMonitor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SoccerDartMonitor.aspx.cs">
+      <DependentUpon>SoccerDartMonitor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SoccerDartMonitor.aspx.designer.cs">
+      <DependentUpon>SoccerDartMonitor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RopeCourseMonitor.aspx.cs">
+      <DependentUpon>RopeCourseMonitor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RopeCourseMonitor.aspx.designer.cs">
+      <DependentUpon>RopeCourseMonitor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTagRemaining.aspx.cs">
+      <DependentUpon>ViewTagRemaining.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewTagRemaining.aspx.designer.cs">
+      <DependentUpon>ViewTagRemaining.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchTag.aspx.cs">
+      <DependentUpon>SearchTag.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchTag.aspx.designer.cs">
+      <DependentUpon>SearchTag.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchWaiver.aspx.cs">
+      <DependentUpon>SearchWaiver.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchWaiver.aspx.designer.cs">
+      <DependentUpon>SearchWaiver.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AddUserWithWaiver.aspx.cs">
       <DependentUpon>AddUserWithWaiver.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -257,13 +338,6 @@
     </Compile>
     <Compile Include="DeviceNotFound.aspx.designer.cs">
       <DependentUpon>DeviceNotFound.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="JustCountMonitor.aspx.cs">
-      <DependentUpon>JustCountMonitor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="JustCountMonitor.aspx.designer.cs">
-      <DependentUpon>JustCountMonitor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Monitor.aspx.cs">
       <DependentUpon>Monitor.aspx</DependentUpon>
@@ -357,6 +431,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataHub\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -50,6 +50,7 @@
     <Compile Include="CountAndWaitProcessor.cs" />
     <Compile Include="CountInAndOutProcessor.cs" />
     <Compile Include="Devices.cs" />
+    <Compile Include="Monitor.cs" />
     <Compile Include="Engine.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="LoginUser.cs" />

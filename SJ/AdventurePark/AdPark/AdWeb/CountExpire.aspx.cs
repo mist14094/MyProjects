@@ -30,10 +30,14 @@ namespace AdWeb
             }
             else
             {
-               List<AdBsnsLayer.Devices> deviceListed = _devices.GetAllDevices().Where(devices => devices.DeviceID == int.Parse(v.ToString()) && (devices.DeviceType == AdBsnsLayer.Devices._DeviceType.CountExpire_In || devices.DeviceType == AdBsnsLayer.Devices._DeviceType.CountExpire_Out)).ToList();
+                var AllDevices = _devices.GetAllDevices();
+                List<AdBsnsLayer.Devices> deviceListed = AllDevices.Where(devices => devices.DeviceID == int.Parse(v.ToString()) && (devices.DeviceType == AdBsnsLayer.Devices._DeviceType.CountExpire_In || devices.DeviceType == AdBsnsLayer.Devices._DeviceType.CountExpire_Out)).ToList();
                 if (deviceListed.Any())
                 {
                     lblTitle.Text = "Welcome to " + deviceListed[0].DisplayName;
+                    lblDeviceCounter.Text = AllDevices.Where(devices => devices.DeviceID == int.Parse(v.ToString()) && (devices.DeviceType == AdBsnsLayer.Devices._DeviceType.CountExpire_In)).ToList()[0].DeviceID.ToString();
+                    lblDeviceSpeed.Text = AllDevices.Where(devices => (devices.DeviceType == AdBsnsLayer.Devices._DeviceType.CountExpire_Out) && (devices.DisplayName == deviceListed[0].DisplayName)).ToList().ToList()[0].DeviceID.ToString();
+
                     txtTagNumber.Focus();
                 }
                 else
@@ -61,11 +65,11 @@ namespace AdWeb
 
             if (rblInandOut.SelectedIndex == 0)
             {
-                deviceId = 17;
+                deviceId = int.Parse(lblDeviceCounter.Text);
             }
             else
             {
-                deviceId = 18;
+                deviceId = int.Parse(lblDeviceSpeed.Text);
             }
 
             try

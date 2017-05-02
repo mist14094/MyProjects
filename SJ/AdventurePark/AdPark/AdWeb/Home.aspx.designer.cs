@@ -13,6 +13,33 @@ namespace AdWeb {
     public partial class Home {
         
         /// <summary>
+        /// btnSearchWaiver control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSearchWaiver;
+        
+        /// <summary>
+        /// btnSearchTag control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSearchTag;
+        
+        /// <summary>
+        /// btnViewTagRemainingActivities control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnViewTagRemainingActivities;
+        
+        /// <summary>
         /// btnAddUser control.
         /// </summary>
         /// <remarks>
