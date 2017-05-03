@@ -11,7 +11,7 @@ namespace AdWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-          
+            
 
         }
 
@@ -21,8 +21,22 @@ namespace AdWeb
             AdBsnsLayer.Monitor monitor = new AdBsnsLayer.Monitor();
             var Result = monitor.LacrosseMonitor();
 
-            if (Result.Tables.Count >= 4)
+            if (Result.Tables.Count >= 5)
             {
+                if (Result.Tables[4].Rows.Count >= 1)
+                {
+                    divPopU1p.Attributes.Add("style", "display: block;");
+                    lblMessage.Text = Result.Tables[4].Rows[0]["FirstName"].ToString() + " - " +
+                                      Result.Tables[4].Rows[0]["Message"].ToString();
+                   
+                }
+                else
+                {
+
+                    divPopU1p.Attributes.Add("style", "display: none;");
+                    lblMessage.Text = "asdasdasdas";
+                   
+                }
                 if (Result.Tables[0].Rows.Count >= 1)
                 {
                     if (Result.Tables[0].Rows[0]["CurrentState"].ToString().Equals(String.Empty))
