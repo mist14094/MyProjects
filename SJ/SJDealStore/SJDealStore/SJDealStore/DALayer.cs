@@ -951,6 +951,47 @@ namespace SJDealStore
             }
         }
 
+
+        public DataTable SJDeals_DeleteReport(string masterID)
+        {
+            Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");
+            var dataTable = new DataTable();
+            var selectCommand = new SqlCommand
+            {
+                CommandText = string.Format(_constants.SJDeals_DeleteReport)
+                ,
+                CommandTimeout = 180,
+                CommandType = CommandType.StoredProcedure
+            };
+
+            selectCommand.Parameters.Add("@MasterID", masterID);
+
+            var adapter = new SqlDataAdapter(selectCommand);
+            var connection = new SqlConnection(_constants.RFIDString);
+            selectCommand.Connection = connection;
+            try
+            {
+                connection.Open();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                Nlog.Trace(
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Error", ex);
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+                connection.Dispose();
+                Nlog.Trace(message:
+                    this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" +
+                    System.Reflection.MethodBase.GetCurrentMethod().Name + "::Leaving");
+            }
+        }
+
         public DataTable SJDeals_GetDamagedReport(string masterID)
         {
             Nlog.Trace(message: this.GetType().Namespace + ":" + MethodBase.GetCurrentMethod().DeclaringType.Name + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name + "::Entering");

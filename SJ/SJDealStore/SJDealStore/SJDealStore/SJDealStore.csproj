@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -79,6 +80,7 @@
     <Content Include="Pages\Items\CopyItemWithPrint.aspx" />
     <Content Include="Pages\Items\EditItemWithPrint.aspx" />
     <Content Include="Pages\Items\AddNewItemWithPrint.aspx" />
+    <Content Include="Pages\Items\DeleteDoc.aspx" />
     <Content Include="Pages\Items\ShopKeepImport.aspx" />
     <Content Include="Pages\Items\ManageManifest.aspx" />
     <Content Include="Pages\Items\Import.aspx" />
@@ -280,6 +282,13 @@
     </Compile>
     <Compile Include="Pages\Items\AddNewItemWithPrint.aspx.designer.cs">
       <DependentUpon>AddNewItemWithPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Items\DeleteDoc.aspx.cs">
+      <DependentUpon>DeleteDoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Items\DeleteDoc.aspx.designer.cs">
+      <DependentUpon>DeleteDoc.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Items\ShopKeepImport.aspx.cs">
       <DependentUpon>ShopKeepImport.aspx</DependentUpon>

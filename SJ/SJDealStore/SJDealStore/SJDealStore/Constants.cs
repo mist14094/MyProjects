@@ -45,6 +45,7 @@ namespace SJDealStore
 
         public string SJDeals_GetReceivedReport = "[Jarvis].[dbo].[SJDeals_GetReceivedReport]";
 
+        public string SJDeals_DeleteReport = "[Jarvis].[dbo].[SJDeals_DeleteReport]";
         public string SJDeals_SquareLogger = "[Jarvis].[dbo].[SJDeals_SquareLogger]";
 
         public string SJDeals_CreateManifest = "[Jarvis].[dbo].[SJDeals_CreateManifest]";

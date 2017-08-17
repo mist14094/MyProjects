@@ -59,5 +59,10 @@ namespace SJDealStore.Pages.Items
         {
             Response.Redirect("AddNewItemWithPrint.aspx");
         }
+
+        protected void Button10_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("DeleteDoc.aspx");
+        }
     }
 }
