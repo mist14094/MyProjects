@@ -88,11 +88,11 @@ namespace DealStore
                 this.txtQuantity.Text = "1";
                 this.ddlSellable.SelectedIndex = 0;
                 this.ddlRoundValue.SelectedIndex = 4;
-                this.cbNewProduct.Checked = false;
+              //  this.cbNewProduct.Checked = false;
                 this.cbNewProduct_CheckedChanged(null, null);
-                this.cbOverrideScanPrice.Checked = false;
+              //  this.cbOverrideScanPrice.Checked = false;
                 this.cbOverrideScanPrice_CheckedChanged(null, null);
-                this.cbCustomPrice.Checked = false;
+             //   this.cbCustomPrice.Checked = false;
                 this.cbCustomPrice_CheckedChanged(null, null);
                 this.txtUPC.Focus();
             }

@@ -501,7 +501,37 @@ namespace DealStore
                                 {
                                 }
                             }
+
+
+
                             connection.Close();
+
+                            try
+                            {
+                                OleDbConnection PubsConn = new OleDbConnection(DBAccess.msAccessCon);
+                                int intRowAffected;
+                                OleDbCommand testCMD = new OleDbCommand
+                                   ("AfterImport_UpdatePrice", PubsConn);
+
+                                testCMD.CommandType = CommandType.StoredProcedure;
+
+                                OleDbParameter RetVal = testCMD.Parameters.Add
+                                   ("RetVal", OleDbType.Integer);
+                                RetVal.Direction = ParameterDirection.ReturnValue;
+                               
+
+                                PubsConn.Open();
+                                intRowAffected = testCMD.ExecuteNonQuery();
+                                MessageBox.Show("Price Updated", "Import");
+
+
+                            }
+                            catch (Exception ex)
+                            {
+                                
+                            }
+
+
                             MessageBox.Show("Import completed successfully.", "Import");
                         }
                         else
